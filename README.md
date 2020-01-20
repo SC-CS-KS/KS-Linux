@@ -1,6 +1,6 @@
 # Linux OS
 
-![GNU/Linux 操作系统的基本体系结构](pic/GNU-Linux-arch.png)
+![GNU/Linux 操作系统的基本体系结构](_pic/GNU-Linux-arch.png)
 
 
 ## 
