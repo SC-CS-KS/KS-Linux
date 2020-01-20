@@ -15,7 +15,7 @@
 * [IO](io/README.md)
 
 
-## [Linux Performance Profile](https://github.com/SunnnyChan/knowledge-Sys-of-Testing/blob/master/perf/Linux)
+## [Linux Performance Profile](https://github.com/SC-CS-KS/KS-QA/blob/master/Perf/LinuxPerf/)
 
 ## Resources
 
