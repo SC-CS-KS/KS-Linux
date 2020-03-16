@@ -1,0 +1,150 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil\fcharset2 Symbol;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid473587614\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'01\uc2\u183 \'a1\'a4\uc1;}{\levelnumbers;}\f3\fs24\lang1024}
+\listid392534040}
+}
+{\*\listoverridetable
+{\listoverride\listid392534040\listoverridecount0\ls1}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 github.vim v1.1
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs20 " Vim color file
+\par "
+\par " Author: Anthony Carapetis <anthony.carapetis@gmail.com>
+\par "
+\par " Note: Based on github's syntax highlighting theme
+\par "       Used Brian Mock's darkspectrum as a starting point/template
+\par "       Thanks to Ryan Heath for an easy list of some of the colours:
+\par "       http://rpheath.com/posts/356-github-theme-for-syntax-gem
+\par 
+\par hi clear
+\par 
+\par set background=light
+\par if version > 580
+\par     " no guarantees for version 5.8 and below, but this makes it stop
+\par     " complaining
+\par     hi clear
+\par     if exists("syntax_on")
+\par \tab syntax reset
+\par     endif
+\par endif
+\par let g:colors_name="github"
+\par 
+\par hi Normal       guifg=#000000 guibg=#F8F8FF
+\par 
+\par " \{\{\{ Cursor
+\par hi Cursor\tab \tab guibg=#444454 guifg=#F8F8FF
+\par hi CursorLine\tab guibg=#D8D8DD
+\par hi CursorColumn\tab guibg=#E8E8EE
+\par " \}\}\}
+\par 
+\par " \{\{\{ Diff
+\par hi DiffAdd         guifg=#003300 guibg=#DDFFDD gui=none
+\par hi DiffChange                    guibg=#ececec gui=none
+\par hi DiffText        guifg=#000033 guibg=#DDDDFF gui=none
+\par hi DiffDelete      guifg=#DDCCCC guibg=#FFDDDD gui=none
+\par " \}\}\}
+\par 
+\par " \{\{\{ Folding / Line Numbering / Status Lines
+\par hi Folded\tab \tab guibg=#ECECEC guifg=#808080 gui=bold
+\par hi vimFold\tab \tab guibg=#ECECEC guifg=#808080 gui=bold
+\par hi FoldColumn\tab guibg=#ECECEC guifg=#808080 gui=bold
+\par 
+\par hi LineNr\tab \tab guifg=#959595 guibg=#ECECEC gui=bold
+\par hi NonText\tab \tab guifg=#808080 guibg=#ECECEC
+\par hi Folded\tab \tab guifg=#808080 guibg=#ECECEC gui=bold
+\par hi FoldeColumn  guifg=#808080 guibg=#ECECEC gui=bold
+\par 
+\par hi VertSplit\tab guibg=#bbbbbb guifg=#bbbbbb gui=none
+\par hi StatusLine   guibg=#bbbbbb guifg=#404040 gui=bold
+\par hi StatusLineNC guibg=#d4d4d4 guifg=#404040 gui=italic
+\par " \}\}\}
+\par 
+\par " \{\{\{ Misc
+\par hi ModeMsg\tab \tab guifg=#990000
+\par hi MoreMsg\tab \tab guifg=#990000
+\par 
+\par hi Title\tab \tab guifg=#ef5939
+\par hi WarningMsg\tab guifg=#ef5939
+\par hi SpecialKey   guifg=#177F80 gui=italic
+\par 
+\par hi MatchParen\tab guibg=#cdcdfd guifg=#000000
+\par hi Underlined\tab guifg=#000000 gui=underline
+\par hi Directory\tab guifg=#990000
+\par " \}\}\}
+\par 
+\par " \{\{\{ Search, Visual, etc
+\par hi Visual\tab \tab guifg=#FFFFFF guibg=#3465a4 gui=none
+\par hi VisualNOS    guifg=#FFFFFF guibg=#204a87 gui=none
+\par hi IncSearch\tab guibg=#cdcdfd guifg=#000000 gui=italic
+\par hi Search\tab \tab guibg=#cdcdfd guifg=#000000 gui=italic
+\par " \}\}\}
+\par 
+\par " \{\{\{ Syntax groups
+\par hi Ignore\tab \tab guifg=#808080
+\par hi Identifier\tab guifg=#0086B3
+\par hi PreProc\tab \tab guifg=#A0A0A0 gui=bold
+\par hi Comment\tab \tab guifg=#999988
+\par hi Constant\tab \tab guifg=#177F80 gui=none
+\par hi String\tab \tab guifg=#D81745
+\par hi Function\tab \tab guifg=#990000 gui=bold
+\par hi Statement\tab guifg=#000000 gui=bold
+\par hi Type\tab \tab \tab guifg=#445588 gui=bold
+\par hi Number\tab \tab guifg=#1C9898
+\par hi Todo\tab \tab \tab guifg=#FFFFFF guibg=#990000 gui=bold
+\par hi Special\tab \tab guifg=#159828 gui=bold
+\par hi rubySymbol   guifg=#960B73
+\par hi Error        guibg=#f8f8ff guifg=#ff1100 gui=undercurl
+\par hi Todo         guibg=#f8f8ff guifg=#ff1100 gui=underline
+\par hi Label        guifg=#000000 gui=bold
+\par hi StorageClass guifg=#000000 gui=bold
+\par hi Structure    guifg=#000000 gui=bold
+\par hi TypeDef      guifg=#000000 gui=bold
+\par " \}\}\}
+\par 
+\par " \{\{\{ Completion menus
+\par hi WildMenu     guifg=#7fbdff guibg=#425c78 gui=none
+\par 
+\par hi Pmenu        guibg=#808080 guifg=#ffffff gui=bold
+\par hi PmenuSel     guibg=#cdcdfd guifg=#000000 gui=italic
+\par hi PmenuSbar    guibg=#000000 guifg=#444444
+\par hi PmenuThumb   guibg=#aaaaaa guifg=#aaaaaa
+\par " \}\}\}
+\par 
+\par " \{\{\{ Spelling
+\par hi spellBad     guisp=#fcaf3e
+\par hi spellCap     guisp=#73d216
+\par hi spellRare    guisp=#fcaf3e
+\par hi spellLocal   guisp=#729fcf
+\par " \}\}\}
+\par 
+\par " \{\{\{ Aliases
+\par hi link cppSTL          Function
+\par hi link cppSTLType      Type
+\par hi link Character\tab \tab Number
+\par hi link htmlTag\tab \tab \tab htmlEndTag
+\par "hi link htmlTagName     htmlTag
+\par hi link htmlLink\tab \tab Underlined
+\par hi link pythonFunction\tab Identifier
+\par hi link Question\tab \tab Type
+\par hi link CursorIM\tab \tab Cursor
+\par hi link VisualNOS\tab \tab Visual
+\par hi link xmlTag\tab \tab \tab Identifier
+\par hi link xmlTagName\tab \tab Identifier
+\par hi link shDeref\tab \tab \tab Identifier
+\par hi link shVariable\tab \tab Function
+\par hi link rubySharpBang\tab Special
+\par hi link perlSharpBang\tab Special
+\par hi link schemeFunc      Statement
+\par "hi link shSpecialVariables Constant
+\par "hi link bashSpecialVariables Constant
+\par " \}\}\}
+\par 
+\par " \{\{\{ Tabs (non-gui0
+\par hi TabLine\tab \tab guifg=#404040 guibg=#dddddd gui=none
+\par hi TabLineFill\tab guifg=#404040 guibg=#dddddd gui=none
+\par hi TabLineSel\tab guifg=#404040 gui=bold
+\par " \}\}\}
+\par "
+\par " vim: sw=4 ts=4 foldmethod=marker\par}

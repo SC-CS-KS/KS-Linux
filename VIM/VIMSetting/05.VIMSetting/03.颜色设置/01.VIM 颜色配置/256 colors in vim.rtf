@@ -1,0 +1,38 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil Arial;}}{\colortbl;\red0\green0\blue255;\red0\green128\blue0;\red128\green0\blue0;\red0\green128\blue128;\red0\green0\blue0;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid1325328733\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+\listid977488088}
+}
+{\*\listoverridetable
+{\listoverride\listid977488088\listoverridecount0\ls1}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf5 256 colors in vim
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs20 XTerm and most other modern terminal emulators support 256 colors, 
+\par you can use a script to\~\plain \f1\ul\fs20\cf1 check if your terminal supports 256 colors\plain \f1\fs20 .
+\par 
+\par To enable colors on XTerm you will need to run the\~configure\~scripts with the\~--enable-256-color\~switch, 
+\par in addition you may also need to set your\~TERM\~environment variable to\~xterm-256color.
+\par 
+\par For bourne shells (bash, zsh, pdksh) this is done in\~~/.profile:
+\par \plain \f1\fs20\cf2 if [ -e /usr/share/terminfo/x/xterm-256color ]; then\'0a 
+\par         export TERM='xterm-256color'\'0a
+\par else\'0a 
+\par         export TERM='xterm-color'\'0a
+\par fi\'0a
+\par \plain \f1\fs20\cf1 
+\par \plain \f1\fs20 Or for csh shells this is done in\~~/.cshrc:
+\par setenv TERM xterm-256color
+\par See\~\plain \f1\ul\fs20\cf1 http://frexx.de/xterm-256-notes/\plain \f1\fs20 \~for more information about 256 colors on XTerm
+\par \plain \f1\fs20\cf4 -----------------------------------------------------------------------------------------------------------------------
+\par \plain \f1\fs20\cf3 To enable 256 colors in vim, put this your .vimrc before setting the colorscheme:
+\par \plain \f1\fs20\cf2 set t_Co=256\'0a
+\par \plain \f1\fs20 
+\par You may also need to add:
+\par set t_AB=^[[48;5;%dm\'0a
+\par set t_AF=^[[38;5;%dm\'0a
+\par 
+\par Your colors should at least look a little different. 
+\par For full effect, use a colorscheme that supports 256 colors like
+\par \plain \f1\b\ul\fs20\cf1 desert256\plain \f1\b\fs20 ,\~\plain \f1\b\ul\fs20\cf1 inkpot\plain \f1\b\fs20 ,\~\plain \f1\b\ul\fs20\cf1 256-grayvim\plain \f1\b\fs20 , or\~\plain \f1\b\ul\fs20\cf1 gardener\plain \f1\b\fs20 .\par}
