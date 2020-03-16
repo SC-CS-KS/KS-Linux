@@ -1,0 +1,949 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil Arial;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid694883301\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+\listid1418328957}
+}
+{\*\listoverridetable
+{\listoverride\listid1418328957\listoverridecount0\ls1}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 02.iptables
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs20 IPTABLES(8)                                                                                                             IPTABLES(8)
+\par 
+\par NAME
+\par \plain \f1\fs20\cf1        iptables - administration tool for IPv4 packet filtering and NAT
+\par \plain \f1\fs20 
+\par SYNOPSIS
+\par        iptables [-t table] -[AD] chain rule-specification [options]
+\par        iptables [-t table] -I chain [rulenum] rule-specification [options]
+\par        iptables [-t table] -R chain rulenum rule-specification [options]
+\par        iptables [-t table] -D chain rulenum [options]
+\par        iptables [-t table] -[LFZ] [chain] [options]
+\par        iptables [-t table] -N chain
+\par        iptables [-t table] -X [chain]
+\par        iptables [-t table] -P chain target [options]
+\par        iptables [-t table] -E old-chain-name new-chain-name
+\par 
+\par DESCRIPTION
+\par        Iptables is used to set up, maintain, and inspect the tables of IP packet filter rules in the Linux kernel.  Several differ-
+\par        ent tables may be defined.  Each table contains a number of built-in chains and may also contain user-defined chains.
+\par 
+\par        Each chain is a list of rules which can match a set of packets.  Each rule specifies what to do with a packet that  matches.
+\par        This is called a 'target', which may be a jump to a user-defined chain in the same table.
+\par 
+\par TARGETS
+\par        A  firewall rule specifies criteria for a packet, and a target.  If the packet does not match, the next rule in the chain is
+\par        the examined; if it does match, then the next rule is specified by the value of the target, which can be the name of a user-
+\par        defined chain or one of the special values ACCEPT, DROP, QUEUE, or RETURN.
+\par 
+\par        ACCEPT  means  to  let  the  packet through.  DROP means to drop the packet on the floor.  QUEUE means to pass the packet to
+\par        userspace (if supported by the kernel).  RETURN means stop traversing this chain and resume at the next rule in the previous
+\par        (calling) chain.  If the end of a built-in chain is reached or a rule in a built-in chain with target RETURN is matched, the
+\par        target specified by the chain policy determines the fate of the packet.
+\par 
+\par TABLES
+\par        There are currently three independent tables (which tables are present at any  time  depends  on  the  kernel  configuration
+\par        options and which modules are present).
+\par 
+\par        -t, --table table
+\par               This  option  specifies  the  packet matching table which the command should operate on.  If the kernel is configured
+\par               with automatic module loading, an attempt will be made to load the appropriate module for that table  if  it  is  not
+\par               already there.
+\par 
+\par               The tables are as follows:
+\par 
+\par               filter:
+\par                   This is the default table (if no -t option is passed).  It contains the built-in chains INPUT (for packets coming
+\par                   into the box itself), FORWARD (for packets being routed through the box), and OUTPUT (for locally-generated pack-
+\par                   ets).
+\par 
+\par               nat:
+\par                   This  table is consulted when a packet that creates a new connection is encountered.  It consists of three built-
+\par                   ins: PREROUTING (for altering packets as soon as they come in), OUTPUT (for  altering  locally-generated  packets
+\par                   before routing), and POSTROUTING (for altering packets as they are about to go out).
+\par 
+\par               mangle:
+\par                   This table is used for specialized packet alteration.  Until kernel 2.4.17 it had two built-in chains: PREROUTING
+\par                   (for altering incoming packets before routing) and OUTPUT (for altering locally-generated  packets  before  rout-
+\par                   ing).   Since  kernel  2.4.18, three other built-in chains are also supported: INPUT (for packets coming into the
+\par                   box itself), FORWARD (for altering packets being routed through the box), and POSTROUTING (for  altering  packets
+\par                   as they are about to go out).
+\par 
+\par OPTIONS
+\par        The options that are recognized by iptables can be divided into several different groups.
+\par 
+\par    COMMANDS
+\par        These  options  specify the specific action to perform.  Only one of them can be specified on the command line unless other-
+\par        wise specified below.  For all the long versions of the command and option names, you need to use  only  enough  letters  to
+\par        ensure that iptables can differentiate it from all other options.
+\par 
+\par        -A, --append chain rule-specification
+\par               Append  one or more rules to the end of the selected chain.  When the source and/or destination names resolve to more
+\par               than one address, a rule will be added for each possible address combination.
+\par 
+\par        -D, --delete chain rule-specification
+\par        -D, --delete chain rulenum
+\par               Delete one or more rules from the selected chain.  There are two versions of this command: the rule can be  specified
+\par               as a number in the chain (starting at 1 for the first rule) or a rule to match.
+\par 
+\par        -I, --insert chain [rulenum] rule-specification
+\par               Insert  one  or  more rules in the selected chain as the given rule number.  So, if the rule number is 1, the rule or
+\par               rules are inserted at the head of the chain.  This is also the default if no rule number is specified.
+\par 
+\par        -R, --replace chain rulenum rule-specification
+\par               Replace a rule in the selected chain.  If the source and/or destination names resolve to multiple addresses, the com-
+\par               mand will fail.  Rules are numbered starting at 1.
+\par 
+\par        -L, --list [chain]
+\par               List  all rules in the selected chain.  If no chain is selected, all chains are listed.  As every other iptables com-
+\par               mand, it applies to the specified table (filter is the default), so NAT rules get listed by
+\par                iptables -t nat -n -L
+\par               Please note that it is often used with the -n option, in order to avoid long reverse DNS lookups.   It  is  legal  to
+\par               specify  the  -Z  (zero)  option as well, in which case the chain(s) will be atomically listed and zeroed.  The exact
+\par               output is affected by the other arguments given. The exact rules are suppressed until you use
+\par                iptables -L -v
+\par 
+\par        -F, --flush [chain]
+\par               Flush the selected chain (all the chains in the table if none is given).  This is  equivalent  to  deleting  all  the
+\par               rules one by one.
+\par 
+\par        -Z, --zero [chain]
+\par               Zero the packet and byte counters in all chains.  It is legal to specify the -L, --list (list) option as well, to see
+\par               the counters immediately before they are cleared. (See above.)
+\par 
+\par        -N, --new-chain chain
+\par               Create a new user-defined chain by the given name.  There must be no target of that name already.
+\par 
+\par        -X, --delete-chain [chain]
+\par               Delete the optional user-defined chain specified.  There must be no references to the chain.  If there are, you  must
+\par               delete  or  replace the referring rules before the chain can be deleted.  If no argument is given, it will attempt to
+\par               delete every non-builtin chain in the table.
+\par 
+\par        -P, --policy chain target
+\par               Set the policy for the chain to the given target.  See the section TARGETS for  the  legal  targets.   Only  built-in
+\par               (non-user-defined) chains can have policies, and neither built-in nor user-defined chains can be policy targets.
+\par 
+\par        -E, --rename-chain old-chain new-chain
+\par               Rename  the  user specified chain to the user supplied name.  This is cosmetic, and has no effect on the structure of
+\par               the table.
+\par 
+\par        -h     Help.  Give a (currently very brief) description of the command syntax.
+\par 
+\par    PARAMETERS
+\par        The following parameters make up a rule specification (as used in the add, delete, insert, replace and append commands).
+\par 
+\par        -p, --protocol [!] protocol
+\par               The protocol of the rule or of the packet to check.  The specified protocol can be one of tcp, udp, icmp, or all,  or
+\par               it  can be a numeric value, representing one of these protocols or a different one.  A protocol name from /etc/proto-
+\par               cols is also allowed.  A "!" argument before the protocol inverts the test.  The number zero is  equivalent  to  all.
+\par               Protocol all will match with all protocols and is taken as default when this option is omitted.
+\par 
+\par        -s, --source [!] address[/mask]
+\par               Source  specification.   Address can be either a network name, a hostname (please note that specifying any name to be
+\par               resolved with a remote query such as DNS is a really bad idea), a network IP address (with  /mask),  or  a  plain  IP
+\par               address.   The  mask can be either a network mask or a plain number, specifying the number of 1's at the left side of
+\par               the network mask.  Thus, a mask of 24 is equivalent to 255.255.255.0.  A "!" argument before the  address  specifica-
+\par               tion inverts the sense of the address. The flag --src is an alias for this option.
+\par 
+\par        -d, --destination [!] address[/mask]
+\par               Destination  specification.   See  the  description of the -s (source) flag for a detailed description of the syntax.
+\par               The flag --dst is an alias for this option.
+\par 
+\par        -j, --jump target
+\par               This specifies the target of the rule; i.e., what to do if the packet matches it.  The target can be  a  user-defined
+\par               chain  (other  than  the one this rule is in), one of the special builtin targets which decide the fate of the packet
+\par               immediately, or an extension (see EXTENSIONS below).  If this option is omitted in a rule,  then  matching  the  rule
+\par               will have no effect on the packet's fate, but the counters on the rule will be incremented.
+\par 
+\par        -i, --in-interface [!] name
+\par               Name  of  an  interface  via which a packet was received (only for packets entering the INPUT, FORWARD and PREROUTING
+\par               chains).  When the "!" argument is used before the interface name, the sense is inverted.  If the interface name ends
+\par               in  a  "+", then any interface which begins with this name will match.  If this option is omitted, any interface name
+\par               will match.
+\par 
+\par        -o, --out-interface [!] name
+\par               Name of an interface via which a packet is going to be sent (for packets entering the FORWARD, OUTPUT and POSTROUTING
+\par               chains).  When the "!" argument is used before the interface name, the sense is inverted.  If the interface name ends
+\par               in a "+", then any interface which begins with this name will match.  If this option is omitted, any  interface  name
+\par               will match.
+\par 
+\par        [!]  -f, --fragment
+\par               This means that the rule only refers to second and further fragments of fragmented packets.  Since there is no way to
+\par               tell the source or destination ports of such a packet (or ICMP type), such a packet will not match  any  rules  which
+\par               specify them.  When the "!" argument precedes the "-f" flag, the rule will only match head fragments, or unfragmented
+\par               packets.
+\par 
+\par        -c, --set-counters PKTS BYTES
+\par               This enables the administrator to initialize the packet and byte counters of a rule (during INSERT,  APPEND,  REPLACE
+\par               operations).
+\par 
+\par    OTHER OPTIONS
+\par        The following additional options can be specified:
+\par 
+\par        -v, --verbose
+\par               Verbose  output.   This option makes the list command show the interface name, the rule options (if any), and the TOS
+\par               masks.  The packet and byte counters are also listed, with the suffix  'K',  'M'  or  'G'  for  1000,  1,000,000  and
+\par               1,000,000,000  multipliers respectively (but see the -x flag to change this).  For appending, insertion, deletion and
+\par               replacement, this causes detailed information on the rule or rules to be printed.
+\par 
+\par        -n, --numeric
+\par               Numeric output.  IP addresses and port numbers will be printed in numeric format.  By default, the program  will  try
+\par               to display them as host names, network names, or services (whenever applicable).
+\par 
+\par        -x, --exact
+\par               Expand  numbers.   Display the exact value of the packet and byte counters, instead of only the rounded number in K's
+\par               (multiples of 1000) M's (multiples of 1000K) or G's (multiples of 1000M).  This option is only relevant  for  the  -L
+\par               command.
+\par 
+\par        --line-numbers
+\par               When  listing  rules,  add  line  numbers to the beginning of each rule, corresponding to that rule's position in the
+\par               chain.
+\par 
+\par        --modprobe=command
+\par               When adding or inserting rules into a chain, use command to load any necessary modules  (targets,  match  extensions,
+\par               etc).
+\par 
+\par MATCH EXTENSIONS
+\par        iptables can use extended packet matching modules.  These are loaded in two ways: implicitly, when -p or --protocol is spec-
+\par        ified, or with the -m or --match options, followed by the matching module name; after  these,  various  extra  command  line
+\par        options  become  available,  depending on the specific module.  You can specify multiple extended match modules in one line,
+\par        and you can use the -h or --help options after the module has been specified to receive help specific to that module.
+\par 
+\par        The following are included in the base package, and most of these can be preceded by a !  to invert the sense of the  match.
+\par 
+\par    addrtype
+\par        This module matches packets based on their address type.  Address types are used within the kernel networking stack and cat-
+\par        egorize addresses into various groups.  The exact definition of that group depends on the specific layer three protocol.
+\par 
+\par        The following address types are possible:
+\par 
+\par        UNSPEC an unspecified address (i.e. 0.0.0.0) UNICAST an unicast address LOCAL a local address BROADCAST a broadcast  address
+\par               ANYCAST  an  anycast  packet  MULTICAST  a multicast address BLACKHOLE a blackhole address UNREACHABLE an unreachable
+\par               address PROHIBIT a prohibited address THROW FIXME NAT FIXME XRESOLVE FIXME
+\par 
+\par        --src-type type
+\par               Matches if the source address is of given type
+\par 
+\par        --dst-type type
+\par               Matches if the destination address is of given type
+\par 
+\par    ah
+\par        This module matches the SPIs in AH header of IPSec packets.
+\par 
+\par        --ahspi [!] spi[:spi]
+\par 
+\par    childlevel
+\par        This is an experimental module.  It matches on whether the packet is part of a master connection or one of its children  (or
+\par        grandchildren, etc).  For instance, most packets are level 0.  FTP data transfer is level 1.
+\par 
+\par        --childlevel [!] level
+\par 
+\par    condition
+\par        This matches if a specific /proc filename is '0' or '1'.
+\par 
+\par        --condition [!] filename
+\par               Match on boolean value stored in /proc/net/ipt_condition/filename file
+\par 
+\par    connmark
+\par        This  module  matches  the  netfilter  mark  field  associated with a connection (which can be set using the CONNMARK target
+\par        below).
+\par 
+\par        --mark value[/mask]
+\par               Matches packets in connections with the given mark value (if a mask is specified, this is logically  ANDed  with  the
+\par               mark before the comparison).
+\par 
+\par    connrate
+\par        This module matches the current transfer rate in a connection.
+\par 
+\par        --connrate [!] [from]:[to]
+\par               Match  against the current connection transfer rate being within 'from' and 'to' bytes per second. When the "!" argu-
+\par               ment is used before the range, the sense of the match is inverted.
+\par 
+\par    conntrack
+\par        This module, when combined with connection tracking, allows access to more connection tracking information than the  "state"
+\par        match.  (this module is present only if iptables was compiled under a kernel supporting this feature)
+\par 
+\par        --ctstate state
+\par               Where  state  is  a comma separated list of the connection states to match.  Possible states are INVALID meaning that
+\par               the packet is associated with no known connection, ESTABLISHED meaning that the packet is associated with  a  connec-
+\par               tion  which  has seen packets in both directions, NEW meaning that the packet has started a new connection, or other-
+\par               wise associated with a connection which has not seen packets in both directions, and RELATED meaning that the  packet
+\par               is starting a new connection, but is associated with an existing connection, such as an FTP data transfer, or an ICMP
+\par               error.  SNAT A virtual state, matching if the original source address differs from the  reply  destination.   DNAT  A
+\par               virtual state, matching if the original destination differs from the reply source.
+\par 
+\par        --ctproto proto
+\par               Protocol to match (by number or name)
+\par 
+\par        --ctorigsrc [!] address[/mask]
+\par               Match against original source address
+\par 
+\par        --ctorigdst [!] address[/mask]
+\par               Match against original destination address
+\par 
+\par        --ctreplsrc [!] address[/mask]
+\par               Match against reply source address
+\par 
+\par        --ctrepldst [!] address[/mask]
+\par               Match against reply destination address
+\par 
+\par        --ctstatus [NONE|EXPECTED|SEEN_REPLY|ASSURED][,...]
+\par               Match against internal conntrack states
+\par 
+\par        --ctexpire time[:time]
+\par               Match remaining lifetime in seconds against given value or range of values (inclusive)
+\par 
+\par    dscp
+\par        This module matches the 6 bit DSCP field within the TOS field in the IP header.  DSCP has superseded TOS within the IETF.
+\par 
+\par        --dscp value
+\par               Match against a numeric (decimal or hex) value [0-32].
+\par 
+\par        --dscp-class DiffServ Class
+\par               Match  the  DiffServ class. This value may be any of the BE, EF, AFxx or CSx classes.  It will then be converted into
+\par               it's according numeric value.
+\par 
+\par    dstlimit
+\par        This module allows you to limit the packet per second (pps) rate on a per destination IP or per destination port  base.   As
+\par        opposed to the 'limit' match, every destination ip / destination port has it's own limit.
+\par 
+\par        --dstlimit avg
+\par               Maximum average match rate (packets per second unless followed by /sec /minute /hour /day postfixes).
+\par 
+\par        --dstlimit-mode mode
+\par               The  limiting hashmode.  Is the specified limit per dstip, dstip-dstport tuple, srcip-dstip tuple, or per srcipdstip-
+\par               dstport tuple.
+\par 
+\par        --dstlimit-name name
+\par               Name for /proc/net/ipt_dstlimit/* file entry
+\par 
+\par        [--dstlimit-burst burst]
+\par               Number of packets to match in a burst.  Default: 5
+\par 
+\par        [--dstlimit-htable-size size]
+\par               Number of buckets in the hashtable
+\par 
+\par        [--dstlimit-htable-max max]
+\par               Maximum number of entries in the hashtable
+\par 
+\par        [--dstlimit-htable-gcinterval interval]
+\par               Interval between garbage collection runs of the hashtable (in miliseconds).  Default is 1000 (1 second).
+\par 
+\par        [--dstlimit-htable-expire time
+\par               After which time are idle entries expired from hashtable (in miliseconds)?  Default is 10000 (10 seconds).
+\par 
+\par    ecn
+\par        This allows you to match the ECN bits of the IPv4 and TCP header.  ECN is the Explicit Congestion Notification mechanism  as
+\par        specified in RFC3168
+\par 
+\par        --ecn-tcp-cwr
+\par               This matches if the TCP ECN CWR (Congestion Window Received) bit is set.
+\par 
+\par        --ecn-tcp-ece
+\par               This matches if the TCP ECN ECE (ECN Echo) bit is set.
+\par 
+\par        --ecn-ip-ect num
+\par               This matches a particular IPv4 ECT (ECN-Capable Transport). You have to specify a number between '0' and '3'.
+\par 
+\par    esp
+\par        This module matches the SPIs in ESP header of IPSec packets.
+\par 
+\par        --espspi [!] spi[:spi]
+\par 
+\par    fuzzy
+\par        This module matches a rate limit based on a fuzzy logic controller [FLC]
+\par 
+\par        --lower-limit  number"
+\par               Specifies the lower limit (in packets per second).
+\par 
+\par        --upper-limit number
+\par               Specifies the upper limit (in packets per second).
+\par 
+\par    helper
+\par        This module matches packets related to a specific conntrack-helper.
+\par 
+\par        --helper string
+\par               Matches packets related to the specified conntrack-helper.
+\par 
+\par               string  can  be  "ftp"  for  packets related to a ftp-session on default port.  For other ports append -portnr to the
+\par               value, ie. "ftp-2121".
+\par 
+\par               Same rules apply for other conntrack-helpers.
+\par 
+\par    icmp
+\par        This extension is loaded if '--protocol icmp' is specified.  It provides the following option:
+\par 
+\par        --icmp-type [!] typename
+\par               This allows specification of the ICMP type, which can be a numeric ICMP type, or one of the ICMP type names shown  by
+\par               the command
+\par                iptables -p icmp -h
+\par 
+\par    iprange
+\par        This matches on a given arbitrary range of IPv4 addresses
+\par 
+\par        [!]--src-range ip-ip
+\par               Match source IP in the specified range.
+\par 
+\par        [!]--dst-range ip-ip
+\par               Match destination IP in the specified range.
+\par 
+\par    length
+\par        This module matches the length of a packet against a specific value or range of values.
+\par 
+\par        --length length[:length]
+\par 
+\par    limit
+\par        This  module matches at a limited rate using a token bucket filter.  A rule using this extension will match until this limit
+\par        is reached (unless the '!' flag is used).  It can be used in combination with the LOG target to give  limited  logging,  for
+\par        example.
+\par 
+\par        --limit rate
+\par               Maximum  average matching rate: specified as a number, with an optional '/second', '/minute', '/hour', or '/day' suf-
+\par               fix; the default is 3/hour.
+\par 
+\par        --limit-burst number
+\par               Maximum initial number of packets to match: this number gets recharged by one every time the limit specified above is
+\par               not reached, up to this number; the default is 5.
+\par 
+\par    mac
+\par        --mac-source [!] address
+\par               Match  source  MAC  address.   It must be of the form XX:XX:XX:XX:XX:XX.  Note that this only makes sense for packets
+\par               coming from an Ethernet device and entering the PREROUTING, FORWARD or INPUT chains.
+\par 
+\par    mark
+\par        This module matches the netfilter mark field associated with a packet (which can be set using the MARK target below).
+\par 
+\par        --mark value[/mask]
+\par               Matches packets with the given unsigned mark value (if a mask is specified, this is logically  ANDed  with  the  mask
+\par               before the comparison).
+\par 
+\par    mport
+\par        This module matches a set of source or destination ports.  Up to 15 ports can be specified.  It can only be used in conjunc-
+\par        tion with -p tcp or -p udp.
+\par 
+\par        --source-ports port[,port[,port...]]
+\par               Match if the source port is one of the given ports.  The flag --sports is a convenient alias for this option.
+\par 
+\par        --destination-ports port[,port[,port...]]
+\par               Match if the destination port is one of the given ports.  The flag --dports is a convenient alias for this option.
+\par 
+\par        --ports port[,port[,port...]]
+\par               Match if the both the source and destination ports are equal to each other and to one of the given ports.
+\par 
+\par    multiport
+\par        This module matches a set of source or destination ports.  Up to 15 ports can be specified.  It can only be used in conjunc-
+\par        tion with -p tcp or -p udp.
+\par 
+\par        --source-ports port[,port[,port...]]
+\par               Match if the source port is one of the given ports.  The flag --sports is a convenient alias for this option.
+\par 
+\par        --destination-ports port[,port[,port...]]
+\par               Match if the destination port is one of the given ports.  The flag --dports is a convenient alias for this option.
+\par 
+\par        --ports port[,port[,port...]]
+\par               Match if the both the source and destination ports are equal to each other and to one of the given ports.
+\par 
+\par    nth
+\par        This module matches every 'n'th packet
+\par 
+\par        --every value
+\par               Match every 'value' packet
+\par 
+\par        [--counter num]
+\par               Use internal counter number 'num'.  Default is '0'.
+\par 
+\par        [--start num]
+\par               Initialize the counter at the number 'num' insetad of '0'.  Most between '0' and 'value'-1.
+\par 
+\par        [--packet num]
+\par               Match on 'num' packet.  Most be between '0' and 'value'-1.
+\par 
+\par    owner
+\par        This  module  attempts  to  match  various characteristics of the packet creator, for locally-generated packets.  It is only
+\par        valid in the OUTPUT chain, and even this some packets (such as ICMP ping responses) may  have  no  owner,  and  hence  never
+\par        match.
+\par 
+\par        --uid-owner userid
+\par               Matches if the packet was created by a process with the given effective user id.
+\par 
+\par        --gid-owner groupid
+\par               Matches if the packet was created by a process with the given effective group id.
+\par 
+\par        --pid-owner processid
+\par               Matches if the packet was created by a process with the given process id.
+\par 
+\par        --sid-owner sessionid
+\par               Matches if the packet was created by a process in the given session group.
+\par 
+\par        --cmd-owner name
+\par               Matches if the packet was created by a process with the given command name.  (this option is present only if iptables
+\par               was compiled under a kernel supporting this feature)
+\par 
+\par    physdev
+\par        This module matches on the bridge port input and output devices enslaved to a bridge device. This module is a  part  of  the
+\par        infrastructure  that enables a transparent bridging IP firewall and is only useful for kernel versions above version 2.5.44.
+\par 
+\par        --physdev-in name
+\par               Name of a bridge port via which a packet is received (only for packets entering the  INPUT,  FORWARD  and  PREROUTING
+\par               chains).  If  the  interface  name  ends  in a "+", then any interface which begins with this name will match. If the
+\par               packet didn't arrive through a bridge device, this packet won't match this option, unless '!' is used.
+\par 
+\par        --physdev-out name
+\par               Name of a bridge port via which a packet is going to be sent (for packets entering the FORWARD, OUTPUT and  POSTROUT-
+\par               ING  chains).   If  the interface name ends in a "+", then any interface which begins with this name will match. Note
+\par               that in the nat and mangle OUTPUT chains one cannot match on the bridge output port, however one can  in  the  filter
+\par               OUTPUT  chain. If the packet won't leave by a bridge device or it is yet unknown what the output device will be, then
+\par               the packet won't match this option, unless
+\par 
+\par        --physdev-is-in
+\par               Matches if the packet has entered through a bridge interface.
+\par 
+\par        --physdev-is-out
+\par               Matches if the packet will leave through a bridge interface.
+\par 
+\par        --physdev-is-bridged
+\par               Matches if the packet is being bridged and therefore is not being routed.  This is only useful  in  the  FORWARD  and
+\par               POSTROUTING chains.
+\par 
+\par    pkttype
+\par        This module matches the link-layer packet type.
+\par 
+\par        --pkt-type [unicast|broadcast|multicast]
+\par 
+\par    random
+\par        This module randomly matches a certain percentage of all packets.
+\par 
+\par        --average percent
+\par               Matches the given percentage.  If omitted, a probability of 50% is set.
+\par 
+\par    realm
+\par        This  matches the routing realm.  Routing realms are used in complex routing setups involving dynamic routing protocols like
+\par        BGP.
+\par 
+\par        --realm [!]value[/mask]
+\par               Matches a given realm number (and optionally mask).
+\par 
+\par    state
+\par        This module, when combined with connection tracking, allows access to the connection tracking state for this packet.
+\par 
+\par        --state state
+\par               Where state is a comma separated list of the connection states to match.  Possible states are  INVALID  meaning  that
+\par               the  packet  could not be identified for some reason which includes running out of memory and ICMP errors which don't
+\par               correspond to any known connection, ESTABLISHED meaning that the packet is associated with  a  connection  which  has
+\par               seen  packets  in  both directions, NEW meaning that the packet has started a new connection, or otherwise associated
+\par               with a connection which has not seen packets in both directions, and RELATED meaning that the packet  is  starting  a
+\par               new connection, but is associated with an existing connection, such as an FTP data transfer, or an ICMP error.
+\par 
+\par    tcp
+\par        These extensions are loaded if '--protocol tcp' is specified. It provides the following options:
+\par 
+\par        --source-port [!] port[:port]
+\par               Source  port  or port range specification. This can either be a service name or a port number. An inclusive range can
+\par               also be specified, using the format port:port.  If the first port is omitted, "0" is assumed; if the last is omitted,
+\par               "65535"  is  assumed.   If the second port greater then the first they will be swapped.  The flag --sport is a conve-
+\par               nient alias for this option.
+\par 
+\par        --destination-port [!] port[:port]
+\par               Destination port or port range specification.  The flag --dport is a convenient alias for this option.
+\par 
+\par        --tcp-flags [!] mask comp
+\par               Match when the TCP flags are as specified.  The first argument is the flags which we should  examine,  written  as  a
+\par               comma-separated  list,  and the second argument is a comma-separated list of flags which must be set.  Flags are: SYN
+\par               ACK FIN RST URG PSH ALL NONE.  Hence the command
+\par                iptables -A FORWARD -p tcp --tcp-flags SYN,ACK,FIN,RST SYN
+\par               will only match packets with the SYN flag set, and the ACK, FIN and RST flags unset.
+\par 
+\par        [!] --syn
+\par               Only match TCP packets with the SYN bit set and the ACK and RST bits cleared.  Such packets are used to  request  TCP
+\par               connection  initiation;  for  example, blocking such packets coming in an interface will prevent incoming TCP connec-
+\par               tions, but outgoing TCP connections will be unaffected.  It is equivalent to --tcp-flags SYN,RST,ACK SYN.  If the "!"
+\par               flag precedes the "--syn", the sense of the option is inverted.
+\par 
+\par        --tcp-option [!] number
+\par               Match if TCP option set.
+\par 
+\par        --mss value[:value]
+\par               Match  TCP  SYN or SYN/ACK packets with the specified MSS value (or range), which control the maximum packet size for
+\par               that connection.
+\par 
+\par    tcpmss
+\par        This matches the TCP MSS (maximum segment size) field of the TCP header.  You can only use this on TCP SYN or SYN/ACK  pack-
+\par        ets, since the MSS is only negotiated during the TCP handshake at connection startup time.
+\par 
+\par        [!] --mss value[:value]"
+\par               Match a given TCP MSS value or range.
+\par 
+\par    time
+\par        This matches if the packet arrival time/date is within a given range. All options are facultative.
+\par 
+\par         --timestart value
+\par               Match only if it is after 'value' (Inclusive, format: HH:MM ; default 00:00).
+\par 
+\par        --timestop  value
+\par               Match only if it is before 'value' (Inclusive, format: HH:MM ; default 23:59).
+\par 
+\par        --days listofdays
+\par               Match only if today is one of the given days. (format: Mon,Tue,Wed,Thu,Fri,Sat,Sun ; default everyday)
+\par 
+\par        --datestart date
+\par               Match  only if it is after 'date' (Inclusive, format: YYYY[:MM[:DD[:hh[:mm[:ss]]]]] ; h,m,s start from 0 ; default to
+\par               1970)
+\par 
+\par        --datestop date
+\par               Match only if it is before 'date' (Inclusive, format: YYYY[:MM[:DD[:hh[:mm[:ss]]]]] ; h,m,s start from 0 ; default to
+\par               2037)
+\par 
+\par    tos
+\par        This module matches the 8 bits of Type of Service field in the IP header (ie. including the precedence bits).
+\par 
+\par        --tos tos
+\par               The argument is either a standard name, (use
+\par                iptables -m tos -h
+\par               to see the list), or a numeric value to match.
+\par 
+\par    ttl
+\par        This module matches the time to live field in the IP header.
+\par 
+\par        --ttl-eq ttl
+\par               Matches the given TTL value.
+\par 
+\par        --ttl-gt ttl
+\par               Matches if TTL is greater than the given TTL value.
+\par 
+\par        --ttl-lt ttl
+\par               Matches if TTL is less than the given TTL value.
+\par 
+\par    udp
+\par        These extensions are loaded if '--protocol udp' is specified.  It provides the following options:
+\par 
+\par        --source-port [!] port[:port]
+\par               Source  port  or  port range specification.  See the description of the --source-port option of the TCP extension for
+\par               details.
+\par 
+\par        --destination-port [!] port[:port]
+\par               Destination port or port range specification.  See the description of the --destination-port option of the TCP exten-
+\par               sion for details.
+\par 
+\par    unclean
+\par        This module takes no options, but attempts to match packets which seem malformed or unusual.  This is regarded as experimen-
+\par        tal.
+\par 
+\par TARGET EXTENSIONS
+\par        iptables can use extended target modules: the following are included in the standard distribution.
+\par 
+\par    BALANCE
+\par        This allows you to DNAT connections in a round-robin way over a given range of destination addresses.
+\par 
+\par        --to-destination ipaddr-ipaddr
+\par               Address range to round-robin over.
+\par 
+\par    CLASSIFY
+\par        This module allows you to set the skb->priority value (and thus classify the packet into a specific CBQ class).
+\par 
+\par        --set-class MAJOR:MINOR
+\par               Set the major and minor class value.
+\par 
+\par    CLUSTERIP
+\par        This module allows you to configure a simple cluster of nodes that share a certain IP and MAC address  without  an  explicit
+\par        load balancer in front of them.  Connections are statically distributed between the nodes in this cluster.
+\par 
+\par        --new  Create a new ClusterIP.  You always have to set this on the first rule for a given ClusterIP.
+\par 
+\par        --hashmode mode
+\par               Specify the hashing mode.  Has to be one of sourceip, sourceip-sourceport, sourceip-sourceport-destport
+\par 
+\par        --clustermac mac
+\par               Specify the ClusterIP MAC address.  Has to be a link-layer multicast address
+\par 
+\par        --total-nodes num
+\par               Number of total nodes within this cluster.
+\par 
+\par        --local-node num
+\par               Local node number within this cluster.
+\par 
+\par        --hash-init rnd
+\par               Specify the random seed used for hash initialization.
+\par 
+\par    CONNMARK
+\par        This module sets the netfilter mark value associated with a connection
+\par 
+\par        --set-mark mark[/mask]
+\par               Set connection mark. If a mask is specified then only those bits set in the mask is modified.
+\par 
+\par        --save-mark [--mask mask]
+\par               Copy  the netfilter packet mark value to the connection mark. If a mask is specified then only those bits are copied.
+\par 
+\par        --restore-mark [--mask mask]
+\par               Copy the connection mark value to the packet. If a mask is specified then only those bits are copied.  This  is  only
+\par               valid in the mangle table.
+\par 
+\par    DNAT
+\par        This  target  is  only  valid  in the nat table, in the PREROUTING and OUTPUT chains, and user-defined chains which are only
+\par        called from those chains.  It specifies that the destination address of the packet should be modified (and all future  pack-
+\par        ets in this connection will also be mangled), and rules should cease being examined.  It takes one type of option:
+\par 
+\par        --to-destination ipaddr[-ipaddr][:port-port]
+\par               which  can  specify  a  single new destination IP address, an inclusive range of IP addresses, and optionally, a port
+\par               range (which is only valid if the rule also specifies -p tcp or -p udp).  If no port range  is  specified,  then  the
+\par               destination port will never be modified.
+\par 
+\par               You  can  add  several  --to-destination  options.   If  you specify more than one destination address, either via an
+\par               address range or multiple --to-destination options, a simple round-robin (one after another in cycle) load  balancing
+\par               takes place between these adresses.
+\par 
+\par    DSCP
+\par        This  target  allows  to  alter  the value of the DSCP bits within the TOS header of the IPv4 packet.  As this manipulates a
+\par        packet, it can only be used in the mangle table.
+\par 
+\par        --set-dscp value
+\par               Set the DSCP field to a numerical value (can be decimal or hex)
+\par 
+\par        --set-dscp-class class
+\par               Set the DSCP field to a DiffServ class.
+\par 
+\par    ECN
+\par        This target allows to selectively work around known ECN blackholes.  It can only be used in the mangle table.
+\par 
+\par        --ecn-tcp-remove
+\par               Remove all ECN bits from the TCP header.  Of course, it can only be used in conjunction with -p tcp.
+\par 
+\par    LOG
+\par        Turn on kernel logging of matching packets.  When this option is set for a rule, the Linux kernel will print  some  informa-
+\par        tion  on  all  matching  packets  (like  most  IP header fields) via the kernel log (where it can be read with dmesg or sys-
+\par        logd(8)).  This is a "non-terminating target", i.e. rule traversal continues at the next rule.  So if you want  to  LOG  the
+\par        packets you refuse, use two separate rules with the same matching criteria, first using target LOG then DROP (or REJECT).
+\par 
+\par        --log-level level
+\par               Level of logging (numeric or see syslog.conf(5)).
+\par 
+\par        --log-prefix prefix
+\par               Prefix  log  messages with the specified prefix; up to 29 letters long, and useful for distinguishing messages in the
+\par               logs.
+\par 
+\par        --log-tcp-sequence
+\par               Log TCP sequence numbers. This is a security risk if the log is readable by users.
+\par 
+\par        --log-tcp-options
+\par               Log options from the TCP packet header.
+\par 
+\par        --log-ip-options
+\par               Log options from the IP packet header.
+\par 
+\par    MARK
+\par        This is used to set the netfilter mark value associated with the packet.  It is only valid in the mangle table.  It can  for
+\par        example be used in conjunction with iproute2.
+\par 
+\par        --set-mark mark
+\par 
+\par    MASQUERADE
+\par        This  target  is only valid in the nat table, in the POSTROUTING chain.  It should only be used with dynamically assigned IP
+\par        (dialup) connections: if you have a static IP address, you should use the SNAT target.  Masquerading is equivalent to speci-
+\par        fying  a  mapping  to  the IP address of the interface the packet is going out, but also has the effect that connections are
+\par        forgotten when the interface goes down.  This is the correct behavior when the next dialup is  unlikely  to  have  the  same
+\par        interface address (and hence any established connections are lost anyway).  It takes one option:
+\par 
+\par        --to-ports port[-port]
+\par               This  specifies  a  range  of  source ports to use, overriding the default SNAT source port-selection heuristics (see
+\par               above).  This is only valid if the rule also specifies -p tcp or -p udp.
+\par 
+\par    MIRROR
+\par        This is an experimental demonstration target which inverts the source and destination fields in the IP header  and  retrans-
+\par        mits  the  packet.   It  is  only  valid in the INPUT, FORWARD and PREROUTING chains, and user-defined chains which are only
+\par        called from those chains.  Note that the outgoing packets are NOT seen by any packet filtering chains,  connection  tracking
+\par        or NAT, to avoid loops and other problems.
+\par 
+\par    NETMAP
+\par        This  target  allows  you  to statically map a whole network of addresses onto another network of addresses.  It can only be
+\par        used from rules in the nat table.
+\par 
+\par        --to address[/mask]
+\par               Network address to map to.  The resulting address will be constructed in the following way: All  'one'  bits  in  the
+\par               mask  are  filled  in  from  the  new  'address'.  All bits that are zero in the mask are filled in from the original
+\par               address.
+\par 
+\par    NOTRACK
+\par        This target disables connection tracking for all packets matching that rule.
+\par 
+\par        It can only be used in the
+\par               raw table.
+\par 
+\par    REDIRECT
+\par        This target is only valid in the nat table, in the PREROUTING and OUTPUT chains, and  user-defined  chains  which  are  only
+\par        called  from those chains.  It alters the destination IP address to send the packet to the machine itself (locally-generated
+\par        packets are mapped to the 127.0.0.1 address).  It takes one option:
+\par 
+\par        --to-ports port[-port]
+\par               This specifies a destination port or range of ports to use: without this, the  destination  port  is  never  altered.
+\par               This is only valid if the rule also specifies -p tcp or -p udp.
+\par 
+\par    REJECT
+\par        This  is  used to send back an error packet in response to the matched packet: otherwise it is equivalent to DROP so it is a
+\par        terminating TARGET, ending rule traversal.  This target is only valid in the INPUT, FORWARD and  OUTPUT  chains,  and  user-
+\par        defined  chains  which  are  only  called  from  those chains.  The following option controls the nature of the error packet
+\par        returned:
+\par 
+\par        --reject-with type
+\par               The type given can be
+\par                icmp-net-unreachable
+\par                icmp-host-unreachable
+\par                icmp-port-unreachable
+\par                icmp-proto-unreachable
+\par                icmp-net-prohibited
+\par                icmp-host-prohibited or
+\par                icmp-admin-prohibited (*)
+\par               which return the appropriate ICMP error message (port-unreachable is the default).  The option tcp-reset can be  used
+\par               on  rules which only match the TCP protocol: this causes a TCP RST packet to be sent back.  This is mainly useful for
+\par               blocking ident (113/tcp) probes which frequently occur when sending mail to broken mail  hosts  (which  won't  accept
+\par               your mail otherwise).
+\par 
+\par        (*) Using icmp-admin-prohibited with kernels that do not support it will result in a plain DROP instead of REJECT
+\par 
+\par    ROUTE
+\par        This is used to explicitly override the core network stack's routing decision.  mangle table.
+\par 
+\par        --oif ifname
+\par               Route the packet through 'ifname' network interface
+\par 
+\par        --iif ifname
+\par               Change the packet's incoming interface to 'ifname'
+\par 
+\par        --gw IP_address
+\par               Route the packet via this gateway
+\par 
+\par        --continue
+\par               Behave like a non-terminating target and continue traversing the rules.  Not valid in combination with '--iif'
+\par 
+\par    SNAT
+\par        This  target  is  only valid in the nat table, in the POSTROUTING chain.  It specifies that the source address of the packet
+\par        should be modified (and all future packets in this connection will also be mangled), and rules should cease being  examined.
+\par        It takes one type of option:
+\par 
+\par        --to-source  ipaddr[-ipaddr][:port-port]
+\par               which  can  specify  a single new source IP address, an inclusive range of IP addresses, and optionally, a port range
+\par               (which is only valid if the rule also specifies -p tcp or -p udp).  If no port range is specified, then source  ports
+\par               below 512 will be mapped to other ports below 512: those between 512 and 1023 inclusive will be mapped to ports below
+\par               1024, and other ports will be mapped to 1024 or above. Where possible, no port alteration will occur.
+\par 
+\par               You can add several --to-source options.  If you specify more than one source address, either via an address range or
+\par               multiple --to-source options, a simple round-robin (one after another in cycle) takes place between these adresses.
+\par 
+\par    TCPMSS
+\par        This  target allows to alter the MSS value of TCP SYN packets, to control the maximum size for that connection (usually lim-
+\par        iting it to your outgoing interface's MTU minus 40).  Of course, it can only be used in conjunction with -p tcp.
+\par        This target is used to overcome criminally braindead ISPs or servers which block ICMP  Fragmentation  Needed  packets.   The
+\par        symptoms  of  this  problem are that everything works fine from your Linux firewall/router, but machines behind it can never
+\par        exchange large packets:
+\par         1) Web browsers connect, then hang with no data received.
+\par         2) Small mail works fine, but large emails hang.
+\par         3) ssh works fine, but scp hangs after initial handshaking.
+\par        Workaround: activate this option and add a rule to your firewall configuration like:
+\par         iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN \\
+\par                     -j TCPMSS --clamp-mss-to-pmtu
+\par 
+\par        --set-mss value
+\par               Explicitly set MSS option to specified value.
+\par 
+\par        --clamp-mss-to-pmtu
+\par               Automatically clamp MSS value to (path_MTU - 40).
+\par 
+\par        These options are mutually exclusive.
+\par 
+\par    TOS
+\par        This is used to set the 8-bit Type of Service field in the IP header.  It is only valid in the mangle table.
+\par 
+\par        --set-tos tos
+\par               You can use a numeric TOS values, or use
+\par                iptables -j TOS -h
+\par               to see the list of valid TOS names.
+\par 
+\par    TRACE
+\par        This target has no options.  It just turns on packet tracing for all packets that match this rule.
+\par 
+\par    TTL
+\par        This is used to modify the IPv4 TTL header field.  The TTL field determines how many hops (routers) a  packet  can  traverse
+\par        until it's time to live is exceeded.
+\par 
+\par        Setting or incrementing the TTL field can potentially be very dangerous,
+\par               so it should be avoided at any cost.
+\par 
+\par        Don't ever set or increment the value on packets that leave your local network!
+\par               mangle table.
+\par 
+\par        --ttl-set value
+\par               Set the TTL value to 'value'.
+\par 
+\par        --ttl-dec value
+\par               Decrement the TTL value 'value' times.
+\par 
+\par        --ttl-inc value
+\par               Increment the TTL value 'value' times.
+\par 
+\par    ULOG
+\par        This  target provides userspace logging of matching packets.  When this target is set for a rule, the Linux kernel will mul-
+\par        ticast this packet through a netlink socket. One or more userspace processes may then subscribe to various multicast  groups
+\par        and receive the packets.  Like LOG, this is a "non-terminating target", i.e. rule traversal continues at the next rule.
+\par 
+\par        --ulog-nlgroup nlgroup
+\par               This specifies the netlink group (1-32) to which the packet is sent.  Default value is 1.
+\par 
+\par        --ulog-prefix prefix
+\par               Prefix  log  messages  with the specified prefix; up to 32 characters long, and useful for distinguishing messages in
+\par               the logs.
+\par 
+\par        --ulog-cprange size
+\par               Number of bytes to be copied to userspace.  A value of 0 always copies the entire packet,  regardless  of  its  size.
+\par               Default is 0.
+\par 
+\par        --ulog-qthreshold size
+\par               Number  of  packet  to queue inside kernel.  Setting this value to, e.g. 10 accumulates ten packets inside the kernel
+\par               and transmits them as one netlink multipart message to userspace.  Default is 1 (for backwards compatibility).
+\par 
+\par DIAGNOSTICS
+\par        Various error messages are printed to standard error.  The exit code is 0 for correct functioning.  Errors which  appear  to
+\par        be caused by invalid or abused command line parameters cause an exit code of 2, and other errors cause an exit code of 1.
+\par 
+\par BUGS
+\par        Bugs?  What's this? ;-) Well... the counters are not reliable on sparc64.
+\par 
+\par COMPATIBILITY WITH IPCHAINS
+\par        This  iptables  is  very  similar to ipchains by Rusty Russell.  The main difference is that the chains INPUT and OUTPUT are
+\par        only traversed for packets coming into the local host and originating from the local host respectively.  Hence every  packet
+\par        only  passes  through one of the three chains (except loopback traffic, which involves both INPUT and OUTPUT chains); previ-
+\par        ously a forwarded packet would pass through all three.
+\par 
+\par        The other main difference is that -i refers to the input interface; -o refers to the output interface, and both  are  avail-
+\par        able for packets entering the FORWARD chain.
+\par 
+\par        iptables  is  a pure packet filter when using the default 'filter' table, with optional extension modules.  This should sim-
+\par        plify much of the previous confusion over the combination of IP masquerading and packet filtering seen previously.   So  the
+\par        following options are handled differently:
+\par         -j MASQ
+\par         -M -S
+\par         -M -L
+\par        There are several other changes in iptables.
+\par 
+\par SEE ALSO
+\par        iptables-save(8), iptables-restore(8), ip6tables(8), ip6tables-save(8), ip6tables-restore(8).
+\par 
+\par        The packet-filtering-HOWTO details iptables usage for packet filtering, the NAT-HOWTO details NAT, the netfilter-extensions-
+\par        HOWTO details the extensions that are not in the standard distribution, and the netfilter-hacking-HOWTO details the  netfil-
+\par        ter internals.
+\par        See http://www.netfilter.org/.
+\par 
+\par AUTHORS
+\par        Rusty Russell wrote iptables, in early consultation with Michael Neuling.
+\par 
+\par        Marc  Boucher  made  Rusty abandon ipnatctl by lobbying for a generic packet selection framework in iptables, then wrote the
+\par        mangle table, the owner match, the mark stuff, and ran around doing cool stuff everywhere.
+\par 
+\par        James Morris wrote the TOS target, and tos match.
+\par 
+\par        Jozsef Kadlecsik wrote the REJECT target.
+\par 
+\par        Harald Welte wrote the ULOG target, TTL, DSCP, ECN matches and targets.
+\par 
+\par        The Netfilter Core Team is: Marc Boucher, Martin Josefsson, Jozsef Kadlecsik, Patrick McHardy, James  Morris,  Harald  Welte
+\par        and Rusty Russell.
+\par 
+\par        Man page written by Herve Eychenne <rv@wallfire.org>.\par}

@@ -1,0 +1,2424 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil\fcharset2 Symbol;}{\f4\fnil Arial;}{\f5\fnil\fcharset0 Courier New;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red235\green245\blue245;}{\*\listtable{\list\listtemplateid1490558621\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'01\uc2\u183 \'a1\'a4\uc1;}{\levelnumbers;}\f3\fs24\lang1024}
+\listid284299542}
+{\list\listtemplateid1648226160\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'00;}{\levelnumbers;}\f4\fs24}
+\listid1580462388}
+{\list\listtemplateid1427065867\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'01\uc2\u183 \'a1\'a4\uc1;}{\levelnumbers;}\f3\fs24\lang1024}
+\listid1289923643}
+{\list\listtemplateid656445230\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'01\uc2\u183 \'a1\'a4\uc1;}{\levelnumbers;}\f3\fs24\lang1024}
+\listid2129594346}
+{\list\listtemplateid1444713881\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'00;}{\levelnumbers;}\f4\fs24}
+\listid1753371649}
+{\list\listtemplateid1911614988\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'01\uc2\u183 \'a1\'a4\uc1;}{\levelnumbers;}\f3\fs24\lang1024}
+\listid1289443904}
+{\list\listtemplateid2027850055
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'01\uc2\u183 \'a1\'a4\uc1;}{\levelnumbers;}\f3\fs24\lang1024}
+{\listlevel\levelnfc23\leveljc0\li1080\fi-360\jclisttab\tx1080{\leveltext\'01o;}{\levelnumbers;}\f5\fs24}
+{\listlevel\levelnfc23\leveljc0\li1080\fi-360\jclisttab\tx1080{\leveltext\'01o;}{\levelnumbers;}\f5\fs24}
+{\listlevel\levelnfc23\leveljc0\li1080\fi-360\jclisttab\tx1080{\leveltext\'01o;}{\levelnumbers;}\f5\fs24}
+{\listlevel\levelnfc23\leveljc0\li1080\fi-360\jclisttab\tx1080{\leveltext\'01o;}{\levelnumbers;}\f5\fs24}
+{\listlevel\levelnfc23\leveljc0\li1080\fi-360\jclisttab\tx1080{\leveltext\'01o;}{\levelnumbers;}\f5\fs24}
+{\listlevel\levelnfc23\leveljc0\li1080\fi-360\jclisttab\tx1080{\leveltext\'01o;}{\levelnumbers;}\f5\fs24}
+{\listlevel\levelnfc23\leveljc0\li1080\fi-360\jclisttab\tx1080{\leveltext\'01o;}{\levelnumbers;}\f5\fs24}
+{\listlevel\levelnfc23\leveljc0\li1080\fi-360\jclisttab\tx1080{\leveltext\'01o;}{\levelnumbers;}\f5\fs24}
+\listid627166824}
+{\list\listtemplateid1620765194\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'01\uc2\u183 \'a1\'a4\uc1;}{\levelnumbers;}\f3\fs24\lang1024}
+\listid1812741686}
+}
+{\*\listoverridetable
+{\listoverride\listid284299542\listoverridecount0\ls1}
+{\listoverride\listid1580462388\listoverridecount0\ls2}
+{\listoverride\listid1289923643\listoverridecount0\ls3}
+{\listoverride\listid2129594346\listoverridecount0\ls4}
+{\listoverride\listid1753371649\listoverridecount0\ls5}
+{\listoverride\listid1289443904\listoverridecount0\ls6}
+{\listoverride\listid627166824\listoverridecount0\ls7}
+{\listoverride\listid1812741686\listoverridecount0\ls8}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 mail/sendmail
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs20 MAILX(1)                         User Commands                        MAILX(1)
+\par 
+\par NAME
+\par \plain \f1\fs20\cf1        mailx - send and receive Internet mail
+\par \plain \f1\fs20 
+\par SYNOPSIS
+\par        \plain \f1\fs20\cf1 mailx\plain \f1\fs20  [-BDdEFintv~] [-s subject] [-a attachment ] [-c cc-addr] [-b bcc-addr] [-r from-addr] [-h hops]
+\par               [-A account] [-S variable[=value]] to-addr . . .
+\par        mailx [-BDdeEHiInNRv~] [-T name] [-A account] [-S variable[=value]] -f [name]
+\par        mailx [-BDdeEinNRv~] [-A account] [-S variable[=value]] [-u user]
+\par 
+\par DESCRIPTION
+\par        Mailx is an intelligent mail processing system, which has a  command  syntax  reminiscent  of  ed(1)  with  lines
+\par        replaced  by  messages.   It is based on Berkeley Mail 8.1, is intended to provide the functionality of the POSIX
+\par        mailx command, and offers extensions for MIME, IMAP, POP3, SMTP, and S/MIME.  Mailx  provides  enhanced  features
+\par        for interactive use, such as caching and disconnected operation for IMAP, message threading, scoring, and filter-
+\par        ing.  It is also usable as a mail batch language, both for sending and receiving mail.
+\par 
+\par        The following options are accepted:
+\par        -A name
+\par               Executes an account command (see below) for name after the startup files have been read.
+\par        -a file
+\par               Attach the given file to the message.
+\par        -B     Make standard input and standard output line-buffered.
+\par        -b address
+\par               Send blind carbon copies to list.  List should be a comma-separated list of names.
+\par        -c address
+\par               Send carbon copies to list of users.
+\par        -D     Start in disconnected mode; see the description for the disconnected variable option.
+\par        -d     Enables debugging messages and disables the actual delivery  of  messages.   Unlike  -v,  this  option  is
+\par               intended for mailx development only.
+\par        -e     Just  check if mail is present in the system mailbox.  If yes, return an exit status of zero, else, a non-
+\par               zero value.
+\par        -E     If an outgoing message does not contain any text in its first or only message part, do  not  send  it  but
+\par               discard  it  silently,  effectively setting the skipemptybody variable at program startup.  This is useful
+\par               for sending messages from scripts started by cron(8).
+\par        -f [file]
+\par               Read in the contents of the user\rquote s mbox (or the specified file) for processing; when  mailx  is  quit,  it
+\par               writes  undeleted messages back to this file.  The string file is handled as described for the folder com-
+\par               mand below.
+\par        -F     Save the message to send in a file named after the local part of the first recipient\rquote s address.
+\par        -H     Print header summaries for all messages and exit.
+\par        -h hops
+\par               Invoke sendmail with the specified hop count.  This option has no effect when SMTP  is  used  for  sending
+\par               mail.
+\par        -i     Ignore tty interrupt signals.  This is particularly useful when using mailx on noisy phone lines.
+\par        -I     Shows the \lquote Newsgroup:\rquote  or \lquote Article-Id:\rquote  fields in the header summary.  Only applicable in combination with
+\par               -f.
+\par        -n     Inhibits reading /etc/mail.rc upon startup.  This option should be activated for mailx  scripts  that  are
+\par               invoked on more than one machine, because the contents of that file may differ between them.
+\par        -N     Inhibits the initial display of message headers when reading mail or editing a mail folder.
+\par        -q file
+\par               Start the message with the contents of the specified file.  May be given in send mode only.
+\par        -r address
+\par               Sets  the  From  address.  Overrides  any  from variable specified in environment or startup files.  Tilde
+\par               escapes are disabled.  The -r address options are passed to the mail transfer agent unless SMTP  is  used.
+\par               This option exists for compatibility only; it is recommended to set the from variable directly instead.
+\par        -R     Opens any folders read-only.
+\par        -s subject
+\par               Specify  subject on command line (only the first argument after the -s flag is used as a subject; be care-
+\par               ful to quote subjects containing spaces).
+\par        -S variable[=value]
+\par               Sets the internal option variable and, in case of a string option, assigns value to it.
+\par        -T name
+\par               Writes the \lquote Message-Id:\rquote  and \lquote Article-Id:\rquote  header fields of each message read in the file  name.   Implies
+\par               -I.  Compressed files are handled as described for the folder command below.
+\par        -t     The  message to be sent is expected to contain a message header with \lquote To:\rquote , \lquote Cc:\rquote , or \lquote Bcc:\rquote  fields giving
+\par               its recipients.  Recipients specified on the command line are ignored.
+\par        -u user
+\par               Reads the mailbox of the given user name.
+\par        -v     Verbose mode.  The details of delivery are displayed on the user\rquote s terminal.
+\par        -V     Print mailx\rquote s version and exit.
+\par        -~     Enable tilde escapes even if not in interactive mode.
+\par 
+\par    Sending mail
+\par        To send a message to one or more people, mailx can be invoked with arguments which are the  names  of  people  to
+\par        whom  the mail will be sent.  The user is then expected to type in his message, followed by an \lquote control-D\rquote  at the
+\par        beginning of a line.  The section below Replying to or originating mail, describes some features of mailx  avail-
+\par        able to help when composing letters.
+\par 
+\par    Reading mail
+\par        In  normal usage mailx is given no arguments and checks the user\rquote s mail out of the post office, then prints out a
+\par        one line header of each message found.  The current message is initially the first message (numbered 1)  and  can
+\par        be  printed  using the print command which can be abbreviated \lquote p\rquote ).  The user can move among the messages much as
+\par        he moves between lines in ed(1), with the commands \lquote +\rquote  and \lquote -\rquote  moving backwards and forwards, and simple numbers.
+\par 
+\par    Disposing of mail
+\par        After  examining  a  message the user can delete \lquote d\rquote ) the message or reply \lquote r\rquote ) to it.  Deletion causes the mailx
+\par        program to forget about the message.  This is not irreversible; the message can be undeleted \lquote u\rquote ) by  giving  its
+\par        number,  or  the  mailx  session can be aborted by giving the exit \lquote x\rquote ) command.  Deleted messages will, however,
+\par        usually disappear never to be seen again.
+\par 
+\par    Specifying messages
+\par        Commands such as print and delete can be given a list of message numbers as arguments to apply  to  a  number  of
+\par        messages  at  once.  Thus \lquote delete 1 2\rquote  deletes messages 1 and 2, while \lquote delete 1-5\rquote  deletes messages 1 through 5.
+\par        In sorted or threaded mode (see the sort and thread commands), \lquote delete 1-5\rquote  deletes the messages that are located
+\par        between  (and  including) messages 1 through 5 in the sorted/threaded order, as shown in the header summary.  The
+\par        following special message names exist:
+\par 
+\par        :n     All new messages.
+\par 
+\par        :o     All old messages (any not in state read or new).
+\par 
+\par        :u     All unread messages.
+\par 
+\par        :d     All deleted messages (for the undelete command).
+\par 
+\par        :r     All read messages.
+\par 
+\par        :f     All \lquote flagged\rquote  messages.
+\par 
+\par        :a     All answered messages (cf. the markanswered variable).
+\par 
+\par        :t     All messages marked as draft.
+\par 
+\par        :k     All \lquote killed\rquote  messages.
+\par 
+\par        :j     All messages classified as junk.
+\par 
+\par        .      The current message.
+\par 
+\par        ;      The message that was previously the current message.
+\par 
+\par        ,      The parent message of the current message, that is the message with the Message-ID given in the \lquote In-Reply-
+\par               To:\rquote  field or the last entry of the \lquote References:\rquote  field of the current message.
+\par 
+\par        -      The  next  previous  undeleted message, or the next previous deleted message for the undelete command.  In
+\par               sorted/threaded mode, the next previous such message in the sorted/threaded order.
+\par 
+\par        +      The next undeleted message, or the next deleted message for  the  undelete  command.   In  sorted/threaded
+\par               mode, the next such message in the sorted/threaded order.
+\par 
+\par        ^      The  first  undeleted  message, or the first deleted message for the undelete command.  In sorted/threaded
+\par               mode, the first such message in the sorted/threaded order.
+\par 
+\par        $      The last message.  In sorted/threaded mode, the last message in the sorted/threaded order.
+\par 
+\par        &x     In threaded mode, selects the message addressed with x, where x is any other  message  specification,  and
+\par               all  messages  from  the thread that begins at it.  Otherwise, it is identical to x.  If x is omitted, the
+\par               thread beginning with the current message is selected.
+\par 
+\par        *      All messages.
+\par 
+\par        \lquote       All messages that were included in the message list for the previous command.
+\par 
+\par        /string
+\par               All messages that contain string in the subject field (case ignored).  See also  the  searchheaders  vari-
+\par               able.  If string is empty, the string from the previous specification of that type is used again.
+\par 
+\par        address
+\par               All messages from address.
+\par 
+\par        (criterion)
+\par               All  messages  that satisfy the given IMAP-style SEARCH criterion.  This addressing mode is available with
+\par               all types of folders; for folders not located on IMAP servers, or for servers unable to execute the SEARCH
+\par               command,  mailx  will  perform the search locally.  Strings must be enclosed by double quotes \lquote "\rquote  in their
+\par               entirety if they contain white space or parentheses; within the quotes, only backslash \lquote \\\rquote   is  recognized
+\par               as  an  escape  character.  All string searches are case-insensitive.  When the description indicates that
+\par               the \lquote envelope\rquote  representation of an address field is used, this means that the search  string  is  checked
+\par               against both a list constructed as
+\par 
+\par               ("real name" "source-route" "local-part" "domain-part")
+\par 
+\par               for  each address, and the addresses without real names from the respective header field.  Criteria can be
+\par               nested using parentheses.
+\par 
+\par        (criterion1 criterion2 ... criterionN)
+\par               All messages that satisfy all of the given criteria.
+\par 
+\par        (or criterion1 criterion2)
+\par               All messages that satisfy either criterion1 or criterion2, or both.  To connect  more  than  two  criteria
+\par               using \lquote or\rquote , (or) specifications have to be nested using additional parentheses, as with \lquote (or a (or b c))\rquote ;
+\par               \lquote (or a b c)\rquote  means ((a or b) and c).  For a simple \lquote or\rquote  operation of independent criteria  on  the  lowest
+\par               nesting  level,  it  is  possible  to  achieve  similar  effects by using three separate criteria, as with
+\par               \lquote (a) (b) (c)\rquote .
+\par 
+\par        (not criterion)
+\par               All messages that do not satisfy criterion.
+\par 
+\par        (bcc string)
+\par               All messages that contain string in the \lquote envelope\rquote  representation of the Bcc: field.
+\par 
+\par        (cc string)
+\par               All messages that contain string in the \lquote envelope\rquote  representation of the Cc: field.
+\par 
+\par        (from string)
+\par               All messages that contain string in the \lquote envelope\rquote  representation of the From: field.
+\par 
+\par        (subject string)
+\par               All messages that contain string in the Subject: field.
+\par 
+\par        (to string)
+\par               All messages that contain string in the \lquote envelope\rquote  representation of the To: field.
+\par 
+\par        (header name string)
+\par               All messages that contain string in the specified Name: field.
+\par 
+\par        (body string)
+\par               All messages that contain string in their body.
+\par 
+\par        (text string)
+\par               All messages that contain string in their header or body.
+\par 
+\par        (larger size)
+\par               All messages that are larger than size (in bytes).
+\par 
+\par        (smaller size)
+\par               All messages that are smaller than size (in bytes).
+\par 
+\par        (before date)
+\par               All messages that were received before date; date must be in the form d[d]-mon-yyyy, where d[d] is the day
+\par               of  the month as one or two digits, mon is the name of the month\emdash one of \lquote Jan\rquote , \lquote Feb\rquote , \lquote Mar\rquote , \lquote Apr\rquote , \lquote May\rquote ,
+\par               \lquote Jun\rquote , \lquote Jul\rquote , \lquote Aug\rquote , \lquote Sep\rquote ,  \lquote Oct\rquote ,  \lquote Nov\rquote ,  or  \lquote Dec\rquote ,  and  yyyy  is  the  year  as  four  digits;  e.g.
+\par               "30-Aug-2004".
+\par 
+\par        (on date)
+\par               All messages that were received on the specified date.
+\par 
+\par        (since date)
+\par               All messages that were received since the specified date.
+\par 
+\par        (sentbefore date)
+\par               All messages that were sent on the specified date.
+\par 
+\par        (senton date)
+\par               All messages that were sent on the specified date.
+\par 
+\par        (sentsince date)
+\par               All messages that were sent since the specified date.
+\par 
+\par        ()     The  same criterion as for the previous search.  This specification cannot be used as part of another cri-
+\par               terion.  If the previous command line contained more than one independent criterion,  the  last  of  those
+\par               criteria is used.
+\par 
+\par        A  practical  method to read a set of messages is to issue a from command with the search criteria first to check
+\par        for appropriate messages, and to read each single message then by typing \lquote \lquote \rquote  repeatedly.
+\par 
+\par    Replying to or originating mail
+\par        The reply command can be used to set up a response to a message, sending it back to the person who it  was  from.
+\par        Text  the  user types in then, up to an end-of-file, defines the contents of the message.  While the user is com-
+\par        posing a message, mailx treats lines beginning with the character  \lquote ~\rquote   specially.   For  instance,  typing  \lquote ~m\rquote 
+\par        (alone  on a line) will place a copy of the current message into the response right shifting it by a tabstop (see
+\par        indentprefix variable, below).  Other escapes will set up subject fields, add and delete recipients to  the  mes-
+\par        sage,  attach  files  to  it and allow the user to escape to an editor to revise the message or to a shell to run
+\par        some commands.  (These options are given in the summary below.)
+\par 
+\par    Ending a mail processing session
+\par        The user can end a mailx session with the quit (\lquote q\rquote ) command.  Messages which have been examined go to the user\rquote s
+\par        mbox  file  unless  they  have been deleted in which case they are discarded.  Unexamined messages go back to the
+\par        post office.  (See the -f option above).
+\par 
+\par    Personal and systemwide distribution lists
+\par        It is also possible to create a personal distribution lists so that, for instance, the  user  can  send  mail  to
+\par        \lquote cohorts\rquote  and have it go to a group of people.  Such lists can be defined by placing a line like
+\par 
+\par                alias cohorts bill ozalp jkf mark kridle@ucbcory
+\par 
+\par        in  the  file  .mailrc  in the user\rquote s home directory.  The current list of such aliases can be displayed with the
+\par        alias command in mailx.  System wide distribution lists can be created by editing  /etc/aliases,  see  aliases(5)
+\par        and sendmail(8); these are kept in a different syntax.  In mail the user sends, personal aliases will be expanded
+\par        in mail sent to others so that they will be able to reply  to  the  recipients.   System  wide  aliases  are  not
+\par        expanded when the mail is sent, but any reply returned to the machine will have the system wide alias expanded as
+\par        all mail goes through sendmail.
+\par 
+\par    Recipient address specifications
+\par        When an address is used to name a recipient (in any of To, Cc, or Bcc), names of local mail folders and pipes  to
+\par        external commands can also be specified; the message text is then written to them.  The rules are: Any name which
+\par        starts with a \lquote |\rquote  character specifies a pipe, the command string following the \lquote |\rquote  is executed and the message is
+\par        sent to its standard input; any other name which contains a \lquote @\rquote  character is treated as a mail address; any other
+\par        name which starts with a \lquote +\rquote  character specifies a folder name; any other name which contains a \lquote /\rquote  character but
+\par        no  \lquote !\rquote    or  \lquote %\rquote  character before also specifies a folder name; what remains is treated as a mail address.  Com-
+\par        pressed folders are handled as described for the folder command below.
+\par 
+\par    Network mail (Internet / ARPA, UUCP, Berknet)
+\par        See mailaddr(7) for a description of network addresses.  Mailx has a number of options which can be  set  in  the
+\par        .mailrc  file  to  alter its behavior; thus \lquote set askcc\rquote  enables the askcc feature.  (These options are summarized
+\par        below).
+\par 
+\par    MIME types
+\par        For any outgoing attachment, mailx tries to determine the content type.  It does this by reading MIME type  files
+\par        whose lines have the following syntax:
+\par 
+\par                type/subtype      extension [extension . . .]
+\par 
+\par        where  type/subtype  are  strings  describing the file contents, and extension is the part of a filename starting
+\par        after the last dot.  Any line not immediately beginning with an ASCII alphabetical character is ignored by mailx.
+\par        If there is a match with the extension of the file to attach, the given type/subtype pair is used.  Otherwise, or
+\par        if the filename has no extension, the content types text/plain or application/octet-stream are  used,  the  first
+\par        for text or international text files, the second for any file that contains formatting characters other than new-
+\par        lines and horizontal tabulators.
+\par 
+\par    Character sets
+\par        Mailx normally detects the character set of the terminal using the LC_CTYPE locale setting.  If the locale cannot
+\par        be  used  appropriately,  the  ttycharset variable should be set to provide an explicit value.  When reading mes-
+\par        sages, their text is converted to the terminal character set if possible.   Unprintable  characters  and  illegal
+\par        byte sequences are detected and replaced by Unicode substitute characters or question marks unless the print-all-
+\par        chars is set at initialization time.
+\par 
+\par        The character set for outgoing messages is not necessarily the same as the one used on the terminal.  If an  out-
+\par        going  text  message  contains  characters  not  representable  in US-ASCII, the character set being used must be
+\par        declared within its header.  Permissible values can be declared using the  sendcharsets  variable,  separated  by
+\par        commas;  mailx  tries  each  of  the values in order and uses the first appropriate one.  If the message contains
+\par        characters that cannot be represented in any of the given character sets, the message will not be sent,  and  its
+\par        text will be saved to the \lquote dead.letter\rquote  file.  Messages that contain NUL bytes are not converted.
+\par 
+\par        Outgoing  attachments  are converted if they are plain text.  If the sendcharsets variable contains more than one
+\par        character set name, the ~@ tilde escape will ask for the character sets  for  individual  attachments  if  it  is
+\par        invoked without arguments.
+\par 
+\par        Best  results  are  usually  achieved  when  mailx is run in a UTF-8 locale on a UTF-8 capable terminal.  In this
+\par        setup, characters from various countries can be displayed, while it is still possible to use more simple  charac-
+\par        ter sets for sending to retain maximum compatibility with older mail clients.
+\par 
+\par    Commands
+\par        Each  command  is typed on a line by itself, and may take arguments following the command word.  The command need
+\par        not be typed in its entirety \endash  the first command which matches the typed prefix is used.  For commands which take
+\par        message  lists  as arguments, if no message list is given, then the next message forward which satisfies the com-
+\par        mand\rquote s requirements is used.  If there are no messages forward of the current message, the search proceeds  back-
+\par        wards,  and  if  there are no good messages at all, mailx types \lquote applicable messages\rquote  and aborts the command.  If
+\par        the command begins with a # sign, the line is ignored.
+\par 
+\par        The arguments to commands can be quoted, using the following methods:
+\par 
+\par        \uc2\u183 \'a1\'a4      An argument can be enclosed between paired double-quotes "" or single-quotes \rquote \rquote ; any  white  space,  shell\uc1
+\par               word  expansion,  or backslash characters within the quotes are treated literally as part of the argument.
+\par               A double-quote will be treated literally within single-quotes and vice versa. These special properties  of
+\par               the quote marks occur only when they are paired at the beginning and end of the argument.
+\par 
+\par        \uc2\u183 \'a1\'a4      A  backslash outside of the enclosing quotes is discarded and the following character is treated literally\uc1
+\par               as part of the argument.
+\par 
+\par        \uc2\u183 \'a1\'a4      An unquoted backslash at the end of a command line is discarded and the next line continues the command.\uc1
+\par 
+\par        Filenames, where expected, are subjected to the following transformations, in sequence:
+\par 
+\par        \uc2\u183 \'a1\'a4      If the filename begins with an unquoted plus sign, and the folder variable is defined, the plus sign  will\uc1
+\par               be replaced by the value of the folder variable followed by a slash. If the folder variable is unset or is
+\par               set to null, the filename will be unchanged.
+\par 
+\par        \uc2\u183 \'a1\'a4      Shell word expansions are applied to the filename.  If more than  a  single  pathname  results  from  this\uc1
+\par               expansion and the command is expecting one file, an error results.
+\par 
+\par        The following commands are provided:
+\par 
+\par        -      Print  out  the  preceding  message.  If given a numeric argument n, goes to the n\rquote th previous message and
+\par               prints it.
+\par 
+\par        ?      Prints a brief summary of commands.
+\par 
+\par        !      Executes the shell (see sh(1) and csh(1)) command which follows.
+\par 
+\par        |      A synonym for the pipe command.
+\par 
+\par        account
+\par               (ac) Creates, selects or lists an email account.  An account is formed by a group of  commands,  primarily
+\par               of  those to set variables.  With two arguments, of which the second is a \lquote \{\rquote , the first argument gives an
+\par               account name, and the following lines create a group of commands for that account until a line  containing
+\par               a single \lquote \}\rquote  appears.  With one argument, the previously created group of commands for the account name is
+\par               executed, and a folder command is executed for the system mailbox or inbox of that account.  Without argu-
+\par               ments, the list of accounts and their contents are printed.  As an example,
+\par 
+\par                   account myisp \{
+\par                       set folder=imaps://mylogin@imap.myisp.example
+\par                       set record=+Sent
+\par                       set from="myname@myisp.example (My Name)"
+\par                       set smtp=smtp.myisp.example
+\par                   \}
+\par 
+\par               creates an account named \lquote myisp\rquote  which can later be selected by specifying \lquote account myisp\rquote .
+\par 
+\par        alias  (a)  With  no  arguments,  prints  out  all currently-defined aliases.  With one argument, prints out that
+\par               alias.  With more than one argument, creates a new alias or changes an old one.
+\par 
+\par        alternates
+\par               (alt) The alternates command is useful if the user has accounts on several machines.  It can  be  used  to
+\par               inform  mailx  that  the  listed  addresses all belong to the invoking user.  When he replies to messages,
+\par               mailx will not send a copy of the message to any of the addresses listed on the alternates list.   If  the
+\par               alternates command is given with no argument, the current set of alternate names is displayed.
+\par 
+\par        answered
+\par               (ans)  Takes  a message list and marks each message as a having been answered.  This mark has no technical
+\par               meaning in the mail system; it just causes messages to be marked in the header  summary,  and  makes  them
+\par               specially addressable.
+\par 
+\par        cache  Only  applicable  to cached IMAP mailboxes; takes a message list and reads the specified messages into the
+\par               IMAP cache.
+\par 
+\par        call   Calls a macro (see the define command).
+\par 
+\par        cd     Same as chdir.
+\par 
+\par        certsave
+\par               Only applicable to S/MIME signed messages.  Takes a message list and a file name and  saves  the  certifi-
+\par               cates  contained  within  the  message signatures to the named file in both human-readable and PEM format.
+\par               The certificates can later be used to send encrypted messages to the messages\rquote  originators by setting  the
+\par               smime-encrypt-user@host variable.
+\par 
+\par        chdir  (ch)  Changes  the  user\rquote s  working directory to that specified, if given.  If no directory is given, then
+\par               changes to the user\rquote s login directory.
+\par 
+\par        classify
+\par               (cl) Takes a list of messages and examines their contents for characteristics of junk mail using  Bayesian
+\par               filtering.   Messages  considered  to  be  junk  are  then  marked as such.  The junk mail database is not
+\par               changed.
+\par 
+\par        collapse
+\par               (coll) Only applicable to threaded mode.  Takes a message list and makes all  replies  to  these  messages
+\par               invisible in header summaries, unless they are in state \lquote new\rquote .
+\par 
+\par        connect
+\par               (conn) If operating in disconnected mode on an IMAP mailbox, switch to online mode and connect to the mail
+\par               server while retaining the mailbox status.  See the description of  the  disconnected  variable  for  more
+\par               information.
+\par 
+\par        copy   (c)  The  copy command does the same thing that save does, except that it does not mark the messages it is
+\par               used on for deletion when the user quits.  Compressed files and IMAP mailboxes are  handled  as  described
+\par               for the folder command.
+\par 
+\par        Copy   (C)  Similar to copy, but saves the messages in a file named after the local part of the sender address of
+\par               the first message.
+\par 
+\par        decrypt
+\par               (dec) For unencrypted messages,  this  command  is  identical  to  copy.   Encrypted  messages  are  first
+\par               decrypted, if possible, and then copied.
+\par 
+\par        Decrypt
+\par               (Dec)  Similar  to  decrypt,  but  saves  the  messages in a file named after the local part of the sender
+\par               address of the first message.
+\par 
+\par        define (def) Defines a macro.  A macro definition is a sequence of commands in the following form:
+\par 
+\par                   define name \{
+\par                       command1
+\par                       command2
+\par                       ...
+\par                       commandN
+\par                   \}
+\par 
+\par               Once defined, a macro can be explicitly invoked using the call command, or can be  implicitly  invoked  by
+\par               setting the folder-hook or folder-hook-fullname variables.
+\par 
+\par        defines
+\par               Prints the currently defined macros including their contents.
+\par 
+\par        delete (d)  Takes  a  list  of  messages as argument and marks them all as deleted.  Deleted messages will not be
+\par               saved in mbox, nor will they be available for most other commands.
+\par 
+\par        discard
+\par               Same as ignore.
+\par 
+\par        disconnect
+\par               (disco) If operating in online mode on an IMAP mailbox, switch to disconnected mode  while  retaining  the
+\par               mailbox  status.   See  the description of the disconnected variable for more information.  A list of mes-
+\par               sages may optionally be given as argument; the respective messages are then read into the cache before the
+\par               connection is closed.  Thus \lquote disco *\rquote  makes the entire current mailbox available for disconnected use.
+\par 
+\par        dp or dt
+\par               Deletes  the  current  message  and  prints the next message.  If there is no next message, mailx says \lquote at
+\par               EOF\rquote .
+\par 
+\par        draft  Takes a message list and marks each message as a draft.  This mark has no technical meaning  in  the  mail
+\par               system;  it just causes messages to be marked in the header summary, and makes them specially addressable.
+\par 
+\par        echo   Echoes its arguments, resolving special names as documented for the folder command.  The escape  sequences
+\par               \lquote \\a\rquote , \lquote \\b\rquote , \lquote \\c\rquote , \lquote \\f\rquote , \lquote \\n\rquote , \lquote \\r\rquote , \lquote \\t\rquote , \lquote \\v\rquote , \lquote \\\\\rquote , and \lquote \\0num\rquote  are interpreted as with the echo(1) com-
+\par               mand.
+\par 
+\par        edit   (e) Takes a list of messages and points the text editor at each one in turn.  Modified contents  are  dis-
+\par               carded unless the writebackedited variable is set.
+\par 
+\par        else   Marks the end of the then-part of an if statement and the beginning of the part to take effect if the con-
+\par               dition of the if statement is false.
+\par 
+\par        endif  Marks the end of an if statement.
+\par 
+\par        exit   (ex or x) Effects an immediate return to the Shell without modifying the user\rquote s system mailbox,  his  mbox
+\par               file, or his edit file in -f.
+\par 
+\par        file   (fi) The same as folder.
+\par 
+\par        flag   (fl) Takes a message list and marks the messages as \lquote flagged\rquote  for urgent/special attention.  This mark has
+\par               no technical meaning in the mail system; it just causes messages to be highlighted in the header  summary,
+\par               and makes them specially addressable.
+\par 
+\par        folders
+\par               With  no  arguments, list the names of the folders in the folder directory.  With an existing folder as an
+\par               argument, lists then names of folders below the named folder; e.g. the command \lquote folders @\rquote  lists the fold-
+\par               ers on the base level of the current IMAP server.  See also the imap-list-depth variable.
+\par 
+\par        folder (fold)  The  folder  command  switches to a new mail file or folder.  With no arguments, it tells the user
+\par               which file he is currently reading.  If an argument is given, it will write out  changes  (such  as  dele-
+\par               tions)  the user has made in the current file and read in the new file.  Some special conventions are rec-
+\par               ognized for the name.  # means the previous file, % means the invoking user\rquote s system mailbox, %user  means
+\par               user\rquote s  system mailbox, & means the invoking user\rquote s mbox file, and +file means a file in the folder direc-
+\par               tory.  %:filespec expands to the same value as filespec, but the file is handled as a system mailbox e. g.
+\par               by  the mbox and save commands.  If the name matches one of the strings defined with the shortcut command,
+\par               it is replaced by its long form and expanded.  If the name ends with .gz or .bz2, it is  treated  as  com-
+\par               pressed  with  gzip(1) or bzip2(1), respectively.  Likewise, if name does not exist, but either name.gz or
+\par               name.bz2 exists, the compressed file is used.  If name refers  to  a  directory  with  the  subdirectories
+\par               \lquote tmp\rquote , \lquote new\rquote , and \lquote cur\rquote , it is treated as a folder in maildir format.  A name of the form
+\par 
+\par                      protocol://[user@]host[:port][/file]
+\par 
+\par               is  taken  as  an Internet mailbox specification.  The supported protocols are currently imap (IMAP v4r1),
+\par               imaps (IMAP with SSL/TLS encryption), pop3 (POP3), and pop3s (POP3 with SSL/TLS encryption).  If user con-
+\par               tains  special  characters,  in  particular  \lquote /\rquote  or \lquote %\rquote , they must be escaped in URL notation, as \lquote %2F\rquote  or
+\par               \lquote %25\rquote .  The optional file part applies to IMAP only; if it is omitted, the default \lquote INBOX\rquote   is  used.   If
+\par               mailx  is  connected  to an IMAP server, a name of the form @mailbox refers to the mailbox on that server.
+\par               If the \lquote folder\rquote  variable refers to an IMAP account, the special name  \lquote %\rquote   selects  the  \lquote INBOX\rquote   on  that
+\par               account.
+\par 
+\par        Followup
+\par               (F)  Similar  to  Respond, but saves the message in a file named after the local part of the first recipi-
+\par               ent\rquote s address.
+\par 
+\par        followup
+\par               (fo) Similar to respond, but saves the message in a file named after the local part of the  first  recipi-
+\par               ent\rquote s address.
+\par 
+\par        followupall
+\par               Similar to followup, but responds to all recipients regardless of the flipr and Replyall variables.
+\par 
+\par        followupsender
+\par               Similar to Followup, but responds to the sender only regardless of the flipr and Replyall variables.
+\par 
+\par        forward
+\par               (fwd)  Takes  a  message  and the address of a recipient and forwards the message to him.  The text of the
+\par               original message is included in the new one, with the value of the  fwdheading  variable  printed  before.
+\par               The  fwdignore  and  fwdretain commands specify which header fields are included in the new message.  Only
+\par               the first part of a multipart message is included unless the forward-as-attachment option is set.
+\par 
+\par        Forward
+\par               (Fwd) Similar to forward, but saves the message in a file named after the local part  of  the  recipient\rquote s
+\par               address.
+\par 
+\par        from   (f)  Takes a list of messages and prints their message headers, piped through the pager if the output does
+\par               not fit on the screen.
+\par 
+\par        fwdignore
+\par               Specifies which header fields are to be ignored with the forward command.  This command has no effect when
+\par               the forward-as-attachment option is set.
+\par 
+\par        fwdretain
+\par               Specifies which header fields are to be retained with the forward command.  fwdretain overrides fwdignore.
+\par               This command has no effect when the forward-as-attachment option is set.
+\par 
+\par        good   (go) Takes a list of messages and marks all of them as not being junk mail.  Data from these  messages  is
+\par               then inserted into the junk mail database for future classification.
+\par 
+\par        headers
+\par               (h)  Lists  the  current range of headers, which is an 18-message group.  If a \lquote +\rquote  argument is given, then
+\par               the next 18-message group is printed, and if a \lquote -\rquote  argument is given, the  previous  18-message  group  is
+\par               printed.
+\par 
+\par        help   A synonym for ?.
+\par 
+\par        hold   (ho,  also  preserve) Takes a message list and marks each message therein to be saved in the user\rquote s system
+\par               mailbox instead of in mbox.  Does not override the delete command.  mailx deviates from the POSIX standard
+\par               with  this  command,  as  a \lquote next\rquote  command issued after \lquote hold\rquote  will display the following message, not the
+\par               current one.
+\par 
+\par        if     Commands in mailx\rquote s startup files can be executed conditionally depending on whether the user  is  sending
+\par               or receiving mail with the if command.  For example:
+\par 
+\par                       if receive
+\par                               commands . . .
+\par                       endif
+\par 
+\par               An else form is also available:
+\par 
+\par                       if receive
+\par                               commands . . .
+\par                       else
+\par                               commands . . .
+\par                       endif
+\par 
+\par               Note  that the only allowed conditions are receive, send, and term (execute command if standard input is a
+\par               tty).
+\par 
+\par        ignore Add the list of header fields named to the ignored list.  Header fields in the ignore list are not printed
+\par               on the terminal when a message is printed.  This command is very handy for suppression of certain machine-
+\par               generated header fields.  The Type and Print commands can be used to print  a  message  in  its  entirety,
+\par               including  ignored  fields.   If ignore is executed with no arguments, it lists the current set of ignored
+\par               fields.
+\par 
+\par        imap   Sends command strings directly to the current IMAP server.  Mailx operates always in IMAP  selected  state
+\par               on  the current mailbox; commands that change this will produce undesirable results and should be avoided.
+\par               Useful IMAP commands are:
+\par 
+\par               create Takes the name of an IMAP mailbox as an argument and creates it.
+\par 
+\par               getquotaroot
+\par                      Takes the name of an IMAP mailbox as an argument and prints the quotas that apply to  the  mailbox.
+\par                      Not all IMAP servers support this command.
+\par 
+\par               namespace
+\par                      Takes  no arguments and prints the Personal Namespaces, the Other User\rquote s Namespaces, and the Shared
+\par                      Namespaces.  Each namespace type is printed in parentheses; if there are multiple namespaces of the
+\par                      same type, inner parentheses separate them.  For each namespace, a namespace prefix and a hierarchy
+\par                      separator is listed.  Not all IMAP servers support this command.
+\par 
+\par        inc    Same as newmail.
+\par 
+\par        junk   (j) Takes a list of messages and marks all of them as  junk  mail.   Data  from  these  messages  is  then
+\par               inserted into the junk mail database for future classification.
+\par 
+\par        kill   (k)  Takes  a list of messages and \lquote kills\rquote  them.  Killed messages are not printed in header summaries, and
+\par               are ignored by the next command.  The kill command also sets the score of the messages to negative  infin-
+\par               ity, so that subsequent score commands will not unkill them again.  Killing is only effective for the cur-
+\par               rent session on a folder; when it is quit, all messages are automatically unkilled.
+\par 
+\par        list   Prints the names of all available commands.
+\par 
+\par        Mail   (M) Similar to mail, but saves the message in a file named after the local part of the  first  recipient\rquote s
+\par               address.
+\par 
+\par        mail   (m) Takes as argument login names and distribution group names and sends mail to those people.
+\par 
+\par        mbox   Indicate that a list of messages be sent to mbox in the user\rquote s home directory when mailx is quit.  This is
+\par               the default action for messages if unless the hold option is set.  mailx deviates from the POSIX  standard
+\par               with  this  command,  as  a \lquote next\rquote  command issued after \lquote mbox\rquote  will display the following message, not the
+\par               current one.
+\par 
+\par        move   (mv) Acts like copy, but marks the messages for deletion if they were transferred successfully.
+\par 
+\par        Move   (Mv) Similar to move, but moves the messages to a file named after the local part of the sender address of
+\par               the first message.
+\par 
+\par        newmail
+\par               Checks  for new mail in the current folder without committing any changes before.  If new mail is present,
+\par               a message is printed.  If the header variable is set, the headers of each new message are also printed.
+\par 
+\par        next   (n) like + or CR) Goes to the next message in sequence and types it.  With an  argument  list,  types  the
+\par               next matching message.
+\par 
+\par        New    Same as unread.
+\par 
+\par        new    Same as unread.
+\par 
+\par        online Same as connect.
+\par 
+\par        noop   If  the current folder is located on an IMAP or POP3 server, a NOOP command is sent.  Otherwise, no opera-
+\par               tion is performed.
+\par 
+\par        Pipe   (Pi) Like pipe but also pipes ignored header fields and all parts of MIME multipart/alternative  messages.
+\par 
+\par        pipe   (pi)  Takes  a  message  list  and a shell command and pipes the messages through the command.  Without an
+\par               argument, the current message is piped through the command given by the cmd variable.  If the  page  vari-
+\par               able is set, every message is followed by a formfeed character.
+\par 
+\par        preserve
+\par               (pre) A synonym for hold.
+\par 
+\par        Print  (P)  Like print but also prints out ignored header fields and all parts of MIME multipart/alternative mes-
+\par               sages.  See also print, ignore, and retain.
+\par 
+\par        print  (p) Takes a message list and types out each message on the user\rquote s terminal.  If the message is a MIME mul-
+\par               tipart  message,  all  parts  with  a  content type of \lquote text\rquote  or \lquote message\rquote  are shown, the other are hidden
+\par               except for their headers.  Messages are decrypted and converted to the terminal character  set  if  neces-
+\par               sary.
+\par 
+\par        probability
+\par               (prob) For each word given as argument, the contents of its junk mail database entry are printed.
+\par 
+\par        quit   (q)  Terminates  the  session, saving all undeleted, unsaved messages in the user\rquote s mbox file in his login
+\par               directory, preserving all messages marked with hold or preserve or never referenced in his system mailbox,
+\par               and  removing all other messages from his system mailbox.  If new mail has arrived during the session, the
+\par               message \lquote You have new mail\rquote  is given.  If given while editing a mailbox file with the -f  flag,  then  the
+\par               edit  file  is  rewritten.   A  return to the Shell is effected, unless the rewrite of edit file fails, in
+\par               which case the user can escape with the exit command.
+\par 
+\par        redirect
+\par               (red) Same as resend.
+\par 
+\par        Redirect
+\par               (Red) Same as Resend.
+\par 
+\par        remove (rem) Removes the named folders.  The user is asked for confirmation in interactive mode.
+\par 
+\par        rename (ren) Takes the name of an existing folder and the name for the new folder and renames the  first  to  the
+\par               second one.  Both folders must be of the same type and must be located on the current server for IMAP.
+\par 
+\par        Reply  (R) Reply to originator.  Does not reply to other recipients of the original message.
+\par 
+\par        reply  (r)  Takes  a  message list and sends mail to the sender and all recipients of the specified message.  The
+\par               default message must not be deleted.
+\par 
+\par        replyall
+\par               Similar to reply, but responds to all recipients regardless of the flipr and Replyall variables.
+\par 
+\par        replysender
+\par               Similar to Reply, but responds to the sender only regardless of the flipr and Replyall variables.
+\par 
+\par        Resend Like resend, but does not add any header lines.  This is not a way to hide the sender\rquote s identity, but use-
+\par               ful for sending a message again to the same recipients.
+\par 
+\par        resend Takes  a  list  of  messages and a user name and sends each message to the named user.  \lquote Resent-From:\rquote  and
+\par               related header fields are prepended to the new copy of the message.
+\par 
+\par        Respond
+\par               Same as Reply.
+\par 
+\par        respond
+\par               Same as reply.
+\par 
+\par        respondall
+\par               Same as replyall.
+\par 
+\par        respondsender
+\par               Same as replysender.
+\par 
+\par        retain Add the list of header fields named to the retained list.  Only the header fields in the retain  list  are
+\par               shown  on  the  terminal when a message is printed.  All other header fields are suppressed.  The Type and
+\par               Print commands can be used to print a message in its entirety.  If retain is executed with  no  arguments,
+\par               it lists the current set of retained fields.
+\par 
+\par        Save   (S)  Similar  to  save,  but  saves the messages in a file named after the local part of the sender of the
+\par               first message instead of taking a filename argument.
+\par 
+\par        save   (s) Takes a message list and a filename and appends each message in turn to the end of the  file.   If  no
+\par               filename  is given, the mbox file is used.  The filename in quotes, followed by the line count and charac-
+\par               ter count is echoed on the user\rquote s terminal.  If editing a system mailbox,  the  messages  are  marked  for
+\par               deletion.   Compressed  files  and  IMAP mailboxes are handled as described for the -f command line option
+\par               above.
+\par 
+\par        savediscard
+\par               Same as saveignore.
+\par 
+\par        saveignore
+\par               Saveignore is to save what ignore is to print and type.  Header fields thus marked are filtered  out  when
+\par               saving  a  message  by  save or when automatically saving to mbox.  This command should only be applied to
+\par               header fields that do not contain information needed to decode the message, as MIME content fields do.  If
+\par               saving  messages  on an IMAP account, ignoring fields makes it impossible to copy the data directly on the
+\par               server, thus operation usually becomes much slower.
+\par 
+\par        saveretain
+\par               Saveretain is to save what retain is to print and type.  Header fields thus marked are the only ones saved
+\par               with a message when saving by save or when automatically saving to mbox.  Saveretain overrides saveignore.
+\par               The use of this command is strongly discouraged since it may strip header fields that are needed to decode
+\par               the message correctly.
+\par 
+\par        score  (sc)  Takes a message list and a floating point number and adds the number to the score of each given mes-
+\par               sage.  All messages start at score 0 when a folder is opened.  When the score of a message  becomes  nega-
+\par               tive,  it is \lquote killed\rquote  with the effects described for the kill command; otherwise if it was negative before
+\par               and becomes positive, it is \lquote unkilled\rquote .  Scores only refer to the currently opened instance of a folder.
+\par 
+\par        set    (se) With no arguments, prints all variable values, piped through the pager if the output does not fit  on
+\par               the  screen.  Otherwise, sets option.  Arguments are of the form option=value (no space before or after =)
+\par               or option.  Quotation marks may be placed around any part of the assignment statement to quote  blanks  or
+\par               tabs,  i.e. \lquote set indentprefix="->"\rquote .  If an argument begins with no, as in \lquote set nosave\rquote , the effect is the
+\par               same as invoking the unset command with the remaining part of the variable (\lquote unset save\rquote ).
+\par 
+\par        seen   Takes a message list and marks all messages as having been read.
+\par 
+\par        shell  (sh) Invokes an interactive version of the shell.
+\par 
+\par        shortcut
+\par               Defines a shortcut name and its string for expansion, as described for the folder command.  With no  argu-
+\par               ments, a list of defined shortcuts is printed.
+\par 
+\par        show   (Sh)  Like print, but performs neither MIME decoding nor decryption so that the raw message text is shown.
+\par 
+\par        size   Takes a message list and prints out the size in characters of each message.
+\par 
+\par        sort   Create a sorted representation of the current folder, and change the next command and the addressing modes
+\par               such  that  they  refer to messages in the sorted order.  Message numbers are the same as in regular mode.
+\par               If the header variable is set, a header summary in the new order is also printed.  Possible sorting crite-
+\par               ria are:
+\par 
+\par               date   Sort the messages by their \lquote Date:\rquote  field, that is by the time they were sent.
+\par 
+\par               from   Sort  messages  by  the value of their \lquote From:\rquote  field, that is by the address of the sender.  If the
+\par                      showname variable is set, the sender\rquote s real name (if any) is used.
+\par 
+\par               size   Sort the messages by their size.
+\par 
+\par               score  Sort the messages by their score.
+\par 
+\par               status Sort the messages by their message status (new, read, old, etc.).
+\par 
+\par               subject
+\par                      Sort the messages by their subject.
+\par 
+\par               thread Create a threaded order, as with the thread command.
+\par 
+\par               to     Sort messages by the value of their \lquote To:\rquote  field, that is by the address of the recipient.   If  the
+\par                      showname variable is set, the recipient\rquote s real name (if any) is used.
+\par 
+\par               If no argument is given, the current sorting criterion is printed.
+\par 
+\par        source The source command reads commands from a file.
+\par 
+\par        thread (th)  Create  a  threaded  representation  of the current folder, i.e. indent messages that are replies to
+\par               other messages in the header display, and change the next command and the addressing modes such that  they
+\par               refer  to  messages  in  the  threaded order.  Message numbers are the same as in unthreaded mode.  If the
+\par               header variable is set, a header summary in threaded order is also printed.
+\par 
+\par        top    Takes a message list and prints the top few lines of each.  The number of lines printed is  controlled  by
+\par               the variable toplines and defaults to five.
+\par 
+\par        touch  Takes  a  message  list and marks the messages for saving in the mbox file.  mailx deviates from the POSIX
+\par               standard with this command, as a \lquote next\rquote  command issued after \lquote mbox\rquote  will display  the  following  message,
+\par               not the current one.
+\par 
+\par        Type   (T) Identical to the Print command.
+\par 
+\par        type   (t) A synonym for print.
+\par 
+\par        unalias
+\par               Takes  a  list  of names defined by alias commands and discards the remembered groups of users.  The group
+\par               names no longer have any significance.
+\par 
+\par        unanswered
+\par               Takes a message list and marks each message as not having been answered.
+\par 
+\par        uncollapse
+\par               (unc) Only applicable to threaded mode.  Takes a message list and makes the message and all replies to  it
+\par               visible  in  header summaries again.  When a message becomes the current message, it is automatically made
+\par               visible.  Also when a message with collapsed replies is printed, all of  these  are  automatically  uncol-
+\par               lapsed.
+\par 
+\par        undef  Undefines  each  of the named macros.  It is not an error to use a name that does not belong to one of the
+\par               currently defined macros.
+\par 
+\par        undelete
+\par               (u) Takes a message list and marks each message as not being deleted.
+\par 
+\par        undraft
+\par               Takes a message list and marks each message as a draft.
+\par 
+\par        unflag Takes a message list and marks each message as not being \lquote flagged\rquote .
+\par 
+\par        unfwdignore
+\par               Removes the header field names from the list of ignored fields for the forward command.
+\par 
+\par        unfwdretain
+\par               Removes the header field names from the list of retained fields for the forward command.
+\par 
+\par        ungood Takes a message list and undoes the effect of a good command that was previously applied on exactly  these
+\par               messages.
+\par 
+\par        unignore
+\par               Removes the header field names from the list of ignored fields.
+\par 
+\par        unjunk Takes  a message list and undoes the effect of a junk command that was previously applied on exactly these
+\par               messages.
+\par 
+\par        unkill Takes a message list and \lquote unkills\rquote  each message.  Also sets the score of the messages to 0.
+\par 
+\par        Unread Same as unread.
+\par 
+\par        unread (U) Takes a message list and marks each message as not having been read.
+\par 
+\par        unretain
+\par               Removes the header field names from the list of retained fields.
+\par 
+\par        unsaveignore
+\par               Removes the header field names from the list of ignored fields for saving.
+\par 
+\par        unsaveretain
+\par               Removes the header field names from the list of retained fields for saving.
+\par 
+\par        unset  Takes a list of option names and discards their remembered values; the inverse of set.
+\par 
+\par        unshortcut
+\par               Deletes the shortcut names given as arguments.
+\par 
+\par        unsort Disable sorted or threaded mode (see the sort and thread commands), return to normal message order and, if
+\par               the header variable is set, print a header summary.
+\par 
+\par        unthread
+\par               (unth) Same as unsort.
+\par 
+\par        verify (verif)  Takes  a  message  list and verifies each message.  If a message is not an S/MIME signed message,
+\par               verification will fail for it.  The verification process checks if the message was signed  using  a  valid
+\par               certificate,  if the message sender\rquote s email address matches one of those contained within the certificate,
+\par               and if the message content has been altered.
+\par 
+\par        visual (v) Takes a message list and invokes the display editor on each message.  Modified contents are  discarded
+\par               unless the writebackedited variable is set.
+\par 
+\par        write  (w)  For conventional messages, the body without all headers is written.  The output is decrypted and con-
+\par               verted to its native format, if necessary.  If the output file exists, the text is appended.\emdash If a  message
+\par               is in MIME multipart format, its first part is written to the specified file as for conventional messages,
+\par               and the user is asked for a filename to save each other part; if the contents of the first part are not to
+\par               be  saved,  \lquote write  /dev/null\rquote   can  be  used.  For the second and subsequent parts, if the filename given
+\par               starts with a \lquote |\rquote  character, the part is piped through the remainder of  the  filename  interpreted  as  a
+\par               shell  command.   In  non-interactive  mode,  only the parts of the multipart message that have a filename
+\par               given in the part header are written, the other are discarded.  The original message is never  marked  for
+\par               deletion  in the originating mail folder.  For attachments, the contents of the destination file are over-
+\par               written if the file previously existed.  No special handling of compressed files is performed.
+\par 
+\par        xit    (x) A synonym for exit.
+\par 
+\par        z      Mailx presents message headers in windowfuls as described  under  the  headers  command.   The  z  command
+\par               scrolls  to the next window of messages.  If an argument is given, it specifies the window to use.  A num-
+\par               ber prefixed by \lquote +\rquote  or \lquote -\rquote  indicates that the window is calculated in relation to the current position.  A
+\par               number  without a prefix specifies an absolute window number, and a \lquote $\rquote  lets mailx scroll to the last win-
+\par               dow of messages.
+\par 
+\par        Z      Similar to z, but scrolls to the next or previous window that contains at least one new or \lquote flagged\rquote   mes-
+\par               sage.
+\par 
+\par    Tilde escapes
+\par        Here  is  a  summary  of  the tilde escapes, which are used when composing messages to perform special functions.
+\par        Tilde escapes are only recognized at the beginning of lines.  The name \lquote tilde escape\rquote  is somewhat of  a  misnomer
+\par        since the actual escape character can be set by the option escape.
+\par 
+\par        ~!command
+\par               Execute the indicated shell command, then return to the message.
+\par 
+\par        ~.     Same effect as typing the end-of-file character.
+\par 
+\par        ~<filename
+\par               Identical to ~r.
+\par 
+\par        ~<!command
+\par               Command is executed using the shell.  Its standard output is inserted into the message.
+\par 
+\par        ~@ [filename . . . ]
+\par               With  no  arguments, edit the attachment list.  First, the user can edit all existing attachment data.  If
+\par               an attachment\rquote s file name is left empty, that attachment is deleted from the list.  When the  end  of  the
+\par               attachment list is reached, mailx will ask for further attachments, until an empty file name is given.  If
+\par               filename arguments are specified, all of them are appended to the end of the attachment  list.   Filenames
+\par               which contain white space can only be specified with the first method (no filename arguments).
+\par 
+\par        ~A     Inserts the string contained in the Sign variable (same as \lquote ~i Sign\rquote ).  The escape sequences \lquote \\t\rquote  (tabula-
+\par               tor) and \lquote \\n\rquote  (newline) are understood.
+\par 
+\par        ~a     Inserts the string contained in the sign variable (same as \lquote ~i sign\rquote ).  The escape sequences \lquote \\t\rquote  (tabula-
+\par               tor) and \lquote \\n\rquote  (newline) are understood.
+\par 
+\par        ~bname . . .
+\par               Add  the  given  names  to the list of carbon copy recipients but do not make the names visible in the Cc:
+\par               line (\lquote blind\rquote  carbon copy).
+\par 
+\par        ~cname . . .
+\par               Add the given names to the list of carbon copy recipients.
+\par 
+\par        ~d     Read the file \lquote dead.letter\rquote  from the user\rquote s home directory into the message.
+\par 
+\par        ~e     Invoke the text editor on the message collected so far.  After the editing session is finished,  the  user
+\par               may continue appending text to the message.
+\par 
+\par        ~fmessages
+\par               Read  the  named  messages into the message being sent.  If no messages are specified, read in the current
+\par               message.  Message headers currently being ignored (by the ignore or retain command) are not included.  For
+\par               MIME multipart messages, only the first printable part is included.
+\par 
+\par        ~Fmessages
+\par               Identical to ~f, except all message headers and all MIME parts are included.
+\par 
+\par        ~h     Edit  the message header fields \lquote To:\rquote , \lquote Cc:\rquote , \lquote Bcc:\rquote , and \lquote Subject:\rquote  by typing each one in turn and allow-
+\par               ing the user to append text to the end or modify the field by using the current terminal  erase  and  kill
+\par               characters.
+\par 
+\par        ~H     Edit  the message header fields \lquote From:\rquote , \lquote Reply-To:\rquote , \lquote Sender:\rquote , and \lquote Organization:\rquote  in the same manner as
+\par               described for ~h.  The default values for these fields originate from the from, replyto, and  ORGANIZATION
+\par               variables.   If this tilde command has been used, changing the variables has no effect on the current mes-
+\par               sage anymore.
+\par 
+\par        ~ivariable
+\par               Insert the value of the specified variable into the message adding a newline character at the end.  If the
+\par               variable is unset or empty, the message remains unaltered.  The escape sequences \lquote \\t\rquote  (tabulator) and \lquote \\n\rquote 
+\par               (newline) are understood.
+\par 
+\par        ~mmessages
+\par               Read the named messages into the message being sent, indented by a tab or by the  value  of  indentprefix.
+\par               If  no  messages are specified, read the current message.  Message headers currently being ignored (by the
+\par               ignore or retain command) are not included.  For MIME multipart messages, only the first printable part is
+\par               included.
+\par 
+\par        ~Mmessages
+\par               Identical to ~m, except all message headers and all MIME parts are included.
+\par 
+\par        ~p     Print  out the message collected so far, prefaced by the message header fields and followed by the attach-
+\par               ment list, if any.  If the message text is longer than the screen size, it is piped through the pager.
+\par 
+\par        ~q     Abort the message being sent, copying the message to \lquote dead.letter\rquote  in the user\rquote s home directory if save is
+\par               set.
+\par 
+\par        ~rfilename
+\par               Read the named file into the message.
+\par 
+\par        ~sstring
+\par               Cause the named string to become the current subject field.
+\par 
+\par        ~tname . . .
+\par               Add the given names to the direct recipient list.
+\par 
+\par        ~v     Invoke  an  alternate editor (defined by the VISUAL option) on the message collected so far.  Usually, the
+\par               alternate editor will be a screen editor.  After the editor is quit, the user may resume appending text to
+\par               the end of the message.
+\par 
+\par        ~wfilename
+\par               Write the message onto the named file.  If the file exists, the message is appended to it.
+\par 
+\par        ~x     Same as ~q, except that the message is not saved to the \lquote dead.letter\rquote  file.
+\par 
+\par        ~|command
+\par               Pipe  the  message  through  the command as a filter.  If the command gives no output or terminates abnor-
+\par               mally, retain the original text of the message.  The command fmt(1) is often used as command to  rejustify
+\par               the message.
+\par 
+\par        ~:mailx-command
+\par               Execute the given mailx command.  Not all commands, however, are allowed.
+\par 
+\par        ~_mailx-command
+\par               Identical to ~:.
+\par 
+\par        ~~string
+\par               Insert  the  string  of  text  in  the  message  prefaced by a single ~.  If the escape character has been
+\par               changed, that character must be doubled in order to send it at the beginning of a line.
+\par 
+\par    Variable options
+\par        Options are controlled via set and unset commands, see their entries for a syntax description.  An option is also
+\par        set  if  it is passed to mailx as part of the environment (this is not restricted to specific variables as in the
+\par        POSIX standard).  A value given in a startup file overrides a value imported from the environment.   Options  may
+\par        be  either  binary,  in which case it is only significant to see whether they are set or not; or string, in which
+\par        case the actual value is of interest.
+\par 
+\par    Binary options
+\par        The binary options include the following:
+\par 
+\par        allnet Causes only the local part to be evaluated when comparing addresses.
+\par 
+\par        append Causes messages saved in mbox to be appended to the end rather than prepended.  This should always be set.
+\par 
+\par        ask or asksub
+\par               Causes  mailx to prompt for the subject of each message sent.  If the user responds with simply a newline,
+\par               no subject field will be sent.
+\par 
+\par        askatend
+\par               Causes the prompts for \lquote Cc:\rquote  and \lquote Bcc:\rquote  lists to appear after the message has been edited.
+\par 
+\par        askattach
+\par               If set, mailx asks for files to attach at the end of each message.  Responding with  a  newline  indicates
+\par               not to include an attachment.
+\par 
+\par        askcc  Causes  the user to be prompted for additional carbon copy recipients (at the end of each message if aska-
+\par               tend or bsdcompat is set).  Responding with a newline indicates the user\rquote s satisfaction with  the  current
+\par               list.
+\par 
+\par        askbcc Causes  the user to be prompted for additional blind carbon copy recipients (at the end of each message if
+\par               askatend or bsdcompat is set).  Responding with a newline indicates the user\rquote s satisfaction with the  cur-
+\par               rent list.
+\par 
+\par        asksign
+\par               Causes  the user to be prompted if the message is to be signed at the end of each message.  The smime-sign
+\par               variable is ignored when this variable is set.
+\par 
+\par        autocollapse
+\par               Causes threads to be collapsed automatically when threaded mode is entered (see the collapse command).
+\par 
+\par        autoinc
+\par               Same as newmail.
+\par 
+\par        autoprint
+\par               Causes the delete command to behave like dp - thus, after deleting a message, the next one will  be  typed
+\par               automatically.
+\par 
+\par        autothread
+\par               Causes threaded mode (see the thread command) to be entered automatically when a folder is opened.
+\par 
+\par        bang   Enables the substitution of \lquote !\rquote   by the contents of the last command line in shell escapes.
+\par 
+\par        bsdannounce
+\par               Causes automatic display of a header summary after executing a folder command.
+\par 
+\par        bsdcompat
+\par               Sets  some cosmetical features to traditional BSD style; has the same affect as setting \lquote askatend\rquote  and all
+\par               other variables prefixed with \lquote bsd\rquote , setting prompt to \lquote & \rquote , and changing the default pager to more.
+\par 
+\par        bsdflags
+\par               Changes the letters printed in the first column of a header summary to traditional BSD style.
+\par 
+\par        bsdheadline
+\par               Changes the display of columns in a header summary to traditional BSD style.
+\par 
+\par        bsdmsgs
+\par               Changes some informational messages to traditional BSD style.
+\par 
+\par        bsdorder
+\par               Causes the \lquote Subject:\rquote  field to appear immediately after the \lquote To:\rquote  field in message headers and with the ~h
+\par               tilde command.
+\par 
+\par        bsdset Changes the output format of the set command to traditional BSD style.
+\par 
+\par        chained-junk-tokens
+\par               Normally,  the  Bayesian  junk  mail filter bases its classifications on single word tokens extracted from
+\par               messages.  If this option is set, adjacent words are combined to pairs, which are then used as  additional
+\par               tokens.  This usually improves the accuracy of the filter, but also increases the junk mail database five-
+\par               to tenfold.
+\par 
+\par        datefield
+\par               The date in a header summary is normally the date of the mailbox \lquote From \rquote  line of  the  message.   If  this
+\par               variable is set, the date as given in the \lquote Date:\rquote  header field is used, converted to local time.
+\par 
+\par        debug  Prints  debugging  messages  and disables the actual delivery of messages.  Unlike verbose, this option is
+\par               intended for mailx development only.
+\par 
+\par        disconnected
+\par               When an IMAP mailbox is selected and this variable is set, no  connection  to  the  server  is  initiated.
+\par               Instead,  data  is  obtained from the local cache (see imap-cache).  Mailboxes that are not present in the
+\par               cache and messages that have not yet entirely been fetched from the server are not available; to fetch all
+\par               messages  in  a  mailbox  at  once, the command \lquote copy * /dev/null\rquote  can be used while still in online mode.
+\par               Changes that are made to IMAP mailboxes in disconnected mode are queued and committed later when a connec-
+\par               tion  to  that server is opened in online mode.  This procedure is not completely reliable since it cannot
+\par               be guaranteed that the IMAP unique identifiers (UIDs) on the server still match the ones in the  cache  at
+\par               that time.  Data is saved to \lquote dead.letter\rquote  when this problem occurs.
+\par 
+\par        disconnected-user@host
+\par               The  specified account is handled as described for the disconnected variable above, but other accounts are
+\par               not affected.
+\par 
+\par        dot    The binary option dot causes mailx to interpret a period alone on a line as the terminator  of  a  message
+\par               the user is sending.
+\par 
+\par        editheaders
+\par               When a message is edited while being composed, its header is included in the editable text.  \lquote To:\rquote , \lquote Cc:\rquote ,
+\par               \lquote Bcc:\rquote , \lquote Subject:\rquote , \lquote From:\rquote , \lquote Reply-To:\rquote , \lquote Sender:\rquote , and \rquote Organization:\rquote  fields are  accepted  within  the
+\par               header, other fields are ignored.
+\par 
+\par        emptybox
+\par               If  set, an empty mailbox file is not removed.  This may improve the interoperability with other mail user
+\par               agents when using a common folder directory.
+\par 
+\par        emptystart
+\par               If the mailbox is empty, mailx normally prints \lquote No mail for user\rquote  and exits immediately.  If  this  option
+\par               is set, mailx starts even with an empty mailbox.
+\par 
+\par        flipr  Exchanges the Respond with the respond commands and vice-versa.
+\par 
+\par        forward-as-attachment
+\par               Original  messages are normally sent as inline text with the forward command, and only the first part of a
+\par               multipart message is included.  With this option, messages are sent as  MIME  message/rfc822  attachments,
+\par               and all of their parts are included.  The fwdignore and fwdretain options are ignored when the forward-as-
+\par               attachment option is set.
+\par 
+\par        fullnames
+\par               When replying to a message, mailx normally removes the comment parts of email addresses, which by  conven-
+\par               tion  contain the full names of the recipients.  If this variable is set, such stripping is not performed,
+\par               and comments are retained.
+\par 
+\par        header Causes the header summary to be written at startup and after commands that affect the number  of  messages
+\par               or the order of messages in the current folder; enabled by default.
+\par 
+\par        hold   This option is used to hold messages in the system mailbox by default.
+\par 
+\par        ignore Causes interrupt signals from the terminal to be ignored and echoed as @\rquote s.
+\par 
+\par        ignoreeof
+\par               An  option related to dot is ignoreeof which makes mailx refuse to accept a control-d as the end of a mes-
+\par               sage.  Ignoreeof also applies to mailx command mode.
+\par 
+\par        imap-use-starttls
+\par               Causes mailx to issue a STARTTLS command to make an unencrypted  IMAP  session  SSL/TLS  encrypted.   This
+\par               functionality  is not supported by all servers, and is not used if the session is already encrypted by the
+\par               IMAPS method.
+\par 
+\par        imap-use-starttls-user@host
+\par               Activates imap-use-starttls for a specific account.
+\par 
+\par        keep   This option causes mailx to truncate the user\rquote s system mailbox instead of deleting it when  it  is  empty.
+\par               This  should  always be set, since it prevents malicious users from creating fake mail folders in a world-
+\par               writable spool directory.
+\par 
+\par        keepsave
+\par               When a message is saved, it is usually discarded from the originating folder when mailx is quit.   Setting
+\par               this option causes all saved message to be retained.
+\par 
+\par        markanswered
+\par               When  a  message  is replied to and this variable is set, it is marked as having been answered.  This mark
+\par               has no technical meaning in the mail system; it just causes messages to be marked in the  header  summary,
+\par               and makes them specially addressable.
+\par 
+\par        metoo  Usually,  when  a  group  is  expanded that contains the sender, the sender is removed from the expansion.
+\par               Setting this option causes the sender to be included in the group.
+\par 
+\par        newmail
+\par               Checks for new mail in the current folder each time the prompt is printed.  For IMAP mailboxes, the server
+\par               is  then  polled  for  new  mail, which may result in delayed operation if the connection to the server is
+\par               slow.  A maildir folder must be re-scanned to determine if new mail has arrived.
+\par 
+\par               If this variable is set to the special value nopoll, an IMAP server is not actively asked  for  new  mail,
+\par               but  new  mail may still be detected and announced with any other IMAP command that is sent to the server.
+\par               A maildir folder is not scanned then.
+\par 
+\par               In any case, the IMAP server may send notifications about messages that have been deleted on the server by
+\par               another  process  or  client.  In this case, \lquote Expunged n messages\rquote  is printed regardless of this variable,
+\par               and message numbers may have changed.
+\par 
+\par        noheader
+\par               Setting the option noheader is the same as giving the -N flag on the command line.
+\par 
+\par        outfolder
+\par               Causes the filename given in the record variable and the sender-based filenames for the Copy and Save com-
+\par               mands  to be interpreted relative to the directory given in the folder variable rather than to the current
+\par               directory unless it is an absolute pathname.
+\par 
+\par        page   If set, each message the pipe command prints out is followed by a formfeed character.
+\par 
+\par        piperaw
+\par               Send messages to the pipe command without performing MIME and character set conversions.
+\par 
+\par        pop3-use-apop
+\par               If this variable is set, the APOP authentication method is used when a connection to a POP3 server is ini-
+\par               tiated.   The advantage of this method over the usual USER/PASS authentication is that the password is not
+\par               sent over the network in clear text.  The connection fails if the server does not support  the  APOP  com-
+\par               mand.
+\par 
+\par        pop3-use-apop-user@host
+\par               Enables pop3-use-apop for a specific account.
+\par 
+\par        pop3-use-starttls
+\par               Causes  mailx  to  issue a STLS command to make an unencrypted POP3 session SSL/TLS encrypted.  This func-
+\par               tionality is not supported by all servers, and is not used if the session  is  already  encrypted  by  the
+\par               POP3S method.
+\par 
+\par        pop3-use-starttls-user@host
+\par               Activates pop3-use-starttls for a specific account.
+\par 
+\par        print-all-chars
+\par               This  option causes all characters to be considered printable.  It is only effective if given in a startup
+\par               file.  With this option set, some character sequences in messages may put the user\rquote s terminal in an  unde-
+\par               fined  state  when  printed;  it  should  only be used as a last resort if no working system locale can be
+\par               found.
+\par 
+\par        print-alternatives
+\par               When a MIME message part of type multipart/alternative is displayed and it  contains  a  subpart  of  type
+\par               text/plain,  other  parts  are  normally  discarded.  Setting this variable causes all subparts to be dis-
+\par               played, just as if the surrounding part was of type multipart/mixed.
+\par 
+\par        quiet  Suppresses the printing of the version when first invoked.
+\par 
+\par        record-resent
+\par               If both this variable and the record variable are set, the resend and Resend commands save messages to the
+\par               record folder as it is normally only done for newly composed messages.
+\par 
+\par        reply-in-same-charset
+\par               If  this  variable  is  set,  mailx  first tries to use the same character set of the original message for
+\par               replies.  If this fails, the sendcharsets variable is evaluated as usual.
+\par 
+\par        Replyall
+\par               Reverses the sense of reply and Reply commands.
+\par 
+\par        save   When the user aborts a message with two RUBOUT (interrupt characters) mailx copies the partial  letter  to
+\par               the file \lquote dead.letter\rquote  in the home directory.  This option is set by default.
+\par 
+\par        searchheaders
+\par               If  this  option is set, then a message-list specifier in the form \lquote /x:y\rquote  will expand to all messages con-
+\par               taining the substring \lquote y\rquote  in the header field \lquote x\rquote .  The string search is case insensitive.
+\par 
+\par        sendwait
+\par               When sending a message, wait until the mail transfer agent exits before accepting  further  commands.   If
+\par               the mail transfer agent returns a non-zero exit status, the exit status of mailx will also be non-zero.
+\par 
+\par        showlast
+\par               Setting this option causes mailx to start at the last message instead of the first one when opening a mail
+\par               folder.
+\par 
+\par        showname
+\par               Causes mailx to use the sender\rquote s real name instead of the plain address in the header field summary and in
+\par               message specifications.
+\par 
+\par        showto Causes the recipient of the message to be shown in the header summary if the message was sent by the user.
+\par 
+\par        skipemptybody
+\par               If an outgoing message does not contain any text in its first or only message part, do  not  send  it  but
+\par               discard it silently (see also the -E option).
+\par 
+\par        smime-force-encryption
+\par               Causes mailx to refuse sending unencrypted messages.
+\par 
+\par        smime-sign
+\par               If  this variable is set, outgoing messages are S/MIME signed with the user\rquote s private key.  Signing a mes-
+\par               sage enables a recipient to verify that the sender used a valid certificate, that the email  addresses  in
+\par               the  certificate match those in the message header, and that the message content has not been altered.  It
+\par               does not change the message text, and people will be able to read the message as usual.
+\par 
+\par        smime-no-default-ca
+\par               Do not load the default CA locations when verifying S/MIME signed messages.   Only  applicable  if  S/MIME
+\par               support is built using OpenSSL.
+\par 
+\par        smtp-use-starttls
+\par               Causes  mailx to issue a STARTTLS command to make an SMTP session SSL/TLS encrypted.  Not all servers sup-
+\par               port this command; because of common implementation defects, it cannot be automatically determined whether
+\par               a server supports it or not.
+\par 
+\par        ssl-no-default-ca
+\par               Do  not  load  the default CA locations to verify SSL/TLS server certificates.  Only applicable if SSL/TLS
+\par               support is built using OpenSSL.
+\par 
+\par        ssl-v2-allow
+\par               Accept SSLv2 connections.  These are normally not allowed because this protocol version is insecure.
+\par 
+\par        stealthmua
+\par               Inhibits the generation of the \lquote Message-Id:\rquote  and \lquote User-Agent:\rquote  header fields that include  obvious  refer-
+\par               ences  to  mailx.  There are two pitfalls associated with this: First, the message id of outgoing messages
+\par               is not known anymore.  Second, an expert may still use the remaining information in the  header  to  track
+\par               down the originating mail user agent.
+\par 
+\par        verbose
+\par               Setting  the option verbose is the same as using the -v flag on the command line.  When mailx runs in ver-
+\par               bose mode, details of the actual message delivery and protocol conversations for IMAP, POP3, and SMTP,  as
+\par               well  as  of  other  internal processes, are displayed on the user\rquote s terminal, This is sometimes useful to
+\par               debug problems.  Mailx prints all data that is sent to remote servers in clear texts, including passwords,
+\par               so care should be taken that no unauthorized option can view the screen if this option is enabled.
+\par 
+\par        writebackedited
+\par               If  this variable is set, messages modified using the edit or visual commands are written back to the cur-
+\par               rent folder when it is quit.  This is only possible for writable folders in  mbox  format.   Setting  this
+\par               variable also disables MIME decoding and decryption for the editing commands.
+\par 
+\par    String Options
+\par        The string options include the following:
+\par 
+\par        attrlist
+\par               A sequence of characters to print in the \lquote attribute\rquote  column of a header summary, each for one type of mes-
+\par               sages in the following order: new, unread but old, new but read, read and old, saved,  preserved,  mboxed,
+\par               flagged, answered, draft, killed, start of a collapsed thread, collapsed, classified as junk.  The default
+\par               is \lquote NUROSPMFATK+-J\rquote , or \lquote NU  *HMFATK+-J\rquote  if bsdflags or the SYSV3 environment variable are set.
+\par 
+\par        autobcc
+\par               Specifies a list of recipients to which a blind carbon copy of each outgoing message will be sent automat-
+\par               ically.
+\par 
+\par        autocc Specifies a list of recipients to which a carbon copy of each outgoing message will be sent automatically.
+\par 
+\par        autosort
+\par               Causes sorted mode (see the sort command) to be entered automatically with the value  of  this  option  as
+\par               sorting method when a folder is opened.
+\par 
+\par        cmd    The default value for the pipe command.
+\par 
+\par        crt    The  valued option crt is used as a threshold to determine how long a message must be before PAGER is used
+\par               to read it.  If crt is set without a value, then the height of the terminal screen stored in the system is
+\par               used to compute the threshold (see stty(1)).
+\par 
+\par        DEAD   The  name  of  the  file to use for saving aborted messages.  This defaults to \lquote dead.letter\rquote  in the user\rquote s
+\par               home directory.
+\par 
+\par        EDITOR Pathname of the text editor to use in the edit command and ~e escape.  If not defined, then a default edi-
+\par               tor is used.
+\par 
+\par        encoding
+\par               The  default  MIME  encoding to use in outgoing text messages and message parts.  Valid values are 8bit or
+\par               quoted-printable.  The default is 8bit.  In case the mail transfer system is not ESMTP compliant,  quoted-
+\par               printable  should  be  used instead.  If there is no need to encode a message, 7bit transfer mode is used,
+\par               without regard to the value of this variable.  Binary data is always encoded in base64 mode.
+\par 
+\par        escape If defined, the first character of this option gives the character to use in the  place  of  ~  to  denote
+\par               escapes.
+\par 
+\par        folder The  name  of  the directory to use for storing folders of messages.  All folder names that begin with \lquote +\rquote 
+\par               refer to files below that directory.  If the directory name begins with a \lquote /\rquote , mailx considers it to be an
+\par               absolute pathname; otherwise, the folder directory is found relative to the user\rquote s home directory.
+\par 
+\par               The  directory  name  may  also refer to an IMAP account; any names that begin with \lquote +\rquote  then refer to IMAP
+\par               mailboxes on that account.  An IMAP folder is normally given in the form
+\par 
+\par                   imaps://mylogin@imap.myisp.example
+\par 
+\par               In this case, the \lquote +\rquote  and \lquote @\rquote  prefixes for folder names have the same effect (see the folder command).
+\par 
+\par               Some IMAP servers do not accept the creation of mailboxes in the hierarchy base; they  require  that  they
+\par               are created as subfolders of \lquote INBOX\rquote .  With such servers, a folder name of the form
+\par 
+\par                   imaps://mylogin@imap.myisp.example/INBOX.
+\par 
+\par               should  be  used  (the  last character is the server\rquote s hierarchy delimiter).  Folder names prefixed by \lquote +\rquote 
+\par               will then refer to folders below \lquote INBOX\rquote , while folder names prefixed by \lquote @\rquote  refer to  folders  below  the
+\par               hierarchy  base.   See the imap namespace command for a method to detect the appropriate prefix and delim-
+\par               iter.
+\par 
+\par        folder-hook
+\par               When a folder is opened and this variable is set, the macro corresponding to the value of this variable is
+\par               executed.   The  macro is also invoked when new mail arrives, but message lists for commands executed from
+\par               the macro only include newly arrived messages then.
+\par 
+\par        folder-hook-fullname
+\par               When a folder named fullname is opened, the macro corresponding to the value of this variable is executed.
+\par               Unlike  other  folder specifications, the fully expanded name of a folder, without metacharacters, is used
+\par               to avoid ambiguities.  The macro specified with folder-hook is not executed if this variable is  effective
+\par               for a folder (unless it is explicitly invoked within the called macro).
+\par 
+\par        from   The  address (or a list of addresses) to put into the \lquote From:\rquote  field of the message header.  If replying to
+\par               a message, these addresses are handled as if they were in the alternates list.  If the machine\rquote s  hostname
+\par               is  not  valid at the Internet (for example at a dialup machine), either this variable or hostname have to
+\par               be set to get correct Message-ID header fields.  If from contains more than one address, the sender  vari-
+\par               able must also be set.
+\par 
+\par        fwdheading
+\par               The  string  to print before the text of a message with the forward command (unless the forward-as-attach-
+\par               ment variable is set).  Defaults to \lquote \lquote -------- Original Message --------\rquote \rquote  if unset.  If it is set to  the
+\par               empty string, no heading is printed.
+\par 
+\par        headline
+\par               A  format  string  to use for the header summary, similar to printf formats.  A \lquote %\rquote  character introduces a
+\par               format specifier.  It may be followed by a number indicating the field width.  If the field is  a  number,
+\par               the width may be negative, which indicates that it is to be left-aligned.  Valid format specifiers are:
+\par 
+\par                   %a    Message attributes.
+\par                   %c    The score of the message.
+\par                   %d    The date when the message was received.
+\par                   %e    The indenting level in threaded mode.
+\par                   %f    The address of the message sender.
+\par                   %i    The message thread structure.
+\par                   %l    The number of lines of the message.
+\par                   %m    Message number.
+\par                   %o    The number of octets (bytes) in the message.
+\par                   %s    Message subject (if any).
+\par                   %S    Message subject (if any) in double quotes.
+\par                   %t    The position in threaded/sorted order.
+\par                   %>    A \lquote >\rquote  for the current message, otherwise \lquote  \rquote .
+\par                   %<    A \lquote <\rquote  for the current message, otherwise \lquote  \rquote .
+\par                   %%    A \lquote %\rquote  character.
+\par 
+\par               The default is \lquote %>%a%m %18f %16d %4l/%-5o %i%s\rquote , or \lquote %>%a%m %20f  %16d %3l/%-5o %i%S\rquote  if bsdcompat is set.
+\par 
+\par        hostname
+\par               Use this string as hostname when expanding local addresses instead of the value obtained from uname(2) and
+\par               getaddrinfo(3).
+\par 
+\par        imap-auth
+\par               Sets the IMAP authentication method.  Valid values are \lquote login\rquote  for the usual password-based authentication
+\par               (the default), \lquote cram-md5\rquote , which is a password-based authentication that does not send the  password  over
+\par               the network in clear text, and \lquote gssapi\rquote  for GSSAPI-based authentication.
+\par 
+\par        imap-auth-user@host
+\par               Sets the IMAP authentication method for a specific account.
+\par 
+\par        imap-cache
+\par               Enables  caching  of  IMAP mailboxes.  The value of this variable must point to a directory that is either
+\par               existent or can be created by mailx.  All contents of the cache can be deleted by mailx at any time; it is
+\par               not safe to make assumptions about them.
+\par 
+\par        imap-keepalive
+\par               IMAP  servers  may  close the connection after a period of inactivity; the standard requires this to be at
+\par               least 30 minutes, but practical experience may vary.  Setting this variable to  a  numeric  value  greater
+\par               than 0 causes a NOOP command to be sent each value seconds if no other operation is performed.
+\par 
+\par        imap-list-depth
+\par               When  retrieving  the  list of folders on an IMAP server, the folders command stops after it has reached a
+\par               certain depth to avoid possible infinite loops.  The  value  of  this  variable  sets  the  maximum  depth
+\par               allowed.  The default is 2.  If the folder separator on the current IMAP server is a slash \lquote /\rquote , this vari-
+\par               able has no effect, and the folders command does not descend to subfolders.
+\par 
+\par        indentprefix
+\par               String used by the \lquote ~m\rquote  and \lquote ~M\rquote  tilde escapes and by the quote option for indenting messages, in place of
+\par               the normal tab character (^I).  Be sure to quote the value if it contains spaces or tabs.
+\par 
+\par        junkdb The  location  of  the junk mail database.  The string is treated like a folder name, as described for the
+\par               folder command.
+\par 
+\par               The files in the junk mail database are normally stored in compress(1) format for saving space.   If  pro-
+\par               cessing  time  is considered more important, uncompress(1) can be used to store them in plain form.  Mailx
+\par               will then work using the uncompressed files.
+\par 
+\par        LISTER Pathname of the directory lister to use in the folders command when operating on local mailboxes.  Default
+\par               is /bin/ls.
+\par 
+\par        MAIL   Is  used  as  the user\rquote s mailbox, if set.  Otherwise, a system-dependent default is used.  Can be a proto-
+\par               col:// string (see the folder command for more information).
+\par 
+\par        MAILX_HEAD
+\par               A string to put at the beginning of each new message.  The escape  sequences  \lquote \\t\rquote   (tabulator)  and  \lquote \\n\rquote 
+\par               (newline) are understood.
+\par 
+\par        MAILX_TAIL
+\par               A  string to put at the end of each new message.  The escape sequences \lquote \\t\rquote  (tabulator) and \lquote \\n\rquote  (newline)
+\par               are understood.
+\par 
+\par        maximum-unencoded-line-length
+\par               Messages that contain lines longer than the value of this variable are encoded in quoted-printable even if
+\par               they contain only ASCII characters.  The maximum effective value is 950.  If set to 0, all ASCII text mes-
+\par               sages are encoded in quoted-printable.  S/MIME signed messages  are  always  encoded  in  quoted-printable
+\par               regardless of the value of this variable.
+\par 
+\par        MBOX   The  name  of  the  mbox  file.  It can be the name of a folder.  The default is \lquote mbox\rquote  in the user\rquote s home
+\par               directory.
+\par 
+\par        NAIL_EXTRA_RC
+\par               The name of an optional startup file to be read after ~/.mailrc.   This  variable  is  ignored  if  it  is
+\par               imported  from  the  environment; it has an effect only if it is set in /etc/mail.rc or ~/.mailrc to allow
+\par               bypassing the configuration with e. g. \lquote MAILRC=/dev/null\rquote .  Use this file for commands that are not under-
+\par               stood by other mailx implementations.
+\par 
+\par        newfolders
+\par               If this variable has the value maildir, newly created local folders will be in maildir format.
+\par 
+\par        nss-config-dir
+\par               A  directory  that contains the files certN.db to retrieve certificates, keyN.db to retrieve private keys,
+\par               and secmod.db, where N is a digit.  These are usually taken from Mozilla installations, so an  appropriate
+\par               value  might  be  \lquote ~/.mozilla/firefox/default.clm\rquote .  Mailx opens these files read-only and does not modify
+\par               them.  However, if the files are modified by Mozilla  while  mailx  is  running,  it  will  print  a  \lquote Bad
+\par               database\rquote  message.  It may be necessary to create copies of these files that are exclusively used by mailx
+\par               then.  Only applicable if S/MIME and SSL/TLS support is built using Network Security Services (NSS).
+\par 
+\par        ORGANIZATION
+\par               The value to put into the \lquote Organization:\rquote  field of the message header.
+\par 
+\par        PAGER  Pathname of the program to use in the more command or when crt variable is  set.   The  default  paginator
+\par               pg(1) or, in BSD compatibility mode, more(1) is used if this option is not defined.
+\par 
+\par        password-user@host
+\par               Set  the  password  for user when connecting to host.  If no such variable is defined for a host, the user
+\par               will be asked for a password on standard input.  Specifying passwords in a startup  file  is  generally  a
+\par               security risk, the file should be readable by the invoking user only.
+\par 
+\par        pipe-content/subcontent
+\par               When a MIME message part of content/subcontent type is displayed or it is replied to, its text is filtered
+\par               through the value of this variable interpreted as a shell command.  Special care must be taken when  using
+\par               such commands as mail viruses may be distributed by this method; if messages of type application/x-sh were
+\par               filtered through the shell, for example, a message sender could easily execute arbitrary code on the  sys-
+\par               tem mailx is running on.
+\par 
+\par        pop3-keepalive
+\par               POP3  servers  may  close the connection after a period of inactivity; the standard requires this to be at
+\par               least 10 minutes, but practical experience may vary.  Setting this variable to  a  numeric  value  greater
+\par               than 0 causes a NOOP command to be sent each value seconds if no other operation is performed.
+\par 
+\par        prompt The  string printed when a command is accepted.  Defaults to \lquote ? \rquote , or to \lquote & \rquote  if the bsdcompat variable is
+\par               set.
+\par 
+\par        quote  If set, mailx starts a replying message with the original message prefixed by the value  of  the  variable
+\par               indentprefix.  Normally, a heading consisting of \lquote Fromheaderfield wrote:\rquote  is printed before the quotation.
+\par               If the string noheading is assigned to the quote variable, this heading is omitted.  If the string headers
+\par               is  assigned,  the headers selected by the ignore/retain commands are printed above the message body, thus
+\par               quote acts like an automatic ~m command then.  If the string  allheaders  is  assigned,  all  headers  are
+\par               printed above the message body, and all MIME parts are included, thus quote acts like an automatic ~M com-
+\par               mand then.
+\par 
+\par        record If defined, gives the pathname of the folder used to record all outgoing mail.  If not defined, then  out-
+\par               going  mail  is  not so saved.  When saving to this folder fails, the message is not sent but saved to the
+\par               \lquote dead.letter\rquote  file instead.
+\par 
+\par        replyto
+\par               A list of addresses to put into the \lquote Reply-To:\rquote  field of the message header.  If replying  to  a  message,
+\par               such addresses are handled as if they were in the alternates list.
+\par 
+\par        screen When mailx initially prints the message headers, it determines the number to print by looking at the speed
+\par               of the terminal.  The faster the terminal, the more it prints.  This option overrides this calculation and
+\par               specifies  how  many  message headers are printed.  This number is also used for scrolling with the z com-
+\par               mand.
+\par 
+\par        sendcharsets
+\par               A comma-separated list of character set names that can be used in Internet mail.  When a message that con-
+\par               tains characters not representable in US-ASCII is prepared for sending, mailx tries to convert its text to
+\par               each of the given character sets in order and uses the first appropriate one.  The default is \lquote utf-8\rquote .
+\par 
+\par               Character sets assigned to this variable should be ordered in ascending complexity.   That  is,  the  list
+\par               should  start  with e.g.  \lquote iso-8859-1\rquote  for compatibility with older mail clients, might contain some other
+\par               language-specific character sets, and should end with \lquote utf-8\rquote  to handle messages  that  combine  texts  in
+\par               multiple languages.
+\par 
+\par        sender An  address  that  is put into the \lquote Sender:\rquote  field of outgoing messages.  This field needs not normally be
+\par               present.  It is, however, required if the \lquote From:\rquote  field contains more than one address.  It  can  also  be
+\par               used to indicate that a message was sent on behalf of somebody other; in this case, \lquote From:\rquote  should contain
+\par               the address of the person that took responsibility for the  message,  and  \lquote Sender:\rquote   should  contain  the
+\par               address  of the person that actually sent the message.  The sender address is handled as if it were in the
+\par               alternates list.
+\par 
+\par        sendmail
+\par               To use an alternate mail delivery system, set this option to the full pathname  of  the  program  to  use.
+\par               This should be used with care.
+\par 
+\par        SHELL  Pathname  of  the shell to use in the ! command and the ~! escape.  A default shell is used if this option
+\par               is not defined.
+\par 
+\par        Sign   A string for use with the ~A command.
+\par 
+\par        sign   A string for use with the ~a command.
+\par 
+\par        signature
+\par               Must correspond to the name of a readable file if set.  The file\rquote s content is then appended to each
+\par               singlepart  message  and  to  the first part of each multipart message.  Be warned that there is no
+\par               possibility to edit the signature for an individual message.
+\par 
+\par        smime-ca-dir
+\par               Specifies a directory with CA certificates for verification of S/MIME signed messages.  The  format
+\par               is the same as described in SSL_CTX_load_verify_locations(3).  Only applicable if S/MIME support is
+\par               built using OpenSSL.
+\par 
+\par        smime-ca-file
+\par               Specifies a file with CA certificates for verification of S/MIME signed messages.   The  format  is
+\par               the  same  as  described in SSL_CTX_load_verify_locations(3).  Only applicable if S/MIME support is
+\par               built using OpenSSL.
+\par 
+\par        smime-cipher-user@host
+\par               Specifies a cipher to use when generating S/MIME encrypted messages for user@host.   Valid  ciphers
+\par               are  rc2-40  (RC2  with 40 bits), rc2-64 (RC2 with 64 bits), des (DES, 56 bits) and des-ede3 (3DES,
+\par               112/168 bits).  The default is 3DES.  It is not recommended to  use  the  other  ciphers  unless  a
+\par               recipient\rquote s  client  is  actually unable to handle 3DES since they are comparatively weak; but even
+\par               so, the recipient should upgrade his software in preference.
+\par 
+\par        smime-crl-file
+\par               Specifies a file that contains a CRL in PEM format to use when  verifying  S/MIME  messages.   Only
+\par               applicable if S/MIME support is built using OpenSSL.
+\par 
+\par        smime-crl-dir
+\par               Specifies a directory that contains files with CRLs in PEM format to use when verifying S/MIME mes-
+\par               sages.  Only applicable if S/MIME support is built using OpenSSL.
+\par 
+\par        smime-encrypt-user@host
+\par               If this variable is set, messages to user@host are encrypted before sending.  If S/MIME support  is
+\par               built  using  OpenSSL,  the value of the variable must be set to the name of a file that contains a
+\par               certificate in PEM format.  If S/MIME support is built using NSS, the value  of  this  variable  is
+\par               ignored,  but  if  multiple  certificates for user@host are available, the smime-nickname-user@host
+\par               variable should be set.  Otherwise a certificate for the recipient is automatically retrieved  from
+\par               the certificate database, if possible.
+\par 
+\par               If  a message is sent to multiple recipients, each of them for whom a corresponding variable is set
+\par               will receive an individually encrypted message; other recipients will continue to receive the  mes-
+\par               sage  in  plain  text unless the smime-force-encryption variable is set.  It is recommended to sign
+\par               encrypted messages, i.e. to also set the smime-sign variable.
+\par 
+\par        smime-nickname-user@host
+\par               Specifies the nickname of a certificate to be used when encrypting messages for user@host  .   Only
+\par               applicable if S/MIME support is built using NSS.
+\par 
+\par        smime-sign-cert
+\par               Points  to  a  file  in PEM format that contains the user\rquote s private key as well as his certificate.
+\par               Both are used with S/MIME for signing and decrypting messages.  Only applicable if  S/MIME  support
+\par               is built using OpenSSL.
+\par 
+\par        smime-sign-cert-user@host
+\par               Overrides  smime-sign-cert  for the specific addresses.  When signing messages and the value of the
+\par               from variable is set to user@host, the specific file is  used.   When  decrypting  messages,  their
+\par               recipient  fields (To: and Cc:) are searched for addresses for which such a variable is set.  Mailx
+\par               always uses the first address that matches, so if the same message is sent to more than one of  the
+\par               user\rquote s addresses using different encryption keys, decryption might fail.  Only applicable if S/MIME
+\par               support is built using OpenSSL.
+\par 
+\par        smime-sign-nickname
+\par               Specifies that the named certificate be used for signing mail.  If this variable is not set, but  a
+\par               single  certificate  matching  the  current from address is found in the database, that one is used
+\par               automatically.  Only applicable if S/MIME support is built using NSS.
+\par 
+\par        smime-sign-nickname-user@host
+\par               Overrides smime-sign-nickname for a specific address.  Only applicable if S/MIME support  is  built
+\par               using NSS.
+\par 
+\par        smtp   Normally,  mailx invokes sendmail(8) directly to transfer messages.  If the smtp variable is set, a
+\par               SMTP connection to the server specified by the value of this variable is used instead.  If the SMTP
+\par               server  does not use the standard port, a value of server:port can be given, with port as a name or
+\par               as a number.
+\par 
+\par               There are two possible methods to get SSL/TLS encrypted SMTP sessions: First, the STARTTLS  command
+\par               can  be used to encrypt a session after it has been initiated, but before any user-related data has
+\par               been sent; see smtp-use-starttls above.  Second, some servers accept sessions  that  are  encrypted
+\par               from  their  beginning  on.  This mode is configured by assigning smtps://server[:port] to the smtp
+\par               variable.
+\par 
+\par               The SMTP transfer is executed in a child process; unless either the sendwait or the  verbose  vari-
+\par               able  is  set,  this  process runs asynchronously.  If it receives a TERM signal, it will abort and
+\par               save the message to the \lquote dead.letter\rquote  file.
+\par 
+\par        smtp-auth
+\par               Sets the SMTP authentication method.  If set to \lquote login\rquote , or if unset  and  smtp-auth-user  is  set,
+\par               AUTH  LOGIN is used.  If set to \lquote cram-md5\rquote , AUTH CRAM-MD5 is used; if set to \lquote plain\rquote , AUTH PLAIN is
+\par               used.  Otherwise, no SMTP authentication is performed.
+\par 
+\par        smtp-auth-user@host
+\par               Overrides smtp-auth for specific values of sender addresses, depending on the from variable.
+\par 
+\par        smtp-auth-password
+\par               Sets the global password for SMTP AUTH.  Both user and password have to be given for AUTH LOGIN and
+\par               AUTH CRAM-MD5.
+\par 
+\par        smtp-auth-password-user@host
+\par               Overrides  smtp-auth-password  for specific values of sender addresses, depending on the from vari-
+\par               able.
+\par 
+\par        smtp-auth-user
+\par               Sets the global user name for SMTP AUTH.  Both user and password have to be given  for  AUTH  LOGIN
+\par               and AUTH CRAM-MD5.
+\par 
+\par               If  this  variable is set but neither smtp-auth-password or a matching smtp-auth-password-user@host
+\par               can be found, mailx will as for a password on the user\rquote s terminal.
+\par 
+\par        smtp-auth-user-user@host
+\par               Overrides smtp-auth-user for specific values of sender addresses, depending on the from variable.
+\par 
+\par        ssl-ca-dir
+\par               Specifies a directory with CA certificates for verification of SSL/TLS  server  certificates.   See
+\par               SSL_CTX_load_verify_locations(3) for more information.  Only applicable if SSL/TLS support is built
+\par               using OpenSSL.
+\par 
+\par        ssl-ca-file
+\par               Specifies a file with CA  certificates  for  verification  of  SSL/TLS  server  certificates.   See
+\par               SSL_CTX_load_verify_locations(3) for more information.  Only applicable if SSL/TLS support is built
+\par               using OpenSSL.
+\par 
+\par        ssl-cert
+\par               Sets the file name for a SSL/TLS client certificate required by some servers.  Only  applicable  if
+\par               SSL/TLS support is built using OpenSSL.
+\par 
+\par        ssl-cert-user@host
+\par               Sets  an  account-specific  file  name  for  a SSL/TLS client certificate required by some servers.
+\par               Overrides ssl-cert for the specified account.  Only applicable if SSL/TLS support  is  built  using
+\par               OpenSSL.
+\par 
+\par        ssl-cipher-list
+\par               Specifies  a  list  of ciphers for SSL/TLS connections.  See ciphers(1) for more information.  Only
+\par               applicable if SSL/TLS support is built using OpenSSL.
+\par 
+\par        ssl-crl-file
+\par               Specifies a file that contains a CRL in PEM format to use when verifying  SSL/TLS  server  certifi-
+\par               cates.  Only applicable if SSL/TLS support is built using OpenSSL.
+\par 
+\par        ssl-crl-dir
+\par               Specifies  a  directory  that  contains files with CRLs in PEM format to use when verifying SSL/TLS
+\par               server certificates.  Only applicable if SSL/TLS support is built using OpenSSL.
+\par 
+\par        ssl-key
+\par               Sets the file name for the private key of a SSL/TLS client certificate.  If unset, the name of  the
+\par               certificate  file  is  used.  The file is expected to be in PEM format.  Only applicable if SSL/TLS
+\par               support is built using OpenSSL.
+\par 
+\par        ssl-key-user@host
+\par               Sets an account-specific file name for the private key of a SSL/TLS client certificate.   Overrides
+\par               ssl-key for the specified account.  Only applicable if SSL/TLS support is built using OpenSSL.
+\par 
+\par        ssl-method
+\par               Selects  a  SSL/TLS  protocol  version; valid values are \lquote ssl2\rquote , \lquote ssl3\rquote , and \lquote tls1\rquote .  If unset, the
+\par               method is selected automatically, if possible.
+\par 
+\par        ssl-method-user@host
+\par               Overrides ssl-method for a specific account.
+\par 
+\par        ssl-rand-egd
+\par               Gives the pathname to an entropy daemon socket, see RAND_egd(3).
+\par 
+\par        ssl-rand-file
+\par               Gives the pathname to a file with entropy data, see RAND_load_file(3).  If the file  is  a  regular
+\par               file  writable  by  the  invoking  user,  new data is written to it after it has been loaded.  Only
+\par               applicable if SSL/TLS support is built using OpenSSL.
+\par 
+\par        ssl-verify
+\par               Sets the action to be performed if an error occurs during SSL/TLS  server  certificate  validation.
+\par               Valid  values  are \lquote strict\rquote  (fail and close connection immediately), \lquote ask\rquote  (ask whether to continue
+\par               on standard input), \lquote warn\rquote  (print a warning and continue), \lquote ignore\rquote  (do  not  perform  validation).
+\par               The default is \lquote ask\rquote .
+\par 
+\par        ssl-verify-user@host
+\par               Overrides ssl-verify for a specific account.
+\par 
+\par        toplines
+\par               If  defined,  gives  the  number of lines of a message to be printed out with the top command; nor-
+\par               mally, the first five lines are printed.
+\par 
+\par        ttycharset
+\par               The character set of the terminal mailx operates on.  There is normally no need to set  this  vari-
+\par               able  since  mailx  can  determine this automatically by looking at the LC_CTYPE locale setting; if
+\par               this succeeds, the value is assigned at startup and will be displayed by  the  set  command.   Note
+\par               that this is not necessarily a character set name that can be used in Internet messages.
+\par 
+\par        VISUAL Pathname of the text editor to use in the visual command and ~v escape.
+\par 
+\par ENVIRONMENT VARIABLES
+\par        Besides the variables described above, mailx uses the following environment strings:
+\par 
+\par        HOME   The user\rquote s home directory.
+\par 
+\par        LANG, LC_ALL, LC_COLLATE, LC_CTYPE, LC_MESSAGES
+\par               See locale(7).
+\par 
+\par        MAILRC Is  used  as startup file instead of ~/.mailrc if set.  When mailx scripts are invoked on behalf of
+\par               other users, this variable should be set to \lquote /dev/null\rquote  to avoid side-effects  from  reading  their
+\par               configuration files.
+\par 
+\par        NAILRC If this variable is set and MAILRC is not set, it is read as startup file.
+\par 
+\par        SYSV3  Changes the letters printed in the first column of a header summary.
+\par 
+\par        TMPDIR Used as directory for temporary files instead of /tmp, if set.
+\par 
+\par FILES
+\par        ~/.mailrc
+\par               File giving initial commands.
+\par 
+\par        /etc/mail.rc
+\par               System wide initialization file.
+\par 
+\par        ~/.mime.types
+\par               Personal MIME types.
+\par 
+\par        /etc/mime.types
+\par               System wide MIME types.
+\par 
+\par EXAMPLES
+\par    Getting started
+\par        The  mailx command has two distinct usages, according to whether one wants to send or receive mail.  Send-
+\par        ing mail is simple: to send a message to a user whose email address is, say, <bill@host.example>, use  the
+\par        shell command:
+\par 
+\par            $ mailx bill@host.example
+\par 
+\par        then type your message.  Mailx will prompt you for a message subject first; after that, lines typed by you
+\par        form the body of the message.  When you reach the end of the message,  type  an  EOT  (control-d)  at  the
+\par        beginning of a line, which will cause mailx to echo \lquote EOT\rquote  and return you to the shell.
+\par 
+\par        If,  while  you  are  composing  the message you decide that you do not wish to send it after all, you can
+\par        abort the letter with a RUBOUT.  Typing a single RUBOUT causes mailx to print \lquote (Interrupt -- one  more  to
+\par        kill  letter)\rquote .  Typing a second RUBOUT causes mailx to save your partial letter on the file \lquote dead.letter\rquote 
+\par        in your home directory and abort the letter.  Once you have sent mail to someone, there is no way to  undo
+\par        the act, so be careful.
+\par 
+\par        If  you  want  to send the same message to several other people, you can list their email addresses on the
+\par        command line.  Thus,
+\par 
+\par            $ mailx sam@workstation.example bob@server.example
+\par            Subject: Fees
+\par            Tuition fees are due next Friday.  Don\rquote t forget!
+\par            <Control-d>
+\par            EOT
+\par            $
+\par 
+\par        will send the reminder to <sam@workstation.example>.  and <bob@server.example>.
+\par 
+\par        To read your mail, simply type
+\par 
+\par            $ mailx
+\par 
+\par        Mailx will respond by typing its version number and date and then listing the messages you  have  waiting.
+\par        Then  it will type a prompt and await your command.  The messages are assigned numbers starting with 1\emdash you
+\par        refer to the messages with these numbers.  Mailx keeps track of which messages are  new  (have  been  sent
+\par        since  you  last read your mail) and read (have been read by you).  New messages have an N next to them in
+\par        the header listing and old, but unread messages have a U next to them.  Mailx keeps track of  new/old  and
+\par        read/unread messages by putting a header field called Status into your messages.
+\par 
+\par        To  look at a specific message, use the type command, which may be abbreviated to simply t .  For example,
+\par        if you had the following messages:
+\par 
+\par            O 1 drfoo@myhost.example Wed Sep  1 19:52  18/631 "Fees"
+\par            O 2 sam@friends.example  Thu Sep  2 00:08  30/895
+\par 
+\par        you could examine the first message by giving the command:
+\par 
+\par            type 1
+\par 
+\par        which might cause to respond with, for example:
+\par 
+\par            Message  1:
+\par            From drfoo@myhost.example Wed Sep  1 19:52:25 2004
+\par            Subject: Fees
+\par            Status: R
+\par 
+\par            Tuition fees are due next Wednesday.  Don\rquote t forget!
+\par 
+\par        Many mailx commands that operate on messages take a message number as an argument like the  type  command.
+\par        For these commands, there is a notion of a current message.  When you enter the mailx program, the current
+\par        message is initially the first (or the first recent) one.  Thus, you can often omit the message number and
+\par        use, for example,
+\par 
+\par            t
+\par 
+\par        to  type the current message.  As a further shorthand, you can type a message by simply giving its message
+\par        number.  Hence,
+\par 
+\par            1
+\par 
+\par        would type the first message.
+\par 
+\par        Frequently, it is useful to read the messages in your mailbox in order, one after another.  You  can  read
+\par        the  next  message in mailx by simply typing a newline.  As a special case, you can type a newline as your
+\par        first command to mailx to type the first message.
+\par 
+\par        If, after typing a message, you wish to immediately send a reply, you can do so with  the  reply  command.
+\par        This  command, like type, takes a message number as an argument.  mailx then begins a message addressed to
+\par        the user who sent you the message.  You may then type in your letter in reply, followed by  a  <control-d>
+\par        at the beginning of a line, as before.
+\par 
+\par        Note  that  mailx  copies the subject header from the original message.  This is useful in that correspon-
+\par        dence about a particular matter will tend to retain the same subject heading, making it easy to recognize.
+\par        If there are other header fields in the message, like \lquote Cc:\rquote , the information found will also be used.
+\par 
+\par        Sometimes  you  will  receive a message that has been sent to several people and wish to reply only to the
+\par        person who sent it.  Reply with a capital R replies to a message, but sends a copy to the sender only.
+\par 
+\par        If you wish, while reading your mail, to send a message to someone, but not as a reply to one of your mes-
+\par        sages,  you can send the message directly with the mail command, which takes as arguments the names of the
+\par        recipients you wish to send to.  For example, to send a message to <frank@machine.example>, you would do:
+\par 
+\par            mail frank@machine.example
+\par 
+\par        To delete a message from the mail folder, you can use the delete  command.   In  addition  to  not  saving
+\par        deleted  messages,  mailx will not let you type them, either.  The effect is to make the message disappear
+\par        altogether, along with its number.
+\par 
+\par        Many features of mailx can be tailored to your liking with the set  command.   The  set  command  has  two
+\par        forms, depending on whether you are setting a binary option or a valued option.  Binary options are either
+\par        on or off.  For example, the askcc option informs mailx that each time you send a message, you want it  to
+\par        prompt you for a \lquote Cc:\rquote  header, to be included in the message.  To set the askcc option, you would type
+\par 
+\par            set askcc
+\par 
+\par        Valued  options are values which mailx uses to adapt to your tastes.  For example, the record option tells
+\par        mailx where to save messages sent by you, and is specified by
+\par 
+\par            set record=Sent
+\par 
+\par        for example.  Note that no spaces are allowed in set record=Sent .
+\par 
+\par        Mailx includes a simple facility for maintaining groups of messages  together  in  folders.   To  use  the
+\par        folder facility, you must tell mailx where you wish to keep your folders.  Each folder of messages will be
+\par        a single file.  For convenience, all of your folders are kept in a single directory of your choosing.   To
+\par        tell mailx where your folder directory is, put a line of the form
+\par 
+\par            set folder=letters
+\par 
+\par        in your .mailrc file.  If, as in the example above, your folder directory does not begin with a \lquote /\rquote , mailx
+\par        will assume that your folder directory is to be found starting from your home directory.
+\par 
+\par        Anywhere a file name is expected, you can use a folder name, preceded with \lquote +\rquote .  For  example,  to  put  a
+\par        message into a folder with the save command, you can use:
+\par 
+\par            save +classwork
+\par 
+\par        to  save the current message in the classwork folder.  If the classwork folder does not yet exist, it will
+\par        be created.  Note that messages which are saved with the save command are automatically removed from  your
+\par        system mailbox.
+\par 
+\par        In order to make a copy of a message in a folder without causing that message to be removed from your sys-
+\par        tem mailbox, use the copy command, which is identical in all other respects to the save command.
+\par 
+\par        The folder command can be used to direct mailx to the contents of a different folder.  For example,
+\par 
+\par            folder +classwork
+\par 
+\par        directs mailx to read the contents of the classwork folder.  All of the commands that you can use on  your
+\par        system mailbox are also applicable to folders, including type, delete, and reply.  To inquire which folder
+\par        you are currently editing, use simply:
+\par 
+\par            folder
+\par 
+\par        To list your current set of folders, use the folders command.
+\par 
+\par        Finally, the help command is available to print out a brief summary of the most important mailx  commands.
+\par 
+\par        While typing in a message to be sent to others, it is often useful to be able to invoke the text editor on
+\par        the partial message, print the message, execute a shell command, or  do  some  other  auxiliary  function.
+\par        Mailx provides these capabilities through tilde escapes , which consist of a tilde (~) at the beginning of
+\par        a line, followed by a single character which indicates the function to  be  performed.   For  example,  to
+\par        print the text of the message so far, use:
+\par 
+\par            ~p
+\par 
+\par        which  will print a line of dashes, the recipients of your message, and the text of the message so far.  A
+\par        list of the most important tilde escapes is available with \lquote ~?\rquote .
+\par 
+\par    IMAP or POP3 client setup
+\par        First you need the following data from your ISP: the host name of the IMAP or POP3 server, user  name  and
+\par        password for this server, and a notice whether the server uses SSL/TLS encryption.  Assuming the host name
+\par        is \lquote server.myisp.example\rquote  and your user name for that server is \lquote mylogin\rquote , you can refer to  this  account
+\par        using the folder command or -f command line option with
+\par 
+\par            imaps://mylogin@server.myisp.example
+\par 
+\par        (This  string is not necessarily the same as your Internet mail address.)  You can replace \lquote imaps://\rquote  with
+\par        \lquote imap://\rquote  if the server does not support SSL/TLS.  (If SSL/TLS support is built using NSS, the nss-config-
+\par        dir variable must be set before a connection can be initiated, see above).  Use \lquote pop3s://\rquote  or \lquote pop3://\rquote  if
+\par        the server does not offer IMAP.  You should use IMAP if you can, though; first because it  requires  fewer
+\par        network  operations  than  POP3  to get the contents of the mailbox and is thus faster; and second because
+\par        message attributes are maintained by the IMAP server, so you can easily distinguish new and  old  messages
+\par        each time you connect.  Even if the server does not accept IMAPS or POP3S connections, it is possible that
+\par        it supports the STARTTLS method to make a session SSL/TLS encrypted after the initial connection has  been
+\par        performed,  but before authentication begins.  The only reliable method to see if this works is to try it;
+\par        enter one of
+\par 
+\par            set imap-use-starttls
+\par            set pop3-use-starttls
+\par 
+\par        before you initiate the connection.
+\par 
+\par        As you probably want messages to be deleted from this account after saving them, prefix it with \lquote %:\rquote .  The
+\par        shortcut command can be used to avoid typing that many characters every time you want to connect:
+\par 
+\par            shortcut myisp %:imaps://mylogin@server.myisp.example
+\par 
+\par        You might want to put this string into a startup file.  As the shortcut command is specific to this imple-
+\par        mentation of mailx and will confuse other implementations, it should not be used  in  ~/.mailrc,  instead,
+\par        put
+\par 
+\par            set NAIL_EXTRA_RC=~/.nailrc
+\par 
+\par        in  ~/.mailrc and create a file ~/.nailrc containing the shortcut command above.  You can then access your
+\par        remote mailbox by invoking \lquote mailx -f myisp\rquote  on the command line, or by executing \lquote fi myisp\rquote  within  mailx.
+\par 
+\par        If  you want to use more than one IMAP mailbox on a server, or if you want to use the IMAP server for mail
+\par        storage too, the account command (which is also mailx-specific) is more appropriate than the shortcut com-
+\par        mand.  You can put the following in ~/.nailrc:
+\par 
+\par            account myisp \{
+\par                set folder=imaps://mylogin@server.myisp.example
+\par                set record=+Sent MBOX=+mbox outfolder
+\par            \}
+\par 
+\par        and can then access incoming mail for this account by invoking \lquote mailx -A myisp\rquote  on the command line, or by
+\par        executing \lquote ac myisp\rquote  within mailx.  After that, a command like \lquote copy 1 +otherfolder\rquote  will refer to  other-
+\par        folder on the IMAP server.  In particular, \lquote fi &\rquote  will change to the mbox folder, and \lquote fi +Sent\rquote  will show
+\par        your recorded sent mail, with both folders located on the IMAP server.
+\par 
+\par        Mailx will ask you for a password string each time you connect to a remote account.  If you can reasonably
+\par        trust the security of your workstation, you can give this password in the startup file as
+\par 
+\par            set password-mylogin@server.myisp.example="SECRET"
+\par 
+\par        You should change the permissions of this file to 0600, see chmod(1).
+\par 
+\par        Mailx supports different authentication methods for both IMAP and POP3.  If Kerberos is used at your loca-
+\par        tion, you can try to activate GSSAPI-based authentication by
+\par 
+\par            set imap-auth=gssapi
+\par 
+\par        The advantage of this method is that mailx does not need to know your password at all, nor needs  to  send
+\par        sensitive data over the network.  Otherwise, the options
+\par 
+\par            set imap-auth=cram-md5
+\par            set pop3-use-apop
+\par 
+\par        for  IMAP  and  POP3,  respectively, offer authentication methods that avoid to send the password in clear
+\par        text over the network, which is especially important if SSL/TLS cannot be used.  If the  server  does  not
+\par        offer  any  of these authentication methods, conventional user/password based authentication must be used.
+\par        It is sometimes helpful to set the verbose option when authentication problems occur.  Mailx will  display
+\par        all data sent to the server in clear text on the screen with this option, including passwords.  You should
+\par        thus take care that no unauthorized person can look at your terminal when this option is set.
+\par 
+\par        If you regularly use the same workstation to access IMAP accounts, you can greatly enhance performance  by
+\par        enabling  local  caching  of IMAP messages.  For any message that has been fully or partially fetched from
+\par        the server, a local copy is made and is used when the message is accessed again, so most  data  is  trans-
+\par        ferred over the network once only.  To enable the IMAP cache, select a local directory name and put
+\par 
+\par            set imap-cache=~/localdirectory
+\par 
+\par        in  the startup file.  All files within that directory can be overwritten or deleted by mailx at any time,
+\par        so you should not use the directory to store other information.
+\par 
+\par        Once the cache contains some messages, it is not strictly necessary anymore to open a  connection  to  the
+\par        IMAP  server  to access them.  When mailx is invoked with the -D option, or when the disconnected variable
+\par        is set, only cached data is used for any folder you open.  Messages that  have  not  yet  been  completely
+\par        cached are not available then, but all other messages can be handled as usual.  Changes made to IMAP mail-
+\par        boxes in disconnected mode are committed to the IMAP server next time it is used in online mode.  Synchro-
+\par        nizing the local status with the status on the server is thus partially within your responsibility; if you
+\par        forget to initiate a connection to the server again before you leave your location, changes  made  on  one
+\par        workstation are not available on others.  Also if you alter IMAP mailboxes from a workstation while uncom-
+\par        mitted changes are still pending on another, the latter data may become invalid.  The same might also hap-
+\par        pen  because  of  internal server status changes.  You should thus carefully evaluate this feature in your
+\par        environment before you rely on it.
+\par 
+\par        Many servers will close the connection after a short period of inactivity. Use one of
+\par 
+\par            set pop3-keepalive=30
+\par            set imap-keepalive=240
+\par 
+\par        to send a keepalive message each 30 seconds for POP3, or each 4 minutes for IMAP.
+\par 
+\par        If you encounter problems connecting to a SSL/TLS server, try the ssl-rand-egd and ssl-rand-file variables
+\par        (see  the OpenSSL FAQ for more information) or specify the protocol version with ssl-method.  Contact your
+\par        ISP if you need a client certificate or if verification of the server certificate fails.   If  the  failed
+\par        certificate is indeed valid, fetch its CA certificate by executing the shell command
+\par 
+\par            $ openssl s_client </dev/null -showcerts -connect \\
+\par                   server.myisp.example:imaps 2>&1 | tee log
+\par 
+\par        (see  s_client(1))  and  put it into the file specified with ssl-ca-file.  The data you need is located at
+\par        the end of the certificate chain within (and including) the  \lquote BEGIN  CERTIFICATE\rquote   and  \lquote END  CERTIFICATE\rquote 
+\par        lines.   (Note  that it is possible to fetch a forged certificate by this method.  You can only completely
+\par        rely on the authenticity of the CA certificate if you fetch it in a way that is trusted  by  other  means,
+\par        such as by personally receiving the certificate on storage media.)
+\par 
+\par    Creating a score file or message filter
+\par        The  scoring  commands  are best separated from other configuration for clarity, and are mostly mailx spe-
+\par        cific.  It is thus recommended to put them in a separate file that is sourced from your  NAIL_EXTRA_RC  as
+\par        follows:
+\par 
+\par            source ~/.scores
+\par 
+\par        The .scores file could then look as follows:
+\par 
+\par            define list \{
+\par                score (subject "important discussion") +10
+\par                score (subject "annoying discussion") -10
+\par                score (from "nicefellow@goodnet") +15
+\par                score (from "badguy@poornet") -5
+\par                move (header x-spam-flag "+++++") +junk
+\par            \}
+\par            set folder-hook-imap://user@host/public.list=list
+\par 
+\par        In  this  scheme,  you would see any mail from \lquote nicefellow@goodnet\rquote , even if the surrounding discussion is
+\par        annoying; but you normally would not see mail from \lquote badguy@poornet\rquote , unless he participates in the  impor-
+\par        tant  discussion.  Messages that are marked with five or more plus characters in their \lquote X-Spam-Flag\rquote  field
+\par        (inserted by some server-side filtering software) are moved to the folder \lquote junk\rquote  in the folder  directory.
+\par 
+\par        Be  aware  that  all  criteria in () lead to substring matches, so you would also score messages from e.g.
+\par        \lquote notsobadguy@poornetmakers\rquote  negative here.  It is possible to select  addresses  exactly  using  "address"
+\par        message  specifications, but these cannot be executed remotely and will thus cause all headers to be down-
+\par        loaded from IMAP servers while looking for matches.
+\par 
+\par        When searching messages on an IMAP server, best performance is usually achieved by sending as many  crite-
+\par        ria  as  possible  in  one large () specification, because each single such specification will result in a
+\par        separate network operation.
+\par 
+\par    Activating the Bayesian filter
+\par        The Bayesian junk mail filter works by examining the words contained in  messages.   You  decide  yourself
+\par        what  a  good  and what a bad message is.  Thus the resulting filter is your very personal one; once it is
+\par        correctly set up, it will filter only messages similar to those previously specified by you.
+\par 
+\par        To use the Bayesian filter, a location for the junk mail database must be defined first:
+\par 
+\par            set junkdb=~/.junkdb
+\par 
+\par        The junk mail database does not contain actual words extracted from messages, but  hashed  representations
+\par        of  them.  A foreign person who can read the database could only examine the frequency of previously known
+\par        words in your mail.
+\par 
+\par        If you have sufficient disk space (several 10 MB) available, it is recommended that you set  the  chained-
+\par        junk-tokens option.  The filter will then also consider two-word tokens, improving its accuracy.
+\par 
+\par        A  set  of  good messages and junk messages must now be available; it is also possible to use the incoming
+\par        new messages for this purpose, although it will of course take some time until the filter  becomes  useful
+\par        then.   Do  not  underestimate  the amount of statistical data needed; some hundred messages are typically
+\par        necessary to get satisfactory results, and many thousand messages for best operation.  You  have  to  pass
+\par        the  good  messages  to the good command, and the junk messages to the junk command.  If you ever acciden-
+\par        tally mark a good message as junk or vice-versa, call the ungood or unjunk command to correct this.
+\par 
+\par        Once a reasonable amount of statistics has been collected, new messages can be  classified  automatically.
+\par        The  classify command marks all messages that the filter considers to be junk, but it does not perform any
+\par        action on them by default.  It is recommended that you move these messages into a separate folder just for
+\par        the  case  that  false positives occur, or to pass them to the junk command later again to further improve
+\par        the junk mail database.  To automatically move incoming junk messages every time the inbox is opened,  put
+\par        lines  like  the following into your .scores file (or whatever name you gave to the file in the last exam-
+\par        ple):
+\par 
+\par            define junkfilter \{
+\par                classify (smaller 20000) :n
+\par                move :j +junk
+\par            \}
+\par            set folder-hook-imap://user@host/INBOX=junkfilter
+\par 
+\par        If you set the verbose option before running the classify command, mailx prints the words it uses for cal-
+\par        culating  the  junk  status along with their statistical probabilities.  This can help you to find out why
+\par        some messages are not classified as you would like them to be.  To see the statistical  probability  of  a
+\par        given word, use the probability command.
+\par 
+\par        If a junk message was not recognized as such, use the junk command to correct this.  Also if you encounter
+\par        a false positive (a good message that was wrongly classified as junk), pass it to the good command.
+\par 
+\par        Since the classify command must examine the entire text of all new messages in the respective folder, this
+\par        will  also  cause all of them to be downloaded from the IMAP server.  You should thus restrict the size of
+\par        messages for automatic filtering.  If server-based filtering is also available,  you  might  try  if  that
+\par        works for you first.
+\par 
+\par    Reading HTML mail
+\par        You  need  either the w3m or lynx utility or another command-line web browser that can write plain text to
+\par        standard output.
+\par 
+\par            set pipe-text/html="w3m -dump -T text/html"
+\par 
+\par        or
+\par 
+\par            set pipe-text/html="lynx -dump -force_html /dev/stdin"
+\par 
+\par        will then cause HTML message parts to be converted into a more friendly form.
+\par 
+\par    Viewing PDF attachments
+\par        Most PDF viewers do not accept input directly from a pipe.  It is thus necessary to store  the  attachment
+\par        in a temporary file, as with
+\par 
+\par            set pipe-application/pdf="cat >/tmp/mailx$$.pdf; \\
+\par                   acroread /tmp/mailx$$.pdf; rm /tmp/mailx$$.pdf"
+\par 
+\par        Note that security defects are discovered in PDF viewers from time to time.  Automatical command execution
+\par        like this can compromise your system security, in particular if you stay not always  informed  about  such
+\par        issues.
+\par 
+\par    Signed and encrypted messages with S/MIME
+\par        S/MIME provides two central mechanisms: message signing and message encryption.  A signed message contains
+\par        some data in addition to the regular text.  The data can be used to verify that the message was sent using
+\par        a  valid certificate, that the sender\rquote s address in the message header matches that in the certificate, and
+\par        that the message text has not been altered.  Signing a message does not change its regular text; it can be
+\par        read regardless of whether the recipient\rquote s software is able to handle S/MIME.  It is thus usually possible
+\par        to sign all outgoing messages if so desired.\emdash Encryption, in contrast, makes the message text invisible for
+\par        all  people except those who have access to the secret decryption key.  To encrypt a message, the specific
+\par        recipient\rquote s public encryption key must be known.  It is thus not possible to send encrypted mail to people
+\par        unless  their key has been retrieved from either previous communication or public key directories.  A mes-
+\par        sage should always be signed before it is encrypted.  Otherwise, it is still possible that  the  encrypted
+\par        message text is altered.
+\par 
+\par        A  central  concept  to S/MIME is that of the certification authority (CA).  A CA is a trusted institution
+\par        that issues certificates.  For each of these certificates, it can be verified that  it  really  originates
+\par        from the CA, provided that the CA\rquote s own certificate is previously known.  A set of CA certificates is usu-
+\par        ally delivered with OpenSSL and installed on your system.  If you trust the source of your  OpenSSL  soft-
+\par        ware  installation, this offers reasonable security for S/MIME on the Internet.  In general, a certificate
+\par        cannot be more secure than the method its CA certificate has been retrieved with,  though.   Thus  if  you
+\par        download  a  CA  certificate from the Internet, you can only trust the messages you verify using that cer-
+\par        tificate as much as you trust the download process.
+\par 
+\par        The first thing you need for participating in  S/MIME  message  exchange  is  your  personal  certificate,
+\par        including  a  private  key.  The certificate contains public information, in particular your name and your
+\par        email address, and the public key that is used by others to encrypt messages for you, and to verify signed
+\par        messages  they supposedly received from you.  The certificate is included in each signed message you send.
+\par        The private key must be kept secret.  It is used to decrypt messages that were previously  encrypted  with
+\par        your public key, and to sign messages.
+\par 
+\par        For  personal  use,  it  is recommended that you get a S/MIME certificate from one of the major CAs on the
+\par        Internet using your WWW browser.  (Many CAs offer such certificates for free.)  You will usually receive a
+\par        combined certificate and private key in PKCS#12 format which mailx does not directly accept if S/MIME sup-
+\par        port is built using OpenSSL.  To convert it to PEM format, use the following shell command:
+\par 
+\par            $ openssl pkcs12 -in cert.p12 -out cert.pem -clcerts \\
+\par                -nodes
+\par 
+\par        If you omit the -nodes parameter, you can specifiy an additional PEM pass phrase for protecting  the  pri-
+\par        vate key.  Mailx will then ask you for that pass phrase each time it signs or decrypts a message.  You can
+\par        then use
+\par 
+\par            set smime-sign-cert-myname@myisp.example=cert.pem
+\par 
+\par        to make this private key and certificate known to mailx.
+\par 
+\par        If S/MIME support is built using NSS, the PKCS#12 file must be installed using Mozilla (provided that nss-
+\par        config-dir  is set appropriately, see above), and no further action is necessary unless multiple user cer-
+\par        tificates for the same email address are installed.  In this case, the smime-sign-nickname variable has to
+\par        be set appropriately.
+\par 
+\par        You can now sign outgoing messages.  Just use
+\par 
+\par            set smime-sign
+\par 
+\par        to do so.
+\par 
+\par        From  each  signed message you send, the recipient can fetch your certificate and use it to send encrypted
+\par        mail back to you.  Accordingly if somebody sends you a signed message, you can do the same.  First use the
+\par        verify  command  to  check the validity of the certificate.  After that, retrieve the certificate and tell
+\par        mailx that it should use it for encryption:
+\par 
+\par            certsave filename
+\par            set smime-encrypt-user@host=filename
+\par 
+\par        If S/MIME support is built using NSS, the saved certificate must be installed using Mozilla.  The value of
+\par        the smime-encrypt-user@host is ignored then, but if multiple certificates for the recipient are available,
+\par        the smime-nickname-user@host variable must be set.
+\par 
+\par        You should carefully consider if you prefer to store encrypted messages in decrypted  form.   If  you  do,
+\par        anybody  who has access to your mail folders can read them, but if you do not, you might be unable to read
+\par        them yourself later if you happen to lose your  private  key.   The  decrypt  command  saves  messages  in
+\par        decrypted form, while the save, copy, and move commands leave them encrypted.
+\par 
+\par        Note  that neither S/MIME signing nor encryption applies to message subjects or other header fields.  Thus
+\par        they may not contain sensitive information for encrypted messages, and cannot be trusted even if the  mes-
+\par        sage  content  has been verified.  When sending signed messages, it is recommended to repeat any important
+\par        header information in the message text.
+\par 
+\par    Using CRLs with S/MIME or SSL/TLS
+\par        Certification authorities (CAs) issue certificate revocation lists (CRLs) on a regular basis.  These lists
+\par        contain  the  serial  numbers of certificates that have been declared invalid after they have been issued.
+\par        Such usually happens because the private key for the certificate has been compromised, because  the  owner
+\par        of  the certificate has left the organization that is mentioned in the certificate, etc.  To seriously use
+\par        S/MIME or SSL/TLS verification, an up-to-date CRL is required for each trusted CA.  There is otherwise  no
+\par        method  to distinguish between valid and invalidated certificates.  Mailx currently offers no mechanism to
+\par        fetch CRLs, or to access them on the Internet, so you have to retrieve them by some external mechanism.
+\par 
+\par        If S/MIME and SSL/TLS support are built using OpenSSL, mailx accepts CRLs in PEM format only; CRLs in  DER
+\par        format must be converted, e.g. with the shell command
+\par 
+\par            $ openssl crl -inform DER -in crl.der -out crl.pem
+\par 
+\par        To  tell  mailx  about the CRLs, a directory that contains all CRL files (and no other files) must be cre-
+\par        ated.  The smime-crl-dir or ssl-crl-dir variables, respectively, must then be set to point to that  direc-
+\par        tory.  After that, mailx requires a CRL to be present for each CA that is used to verify a certificate.
+\par 
+\par        If  S/MIME and SSL/TLS support are built using NSS, CRLs can be imported in Mozilla applications (provided
+\par        that nss-config-dir is set appropriately).
+\par 
+\par    Sending mail from scripts
+\par        If you want to send mail from scripts, you must be aware that mailx reads the user\rquote s  configuration  files
+\par        by  default.   So  unless your script is only intended for your own personal use (as e.g. a cron job), you
+\par        need to circumvent this by invoking mailx like
+\par 
+\par            MAILRC=/dev/null mailx -n
+\par 
+\par        You then need to create a configuration for mailx for your script.  This can be done  by  either  pointing
+\par        the  MAILRC  variable to a custom configuration file, or by passing the configuration in environment vari-
+\par        ables.  Since many of the configuration options are not valid shell variables, the env command  is  useful
+\par        in this situation.  An invocation could thus look like
+\par 
+\par            env MAILRC=/dev/null from=scriptreply@domain smtp=host \\
+\par                  smtp-auth-user=login smtp-auth-password=secret \\
+\par                  smtp-auth=login mailx -n -s "subject" \\
+\par                  -a attachment_file recipient@domain <content_file
+\par 
+\par SEE ALSO
+\par        fmt(1),   newaliases(1),   openssl(1),   pg(1),   more(1),  vacation(1),  ssl(3),  aliases(5),  locale(7),
+\par        mailaddr(7), sendmail(8)
+\par 
+\par NOTES
+\par        Variables in the environment passed to mailx cannot be unset.
+\par 
+\par        The character set conversion relies on the iconv(3) function.  Its functionality  differs  widely  between
+\par        the  various  system  environments  mailx  runs  on.  If the message \lquote Cannot convert from a to b\rquote  appears,
+\par        either some characters within the message header or text are not appropriate for  the  currently  selected
+\par        terminal character set, or the needed conversion is not supported by the system.  In the first case, it is
+\par        necessary to set an appropriate LC_CTYPE locale (e.g. en_US) or the ttycharset variable.   In  the  second
+\par        case,  the  sendcharsets  and  ttycharset variables must be set to the same value to inhibit character set
+\par        conversion.  If iconv() is not available at all, the value assigned to sendcharsets must match the charac-
+\par        ter set that is used on the terminal.
+\par 
+\par        Mailx  expects  input text to be in Unix format, with lines separated by newline (^J, \\n) characters only.
+\par        Non-Unix text files that use carriage return (^M, \\r) characters in addition will  be  treated  as  binary
+\par        data; to send such files as text, strip these characters e. g. by
+\par 
+\par               tr -d \rquote \\015\rquote  <input | mailx . . .
+\par 
+\par        or fix the tools that generate them.
+\par 
+\par        Limitations  with  IMAP  mailboxes  are: It is not possible to edit messages, but it is possible to append
+\par        them.  Thus to edit a message, create a local copy of it, edit it, append it,  and  delete  the  original.
+\par        The  line  count for the header display is only appropriate if the entire message has been downloaded from
+\par        the server.  The marking of messages as \lquote new\rquote  is performed by the IMAP server; use  of  the  exit  command
+\par        instead  of  quit  will not cause it to be reset, and if the autoinc/newmail variables are unset, messages
+\par        that arrived during a session will not be in state \lquote new\rquote  anymore when the folder is opened again.  Also if
+\par        commands  queued  in  disconnected  mode are committed, the IMAP server will delete the \lquote new\rquote  flag for all
+\par        messages in the changed folder, and new messages will appear as unread when it  is  selected  for  viewing
+\par        later.  The \lquote flagged\rquote , \lquote answered\rquote , and \lquote draft\rquote  attributes are usually permanent, but some IMAP servers are
+\par        known to drop them without notification.  Message numbers may change  with  IMAP  every  time  before  the
+\par        prompt  is printed if mailx is notified by the server that messages have been deleted by some other client
+\par        or process.  In this case, \lquote Expunged n messages\rquote  is printed, and message numbers may have changed.
+\par 
+\par        Limitations with POP3 mailboxes are: It is not possible to edit messages, they  can  only  be  copied  and
+\par        deleted.   The  line count for the header display is only appropriate if the entire message has been down-
+\par        loaded from the server.  The status field of a message is maintained by the  server  between  connections;
+\par        some  servers  do not update it at all, and with a server that does, the \lquote exit\rquote  command will not cause the
+\par        message status to be reset.  The \lquote newmail\rquote  command and the \lquote newmail\rquote  variable have no effect.  It  is  not
+\par        possible to rename or to remove POP3 mailboxes.
+\par 
+\par        If a RUBOUT (interrupt) is typed while an IMAP or POP3 operation is in progress, mailx will wait until the
+\par        operation can be safely aborted, and will then return to the command loop  and  print  the  prompt  again.
+\par        When  a  second RUBOUT is typed while mailx is waiting for the operation to complete, the operation itself
+\par        will be canceled.  In this case, data that has not been fetched yet will have to  be  fetched  before  the
+\par        next command can be performed.  If the canceled operation was using an SSL/TLS encrypted channel, an error
+\par        in the SSL transport will very likely result, and the connection is no longer usable.
+\par 
+\par        As mailx is a mail user agent, it provides only basic SMTP services.  If it fails to contact its  upstream
+\par        SMTP  server,  it  will not make further attempts to transfer the message at a later time, and it does not
+\par        leave other information about this condition than an error message on the  terminal  and  a  \lquote dead.letter\rquote 
+\par        file.   This  is usually not a problem if the SMTP server is located in the same local network as the com-
+\par        puter on which mailx is run.  However, care should be taken when using a remote server of an ISP; it might
+\par        be better to set up a local SMTP server then which just acts as a proxy.
+\par 
+\par        Mailx  immediately  contacts  the  SMTP  server (or /usr/lib/sendmail) even when operating in disconnected
+\par        mode.  It would not make much sense for mailx to defer outgoing mail since SMTP  servers  usually  provide
+\par        much  more elaborated delay handling than mailx could perform as a client.  Thus the recommended setup for
+\par        sending mail in disconnected mode is to configure a local SMTP server such that it sends outgoing mail  as
+\par        soon  as  an  external  network connection is available again, i.e. to advise it to do that from a network
+\par        startup script.
+\par 
+\par        The junk mail filter follows the concepts developed by Paul Graham in his articles, \lquote \lquote A Plan  for  Spam\rquote \rquote ,
+\par        August  2002,  <http://www.paulgraham.com/spam.html>,  and  \lquote \lquote Better  Bayesian  Filtering\rquote \rquote , January 2003,
+\par        <http://www.paulgraham.com/better.html>.  Chained tokens are due to a  paper  by  Jonathan  A.  Zdziarski,
+\par        \lquote \lquote Advanced      Language      Classification      using      Chained      Tokens\rquote \rquote ,     February     2004,
+\par        <http://www.nuclearelephant.com/papers/chained.html>.
+\par 
+\par        A mail command appeared in Version 1 AT&T Unix.  Berkeley Mail was written in 1978 by Kurt  Shoens.   This
+\par        man page is derived from from The Mail Reference Manual originally written by Kurt Shoens.  Heirloom Mailx
+\par        enhancements are maintained and documented by Gunnar Ritter.
+\par 
+\par        Portions of this text are reprinted and reproduced in electronic form from IEEE Std 1003.1, 2003  Edition,
+\par        Standard  for  Information Technology \emdash  Operating System Interface (POSIX), The Open Group Base Specifica-
+\par        tions Issue 6, Copyright \u169 ? 2001-2003 by the Institute of Electrical and Electronics Engineers, Inc and The
+\par        Open  Group. In the event of any discrepancy between this version and the original IEEE and The Open Group
+\par        Standard, the original IEEE and The Open Group Standard is the referee document. The original Standard can
+\par        be obtained online at http://www.opengroup.org/unix/online.html .  Redistribution of this material is per-
+\par        mitted so long as this notice remains intact.
+\par 
+\par Heirloom mailx 12.4                 10/1/07                           MAILX(1)\par}

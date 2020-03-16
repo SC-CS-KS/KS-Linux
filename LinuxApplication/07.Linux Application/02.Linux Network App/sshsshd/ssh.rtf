@@ -1,0 +1,707 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil\fcharset0 Times New Roman;}}{\colortbl;\red0\green0\blue255;\red255\green0\blue0;\red0\green0\blue0;\red79\green129\blue189;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid343937664
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\b\i\fs28}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+\listid202563717}
+{\list\listtemplateid676280475\listsimple1
+{\listlevel\levelnfc0\leveljc0\li1380\fi-420\jclisttab\tx1380\levelstartat1{\leveltext\'02\'00);}{\levelnumbers\'01;}\f3\b\i\fs24\cf4}
+\listid1201441547}
+}
+{\*\listoverridetable
+{\listoverride\listid202563717\listoverridecount0\ls1}
+{\listoverride\listid1201441547\listoverridecount0\ls2}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf3 ssh
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs20 SSH(1)                    BSD General Commands Manual                   SSH(1)
+\par 
+\par NAME
+\par \plain \f1\fs20\cf1      ssh - OpenSSH SSH client (remote login program)
+\par \plain \f1\fs20 
+\par SYNOPSIS
+\par      ssh [-1246AaCfgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec] [-D  [bind_address:]port] [-e escape_char]
+\par          [-F configfile] [-i identity_file] [-L  [bind_address:]port:host:hostport] [-l login_name] [-m mac_spec]
+\par          [-O ctl_cmd] [-o option] [-p port] [-R  [bind_address:]port:host:hostport] [-S ctl_path]
+\par          [-w local_tun[:remote_tun]] \plain \f1\fs20\cf2 [user@]hostname [command]
+\par \plain \f1\fs20 
+\par DESCRIPTION
+\par      ssh (SSH client) is a program for logging into a remote machine and for executing commands on a remote machine.  It
+\par      is intended to replace rlogin and rsh, and provide secure encrypted communications between two untrusted hosts over
+\par      an insecure network.  X11 connections and arbitrary TCP ports can also be forwarded over the secure channel.
+\par 
+\par      ssh connects and logs into the specified hostname (with optional user name).  The user must prove his/her identity
+\par      to the remote machine using one of several methods depending on the protocol version used (see below).
+\par 
+\par      If command is specified, it is executed on the remote host instead of a login shell.
+\par 
+\par      The options are as follows:
+\par      -1      Forces ssh to try protocol version 1 only.
+\par      -2      Forces ssh to try protocol version 2 only.
+\par      -4      Forces ssh to use IPv4 addresses only.
+\par      -6      Forces ssh to use IPv6 addresses only.
+\par 
+\par      -A      Enables forwarding of the authentication agent connection.  This can also be specified on a per-host basis
+\par              in a configuration file.
+\par              Agent forwarding should be enabled with caution.  Users with the ability to bypass file permissions on the
+\par              remote host (for the agent\rquote s Unix-domain socket) can access the local agent through the forwarded connec-
+\par              tion.  An attacker cannot obtain key material from the agent, however they can perform operations on the
+\par              keys that enable them to authenticate using the identities loaded into the agent.
+\par 
+\par      -a      Disables forwarding of the authentication agent connection.
+\par 
+\par      -b bind_address
+\par              Use bind_address on the local machine as the source address of the connection.  Only useful on systems with
+\par              more than one address.
+\par 
+\par      -C      Requests compression of all data (including stdin, stdout, stderr, and data for forwarded X11 and TCP con-
+\par              nections).  The compression algorithm is the same used by gzip(1), and the \ldblquote level\rdblquote  can be controlled by the
+\par              CompressionLevel option for protocol version 1.  Compression is desirable on modem lines and other slow
+\par              connections, but will only slow down things on fast networks.  The default value can be set on a host-by-
+\par              host basis in the configuration files; see the Compression option.
+\par 
+\par      -c cipher_spec
+\par              Selects the cipher specification for encrypting the session.
+\par 
+\par              Protocol version 1 allows specification of a single cipher.  The supported values are \ldblquote 3des\rdblquote , \ldblquote blowfish\rdblquote ,
+\par              and \ldblquote des\rdblquote .  3des (triple-des) is an encrypt-decrypt-encrypt triple with three different keys.  It is
+\par              believed to be secure.  blowfish is a fast block cipher; it appears very secure and is much faster than
+\par              3des.  des is only supported in the ssh client for interoperability with legacy protocol 1 implementations
+\par              that do not support the 3des cipher.  Its use is strongly discouraged due to cryptographic weaknesses.  The
+\par              default is \ldblquote 3des\rdblquote .
+\par 
+\par              For protocol version 2, cipher_spec is a comma-separated list of ciphers listed in order of preference.
+\par              See the Ciphers keyword for more information.
+\par 
+\par      -D [bind_address:]port
+\par              Specifies a local \ldblquote dynamic\rdblquote  application-level port forwarding.  This works by allocating a socket to listen
+\par              to port on the local side, optionally bound to the specified bind_address.  Whenever a connection is made
+\par              to this port, the connection is forwarded over the secure channel, and the application protocol is then
+\par              used to determine where to connect to from the remote machine.  Currently the SOCKS4 and SOCKS5 protocols
+\par              are supported, and ssh will act as a SOCKS server.  Only root can forward privileged ports.  Dynamic port
+\par              forwardings can also be specified in the configuration file.
+\par 
+\par              IPv6 addresses can be specified with an alternative syntax: [bind_address/]port or by enclosing the address
+\par              in square brackets.  Only the superuser can forward privileged ports.  By default, the local port is bound
+\par              in accordance with the GatewayPorts setting.  However, an explicit bind_address may be used to bind the
+\par              connection to a specific address.  The bind_address of \ldblquote localhost\rdblquote  indicates that the listening port be
+\par              bound for local use only, while an empty address or \lquote *\rquote  indicates that the port should be available from
+\par              all interfaces.
+\par 
+\par      -e escape_char
+\par              Sets the escape character for sessions with a pty (default: \lquote ~\rquote ).  The escape character is only recognized
+\par              at the beginning of a line.  The escape character followed by a dot (\lquote .\rquote ) closes the connection; followed
+\par              by control-Z suspends the connection; and followed by itself sends the escape character once.  Setting the
+\par              character to \ldblquote none\rdblquote  disables any escapes and makes the session fully transparent.
+\par 
+\par      -F configfile
+\par              Specifies an alternative per-user configuration file.  If a configuration file is given on the command
+\par              line, the system-wide configuration file (/etc/ssh/ssh_config) will be ignored.  The default for the per-
+\par              user configuration file is ~/.ssh/config.
+\par 
+\par      -f      Requests ssh to go to background just before command execution.  This is useful if ssh is going to ask for
+\par              passwords or passphrases, but the user wants it in the background.  This implies -n.  The recommended way
+\par              to start X11 programs at a remote site is with something like ssh -f host xterm.
+\par 
+\par              If the ExitOnForwardFailure configuration option is set to \ldblquote yes\rdblquote , then a client started with -f will wait
+\par              for all remote port forwards to be successfully established before placing itself in the background.
+\par 
+\par      -g      Allows remote hosts to connect to local forwarded ports.
+\par 
+\par      -I smartcard_device
+\par              Specify the device ssh should use to communicate with a smartcard used for storing the user\rquote s private RSA
+\par              key.  This option is only available if support for smartcard devices is compiled in (default is no sup-
+\par              port).
+\par 
+\par      -i identity_file
+\par              Selects a file from which the identity (private key) for RSA or DSA authentication is read.  The default is
+\par              ~/.ssh/identity for protocol version 1, and ~/.ssh/id_rsa and ~/.ssh/id_dsa for protocol version 2.  Iden-
+\par              tity files may also be specified on a per-host basis in the configuration file.  It is possible to have
+\par              multiple -i options (and multiple identities specified in configuration files).
+\par 
+\par      -K      Enables GSSAPI-based authentication and forwarding (delegation) of GSSAPI credentials to the server.
+\par 
+\par      -k      Disables forwarding (delegation) of GSSAPI credentials to the server.
+\par 
+\par      -L [bind_address:]port:host:hostport
+\par              Specifies that the given port on the local (client) host is to be forwarded to the given host and port on
+\par              the remote side.  This works by allocating a socket to listen to port on the local side, optionally bound
+\par              to the specified bind_address.  Whenever a connection is made to this port, the connection is forwarded
+\par              over the secure channel, and a connection is made to host port hostport from the remote machine.  Port for-
+\par              wardings can also be specified in the configuration file.  IPv6 addresses can be specified with an alterna-
+\par              tive syntax: [bind_address/]port/host/hostport or by enclosing the address in square brackets.  Only the
+\par              superuser can forward privileged ports.  By default, the local port is bound in accordance with the
+\par              GatewayPorts setting.  However, an explicit bind_address may be used to bind the connection to a specific
+\par              address.  The bind_address of \ldblquote localhost\rdblquote  indicates that the listening port be bound for local use only,
+\par              while an empty address or \lquote *\rquote  indicates that the port should be available from all interfaces.
+\par 
+\par      -l login_name
+\par              Specifies the user to log in as on the remote machine.  This also may be specified on a per-host basis in
+\par              the configuration file.
+\par 
+\par      -M      Places the ssh client into \ldblquote master\rdblquote  mode for connection sharing.  Multiple -M options places ssh into
+\par              \ldblquote master\rdblquote  mode with confirmation required before slave connections are accepted.  Refer to the description
+\par              of ControlMaster in ssh_config(5) for details.
+\par 
+\par      -m mac_spec
+\par              Additionally, for protocol version 2 a comma-separated list of MAC (message authentication code) algorithms
+\par              can be specified in order of preference.  See the MACs keyword for more information.
+\par 
+\par      -N      Do not execute a remote command.  This is useful for just forwarding ports (protocol version 2 only).
+\par 
+\par      -n      Redirects stdin from /dev/null (actually, prevents reading from stdin).  This must be used when ssh is run
+\par              in the background.  A common trick is to use this to run X11 programs on a remote machine.  For example,
+\par              ssh -n shadows.cs.hut.fi emacs & will start an emacs on shadows.cs.hut.fi, and the X11 connection will be
+\par              automatically forwarded over an encrypted channel.  The ssh program will be put in the background.  (This
+\par              does not work if ssh needs to ask for a password or passphrase; see also the -f option.)
+\par 
+\par      -O ctl_cmd
+\par              Control an active connection multiplexing master process.  When the -O option is specified, the ctl_cmd
+\par              argument is interpreted and passed to the master process.  Valid commands are: \ldblquote check\rdblquote  (check that the mas-
+\par              ter process is running) and \ldblquote exit\rdblquote  (request the master to exit).
+\par 
+\par      -o option
+\par              Can be used to give options in the format used in the configuration file.  This is useful for specifying
+\par              options for which there is no separate command-line flag.  For full details of the options listed below,
+\par              and their possible values, see ssh_config(5).
+\par 
+\par                    AddressFamily
+\par                    BatchMode
+\par                    BindAddress
+\par                    ChallengeResponseAuthentication
+\par                    CheckHostIP
+\par                    Cipher
+\par                    Ciphers
+\par                    ClearAllForwardings
+\par                    Compression
+\par                    CompressionLevel
+\par                    ConnectionAttempts
+\par                    ConnectTimeout
+\par                    ControlMaster
+\par                    ControlPath
+\par                    DynamicForward
+\par                    EscapeChar
+\par                    ExitOnForwardFailure
+\par                    ForwardAgent
+\par                    ForwardX11
+\par                    ForwardX11Trusted
+\par                    GatewayPorts
+\par                    GlobalKnownHostsFile
+\par                    GSSAPIAuthentication
+\par                    GSSAPIDelegateCredentials
+\par                    HashKnownHosts
+\par                    Host
+\par                    HostbasedAuthentication
+\par                    HostKeyAlgorithms
+\par                    HostKeyAlias
+\par                    HostName
+\par                    IdentityFile
+\par                    IdentitiesOnly
+\par                    KbdInteractiveDevices
+\par                    LocalCommand
+\par                    LocalForward
+\par                    LogLevel
+\par                    MACs
+\par                    NoHostAuthenticationForLocalhost
+\par                    NumberOfPasswordPrompts
+\par                    PasswordAuthentication
+\par                    PermitLocalCommand
+\par                    Port
+\par                    PreferredAuthentications
+\par                    Protocol
+\par                    ProxyCommand
+\par                    PubkeyAuthentication
+\par                    RekeyLimit
+\par                    RemoteForward
+\par                    RhostsRSAAuthentication
+\par                    RSAAuthentication
+\par                    SendEnv
+\par                    ServerAliveInterval
+\par                    ServerAliveCountMax
+\par                    SmartcardDevice
+\par                    StrictHostKeyChecking
+\par                    TCPKeepAlive
+\par                    Tunnel
+\par                    TunnelDevice
+\par                    UsePrivilegedPort
+\par                    User
+\par                    UserKnownHostsFile
+\par                    VerifyHostKeyDNS
+\par                    VisualHostKey
+\par                    XAuthLocation
+\par 
+\par      -p port
+\par              Port to connect to on the remote host.  This can be specified on a per-host basis in the configuration
+\par              file.
+\par 
+\par      -q      Quiet mode.  Causes most warning and diagnostic messages to be suppressed.
+\par 
+\par      -R [bind_address:]port:host:hostport
+\par              Specifies that the given port on the remote (server) host is to be forwarded to the given host and port on
+\par              the local side.  This works by allocating a socket to listen to port on the remote side, and whenever a
+\par              connection is made to this port, the connection is forwarded over the secure channel, and a connection is
+\par              made to host port hostport from the local machine.
+\par 
+\par              Port forwardings can also be specified in the configuration file.  Privileged ports can be forwarded only
+\par              when logging in as root on the remote machine.  IPv6 addresses can be specified by enclosing the address in
+\par              square braces or using an alternative syntax: [bind_address/]host/port/hostport.
+\par 
+\par              By default, the listening socket on the server will be bound to the loopback interface only.  This may be
+\par              overridden by specifying a bind_address.  An empty bind_address, or the address \lquote *\rquote , indicates that the
+\par              remote socket should listen on all interfaces.  Specifying a remote bind_address will only succeed if the
+\par              server\rquote s GatewayPorts option is enabled (see sshd_config(5)).
+\par 
+\par              If the port argument is \lquote 0\rquote , the listen port will be dynamically allocated on the server and reported to
+\par              the client at run time.
+\par 
+\par      -S ctl_path
+\par              Specifies the location of a control socket for connection sharing.  Refer to the description of ControlPath
+\par              and ControlMaster in ssh_config(5) for details.
+\par 
+\par      -s      May be used to request invocation of a subsystem on the remote system.  Subsystems are a feature of the
+\par              SSH2 protocol which facilitate the use of SSH as a secure transport for other applications (eg. sftp(1)).
+\par              The subsystem is specified as the remote command.
+\par 
+\par      -T      Disable pseudo-tty allocation.
+\par 
+\par    \plain \f1\fs20\cf1   -t      Force pseudo-tty allocation. \plain \f1\fs20  This can be used to execute arbitrary screen-based programs on a remote
+\par              machine, which can be very useful, e.g. when implementing menu services.  \plain \f1\fs20\cf1 Multiple -t options force tty
+\par              allocation, even if ssh has no local tty.
+\par \plain \f1\fs20 
+\par      -V      Display the version number and exit.
+\par 
+\par      -v      Verbose mode.  Causes ssh to print debugging messages about its progress.  This is helpful in debugging
+\par              connection, authentication, and configuration problems.  Multiple -v options increase the verbosity.  The
+\par              maximum is 3.
+\par 
+\par      -w local_tun[:remote_tun]
+\par              Requests tunnel device forwarding with the specified tun(4) devices between the client (local_tun) and the
+\par              server (remote_tun).
+\par 
+\par              The devices may be specified by numerical ID or the keyword \ldblquote any\rdblquote , which uses the next available tunnel
+\par              device.  If remote_tun is not specified, it defaults to \ldblquote any\rdblquote .  See also the Tunnel and TunnelDevice direc-
+\par              tives in ssh_config(5).  If the Tunnel directive is unset, it is set to the default tunnel mode, which is
+\par              \ldblquote point-to-point\rdblquote .
+\par 
+\par      -X      Enables X11 forwarding.  This can also be specified on a per-host basis in a configuration file.
+\par 
+\par              X11 forwarding should be enabled with caution.  Users with the ability to bypass file permissions on the
+\par              remote host (for the user\rquote s X authorization database) can access the local X11 display through the for-
+\par              warded connection.  An attacker may then be able to perform activities such as keystroke monitoring.
+\par 
+\par              For this reason, X11 forwarding is subjected to X11 SECURITY extension restrictions by default.  Please
+\par              refer to the ssh -Y option and the ForwardX11Trusted directive in ssh_config(5) for more information.
+\par 
+\par      -x      Disables X11 forwarding.
+\par 
+\par      -Y      Enables trusted X11 forwarding.  Trusted X11 forwardings are not subjected to the X11 SECURITY extension
+\par              controls.
+\par 
+\par      -y      Send log information using the syslog(3) system module.  By default this information is sent to stderr.
+\par 
+\par      ssh may additionally obtain configuration data from a per-user configuration file and a system-wide configuration
+\par      file.  The file format and configuration options are described in ssh_config(5).
+\par 
+\par      ssh exits with the exit status of the remote command or with 255 if an error occurred.
+\par 
+\par AUTHENTICATION
+\par      The OpenSSH SSH client supports SSH protocols 1 and 2.  Protocol 2 is the default, with ssh falling back to proto-
+\par      col 1 if it detects protocol 2 is unsupported.  These settings may be altered using the Protocol option in
+\par      ssh_config(5), or enforced using the -1 and -2 options (see above).  Both protocols support similar authentication
+\par      methods, but protocol 2 is preferred since it provides additional mechanisms for confidentiality (the traffic is
+\par      encrypted using AES, 3DES, Blowfish, CAST128, or Arcfour) and integrity (hmac-md5, hmac-sha1, umac-64, hmac-
+\par      ripemd160).  Protocol 1 lacks a strong mechanism for ensuring the integrity of the connection.
+\par 
+\par      The methods available for authentication are: GSSAPI-based authentication, host-based authentication, public key
+\par      authentication, challenge-response authentication, and password authentication.  Authentication methods are tried
+\par      in the order specified above, though protocol 2 has a configuration option to change the default order:
+\par      PreferredAuthentications.
+\par 
+\par      Host-based authentication works as follows: If the machine the user logs in from is listed in /etc/hosts.equiv or
+\par      /etc/ssh/shosts.equiv on the remote machine, and the user names are the same on both sides, or if the files
+\par      ~/.rhosts or ~/.shosts exist in the user\rquote s home directory on the remote machine and contain a line containing the
+\par      name of the client machine and the name of the user on that machine, the user is considered for login.  Addition-
+\par      ally, the server must be able to verify the client\rquote s host key (see the description of /etc/ssh/ssh_known_hosts and
+\par      ~/.ssh/known_hosts, below) for login to be permitted.  This authentication method closes security holes due to IP
+\par      spoofing, DNS spoofing, and routing spoofing.  [Note to the administrator: /etc/hosts.equiv, ~/.rhosts, and the
+\par      rlogin/rsh protocol in general, are inherently insecure and should be disabled if security is desired.]
+\par 
+\par      Public key authentication works as follows: The scheme is based on public-key cryptography, using cryptosystems
+\par      where encryption and decryption are done using separate keys, and it is unfeasible to derive the decryption key
+\par      from the encryption key.  The idea is that each user creates a public/private key pair for authentication purposes.
+\par      The server knows the public key, and only the user knows the private key.  ssh implements public key authentication
+\par      protocol automatically, using either the RSA or DSA algorithms.  Protocol 1 is restricted to using only RSA keys,
+\par      but protocol 2 may use either.  The HISTORY section of ssl(8) contains a brief discussion of the two algorithms.
+\par 
+\par      The file ~/.ssh/authorized_keys lists the public keys that are permitted for logging in.  When the user logs in,
+\par      the ssh program tells the server which key pair it would like to use for authentication.  The client proves that it
+\par      has access to the private key and the server checks that the corresponding public key is authorized to accept the
+\par      account.
+\par 
+\par      The user creates his/her key pair by running ssh-keygen(1).  This stores the private key in ~/.ssh/identity (proto-
+\par      col 1), ~/.ssh/id_dsa (protocol 2 DSA), or ~/.ssh/id_rsa (protocol 2 RSA) and stores the public key in
+\par      ~/.ssh/identity.pub (protocol 1), ~/.ssh/id_dsa.pub (protocol 2 DSA), or ~/.ssh/id_rsa.pub (protocol 2 RSA) in the
+\par      user\rquote s home directory.  The user should then copy the public key to ~/.ssh/authorized_keys in his/her home direc-
+\par      tory on the remote machine.  The authorized_keys file corresponds to the conventional ~/.rhosts file, and has one
+\par      key per line, though the lines can be very long.  After this, the user can log in without giving the password.
+\par 
+\par      The most convenient way to use public key authentication may be with an authentication agent.  See ssh-agent(1) for
+\par      more information.
+\par 
+\par      Challenge-response authentication works as follows: The server sends an arbitrary "challenge" text, and prompts for
+\par      a response.  Protocol 2 allows multiple challenges and responses; protocol 1 is restricted to just one chal-
+\par      lenge/response.  Examples of challenge-response authentication include BSD Authentication (see login.conf(5)) and
+\par      PAM (some non-OpenBSD systems).
+\par 
+\par      Finally, if other authentication methods fail, ssh prompts the user for a password.  The password is sent to the
+\par      remote host for checking; however, since all communications are encrypted, the password cannot be seen by someone
+\par      listening on the network.
+\par 
+\par      ssh automatically maintains and checks a database containing identification for all hosts it has ever been used
+\par      with.  Host keys are stored in ~/.ssh/known_hosts in the user\rquote s home directory.  Additionally, the file
+\par      /etc/ssh/ssh_known_hosts is automatically checked for known hosts.  Any new hosts are automatically added to the
+\par      user\rquote s file.  If a host\rquote s identification ever changes, ssh warns about this and disables password authentication to
+\par      prevent server spoofing or man-in-the-middle attacks, which could otherwise be used to circumvent the encryption.
+\par      The StrictHostKeyChecking option can be used to control logins to machines whose host key is not known or has
+\par      changed.
+\par 
+\par      When the user\rquote s identity has been accepted by the server, the server either executes the given command, or logs
+\par      into the machine and gives the user a normal shell on the remote machine.  All communication with the remote com-
+\par      mand or shell will be automatically encrypted.
+\par 
+\par      If a pseudo-terminal has been allocated (normal login session), the user may use the escape characters noted below.
+\par 
+\par      If no pseudo-tty has been allocated, the session is transparent and can be used to reliably transfer binary data.
+\par      On most systems, setting the escape character to \ldblquote none\rdblquote  will also make the session transparent even if a tty is
+\par      used.
+\par 
+\par      The session terminates when the command or shell on the remote machine exits and all X11 and TCP connections have
+\par      been closed.
+\par 
+\par ESCAPE CHARACTERS
+\par      When a pseudo-terminal has been requested, ssh supports a number of functions through the use of an escape charac-
+\par      ter.
+\par 
+\par      A single tilde character can be sent as ~~ or by following the tilde by a character other than those described
+\par      below.  The escape character must always follow a newline to be interpreted as special.  The escape character can
+\par      be changed in configuration files using the EscapeChar configuration directive or on the command line by the -e
+\par      option.
+\par 
+\par      The supported escapes (assuming the default \lquote ~\rquote ) are:
+\par 
+\par      ~.      Disconnect.
+\par 
+\par      ~^Z     Background ssh.
+\par 
+\par      ~#      List forwarded connections.
+\par 
+\par      ~&      Background ssh at logout when waiting for forwarded connection / X11 sessions to terminate.
+\par 
+\par      ~?      Display a list of escape characters.
+\par 
+\par      ~B      Send a BREAK to the remote system (only useful for SSH protocol version 2 and if the peer supports it).
+\par 
+\par      ~C      Open command line.  Currently this allows the addition of port forwardings using the -L, -R and -D options
+\par              (see above).  It also allows the cancellation of existing remote port-forwardings using
+\par              -KR[bind_address:]port.  !command allows the user to execute a local command if the PermitLocalCommand
+\par              option is enabled in ssh_config(5).  Basic help is available, using the -h option.
+\par 
+\par      ~R      Request rekeying of the connection (only useful for SSH protocol version 2 and if the peer supports it).
+\par 
+\par TCP FORWARDING
+\par      Forwarding of arbitrary TCP connections over the secure channel can be specified either on the command line or in a
+\par      configuration file.  One possible application of TCP forwarding is a secure connection to a mail server; another is
+\par      going through firewalls.
+\par 
+\par      In the example below, we look at encrypting communication between an IRC client and server, even though the IRC
+\par      server does not directly support encrypted communications.  This works as follows: the user connects to the remote
+\par      host using ssh, specifying a port to be used to forward connections to the remote server.  After that it is possi-
+\par      ble to start the service which is to be encrypted on the client machine, connecting to the same local port, and ssh
+\par      will encrypt and forward the connection.
+\par 
+\par      The following example tunnels an IRC session from client machine \ldblquote 127.0.0.1\rdblquote  (localhost) to remote server
+\par      \ldblquote server.example.com\rdblquote :
+\par 
+\par          $ ssh -f -L 1234:localhost:6667 server.example.com sleep 10
+\par          $ irc -c \rquote #users\rquote  -p 1234 pinky 127.0.0.1
+\par 
+\par      This tunnels a connection to IRC server \ldblquote server.example.com\rdblquote , joining channel \ldblquote #users\rdblquote , nickname \ldblquote pinky\rdblquote , using
+\par      port 1234.  It doesn\rquote t matter which port is used, as long as it\rquote s greater than 1023 (remember, only root can open
+\par      sockets on privileged ports) and doesn\rquote t conflict with any ports already in use.  The connection is forwarded to
+\par      port 6667 on the remote server, since that\rquote s the standard port for IRC services.
+\par 
+\par      The -f option backgrounds ssh and the remote command \ldblquote sleep 10\rdblquote  is specified to allow an amount of time (10 sec-
+\par      onds, in the example) to start the service which is to be tunnelled.  If no connections are made within the time
+\par      specified, ssh will exit.
+\par 
+\par X11 FORWARDING
+\par      If the ForwardX11 variable is set to \ldblquote yes\rdblquote  (or see the description of the -X, -x, and -Y options above) and the
+\par      user is using X11 (the DISPLAY environment variable is set), the connection to the X11 display is automatically
+\par      forwarded to the remote side in such a way that any X11 programs started from the shell (or command) will go
+\par      through the encrypted channel, and the connection to the real X server will be made from the local machine.  The
+\par      user should not manually set DISPLAY.  Forwarding of X11 connections can be configured on the command line or in
+\par      configuration files.
+\par 
+\par      The DISPLAY value set by ssh will point to the server machine, but with a display number greater than zero.  This
+\par      is normal, and happens because ssh creates a \ldblquote proxy\rdblquote  X server on the server machine for forwarding the connections
+\par      over the encrypted channel.
+\par 
+\par      ssh will also automatically set up Xauthority data on the server machine.  For this purpose, it will generate a
+\par      random authorization cookie, store it in Xauthority on the server, and verify that any forwarded connections carry
+\par      this cookie and replace it by the real cookie when the connection is opened.  The real authentication cookie is
+\par      never sent to the server machine (and no cookies are sent in the plain).
+\par 
+\par      If the ForwardAgent variable is set to \ldblquote yes\rdblquote  (or see the description of the -A and -a options above) and the user
+\par      is using an authentication agent, the connection to the agent is automatically forwarded to the remote side.
+\par 
+\par VERIFYING HOST KEYS
+\par      When connecting to a server for the first time, a fingerprint of the server\rquote s public key is presented to the user
+\par      (unless the option StrictHostKeyChecking has been disabled).  Fingerprints can be determined using ssh-keygen(1):
+\par 
+\par            $ ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key
+\par 
+\par      If the fingerprint is already known, it can be matched and the key can be accepted or rejected.  Because of the
+\par      difficulty of comparing host keys just by looking at hex strings, there is also support to compare host keys visu-
+\par      ally, using random art.  By setting the VisualHostKey option to \ldblquote yes\rdblquote , a small ASCII graphic gets displayed on
+\par      every login to a server, no matter if the session itself is interactive or not.  By learning the pattern a known
+\par      server produces, a user can easily find out that the host key has changed when a completely different pattern is
+\par      displayed.  Because these patterns are not unambiguous however, a pattern that looks similar to the pattern remem-
+\par      bered only gives a good probability that the host key is the same, not guaranteed proof.
+\par 
+\par      To get a listing of the fingerprints along with their random art for all known hosts, the following command line
+\par      can be used:
+\par 
+\par            $ ssh-keygen -lv -f ~/.ssh/known_hosts
+\par 
+\par      If the fingerprint is unknown, an alternative method of verification is available: SSH fingerprints verified by
+\par      DNS.  An additional resource record (RR), SSHFP, is added to a zonefile and the connecting client is able to match
+\par      the fingerprint with that of the key presented.
+\par 
+\par      In this example, we are connecting a client to a server, \ldblquote host.example.com\rdblquote .  The SSHFP resource records should
+\par      first be added to the zonefile for host.example.com:
+\par 
+\par            $ ssh-keygen -r host.example.com.
+\par 
+\par      The output lines will have to be added to the zonefile.  To check that the zone is answering fingerprint queries:
+\par 
+\par            $ dig -t SSHFP host.example.com
+\par 
+\par      Finally the client connects:
+\par 
+\par            $ ssh -o "VerifyHostKeyDNS ask" host.example.com
+\par            [...]
+\par            Matching host key fingerprint found in DNS.
+\par            Are you sure you want to continue connecting (yes/no)?
+\par 
+\par      See the VerifyHostKeyDNS option in ssh_config(5) for more information.
+\par 
+\par SSH-BASED VIRTUAL PRIVATE NETWORKS
+\par      ssh contains support for Virtual Private Network (VPN) tunnelling using the tun(4) network pseudo-device, allowing
+\par      two networks to be joined securely.  The sshd_config(5) configuration option PermitTunnel controls whether the
+\par      server supports this, and at what level (layer 2 or 3 traffic).
+\par 
+\par      The following example would connect client network 10.0.50.0/24 with remote network 10.0.99.0/24 using a point-to-
+\par      point connection from 10.1.1.1 to 10.1.1.2, provided that the SSH server running on the gateway to the remote net-
+\par      work, at 192.168.1.15, allows it.
+\par 
+\par      On the client:
+\par 
+\par            # ssh -f -w 0:1 192.168.1.15 true
+\par            # ifconfig tun0 10.1.1.1 10.1.1.2 netmask 255.255.255.252
+\par            # route add 10.0.99.0/24 10.1.1.2
+\par 
+\par      On the server:
+\par 
+\par            # ifconfig tun1 10.1.1.2 10.1.1.1 netmask 255.255.255.252
+\par            # route add 10.0.50.0/24 10.1.1.1
+\par 
+\par      Client access may be more finely tuned via the /root/.ssh/authorized_keys file (see below) and the PermitRootLogin
+\par      server option.  The following entry would permit connections on tun(4) device 1 from user \ldblquote jane\rdblquote  and on tun device
+\par      2 from user \ldblquote john\rdblquote , if PermitRootLogin is set to \ldblquote forced-commands-only\rdblquote :
+\par 
+\par        tunnel="1",command="sh /etc/netstart tun1" ssh-rsa ... jane
+\par        tunnel="2",command="sh /etc/netstart tun2" ssh-rsa ... john
+\par 
+\par      Since an SSH-based setup entails a fair amount of overhead, it may be more suited to temporary setups, such as for
+\par      wireless VPNs.  More permanent VPNs are better provided by tools such as ipsecctl(8) and isakmpd(8).
+\par 
+\par ENVIRONMENT
+\par      ssh will normally set the following environment variables:
+\par 
+\par      DISPLAY               The DISPLAY variable indicates the location of the X11 server.  It is automatically set by
+\par                            ssh to point to a value of the form \ldblquote hostname:n\rdblquote , where \ldblquote hostname\rdblquote  indicates the host where
+\par                            the shell runs, and \lquote n\rquote  is an integer \uc2\u8805 \'a1\'dd 1.  ssh uses this special value to forward X11 con-\uc1
+\par                            nections over the secure channel.  The user should normally not set DISPLAY explicitly, as
+\par                            that will render the X11 connection insecure (and will require the user to manually copy any
+\par                            required authorization cookies).
+\par 
+\par      HOME                  Set to the path of the user\rquote s home directory.
+\par 
+\par      LOGNAME               Synonym for USER; set for compatibility with systems that use this variable.
+\par 
+\par      MAIL                  Set to the path of the user\rquote s mailbox.
+\par 
+\par      PATH                  Set to the default PATH, as specified when compiling ssh.
+\par 
+\par      SSH_ASKPASS           If ssh needs a passphrase, it will read the passphrase from the current terminal if it was
+\par                            run from a terminal.  If ssh does not have a terminal associated with it but DISPLAY and
+\par                            SSH_ASKPASS are set, it will execute the program specified by SSH_ASKPASS and open an X11
+\par                            window to read the passphrase.  This is particularly useful when calling ssh from a .xsession
+\par                            or related script.  (Note that on some machines it may be necessary to redirect the input
+\par                            from /dev/null to make this work.)
+\par 
+\par      SSH_AUTH_SOCK         Identifies the path of a UNIX-domain socket used to communicate with the agent.
+\par 
+\par      SSH_CONNECTION        Identifies the client and server ends of the connection.  The variable contains four space-
+\par                            separated values: client IP address, client port number, server IP address, and server port
+\par                            number.
+\par 
+\par      SSH_ORIGINAL_COMMAND  This variable contains the original command line if a forced command is executed.  It can be
+\par                            used to extract the original arguments.
+\par 
+\par      SSH_TTY               This is set to the name of the tty (path to the device) associated with the current shell or
+\par                            command.  If the current session has no tty, this variable is not set.
+\par 
+\par      TZ                    This variable is set to indicate the present time zone if it was set when the daemon was
+\par                            started (i.e. the daemon passes the value on to new connections).
+\par 
+\par      USER                  Set to the name of the user logging in.
+\par 
+\par      Additionally, ssh reads ~/.ssh/environment, and adds lines of the format \ldblquote VARNAME=value\rdblquote  to the environment if the
+\par      file exists and users are allowed to change their environment.  For more information, see the PermitUserEnvironment
+\par      option in sshd_config(5).
+\par 
+\par ENVIRONMENT
+\par      SSH_USE_STRONG_RNG
+\par              The reseeding of the OpenSSL random generator is usually done from /dev/urandom.  If the SSH_USE_STRONG_RNG
+\par              environment variable is set to value other than 0 the OpenSSL random generator is reseeded from
+\par              /dev/random.  The number of bytes read is defined by the SSH_USE_STRONG_RNG value.  Minimum is 6 bytes.
+\par              This setting is not recommended on the computers without the hardware random generator because insufficient
+\par              entropy causes the connection to be blocked until enough entropy is available.
+\par 
+\par FILES
+\par      ~/.rhosts
+\par              This file is used for host-based authentication (see above).  On some machines this file may need to be
+\par              world-readable if the user\rquote s home directory is on an NFS partition, because sshd(8) reads it as root.
+\par              Additionally, this file must be owned by the user, and must not have write permissions for anyone else.
+\par              The recommended permission for most machines is read/write for the user, and not accessible by others.
+\par 
+\par      ~/.shosts
+\par              This file is used in exactly the same way as .rhosts, but allows host-based authentication without permit-
+\par              ting login with rlogin/rsh.
+\par 
+\par      ~/.ssh/
+\par              This directory is the default location for all user-specific configuration and authentication information.
+\par              There is no general requirement to keep the entire contents of this directory secret, but the recommended
+\par              permissions are read/write/execute for the user, and not accessible by others.
+\par 
+\par      ~/.ssh/authorized_keys
+\par              Lists the public keys (RSA/DSA) that can be used for logging in as this user.  The format of this file is
+\par              described in the sshd(8) manual page.  This file is not highly sensitive, but the recommended permissions
+\par              are read/write for the user, and not accessible by others.
+\par 
+\par      ~/.ssh/config
+\par              This is the per-user configuration file.  The file format and configuration options are described in
+\par              ssh_config(5).  Because of the potential for abuse, this file must have strict permissions: read/write for
+\par              the user, and not accessible by others.
+\par 
+\par      ~/.ssh/environment
+\par              Contains additional definitions for environment variables; see ENVIRONMENT, above.
+\par 
+\par      ~/.ssh/identity
+\par      ~/.ssh/id_dsa
+\par      ~/.ssh/id_rsa
+\par              Contains the private key for authentication.  These files contain sensitive data and should be readable by
+\par              the user but not accessible by others (read/write/execute).  ssh will simply ignore a private key file if
+\par              it is accessible by others.  It is possible to specify a passphrase when generating the key which will be
+\par              used to encrypt the sensitive part of this file using 3DES.
+\par 
+\par      ~/.ssh/identity.pub
+\par      ~/.ssh/id_dsa.pub
+\par      ~/.ssh/id_rsa.pub
+\par              Contains the public key for authentication.  These files are not sensitive and can (but need not) be read-
+\par              able by anyone.
+\par 
+\par      ~/.ssh/known_hosts
+\par              Contains a list of host keys for all hosts the user has logged into that are not already in the systemwide
+\par              list of known host keys.  See sshd(8) for further details of the format of this file.
+\par 
+\par      ~/.ssh/rc
+\par              Commands in this file are executed by ssh when the user logs in, just before the user\rquote s shell (or command)
+\par              is started.  See the sshd(8) manual page for more information.
+\par 
+\par      /etc/hosts.equiv
+\par              This file is for host-based authentication (see above).  It should only be writable by root.
+\par 
+\par      /etc/ssh/shosts.equiv
+\par              This file is used in exactly the same way as hosts.equiv, but allows host-based authentication without per-
+\par              mitting login with rlogin/rsh.
+\par 
+\par      /etc/ssh/ssh_config
+\par              Systemwide configuration file.  The file format and configuration options are described in ssh_config(5).
+\par 
+\par      /etc/ssh/ssh_host_key
+\par      /etc/ssh/ssh_host_dsa_key
+\par      /etc/ssh/ssh_host_rsa_key
+\par              These three files contain the private parts of the host keys and are used for host-based authentication.
+\par              If protocol version 1 is used, ssh must be setuid root, since the host key is readable only by root.  For
+\par              protocol version 2, ssh uses ssh-keysign(8) to access the host keys, eliminating the requirement that ssh
+\par              be setuid root when host-based authentication is used.  By default ssh is not setuid root.
+\par 
+\par      /etc/ssh/ssh_known_hosts
+\par              Systemwide list of known host keys.  This file should be prepared by the system administrator to contain
+\par              the public host keys of all machines in the organization.  It should be world-readable.  See sshd(8) for
+\par              further details of the format of this file.
+\par 
+\par      /etc/ssh/sshrc
+\par              Commands in this file are executed by ssh when the user logs in, just before the user\rquote s shell (or command)
+\par              is started.  See the sshd(8) manual page for more information.
+\par 
+\par IPV6
+\par      IPv6 address can be used everywhere where IPv4 address. In all entries must be the IPv6 address enclosed in square
+\par      brackets. Note: The square brackets are metacharacters for the shell and must be escaped in shell.
+\par 
+\par SEE ALSO
+\par      scp(1), sftp(1), ssh-add(1), ssh-agent(1), ssh-keygen(1), ssh-keyscan(1), tun(4), hosts.equiv(5), ssh_config(5),
+\par      ssh-keysign(8), sshd(8)
+\par 
+\par      The Secure Shell (SSH) Protocol Assigned Numbers, RFC 4250, 2006.
+\par 
+\par      The Secure Shell (SSH) Protocol Architecture, RFC 4251, 2006.
+\par 
+\par      The Secure Shell (SSH) Authentication Protocol, RFC 4252, 2006.
+\par 
+\par      The Secure Shell (SSH) Transport Layer Protocol, RFC 4253, 2006.
+\par 
+\par      The Secure Shell (SSH) Connection Protocol, RFC 4254, 2006.
+\par 
+\par      Using DNS to Securely Publish Secure Shell (SSH) Key Fingerprints, RFC 4255, 2006.
+\par 
+\par      Generic Message Exchange Authentication for the Secure Shell Protocol (SSH), RFC 4256, 2006.
+\par 
+\par      The Secure Shell (SSH) Session Channel Break Extension, RFC 4335, 2006.
+\par 
+\par      The Secure Shell (SSH) Transport Layer Encryption Modes, RFC 4344, 2006.
+\par 
+\par      Improved Arcfour Modes for the Secure Shell (SSH) Transport Layer Protocol, RFC 4345, 2006.
+\par 
+\par      Diffie-Hellman Group Exchange for the Secure Shell (SSH) Transport Layer Protocol, RFC 4419, 2006.
+\par 
+\par      The Secure Shell (SSH) Public Key File Format, RFC 4716, 2006.
+\par 
+\par      A. Perrig and D. Song, Hash Visualization: a New Technique to improve Real-World Security, 1999, International
+\par      Workshop on Cryptographic Techniques and E-Commerce (CrypTEC \rquote 99).
+\par 
+\par AUTHORS
+\par      OpenSSH is a derivative of the original and free ssh 1.2.12 release by Tatu Ylonen.  Aaron Campbell, Bob Beck,
+\par      Markus Friedl, Niels Provos, Theo de Raadt and Dug Song removed many bugs, re-added newer features and created
+\par      OpenSSH.  Markus Friedl contributed the support for SSH protocol versions 1.5 and 2.0.
+\par 
+\par BSD                             January 5, 2014                            BSD\par}

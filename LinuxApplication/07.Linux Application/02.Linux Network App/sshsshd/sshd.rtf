@@ -1,0 +1,481 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil\fcharset0 Times New Roman;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red79\green129\blue189;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid1991418259
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\b\i\fs28}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+\listid493992422}
+{\list\listtemplateid1045151107\listsimple1
+{\listlevel\levelnfc0\leveljc0\li1380\fi-420\jclisttab\tx1380\levelstartat1{\leveltext\'02\'00);}{\levelnumbers\'01;}\f3\b\i\fs24\cf3}
+\listid1296990609}
+}
+{\*\listoverridetable
+{\listoverride\listid493992422\listoverridecount0\ls1}
+{\listoverride\listid1296990609\listoverridecount0\ls2}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 sshd
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs20 SSHD(8)                   BSD System Manager\rquote s Manual                  SSHD(8)
+\par 
+\par NAME
+\par \plain \f1\fs20\cf1      sshd - OpenSSH SSH daemon
+\par \plain \f1\fs20 
+\par SYNOPSIS
+\par      sshd [-46DdeiqTt] [-b bits] [-C connection_spec] [-f config_file] [-g login_grace_time] [-h host_key_file]
+\par           [-k key_gen_time] [-o option] [-p port] [-u len]
+\par 
+\par DESCRIPTION
+\par      \plain \f1\fs20\cf1 sshd (OpenSSH Daemon) is the daemon program for ssh(1). \plain \f1\fs20  Together these programs replace rlogin(1) and rsh(1), and
+\par      provide secure encrypted communications between two untrusted hosts over an insecure network.
+\par 
+\par      sshd listens for connections from clients.  It is normally started at boot from /etc/rc.  It forks a new daemon for
+\par      each incoming connection.  The forked daemons handle key exchange, encryption, authentication, command execution,
+\par      and data exchange.
+\par 
+\par      sshd can be configured using command-line options or a configuration file (by default sshd_config(5)); command-line
+\par      options override values specified in the configuration file.  sshd rereads its configuration file when it receives
+\par      a hangup signal, SIGHUP, by executing itself with the name and options it was started with, e.g. /usr/sbin/sshd.
+\par 
+\par      The options are as follows:
+\par      -4      Forces sshd to use IPv4 addresses only.
+\par      -6      Forces sshd to use IPv6 addresses only.
+\par 
+\par      -b bits
+\par              Specifies the number of bits in the ephemeral protocol version 1 server key (default 1024).
+\par 
+\par      -C connection_spec
+\par              Specify the connection parameters to use for the -T extended test mode.  If provided, any Match directives
+\par              in the configuration file that would apply to the specified user, host, and address will be set before the
+\par              configuration is written to standard output.  The connection parameters are supplied as keyword=value
+\par              pairs.  The keywords are \ldblquote user\rdblquote , \ldblquote host\rdblquote , and \ldblquote addr\rdblquote .  All are required and may be supplied in any order,
+\par              either with multiple -C options or as a comma-separated list.
+\par 
+\par      -D      When this option is specified, sshd will not detach and does not become a daemon.  This allows easy moni-
+\par              toring of sshd.
+\par 
+\par      -d      Debug mode.  The server sends verbose debug output to the system log, and does not put itself in the back-
+\par              ground.  The server also will not fork and will only process one connection.  This option is only intended
+\par              for debugging for the server.  Multiple -d options increase the debugging level.  Maximum is 3.
+\par 
+\par      -e      When this option is specified, sshd will send the output to the standard error instead of the system log.
+\par 
+\par      -f config_file
+\par              Specifies the name of the configuration file.  The default is /etc/ssh/sshd_config.  sshd refuses to start
+\par              if there is no configuration file.
+\par 
+\par      -g login_grace_time
+\par              Gives the grace time for clients to authenticate themselves (default 120 seconds).  If the client fails to
+\par              authenticate the user within this many seconds, the server disconnects and exits.  A value of zero indi-
+\par              cates no limit.
+\par 
+\par      -h host_key_file
+\par              Specifies a file from which a host key is read.  This option must be given if sshd is not run as root (as
+\par              the normal host key files are normally not readable by anyone but root).  The default is
+\par              /etc/ssh/ssh_host_key for protocol version 1, and /etc/ssh/ssh_host_rsa_key and /etc/ssh/ssh_host_dsa_key
+\par              for protocol version 2.  It is possible to have multiple host key files for the different protocol versions
+\par              and host key algorithms.
+\par 
+\par      -i      Specifies that sshd is being run from inetd(8).  sshd is normally not run from inetd because it needs to
+\par              generate the server key before it can respond to the client, and this may take tens of seconds.  Clients
+\par              would have to wait too long if the key was regenerated every time.  However, with small key sizes (e.g.
+\par              512) using sshd from inetd may be feasible.
+\par 
+\par      -k key_gen_time
+\par              Specifies how often the ephemeral protocol version 1 server key is regenerated (default 3600 seconds, or
+\par              one hour).  The motivation for regenerating the key fairly often is that the key is not stored anywhere,
+\par              and after about an hour it becomes impossible to recover the key for decrypting intercepted communications
+\par              even if the machine is cracked into or physically seized.  A value of zero indicates that the key will
+\par              never be regenerated.
+\par 
+\par      -o option
+\par              Can be used to give options in the format used in the configuration file.  This is useful for specifying
+\par              options for which there is no separate command-line flag.  For full details of the options, and their val-
+\par              ues, see sshd_config(5).
+\par 
+\par      -p port
+\par              Specifies the port on which the server listens for connections (default 22).  Multiple port options are
+\par              permitted.  Ports specified in the configuration file with the Port option are ignored when a command-line
+\par              port is specified.  Ports specified using the ListenAddress option override command-line ports.
+\par 
+\par      -q      Quiet mode.  Nothing is sent to the system log.  Normally the beginning, authentication, and termination of
+\par              each connection is logged.
+\par 
+\par      -T      Extended test mode.  Check the validity of the configuration file, output the effective configuration to
+\par              stdout and then exit.  Optionally, Match rules may be applied by specifying the connection parameters using
+\par              one or more -C options.
+\par 
+\par      -t      Test mode.  Only check the validity of the configuration file and sanity of the keys.  This is useful for
+\par              updating sshd reliably as configuration options may change.
+\par 
+\par      -u len  This option is used to specify the size of the field in the utmp structure that holds the remote host name.
+\par              If the resolved host name is longer than len, the dotted decimal value will be used instead.  This allows
+\par              hosts with very long host names that overflow this field to still be uniquely identified.  Specifying -u0
+\par              indicates that only dotted decimal addresses should be put into the utmp file.  -u0 may also be used to
+\par              prevent sshd from making DNS requests unless the authentication mechanism or configuration requires it.
+\par              Authentication mechanisms that may require DNS include RhostsRSAAuthentication, HostbasedAuthentication,
+\par              and using a from="pattern-list" option in a key file.  Configuration options that require DNS include using
+\par              a USER@HOST pattern in AllowUsers or DenyUsers.
+\par 
+\par AUTHENTICATION
+\par      The OpenSSH SSH daemon supports SSH protocols 1 and 2.  Both protocols are supported by default, though this can be
+\par      changed via the Protocol option in sshd_config(5).  Protocol 2 supports both RSA and DSA keys; protocol 1 only sup-
+\par      ports RSA keys.  For both protocols, each host has a host-specific key, normally 2048 bits, used to identify the
+\par      host.
+\par 
+\par      Forward security for protocol 1 is provided through an additional server key, normally 768 bits, generated when the
+\par      server starts.  This key is normally regenerated every hour if it has been used, and is never stored on disk.
+\par      Whenever a client connects, the daemon responds with its public host and server keys.  The client compares the RSA
+\par      host key against its own database to verify that it has not changed.  The client then generates a 256-bit random
+\par      number.  It encrypts this random number using both the host key and the server key, and sends the encrypted number
+\par      to the server.  Both sides then use this random number as a session key which is used to encrypt all further commu-
+\par      nications in the session.  The rest of the session is encrypted using a conventional cipher, currently Blowfish or
+\par      3DES, with 3DES being used by default.  The client selects the encryption algorithm to use from those offered by
+\par      the server.
+\par 
+\par      For protocol 2, forward security is provided through a Diffie-Hellman key agreement.  This key agreement results in
+\par      a shared session key.  The rest of the session is encrypted using a symmetric cipher, currently 128-bit AES, Blow-
+\par      fish, 3DES, CAST128, Arcfour, 192-bit AES, or 256-bit AES.  The client selects the encryption algorithm to use from
+\par      those offered by the server.  Additionally, session integrity is provided through a cryptographic message authenti-
+\par      cation code (hmac-md5, hmac-sha1, umac-64 or hmac-ripemd160).
+\par 
+\par      Finally, the server and the client enter an authentication dialog.  The client tries to authenticate itself using
+\par      host-based authentication, public key authentication, challenge-response authentication, or password authentica-
+\par      tion.
+\par 
+\par      Regardless of the authentication type, the account is checked to ensure that it is accessible.  An account is not
+\par      accessible if it is locked, listed in DenyUsers or its group is listed in DenyGroups .  The definition of a locked
+\par      account is system dependant. Some platforms have their own account database (eg AIX) and some modify the passwd
+\par      field ( \lquote *LK*\rquote  on Solaris and UnixWare, \lquote *\rquote  on HP-UX, containing \lquote Nologin\rquote  on Tru64, a leading \lquote *LOCKED*\rquote  on
+\par      FreeBSD and a leading \lquote !\rquote  on most Linuxes).  If there is a requirement to disable password authentication for the
+\par      account while allowing still public-key, then the passwd field should be set to something other than these values
+\par      (eg \lquote NP\rquote  or \lquote *NP*\rquote  ).
+\par 
+\par      If the client successfully authenticates itself, a dialog for preparing the session is entered.  At this time the
+\par      client may request things like allocating a pseudo-tty, forwarding X11 connections, forwarding TCP connections, or
+\par      forwarding the authentication agent connection over the secure channel.
+\par 
+\par      After this, the client either requests a shell or execution of a command.  The sides then enter session mode.  In
+\par      this mode, either side may send data at any time, and such data is forwarded to/from the shell or command on the
+\par      server side, and the user terminal in the client side.
+\par 
+\par      When the user program terminates and all forwarded X11 and other connections have been closed, the server sends
+\par      command exit status to the client, and both sides exit.
+\par 
+\par LOGIN PROCESS
+\par      When a user successfully logs in, sshd does the following:
+\par 
+\par            1.   If the login is on a tty, and no command has been specified, prints last login time and /etc/motd
+\par                 (unless prevented in the configuration file or by ~/.hushlogin; see the FILES section).
+\par 
+\par            2.   If the login is on a tty, records login time.
+\par 
+\par            3.   Checks /etc/nologin; if it exists, prints contents and quits (unless root).
+\par 
+\par            4.   Changes to run with normal user privileges.
+\par 
+\par            5.   Sets up basic environment.
+\par 
+\par            6.   Reads the file ~/.ssh/environment, if it exists, and users are allowed to change their environment.  See
+\par                 the PermitUserEnvironment option in sshd_config(5).
+\par 
+\par            7.   Changes to user\rquote s home directory.
+\par 
+\par            8.   If ~/.ssh/rc exists, runs it; else if /etc/ssh/sshrc exists, runs it; otherwise runs xauth.  The \ldblquote rc\rdblquote 
+\par                 files are given the X11 authentication protocol and cookie in standard input.  See SSHRC, below.
+\par 
+\par            9.   Runs user\rquote s shell or command.
+\par 
+\par SSHRC
+\par      If the file ~/.ssh/rc exists, sh(1) runs it after reading the environment files but before starting the user\rquote s
+\par      shell or command.  It must not produce any output on stdout; stderr must be used instead.  If X11 forwarding is in
+\par      use, it will receive the "proto cookie" pair in its standard input (and DISPLAY in its environment).  The script
+\par      must call xauth(1) because sshd will not run xauth automatically to add X11 cookies.
+\par 
+\par      The primary purpose of this file is to run any initialization routines which may be needed before the user\rquote s home
+\par      directory becomes accessible; AFS is a particular example of such an environment.
+\par 
+\par      This file will probably contain some initialization code followed by something similar to:
+\par 
+\par         if read proto cookie && [ -n "$DISPLAY" ]; then
+\par                 if [ \lquote echo $DISPLAY | cut -c1-10\lquote  = \rquote localhost:\rquote  ]; then
+\par                         # X11UseLocalhost=yes
+\par                         echo add unix:\lquote echo $DISPLAY |
+\par                             cut -c11-\lquote  $proto $cookie
+\par                 else
+\par                         # X11UseLocalhost=no
+\par                         echo add $DISPLAY $proto $cookie
+\par                 fi | xauth -q -
+\par         fi
+\par 
+\par      If this file does not exist, /etc/ssh/sshrc is run, and if that does not exist either, xauth is used to add the
+\par      cookie.
+\par 
+\par AUTHORIZED_KEYS FILE FORMAT
+\par      AuthorizedKeysFile specifies the file containing public keys for public key authentication; if none is specified,
+\par      the default is ~/.ssh/authorized_keys.  Each line of the file contains one key (empty lines and lines starting with
+\par      a \lquote #\rquote  are ignored as comments).  Protocol 1 public keys consist of the following space-separated fields: options,
+\par      bits, exponent, modulus, comment.  Protocol 2 public key consist of: options, keytype, base64-encoded key, comment.
+\par      The options field is optional; its presence is determined by whether the line starts with a number or not (the
+\par      options field never starts with a number).  The bits, exponent, modulus, and comment fields give the RSA key for
+\par      protocol version 1; the comment field is not used for anything (but may be convenient for the user to identify the
+\par      key).  For protocol version 2 the keytype is \ldblquote ssh-dss\rdblquote  or \ldblquote ssh-rsa\rdblquote .
+\par 
+\par      Note that lines in this file are usually several hundred bytes long (because of the size of the public key encod-
+\par      ing) up to a limit of 8 kilobytes, which permits DSA keys up to 8 kilobits and RSA keys up to 16 kilobits.  You
+\par      don\rquote t want to type them in; instead, copy the identity.pub, id_dsa.pub, or the id_rsa.pub file and edit it.
+\par 
+\par      sshd enforces a minimum RSA key modulus size for protocol 1 and protocol 2 keys of 768 bits.
+\par 
+\par      The options (if present) consist of comma-separated option specifications.  No spaces are permitted, except within
+\par      double quotes.  The following option specifications are supported (note that option keywords are case-insensitive):
+\par 
+\par      command="command"
+\par              Specifies that the command is executed whenever this key is used for authentication.  The command supplied
+\par              by the user (if any) is ignored.  The command is run on a pty if the client requests a pty; otherwise it is
+\par              run without a tty.  If an 8-bit clean channel is required, one must not request a pty or should specify
+\par              no-pty.  A quote may be included in the command by quoting it with a backslash.  This option might be use-
+\par              ful to restrict certain public keys to perform just a specific operation.  An example might be a key that
+\par              permits remote backups but nothing else.  Note that the client may specify TCP and/or X11 forwarding unless
+\par              they are explicitly prohibited.  The command originally supplied by the client is available in the
+\par              SSH_ORIGINAL_COMMAND environment variable.  Note that this option applies to shell, command or subsystem
+\par              execution.
+\par 
+\par      environment="NAME=value"
+\par              Specifies that the string is to be added to the environment when logging in using this key.  Environment
+\par              variables set this way override other default environment values.  Multiple options of this type are per-
+\par              mitted.  Environment processing is disabled by default and is controlled via the PermitUserEnvironment
+\par              option.  This option is automatically disabled if UseLogin is enabled.
+\par 
+\par      from="pattern-list"
+\par              Specifies that in addition to public key authentication, either the canonical name of the remote host or
+\par              its IP address must be present in the comma-separated list of patterns.  See PATTERNS in ssh_config(5) for
+\par              more information on patterns.
+\par 
+\par              In addition to the wildcard matching that may be applied to hostnames or addresses, a from stanza may match
+\par              IP addresses using CIDR address/masklen notation.
+\par 
+\par              The purpose of this option is to optionally increase security: public key authentication by itself does not
+\par              trust the network or name servers or anything (but the key); however, if somebody somehow steals the key,
+\par              the key permits an intruder to log in from anywhere in the world.  This additional option makes using a
+\par              stolen key more difficult (name servers and/or routers would have to be compromised in addition to just the
+\par              key).
+\par 
+\par      no-agent-forwarding
+\par              Forbids authentication agent forwarding when this key is used for authentication.
+\par 
+\par      no-port-forwarding
+\par              Forbids TCP forwarding when this key is used for authentication.  Any port forward requests by the client
+\par              will return an error.  This might be used, e.g. in connection with the command option.
+\par 
+\par      no-pty  Prevents tty allocation (a request to allocate a pty will fail).
+\par 
+\par      no-user-rc
+\par              Disables execution of ~/.ssh/rc.
+\par 
+\par      no-X11-forwarding
+\par              Forbids X11 forwarding when this key is used for authentication.  Any X11 forward requests by the client
+\par              will return an error.
+\par 
+\par      permitopen="host:port"
+\par              Limit local \lquote \lquote ssh -L\rquote \rquote  port forwarding such that it may only connect to the specified host and port.  IPv6
+\par              addresses can be specified with an alternative syntax: host/port.  Multiple permitopen options may be
+\par              applied separated by commas.  No pattern matching is performed on the specified hostnames, they must be
+\par              literal domains or addresses.
+\par 
+\par      tunnel="n"
+\par              Force a tun(4) device on the server.  Without this option, the next available device will be used if the
+\par              client requests a tunnel.
+\par 
+\par      An example authorized_keys file:
+\par 
+\par         # Comments allowed at start of line
+\par         ssh-rsa AAAAB3Nza...LiPk== user@example.net
+\par         from="*.sales.example.net,!pc.sales.example.net" ssh-rsa
+\par         AAAAB2...19Q== john@example.net
+\par         command="dump /home",no-pty,no-port-forwarding ssh-dss
+\par         AAAAC3...51R== example.net
+\par         permitopen="192.0.2.1:80",permitopen="192.0.2.2:25" ssh-dss
+\par         AAAAB5...21S==
+\par         tunnel="0",command="sh /etc/netstart tun0" ssh-rsa AAAA...==
+\par         jane@example.net
+\par 
+\par SSH_KNOWN_HOSTS FILE FORMAT
+\par      The /etc/ssh/ssh_known_hosts and ~/.ssh/known_hosts files contain host public keys for all known hosts.  The global
+\par      file should be prepared by the administrator (optional), and the per-user file is maintained automatically: when-
+\par      ever the user connects from an unknown host, its key is added to the per-user file.
+\par 
+\par      Each line in these files contains the following fields: hostnames, bits, exponent, modulus, comment.  The fields
+\par      are separated by spaces.
+\par 
+\par      Hostnames is a comma-separated list of patterns (\lquote *\rquote  and \lquote ?\rquote  act as wildcards); each pattern in turn is matched
+\par      against the canonical host name (when authenticating a client) or against the user-supplied name (when authenticat-
+\par      ing a server).  A pattern may also be preceded by \lquote !\rquote  to indicate negation: if the host name matches a negated pat-
+\par      tern, it is not accepted (by that line) even if it matched another pattern on the line.  A hostname or address may
+\par      optionally be enclosed within \lquote [\rquote  and \lquote ]\rquote  brackets then followed by \lquote :\rquote  and a non-standard port number.
+\par 
+\par      Alternately, hostnames may be stored in a hashed form which hides host names and addresses should the file\rquote s con-
+\par      tents be disclosed.  Hashed hostnames start with a \lquote |\rquote  character.  Only one hashed hostname may appear on a single
+\par      line and none of the above negation or wildcard operators may be applied.
+\par 
+\par      Bits, exponent, and modulus are taken directly from the RSA host key; they can be obtained, for example, from
+\par      /etc/ssh/ssh_host_key.pub.  The optional comment field continues to the end of the line, and is not used.
+\par 
+\par      Lines starting with \lquote #\rquote  and empty lines are ignored as comments.
+\par 
+\par      When performing host authentication, authentication is accepted if any matching line has the proper key.  It is
+\par      thus permissible (but not recommended) to have several lines or different host keys for the same names.  This will
+\par      inevitably happen when short forms of host names from different domains are put in the file.  It is possible that
+\par      the files contain conflicting information; authentication is accepted if valid information can be found from either
+\par      file.
+\par 
+\par      Note that the lines in these files are typically hundreds of characters long, and you definitely don\rquote t want to type
+\par      in the host keys by hand.  Rather, generate them by a script or by taking /etc/ssh/ssh_host_key.pub and adding the
+\par      host names at the front.
+\par 
+\par      An example ssh_known_hosts file:
+\par 
+\par         # Comments allowed at start of line
+\par         closenet,...,192.0.2.53 1024 37 159...93 closenet.example.net
+\par         cvs.example.net,192.0.2.10 ssh-rsa AAAA1234.....=
+\par         # A hashed hostname
+\par         |1|JfKTdBh7rNbXkVAQCRp4OQoPfmI=|USECr3SWf1JUPsms5AqfD5QfxkM= ssh-rsa
+\par         AAAA1234.....=
+\par 
+\par FILES
+\par      ~/.hushlogin
+\par              This file is used to suppress printing the last login time and /etc/motd, if PrintLastLog and PrintMotd,
+\par              respectively, are enabled.  It does not suppress printing of the banner specified by Banner.
+\par 
+\par      ~/.rhosts
+\par              This file is used for host-based authentication (see ssh(1) for more information).  On some machines this
+\par              file may need to be world-readable if the user\rquote s home directory is on an NFS partition, because sshd reads
+\par              it as root.  Additionally, this file must be owned by the user, and must not have write permissions for
+\par              anyone else.  The recommended permission for most machines is read/write for the user, and not accessible
+\par              by others.
+\par 
+\par      ~/.shosts
+\par              This file is used in exactly the same way as .rhosts, but allows host-based authentication without permit-
+\par              ting login with rlogin/rsh.
+\par 
+\par      ~/.ssh/
+\par              This directory is the default location for all user-specific configuration and authentication information.
+\par              There is no general requirement to keep the entire contents of this directory secret, but the recommended
+\par              permissions are read/write/execute for the user, and not accessible by others.
+\par 
+\par      ~/.ssh/authorized_keys
+\par              Lists the public keys (RSA/DSA) that can be used for logging in as this user.  The format of this file is
+\par              described above.  The content of the file is not highly sensitive, but the recommended permissions are
+\par              read/write for the user, and not accessible by others.
+\par 
+\par              If this file, the ~/.ssh directory, or the user\rquote s home directory are writable by other users, then the file
+\par              could be modified or replaced by unauthorized users.  In this case, sshd will not allow it to be used
+\par              unless the StrictModes option has been set to \ldblquote no\rdblquote .
+\par 
+\par      ~/.ssh/environment
+\par              This file is read into the environment at login (if it exists).  It can only contain empty lines, comment
+\par              lines (that start with \lquote #\rquote ), and assignment lines of the form name=value.  The file should be writable only
+\par              by the user; it need not be readable by anyone else.  Environment processing is disabled by default and is
+\par              controlled via the PermitUserEnvironment option.
+\par 
+\par      ~/.ssh/known_hosts
+\par              Contains a list of host keys for all hosts the user has logged into that are not already in the systemwide
+\par              list of known host keys.  The format of this file is described above.  This file should be writable only by
+\par              root/the owner and can, but need not be, world-readable.
+\par 
+\par      ~/.ssh/rc
+\par              Contains initialization routines to be run before the user\rquote s home directory becomes accessible.  This file
+\par              should be writable only by the user, and need not be readable by anyone else.
+\par 
+\par      /etc/hosts.allow
+\par      /etc/hosts.deny
+\par              Access controls that should be enforced by tcp-wrappers are defined here.  Further details are described in
+\par              hosts_access(5).
+\par 
+\par      /etc/hosts.equiv
+\par              This file is for host-based authentication (see ssh(1)).  It should only be writable by root.
+\par 
+\par      /etc/ssh/moduli
+\par              Contains Diffie-Hellman groups used for the "Diffie-Hellman Group Exchange".  The file format is described
+\par              in moduli(5).
+\par 
+\par      /etc/motd
+\par              See motd(5).
+\par 
+\par      /etc/nologin
+\par              If this file exists, sshd refuses to let anyone except root log in.  The contents of the file are displayed
+\par              to anyone trying to log in, and non-root connections are refused.  The file should be world-readable.
+\par 
+\par      /etc/ssh/shosts.equiv
+\par              This file is used in exactly the same way as hosts.equiv, but allows host-based authentication without per-
+\par              mitting login with rlogin/rsh.
+\par 
+\par      /etc/ssh/ssh_host_key
+\par      /etc/ssh/ssh_host_dsa_key
+\par      /etc/ssh/ssh_host_rsa_key
+\par              These three files contain the private parts of the host keys.  These files should only be owned by root,
+\par              readable only by root, and not accessible to others.  Note that sshd does not start if these files are
+\par              group/world-accessible.
+\par 
+\par      /etc/ssh/ssh_host_key.pub
+\par      /etc/ssh/ssh_host_dsa_key.pub
+\par      /etc/ssh/ssh_host_rsa_key.pub
+\par              These three files contain the public parts of the host keys.  These files should be world-readable but
+\par              writable only by root.  Their contents should match the respective private parts.  These files are not
+\par              really used for anything; they are provided for the convenience of the user so their contents can be copied
+\par              to known hosts files.  These files are created using ssh-keygen(1).
+\par 
+\par      /etc/ssh/ssh_known_hosts
+\par              Systemwide list of known host keys.  This file should be prepared by the system administrator to contain
+\par              the public host keys of all machines in the organization.  The format of this file is described above.
+\par              This file should be writable only by root/the owner and should be world-readable.
+\par 
+\par      /etc/ssh/sshd_config
+\par              Contains configuration data for sshd.  The file format and configuration options are described in
+\par              sshd_config(5).
+\par 
+\par      /etc/ssh/sshrc
+\par              Similar to ~/.ssh/rc, it can be used to specify machine-specific login-time initializations globally.  This
+\par              file should be writable only by root, and should be world-readable.
+\par 
+\par      /var/empty/sshd
+\par              chroot(2) directory used by sshd during privilege separation in the pre-authentication phase.  The direc-
+\par              tory should not contain any files and must be owned by root and not group or world-writable.
+\par 
+\par      /var/run/sshd.pid
+\par              Contains the process ID of the sshd listening for connections (if there are several daemons running concur-
+\par              rently for different ports, this contains the process ID of the one started last).  The content of this
+\par              file is not sensitive; it can be world-readable.
+\par 
+\par ENVIRONMENT
+\par      SSH_USE_STRONG_RNG
+\par              The reseeding of the OpenSSL random generator is usually done from /dev/urandom.  If the SSH_USE_STRONG_RNG
+\par              environment variable is set to value other than 0 the OpenSSL random generator is reseeded from
+\par              /dev/random.  The number of bytes read is defined by the SSH_USE_STRONG_RNG value.  Minimum is 6 bytes.
+\par              This setting is not recommended on the computers without the hardware random generator because insufficient
+\par              entropy causes the connection to be blocked until enough entropy is available.
+\par 
+\par IPV6
+\par      IPv6 address can be used everywhere where IPv4 address. In all entries must be the IPv6 address enclosed in square
+\par      brackets. Note: The square brackets are metacharacters for the shell and must be escaped in shell.
+\par 
+\par SEE ALSO
+\par      scp(1), sftp(1), ssh(1), ssh-add(1), ssh-agent(1), ssh-keygen(1), ssh-keyscan(1), chroot(2), hosts_access(5),
+\par      login.conf(5), moduli(5), sshd_config(5), inetd(8), sftp-server(8)
+\par 
+\par AUTHORS
+\par      OpenSSH is a derivative of the original and free ssh 1.2.12 release by Tatu Ylonen.  Aaron Campbell, Bob Beck,
+\par      Markus Friedl, Niels Provos, Theo de Raadt and Dug Song removed many bugs, re-added newer features and created
+\par      OpenSSH.  Markus Friedl contributed the support for SSH protocol versions 1.5 and 2.0.  Niels Provos and Markus
+\par      Friedl contributed support for privilege separation.
+\par 
+\par CAVEATS
+\par      System security is not improved unless rshd, rlogind, and rexecd are disabled (thus completely disabling rlogin and
+\par      rsh into the machine).
+\par 
+\par BSD                             January 5, 2014                            BSD\par}

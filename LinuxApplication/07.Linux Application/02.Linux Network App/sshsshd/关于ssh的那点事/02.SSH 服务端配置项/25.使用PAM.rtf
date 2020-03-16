@@ -1,0 +1,30 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil Arial;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid765305632\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+\listid1295594404}
+}
+{\*\listoverridetable
+{\listoverride\listid1295594404\listoverridecount0\ls1}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 25.\uc2\u20351 \'ca\'b9\u29992 \'d3\'c3PAM\uc1
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\b\fs20 25)\uc2\u20351 \'ca\'b9\u29992 \'d3\'c3PAM\uc1
+\par \plain \f1\fs20 \uc2\u22312 \'d4\'daSSH\u26381 \'b7\'fe\u21153 \'ce\'f1\u31471 \'b6\'cb\u20351 \'ca\'b9\u29992 \'d3\'c3UsePAM yes,\u21017 \'d4\'f2ssh\u26381 \'b7\'fe\u21153 \'ce\'f1\u31471 \'b6\'cb\u20250 \'bb\'e1\u21152 \'bc\'d3\u36733 \'d4\'d8/etc/pam.d/sshd,\u25105 \'ce\'d2\u20204 \'c3\'c7\u20570 \'d7\'f6\u19979 \'cf\'c2\u38754 \'c3\'e6\u30340 \'b5\'c4\u35797 \'ca\'d4\u39564 \'d1\'e9\uc1
+\par \uc2\u20462 \'d0\'de\u25913 \'b8\'c4sshd\u30340 \'b5\'c4pam,\u21152 \'bc\'d3\u20837 \'c8\'ebsession \~ \~ required \~ \~ \~pam_limits.so,\u22914 \'c8\'e7\u19979 \'cf\'c2:\uc1
+\par vi /etc/pam.d/sshd
+\par session \~ \~ required \~ \~ \~pam_limits.so
+\par \uc2\u20462 \'d0\'de\u25913 \'b8\'c4cat /etc/security/limits.conf ,\u22914 \'c8\'e7\u19979 \'cf\'c2:\uc1
+\par * \~ \~ \~ \~ \~ \~ \~ soft \~ \~core \~ \~ \~ \~ \~ \~1000
+\par \uc2\u23458 \'bf\'cd\u25143 \'bb\'a7\u31471 \'b6\'cb\u30331 \'b5\'c7\u24405 \'c2\'bcSSH\u26381 \'b7\'fe\u21153 \'ce\'f1\u31471 \'b6\'cb,\u26597 \'b2\'e9\u30475 \'bf\'b4core limit,\u22914 \'c8\'e7\u19979 \'cf\'c2:\uc1
+\par ulimit -c
+\par 1000
+\par \uc2\u20851 \'b9\'d8\u38381 \'b1\'d5SSH\u26381 \'b7\'fe\u21153 \'ce\'f1\u31471 \'b6\'cb\u30340 \'b5\'c4\u30340 \'b5\'c4PAM\u35748 \'c8\'cf\u35777 \'d6\'a4,\u22914 \'c8\'e7\u19979 \'cf\'c2:\uc1
+\par vi /etc/ssh/sshd_config
+\par UsePAM no
+\par \uc2\u20877 \'d4\'d9\u27425 \'b4\'ce\u20174 \'b4\'d3\u23458 \'bf\'cd\u25143 \'bb\'a7\u31471 \'b6\'cb\u30331 \'b5\'c7\u24405 \'c2\'bcssh\u26381 \'b7\'fe\u21153 \'ce\'f1\u31471 \'b6\'cb,\u26597 \'b2\'e9\u30475 \'bf\'b4core limit,\u22914 \'c8\'e7\u19979 \'cf\'c2:\uc1
+\par ulimit -c
+\par 0
+\par \uc2\u25105 \'ce\'d2\u20204 \'c3\'c7\u35777 \'d6\'a4\u26126 \'c3\'f7ssh/PAM\u26159 \'ca\'c7\u36215 \'c6\'f0\u20316 \'d7\'f7\u29992 \'d3\'c3\u30340 \'b5\'c4,\u36890 \'cd\'a8\u36807 \'b9\'fdSSH/PAM\u21487 \'bf\'c9\u23454 \'ca\'b5\u29616 \'cf\'d6limit.conf\u30340 \'b5\'c4\u21160 \'b6\'af\u24577 \'cc\'ac\u21152 \'bc\'d3\u36733 \'d4\'d8.\uc1
+\par \uc2\u25105 \'ce\'d2\u20204 \'c3\'c7\u24314 \'bd\'a8\u35758 \'d2\'e9\u20351 \'ca\'b9\u29992 \'d3\'c3SSH/PAM,\u22914 \'c8\'e7\u19979 \'cf\'c2:\uc1
+\par UsePAM yes\par}

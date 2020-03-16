@@ -1,0 +1,49 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil Arial;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid574698500\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+\listid238835222}
+}
+{\*\listoverridetable
+{\listoverride\listid238835222\listoverridecount0\ls1}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 26.\uc2\u24320 \'bf\'aa\u21551 \'c6\'f4\u21387 \'d1\'b9\u32553 \'cb\'f5\u36873 \'d1\'a1\u39033 \'cf\'ee\uc1
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\b\fs20 26)\uc2\u24320 \'bf\'aa\u21551 \'c6\'f4\u21387 \'d1\'b9\u32553 \'cb\'f5\u36873 \'d1\'a1\u39033 \'cf\'ee\uc1
+\par \plain \f1\fs20 \uc2\u25105 \'ce\'d2\u20204 \'c3\'c7\u21487 \'bf\'c9\u20197 \'d2\'d4\u25171 \'b4\'f2\u24320 \'bf\'aaCompression\u36873 \'d1\'a1\u39033 \'cf\'ee,\u21363 \'bc\'b4:\uc1
+\par vi /etc/ssh/sshd_config
+\par Compression yes
+\par \uc2\u27979 \'b2\'e2\u35797 \'ca\'d4\u30340 \'b5\'c4\u21387 \'d1\'b9\u32553 \'cb\'f5\u25928 \'d0\'a7\u26524 \'b9\'fb\u22914 \'c8\'e7\u19979 \'cf\'c2:\uc1
+\par scp \~-v /tmp/test root@192.168.27.142:/tmp
+\par \uc2\u30053 \'c2\'d4\uc1
+\par debug1: Sending command: scp -v -t /tmp
+\par Sending file modes: C0644 209715200 test
+\par Sink: C0644 209715200 test
+\par test \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~100% \~200MB \~ 9.1MB/s \~ 00:22
+\par debug1: client_input_channel_req: channel 0 rtype exit-status reply 0
+\par debug1: channel 0: free: client-session, nchannels 1
+\par debug1: fd 0 clearing O_NONBLOCK
+\par debug1: fd 1 clearing O_NONBLOCK
+\par Transferred: sent 209936128, received 56592 bytes, in 22.3 seconds
+\par Bytes per second: sent 9430610.8, received 2542.2
+\par debug1: Exit status 0
+\par \uc2\u27880 \'d7\'a2:\uc1
+\par \uc2\u29992 \'d3\'c3SCP\u26102 \'ca\'b1\u19981 \'b2\'bb\u21551 \'c6\'f4\u29992 \'d3\'c3\u21387 \'d1\'b9\u32553 \'cb\'f5\u36873 \'d1\'a1\u39033 \'cf\'ee,\u27492 \'b4\'cb\u26102 \'ca\'b1\u20256 \'b4\'ab\u36755 \'ca\'e4200MB\u30340 \'b5\'c4\u25968 \'ca\'fd\u25454 \'be\'dd\u22823 \'b4\'f3\u27010 \'b8\'c5\u29992 \'d3\'c3\u20102 \'c1\'cb22\u31186 \'c3\'eb.\uc1
+\par scp\uc2\u21551 \'c6\'f4\u29992 \'d3\'c3\u21387 \'d1\'b9\u32553 \'cb\'f5\u36873 \'d1\'a1\u39033 \'cf\'ee,\u21363 \'bc\'b4\u22312 \'d4\'da\u21629 \'c3\'fc\u20196 \'c1\'ee\u34892 \'d0\'d0\u20013 \'d6\'d0\u21152 \'bc\'d3\u20837 \'c8\'eb-C,\u22914 \'c8\'e7\u19979 \'cf\'c2:\uc1
+\par scp \~-C -v /tmp/test root@192.168.27.142:/tmp
+\par Executing: program /usr/bin/ssh host 192.168.27.142, user root, command scp -v -t /tmp
+\par Sending file modes: C0644 209715200 test
+\par test \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~0% \~ \~0 \~ \~ 0.0KB/s \~ --:-- ETASink: C0644 209715200 test
+\par test \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~ \~100% \~200MB \~14.3MB/s \~ 00:14
+\par debug1: client_input_channel_req: channel 0 rtype exit-status reply 0
+\par debug1: channel 0: free: client-session, nchannels 1
+\par debug1: fd 0 clearing O_NONBLOCK
+\par debug1: fd 1 clearing O_NONBLOCK
+\par Transferred: sent 615920, received 54144 bytes, in 13.6 seconds
+\par Bytes per second: sent 45267.3, received 3979.3
+\par debug1: Exit status 0
+\par debug1: compress outgoing: raw data 209830605, compressed 448191, factor 0.00
+\par debug1: compress incoming: raw data 29449, compressed 14259, factor 0.48
+\par \uc2\u27880 \'d7\'a2:\uc1
+\par \uc2\u25105 \'ce\'d2\u20204 \'c3\'c7\u30475 \'bf\'b4\u21040 \'b5\'bd\u21551 \'c6\'f4\u29992 \'d3\'c3\u21387 \'d1\'b9\u32553 \'cb\'f5\u36873 \'d1\'a1\u39033 \'cf\'ee,\u27492 \'b4\'cb\u26102 \'ca\'b1\u20256 \'b4\'ab\u36755 \'ca\'e4200MB\u30340 \'b5\'c4\u25968 \'ca\'fd\u25454 \'be\'dd\u21482 \'d6\'bb\u29992 \'d3\'c3\u20102 \'c1\'cb14\u31186 \'c3\'eb.\uc1
+\par \uc2\u26368 \'d7\'ee\u21518 \'ba\'f3\u23427 \'cb\'fc\u36824 \'bb\'b9\u26174 \'cf\'d4\u31034 \'ca\'be\u20102 \'c1\'cb\u21387 \'d1\'b9\u32553 \'cb\'f5\u30340 \'b5\'c4\u35814 \'cf\'ea\u32454 \'cf\'b8\u20449 \'d0\'c5\u24687 \'cf\'a2.\uc1\par}

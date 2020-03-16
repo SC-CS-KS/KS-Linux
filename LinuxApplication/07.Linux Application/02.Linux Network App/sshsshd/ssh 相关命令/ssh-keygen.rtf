@@ -1,0 +1,264 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil\fcharset0 Times New Roman;}}{\colortbl;\red0\green0\blue255;\red0\green128\blue128;\red0\green0\blue0;\red79\green129\blue189;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid434622426
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\b\i\fs28}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+{\listlevel\levelnfc0\leveljc0\li0\fi0\jclisttab\tx0\levelstartat1{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+\listid1535621444}
+{\list\listtemplateid928395865\listsimple1
+{\listlevel\levelnfc0\leveljc0\li1380\fi-420\jclisttab\tx1380\levelstartat1{\leveltext\'02\'00);}{\levelnumbers\'01;}\f3\b\i\fs24\cf4}
+\listid1701913023}
+}
+{\*\listoverridetable
+{\listoverride\listid1535621444\listoverridecount0\ls1}
+{\listoverride\listid1701913023\listoverridecount0\ls2}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf3 ssh-keygen
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs20\cf1 ssh-keygen -t rsa  -N "" -f /home/sunny/.ssh/id_rsa > /dev/null
+\par \plain \f1\fs20\cf2 ----------------------------------------------------------------------------------------------------
+\par \plain \f1\fs20 SSH-KEYGEN(1)             BSD General Commands Manual            SSH-KEYGEN(1)
+\par 
+\par NAME
+\par \plain \f1\fs20\cf1      ssh-keygen - authentication key generation, management and conversion
+\par \plain \f1\fs20 
+\par SYNOPSIS
+\par      ssh-keygen [-q] [-b bits]\plain \f1\fs20\cf1  -t type\plain \f1\fs20  [\plain \f1\fs20\cf1 -N new_passphrase\plain \f1\fs20 ] [-C comment] [\plain \f1\fs20\cf1 -f output_keyfile\plain \f1\fs20 ]
+\par      ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]
+\par      ssh-keygen -i [-f input_keyfile]
+\par      ssh-keygen -e [-f input_keyfile]
+\par      ssh-keygen -y [-f input_keyfile]
+\par      ssh-keygen -c [-P passphrase] [-C comment] [-f keyfile]
+\par      ssh-keygen -l [-f input_keyfile]
+\par      ssh-keygen -B [-f input_keyfile]
+\par      ssh-keygen -D reader
+\par      ssh-keygen -F hostname [-f known_hosts_file] [-l]
+\par      ssh-keygen -H [-f known_hosts_file]
+\par      ssh-keygen -R hostname [-f known_hosts_file]
+\par      ssh-keygen -U reader [-f input_keyfile]
+\par      ssh-keygen -r hostname [-f input_keyfile] [-g]
+\par      ssh-keygen -G output_file [-v] [-b bits] [-M memory] [-S start_point]
+\par      ssh-keygen -T output_file -f input_file [-v] [-a num_trials] [-W generator]
+\par      ssh-keygen [-n] [-D smartcard]
+\par 
+\par DESCRIPTION
+\par      ssh-keygen generates, manages and converts authentication keys for ssh(1).  ssh-keygen can create RSA keys for use
+\par      by SSH protocol version 1 and RSA or DSA keys for use by SSH protocol version 2.  The type of key to be generated
+\par      is specified with the -t option.  If invoked without any arguments, ssh-keygen will generate an RSA key for use in
+\par      SSH protocol 2 connections.
+\par 
+\par      ssh-keygen is also used to generate groups for use in Diffie-Hellman group exchange (DH-GEX).  See the MODULI
+\par      GENERATION section for details.
+\par 
+\par      Normally each user wishing to use SSH with RSA or DSA authentication runs this once to create the authentication
+\par      key in ~/.ssh/identity, ~/.ssh/id_dsa or ~/.ssh/id_rsa.  Additionally, the system administrator may use this to
+\par      generate host keys, as seen in /etc/rc.
+\par 
+\par      Normally this program generates the key and asks for a file in which to store the private key.  The public key is
+\par      stored in a file with the same name but \ldblquote .pub\rdblquote  appended.  The program also asks for a passphrase.  The passphrase
+\par      may be empty to indicate no passphrase (host keys must have an empty passphrase), or it may be a string of arbi-
+\par      trary length.  A passphrase is similar to a password, except it can be a phrase with a series of words, punctua-
+\par      tion, numbers, whitespace, or any string of characters you want.  Good passphrases are 10-30 characters long, are
+\par      not simple sentences or otherwise easily guessable (English prose has only 1-2 bits of entropy per character, and
+\par      provides very bad passphrases), and contain a mix of upper and lowercase letters, numbers, and non-alphanumeric
+\par      characters.  The passphrase can be changed later by using the -p option.
+\par 
+\par      There is no way to recover a lost passphrase.  If the passphrase is lost or forgotten, a new key must be generated
+\par      and copied to the corresponding public key to other machines.
+\par 
+\par      For RSA1 keys, there is also a comment field in the key file that is only for convenience to the user to help iden-
+\par      tify the key.  The comment can tell what the key is for, or whatever is useful.  The comment is initialized to
+\par      \ldblquote user@host\rdblquote  when the key is created, but can be changed using the -c option.
+\par 
+\par      After a key is generated, instructions below detail where the keys should be placed to be activated.
+\par 
+\par      The options are as follows:
+\par 
+\par      -a trials
+\par              Specifies the number of primality tests to perform when screening DH-GEX candidates using the -T command.
+\par 
+\par      -B      Show the bubblebabble digest of specified private or public key file.
+\par 
+\par      -b bits
+\par              Specifies the number of bits in the key to create.  For RSA keys, the minimum size is 768 bits and the
+\par              default is 2048 bits.  Generally, 2048 bits is considered sufficient.  DSA keys must be exactly 1024 bits
+\par              as specified by FIPS 186-2.
+\par 
+\par      -C comment
+\par              Provides a new comment.
+\par 
+\par      -c      Requests changing the comment in the private and public key files.  This operation is only supported for
+\par              RSA1 keys.  The program will prompt for the file containing the private keys, for the passphrase if the key
+\par              has one, and for the new comment.
+\par 
+\par      -D reader
+\par              Download the RSA public key stored in the smartcard in reader.
+\par 
+\par      -e      This option will read a private or public OpenSSH key file and print the key in RFC 4716 SSH Public Key
+\par              File Format to stdout.  This option allows exporting keys for use by several commercial SSH implementa-
+\par              tions.
+\par 
+\par      -F hostname
+\par              Search for the specified hostname in a known_hosts file, listing any occurrences found.  This option is
+\par              useful to find hashed host names or addresses and may also be used in conjunction with the -H option to
+\par              print found keys in a hashed format.
+\par 
+\par      -f filename
+\par              Specifies the filename of the key file.
+\par 
+\par      -G output_file
+\par              Generate candidate primes for DH-GEX.  These primes must be screened for safety (using the -T option)
+\par              before use.
+\par 
+\par      -g      Use generic DNS format when printing fingerprint resource records using the -r command.
+\par 
+\par      -H      Hash a known_hosts file.  This replaces all hostnames and addresses with hashed representations within the
+\par              specified file; the original content is moved to a file with a .old suffix.  These hashes may be used nor-
+\par              mally by ssh and sshd, but they do not reveal identifying information should the file\rquote s contents be dis-
+\par              closed.  This option will not modify existing hashed hostnames and is therefore safe to use on files that
+\par              mix hashed and non-hashed names.
+\par 
+\par      -i      This option will read an unencrypted private (or public) key file in SSH2-compatible format and print an
+\par              OpenSSH compatible private (or public) key to stdout.  ssh-keygen also reads the RFC 4716 SSH Public Key
+\par              File Format.  This option allows importing keys from several commercial SSH implementations.
+\par 
+\par      -l      Show fingerprint of specified public key file.  Private RSA1 keys are also supported.  For RSA and DSA keys
+\par              ssh-keygen tries to find the matching public key file and prints its fingerprint.  If combined with -v, an
+\par              ASCII art representation of the key is supplied with the fingerprint.
+\par 
+\par      -M memory
+\par              Specify the amount of memory to use (in megabytes) when generating candidate moduli for DH-GEX.
+\par 
+\par      -n      Extract the public key from smartcard.
+\par 
+\par      -N new_passphrase
+\par              Provides the new passphrase.
+\par 
+\par      -P passphrase
+\par              Provides the (old) passphrase.
+\par 
+\par      -p      Requests changing the passphrase of a private key file instead of creating a new private key.  The program
+\par              will prompt for the file containing the private key, for the old passphrase, and twice for the new
+\par              passphrase.
+\par 
+\par      -q      Silence ssh-keygen.  Used by /etc/rc when creating a new key.
+\par 
+\par      -R hostname
+\par              Removes all keys belonging to hostname from a known_hosts file.  This option is useful to delete hashed
+\par              hosts (see the -H option above).
+\par 
+\par      -r hostname
+\par              Print the SSHFP fingerprint resource record named hostname for the specified public key file.
+\par 
+\par      -S start
+\par              Specify start point (in hex) when generating candidate moduli for DH-GEX.
+\par 
+\par      -T output_file
+\par              Test DH group exchange candidate primes (generated using the -G option) for safety.
+\par 
+\par      -t type
+\par              Specifies the type of key to create.  The possible values are \ldblquote rsa1\rdblquote  for protocol version 1 and \ldblquote rsa\rdblquote  or
+\par              \ldblquote dsa\rdblquote  for protocol version 2.
+\par 
+\par      -U reader
+\par              Upload an existing RSA private key into the smartcard in reader.
+\par 
+\par      -v      Verbose mode.  Causes ssh-keygen to print debugging messages about its progress.  This is helpful for
+\par              debugging moduli generation.  Multiple -v options increase the verbosity.  The maximum is 3.
+\par 
+\par      -W generator
+\par              Specify desired generator when testing candidate moduli for DH-GEX.
+\par 
+\par      -y      This option will read a private OpenSSH format file and print an OpenSSH public key to stdout.
+\par 
+\par MODULI GENERATION
+\par      ssh-keygen may be used to generate groups for the Diffie-Hellman Group Exchange (DH-GEX) protocol.  Generating
+\par      these groups is a two-step process: first, candidate primes are generated using a fast, but memory intensive pro-
+\par      cess.  These candidate primes are then tested for suitability (a CPU-intensive process).
+\par 
+\par      Generation of primes is performed using the -G option.  The desired length of the primes may be specified by the -b
+\par      option.  For example:
+\par 
+\par            # ssh-keygen -G moduli-2048.candidates -b 2048
+\par 
+\par      By default, the search for primes begins at a random point in the desired length range.  This may be overridden
+\par      using the -S option, which specifies a different start point (in hex).
+\par 
+\par      Once a set of candidates have been generated, they must be tested for suitability.  This may be performed using the
+\par      -T option.  In this mode ssh-keygen will read candidates from standard input (or a file specified using the -f
+\par      option).  For example:
+\par 
+\par            # ssh-keygen -T moduli-2048 -f moduli-2048.candidates
+\par 
+\par      By default, each candidate will be subjected to 100 primality tests.  This may be overridden using the -a option.
+\par      The DH generator value will be chosen automatically for the prime under consideration.  If a specific generator is
+\par      desired, it may be requested using the -W option.  Valid generator values are 2, 3, and 5.
+\par 
+\par      Screened DH groups may be installed in /etc/ssh/moduli.  It is important that this file contains moduli of a range
+\par      of bit lengths and that both ends of a connection share common moduli.
+\par 
+\par FILES
+\par      ~/.ssh/identity
+\par              Contains the protocol version 1 RSA authentication identity of the user.  This file should not be readable
+\par              by anyone but the user.  It is possible to specify a passphrase when generating the key; that passphrase
+\par              will be used to encrypt the private part of this file using 3DES.  This file is not automatically accessed
+\par              by ssh-keygen but it is offered as the default file for the private key.  ssh(1) will read this file when a
+\par              login attempt is made.
+\par 
+\par      ~/.ssh/identity.pub
+\par              Contains the protocol version 1 RSA public key for authentication.  The contents of this file should be
+\par              added to ~/.ssh/authorized_keys on all machines where the user wishes to log in using RSA authentication.
+\par              There is no need to keep the contents of this file secret.
+\par 
+\par      ~/.ssh/id_dsa
+\par              Contains the protocol version 2 DSA authentication identity of the user.  This file should not be readable
+\par              by anyone but the user.  It is possible to specify a passphrase when generating the key; that passphrase
+\par              will be used to encrypt the private part of this file using 3DES.  This file is not automatically accessed
+\par              by ssh-keygen but it is offered as the default file for the private key.  ssh(1) will read this file when a
+\par              login attempt is made.
+\par 
+\par      ~/.ssh/id_dsa.pub
+\par              Contains the protocol version 2 DSA public key for authentication.  The contents of this file should be
+\par              added to ~/.ssh/authorized_keys on all machines where the user wishes to log in using public key authenti-
+\par              cation.  There is no need to keep the contents of this file secret.
+\par 
+\par      ~/.ssh/id_rsa
+\par              Contains the protocol version 2 RSA authentication identity of the user.  This file should not be readable
+\par              by anyone but the user.  It is possible to specify a passphrase when generating the key; that passphrase
+\par              will be used to encrypt the private part of this file using 3DES.  This file is not automatically accessed
+\par              by ssh-keygen but it is offered as the default file for the private key.  ssh(1) will read this file when a
+\par              login attempt is made.
+\par 
+\par      ~/.ssh/id_rsa.pub
+\par              Contains the protocol version 2 RSA public key for authentication.  The contents of this file should be
+\par              added to ~/.ssh/authorized_keys on all machines where the user wishes to log in using public key authenti-
+\par              cation.  There is no need to keep the contents of this file secret.
+\par 
+\par      /etc/ssh/moduli
+\par              Contains Diffie-Hellman groups used for DH-GEX.  The file format is described in moduli(5).
+\par 
+\par ENVIRONMENT
+\par      SSH_USE_STRONG_RNG
+\par              The reseeding of the OpenSSL random generator is usually done from /dev/urandom.  If the SSH_USE_STRONG_RNG
+\par              environment variable is set to value other than 0 the OpenSSL random generator is reseeded from
+\par              /dev/random.  The number of bytes read is defined by the SSH_USE_STRONG_RNG value.  Minimum is 6 bytes.
+\par              This setting is not recommended on the computers without the hardware random generator because insufficient
+\par              entropy causes the connection to be blocked until enough entropy is available.
+\par 
+\par SEE ALSO
+\par      ssh(1), ssh-add(1), ssh-agent(1), moduli(5), sshd(8)
+\par 
+\par      The Secure Shell (SSH) Public Key File Format, RFC 4716, 2006.
+\par 
+\par AUTHORS
+\par      OpenSSH is a derivative of the original and free ssh 1.2.12 release by Tatu Ylonen.  Aaron Campbell, Bob Beck,
+\par      Markus Friedl, Niels Provos, Theo de Raadt and Dug Song removed many bugs, re-added newer features and created
+\par      OpenSSH.  Markus Friedl contributed the support for SSH protocol versions 1.5 and 2.0.
+\par 
+\par BSD                             January 5, 2014                            BSD\par}

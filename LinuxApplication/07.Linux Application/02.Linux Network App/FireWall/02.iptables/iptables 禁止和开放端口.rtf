@@ -1,0 +1,228 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil Arial;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid1379098855\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid1681704586}
+{\list\listtemplateid1474792630\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid1037065621}
+{\list\listtemplateid1107504109\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid1076549032}
+{\list\listtemplateid1279873100\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid960661379}
+}
+{\*\listoverridetable
+{\listoverride\listid1681704586\listoverridecount0\ls1}
+{\listoverride\listid1037065621\listoverridecount0\ls2}
+{\listoverride\listid1076549032\listoverridecount0\ls3}
+{\listoverride\listid960661379\listoverridecount0\ls4}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 iptables \uc2\u31105 \'bd\'fb\u27490 \'d6\'b9\u21644 \'ba\'cd\u24320 \'bf\'aa\u25918 \'b7\'c5\u31471 \'b6\'cb\u21475 \'bf\'da\uc1
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\b\fs20 1\uc2\u12289 \'a1\'a2\u20851 \'b9\'d8\u38381 \'b1\'d5\u25152 \'cb\'f9\u26377 \'d3\'d0\u30340 \'b5\'c4 INPUT FORWARD OUTPUT \u21482 \'d6\'bb\u23545 \'b6\'d4\u26576 \'c4\'b3\u20123 \'d0\'a9\u31471 \'b6\'cb\u21475 \'bf\'da\u24320 \'bf\'aa\u25918 \'b7\'c5\u12290 \'a1\'a3\uc1
+\par \plain \f1\fs20 \uc2\u19979 \'cf\'c2\u38754 \'c3\'e6\u26159 \'ca\'c7\u21629 \'c3\'fc\u20196 \'c1\'ee\u23454 \'ca\'b5\u29616 \'cf\'d6\u65306 \'a3\'ba\uc1
+\par iptables -P INPUT DROP
+\par iptables -P FORWARD DROP
+\par iptables -P OUTPUT DROP
+\par 
+\par \uc2\u20877 \'d4\'d9\u29992 \'d3\'c3\u21629 \'c3\'fc\u20196 \'c1\'ee iptables -L -n \u26597 \'b2\'e9\u30475 \'bf\'b4 \u26159 \'ca\'c7\u21542 \'b7\'f1\u35774 \'c9\'e8\u32622 \'d6\'c3\u22909 \'ba\'c3\u65292 \'a3\'ac \u22909 \'ba\'c3\u30475 \'bf\'b4\u21040 \'b5\'bd\u20840 \'c8\'ab\u37096 \'b2\'bf DROP \u20102 \'c1\'cb\uc1
+\par \uc2\u36825 \'d5\'e2\u26679 \'d1\'f9\u30340 \'b5\'c4\u35774 \'c9\'e8\u32622 \'d6\'c3\u22909 \'ba\'c3\u20102 \'c1\'cb\u65292 \'a3\'ac\u25105 \'ce\'d2\u20204 \'c3\'c7\u21482 \'d6\'bb\u26159 \'ca\'c7\u20020 \'c1\'d9\u26102 \'ca\'b1\u30340 \'b5\'c4\u65292 \'a3\'ac \u37325 \'d6\'d8\u21551 \'c6\'f4\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7\u36824 \'bb\'b9\u26159 \'ca\'c7\u20250 \'bb\'e1\u24674 \'bb\'d6\u22797 \'b8\'b4\u21407 \'d4\'ad\u26469 \'c0\'b4\u27809 \'c3\'bb\u26377 \'d3\'d0\u35774 \'c9\'e8\u32622 \'d6\'c3\u30340 \'b5\'c4\u29366 \'d7\'b4\u24577 \'cc\'ac\uc1
+\par \uc2\u36824 \'bb\'b9\u35201 \'d2\'aa\u20351 \'ca\'b9\u29992 \'d3\'c3 service iptables save \u36827 \'bd\'f8\u34892 \'d0\'d0\u20445 \'b1\'a3\u23384 \'b4\'e6\uc1
+\par \uc2\u30475 \'bf\'b4\u21040 \'b5\'bd\u20449 \'d0\'c5\u24687 \'cf\'a2 firewall rules \u38450 \'b7\'c0\u28779 \'bb\'f0\u22681 \'c7\'bd\u30340 \'b5\'c4\u35268 \'b9\'e6\u21017 \'d4\'f2 \u20854 \'c6\'e4\u23454 \'ca\'b5\u23601 \'be\'cd\u26159 \'ca\'c7\u20445 \'b1\'a3\u23384 \'b4\'e6\u22312 \'d4\'da /etc/sysconfig/iptables\uc1
+\par \uc2\u21487 \'bf\'c9\u20197 \'d2\'d4\u25171 \'b4\'f2\u24320 \'bf\'aa\u25991 \'ce\'c4\u20214 \'bc\'fe\u26597 \'b2\'e9\u30475 \'bf\'b4 vi /etc/sysconfig/iptables\uc1
+\par 
+\par \plain \f1\b\fs20 2\uc2\u12289 \'a1\'a2\u19979 \'cf\'c2\u38754 \'c3\'e6\u25105 \'ce\'d2\u21482 \'d6\'bb\u25171 \'b4\'f2\u24320 \'bf\'aa22\u31471 \'b6\'cb\u21475 \'bf\'da\u65292 \'a3\'ac\u30475 \'bf\'b4\u25105 \'ce\'d2\u26159 \'ca\'c7\u22914 \'c8\'e7\u20309 \'ba\'ce\u25805 \'b2\'d9\u20316 \'d7\'f7\u30340 \'b5\'c4\u65292 \'a3\'ac\u23601 \'be\'cd\u26159 \'ca\'c7\u19979 \'cf\'c2\u38754 \'c3\'e62\u20010 \'b8\'f6\u35821 \'d3\'ef\u21477 \'be\'e4\uc1
+\par \plain \f1\fs20 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+\par iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
+\par \uc2\u20877 \'d4\'d9\u26597 \'b2\'e9\u30475 \'bf\'b4\u19979 \'cf\'c2 iptables -L -n \u26159 \'ca\'c7\u21542 \'b7\'f1\u28155 \'cc\'ed\u21152 \'bc\'d3\u19978 \'c9\'cf\u21435 \'c8\'a5, \u30475 \'bf\'b4\u21040 \'b5\'bd\u28155 \'cc\'ed\u21152 \'bc\'d3\u20102 \'c1\'cb\uc1
+\par Chain INPUT (policy DROP)
+\par target\~\~\~\~ prot opt source\~\~\~\~\~\~\~\~\~\~\~\~\~\~ destination
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ tcp dpt:22
+\par Chain FORWARD (policy DROP)
+\par target\~\~\~\~ prot opt source\~\~\~\~\~\~\~\~\~\~\~\~\~\~ destination
+\par Chain OUTPUT (policy DROP)
+\par target\~\~\~\~ prot opt source\~\~\~\~\~\~\~\~\~\~\~\~\~\~ destination
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ tcp spt:22
+\par \uc2\u29616 \'cf\'d6\u22312 \'d4\'daLinux\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7\u21482 \'d6\'bb\u25171 \'b4\'f2\u24320 \'bf\'aa\u20102 \'c1\'cb22\u31471 \'b6\'cb\u21475 \'bf\'da\u65292 \'a3\'ac\u29992 \'d3\'c3putty.exe\u27979 \'b2\'e2\u35797 \'ca\'d4\u19968 \'d2\'bb\u19979 \'cf\'c2\u26159 \'ca\'c7\u21542 \'b7\'f1\u21487 \'bf\'c9\u20197 \'d2\'d4\u38142 \'c1\'b4\u25509 \'bd\'d3\u19978 \'c9\'cf\u21435 \'c8\'a5\u12290 \'a1\'a3\uc1
+\par \uc2\u21487 \'bf\'c9\u20197 \'d2\'d4\u38142 \'c1\'b4\u25509 \'bd\'d3\u19978 \'c9\'cf\u21435 \'c8\'a5\u20102 \'c1\'cb\u65292 \'a3\'ac\u35828 \'cb\'b5\u26126 \'c3\'f7\u27809 \'c3\'bb\u26377 \'d3\'d0\u38382 \'ce\'ca\u39064 \'cc\'e2\u12290 \'a1\'a3\uc1
+\par \uc2\u26368 \'d7\'ee\u21518 \'ba\'f3\u21035 \'b1\'f0\u24536 \'cd\'fc\u35760 \'bc\'c7\u20102 \'c1\'cb\u20445 \'b1\'a3\u23384 \'b4\'e6 \u23545 \'b6\'d4\u38450 \'b7\'c0\u28779 \'bb\'f0\u22681 \'c7\'bd\u30340 \'b5\'c4\u35774 \'c9\'e8\u32622 \'d6\'c3\uc1
+\par \uc2\u36890 \'cd\'a8\u36807 \'b9\'fd\u21629 \'c3\'fc\u20196 \'c1\'ee\u65306 \'a3\'baservice iptables save \u36827 \'bd\'f8\u34892 \'d0\'d0\u20445 \'b1\'a3\u23384 \'b4\'e6\uc1
+\par iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+\par iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
+\par \uc2\u38024 \'d5\'eb\u23545 \'b6\'d4\u36825 \'d5\'e22\u26465 \'cc\'f5\u21629 \'c3\'fc\u20196 \'c1\'ee\u36827 \'bd\'f8\u34892 \'d0\'d0\u19968 \'d2\'bb\u20123 \'d0\'a9\u35762 \'bd\'b2\u35299 \'bd\'e2\u21543 \'b0\'c9\uc1
+\par -A \uc2\u21442 \'b2\'ce\u25968 \'ca\'fd\u23601 \'be\'cd\u30475 \'bf\'b4\u25104 \'b3\'c9\u26159 \'ca\'c7\u28155 \'cc\'ed\u21152 \'bc\'d3\u19968 \'d2\'bb\u26465 \'cc\'f5 INPUT \u30340 \'b5\'c4\u35268 \'b9\'e6\u21017 \'d4\'f2\uc1
+\par -p \uc2\u25351 \'d6\'b8\u23450 \'b6\'a8\u26159 \'ca\'c7\u20160 \'ca\'b2\u20040 \'c3\'b4\u21327 \'d0\'ad\u35758 \'d2\'e9 \u25105 \'ce\'d2\u20204 \'c3\'c7\u24120 \'b3\'a3\u29992 \'d3\'c3\u30340 \'b5\'c4tcp \u21327 \'d0\'ad\u35758 \'d2\'e9\u65292 \'a3\'ac\u24403 \'b5\'b1\u28982 \'c8\'bb\u20063 \'d2\'b2\u26377 \'d3\'d0udp \u20363 \'c0\'fd\u22914 \'c8\'e753\u31471 \'b6\'cb\u21475 \'bf\'da\u30340 \'b5\'c4DNS\uc1
+\par \uc2\u21040 \'b5\'bd\u26102 \'ca\'b1\u25105 \'ce\'d2\u20204 \'c3\'c7\u35201 \'d2\'aa\u37197 \'c5\'e4\u32622 \'d6\'c3DNS\u29992 \'d3\'c3\u21040 \'b5\'bd53\u31471 \'b6\'cb\u21475 \'bf\'da \u22823 \'b4\'f3\u23478 \'bc\'d2\u23601 \'be\'cd\u20250 \'bb\'e1\u21457 \'b7\'a2\u29616 \'cf\'d6\u20351 \'ca\'b9\u29992 \'d3\'c3udp\u21327 \'d0\'ad\u35758 \'d2\'e9\u30340 \'b5\'c4\uc1
+\par \uc2\u32780 \'b6\'f8 --dport \u23601 \'be\'cd\u26159 \'ca\'c7\u30446 \'c4\'bf\u26631 \'b1\'ea\u31471 \'b6\'cb\u21475 \'bf\'da \u24403 \'b5\'b1\u25968 \'ca\'fd\u25454 \'be\'dd\u20174 \'b4\'d3\u22806 \'cd\'e2\u37096 \'b2\'bf\u36827 \'bd\'f8\u20837 \'c8\'eb\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7\u20026 \'ce\'aa\u30446 \'c4\'bf\u26631 \'b1\'ea\u31471 \'b6\'cb\u21475 \'bf\'da\uc1
+\par \uc2\u21453 \'b7\'b4\u20043 \'d6\'ae \u25968 \'ca\'fd\u25454 \'be\'dd\u20174 \'b4\'d3\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7\u20986 \'b3\'f6\u21435 \'c8\'a5 \u21017 \'d4\'f2\u20026 \'ce\'aa\u25968 \'ca\'fd\u25454 \'be\'dd\u28304 \'d4\'b4\u31471 \'b6\'cb\u21475 \'bf\'da \u20351 \'ca\'b9\u29992 \'d3\'c3 --sport\uc1
+\par -j \uc2\u23601 \'be\'cd\u26159 \'ca\'c7\u25351 \'d6\'b8\u23450 \'b6\'a8\u26159 \'ca\'c7 ACCEPT \u25509 \'bd\'d3\u25910 \'ca\'d5 \u25110 \'bb\'f2\u32773 \'d5\'df DROP \u19981 \'b2\'bb\u25509 \'bd\'d3\u25910 \'ca\'d5\uc1
+\par 
+\par \plain \f1\b\fs20 3\uc2\u12289 \'a1\'a2\u31105 \'bd\'fb\u27490 \'d6\'b9\u26576 \'c4\'b3\u20010 \'b8\'f6IP\u35775 \'b7\'c3\u38382 \'ce\'ca\uc1
+\par \plain \f1\fs20 1\uc2\u21488 \'cc\'a8Linux\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7,2\u21488 \'cc\'a8windows xp \u25805 \'b2\'d9\u20316 \'d7\'f7\u31995 \'cf\'b5\u32479 \'cd\'b3\u36827 \'bd\'f8\u34892 \'d0\'d0\u35775 \'b7\'c3\u38382 \'ce\'ca\uc1
+\par Linux\uc2\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7ip 192.168.1.99\uc1
+\par xp1 ip: 192.168.1.2
+\par xp2 ip: 192.168.1.8
+\par \uc2\u19979 \'cf\'c2\u38754 \'c3\'e6\u30475 \'bf\'b4\u30475 \'bf\'b4\u25105 \'ce\'d22\u21488 \'cc\'a8xp \u37117 \'b6\'bc\u21487 \'bf\'c9\u20197 \'d2\'d4\u35775 \'b7\'c3\u38382 \'ce\'ca\u30340 \'b5\'c4\uc1
+\par 192.168.1.2 \uc2\u36825 \'d5\'e2\u26159 \'ca\'c7 xp1 \u21487 \'bf\'c9\u20197 \'d2\'d4\u35775 \'b7\'c3\u38382 \'ce\'ca\u30340 \'b5\'c4\u65292 \'a3\'ac\uc1
+\par 192.168.1.8 xp2 \uc2\u20063 \'d2\'b2\u26159 \'ca\'c7\u21487 \'bf\'c9\u20197 \'d2\'d4\u27491 \'d5\'fd\u24120 \'b3\'a3\u35775 \'b7\'c3\u38382 \'ce\'ca\u30340 \'b5\'c4\u12290 \'a1\'a3\uc1
+\par \uc2\u37027 \'c4\'c7\u20040 \'c3\'b4\u29616 \'cf\'d6\u22312 \'d4\'da\u25105 \'ce\'d2\u35201 \'d2\'aa\u31105 \'bd\'fb\u27490 \'d6\'b9 192.168.1.2 xp1 \u35775 \'b7\'c3\u38382 \'ce\'ca\u65292 \'a3\'ac xp2 \u27491 \'d5\'fd\u24120 \'b3\'a3\u35775 \'b7\'c3\u38382 \'ce\'ca\u65292 \'a3\'ac\uc1
+\par \uc2\u19979 \'cf\'c2\u38754 \'c3\'e6\u30475 \'bf\'b4\u30475 \'bf\'b4\u28436 \'d1\'dd\u31034 \'ca\'be\uc1
+\par \uc2\u36890 \'cd\'a8\u36807 \'b9\'fd\u21629 \'c3\'fc\u20196 \'c1\'ee iptables -A INPUT -p tcp -s 192.168.1.2 -j DROP\uc1
+\par \uc2\u36825 \'d5\'e2\u37324 \'c0\'ef\u24847 \'d2\'e2\u24605 \'cb\'bc\u23601 \'be\'cd\u26159 \'ca\'c7 -A \u23601 \'be\'cd\u26159 \'ca\'c7\u28155 \'cc\'ed\u21152 \'bc\'d3\u26032 \'d0\'c2\u30340 \'b5\'c4\u35268 \'b9\'e6\u21017 \'d4\'f2\u65292 \'a3\'ac \u24590 \'d4\'f5\u26679 \'d1\'f9\u30340 \'b5\'c4\u35268 \'b9\'e6\u21017 \'d4\'f2\u21602 \'c4\'d8\u65311 \'a3\'bf \u30001 \'d3\'c9\u20110 \'d3\'da\u25105 \'ce\'d2\u20204 \'c3\'c7\u35775 \'b7\'c3\u38382 \'ce\'ca\u32593 \'cd\'f8\u31449 \'d5\'be\u20351 \'ca\'b9\u29992 \'d3\'c3tcp\u30340 \'b5\'c4\u65292 \'a3\'ac\uc1
+\par \uc2\u25105 \'ce\'d2\u20204 \'c3\'c7\u23601 \'be\'cd\u29992 \'d3\'c3 -p tcp , \u22914 \'c8\'e7\u26524 \'b9\'fb\u26159 \'ca\'c7 udp \u23601 \'be\'cd\u20889 \'d0\'b4udp\u65292 \'a3\'ac\u36825 \'d5\'e2\u37324 \'c0\'ef\u23601 \'be\'cd\u29992 \'d3\'c3tcp\u20102 \'c1\'cb\u65292 \'a3\'ac -s\u23601 \'be\'cd\u26159 \'ca\'c7 \u26469 \'c0\'b4\u28304 \'d4\'b4\u30340 \'b5\'c4\u24847 \'d2\'e2\u24605 \'cb\'bc\u65292 \'a3\'ac\uc1
+\par ip\uc2\u26469 \'c0\'b4\u28304 \'d4\'b4\u20110 \'d3\'da 192.168.1.2 \u65292 \'a3\'ac-j \u24590 \'d4\'f5\u20040 \'c3\'b4\u20570 \'d7\'f6 \u25105 \'ce\'d2\u20204 \'c3\'c7\u25298 \'be\'dc\u32477 \'be\'f8\u23427 \'cb\'fc \u36825 \'d5\'e2\u37324 \'c0\'ef\u24212 \'d3\'a6\u35813 \'b8\'c3\u26159 \'ca\'c7 DROP\uc1
+\par \uc2\u22909 \'ba\'c3\u65292 \'a3\'ac\u30475 \'bf\'b4\u30475 \'bf\'b4\u25928 \'d0\'a7\u26524 \'b9\'fb\u12290 \'a1\'a3\u22909 \'ba\'c3\u28155 \'cc\'ed\u21152 \'bc\'d3\u25104 \'b3\'c9\u21151 \'b9\'a6\u12290 \'a1\'a3\u19979 \'cf\'c2\u38754 \'c3\'e6\u36827 \'bd\'f8\u34892 \'d0\'d0\u39564 \'d1\'e9\u35777 \'d6\'a4 \u19968 \'d2\'bb\u19979 \'cf\'c2\u26159 \'ca\'c7\u21542 \'b7\'f1\u29983 \'c9\'fa\u25928 \'d0\'a7\uc1
+\par \uc2\u19968 \'d2\'bb\u30452 \'d6\'b1\u20986 \'b3\'f6\u29616 \'cf\'d6\u31561 \'b5\'c8\u24453 \'b4\'fd\u29366 \'d7\'b4\u24577 \'cc\'ac \u26368 \'d7\'ee\u21518 \'ba\'f3 \u35813 \'b8\'c3\u39029 \'d2\'b3\u26080 \'ce\'de\u27861 \'b7\'a8\u26174 \'cf\'d4\u31034 \'ca\'be \u65292 \'a3\'ac\u36825 \'d5\'e2\u26159 \'ca\'c7 192.168.1.2 xp1 \u30340 \'b5\'c4\u35775 \'b7\'c3\u38382 \'ce\'ca\u34987 \'b1\'bb\u25298 \'be\'dc\u32477 \'be\'f8\u20102 \'c1\'cb\u12290 \'a1\'a3\uc1
+\par \uc2\u20877 \'d4\'d9\u30475 \'bf\'b4\u30475 \'bf\'b4\u21478 \'c1\'ed\u22806 \'cd\'e2\u19968 \'d2\'bb\u21488 \'cc\'a8 xp \u26159 \'ca\'c7\u21542 \'b7\'f1\u21487 \'bf\'c9\u20197 \'d2\'d4\u35775 \'b7\'c3\u38382 \'ce\'ca\u65292 \'a3\'ac \u26159 \'ca\'c7\u21487 \'bf\'c9\u20197 \'d2\'d4\u27491 \'d5\'fd\u24120 \'b3\'a3\u35775 \'b7\'c3\u38382 \'ce\'ca\u30340 \'b5\'c4 192.168.1.8 \u26159 \'ca\'c7\u21487 \'bf\'c9\u20197 \'d2\'d4\u27491 \'d5\'fd\u24120 \'b3\'a3\u35775 \'b7\'c3\u38382 \'ce\'ca\u30340 \'b5\'c4\uc1
+\par 
+\par \plain \f1\b\fs20 4\uc2\u12289 \'a1\'a2\u22914 \'c8\'e7\u20309 \'ba\'ce\u21024 \'c9\'be\u38500 \'b3\'fd\u35268 \'b9\'e6\u21017 \'d4\'f2\uc1
+\par \plain \f1\fs20 \uc2\u39318 \'ca\'d7\u20808 \'cf\'c8\u25105 \'ce\'d2\u20204 \'c3\'c7\u35201 \'d2\'aa\u30693 \'d6\'aa\u36947 \'b5\'c0 \u36825 \'d5\'e2\u26465 \'cc\'f5\u35268 \'b9\'e6\u21017 \'d4\'f2\u30340 \'b5\'c4\u32534 \'b1\'e0\u21495 \'ba\'c5\u65292 \'a3\'ac\u27599 \'c3\'bf\u26465 \'cc\'f5\u35268 \'b9\'e6\u21017 \'d4\'f2\u37117 \'b6\'bc\u26377 \'d3\'d0\u19968 \'d2\'bb\u20010 \'b8\'f6\u32534 \'b1\'e0\u21495 \'ba\'c5\uc1
+\par \uc2\u36890 \'cd\'a8\u36807 \'b9\'fd iptables -L -n --line-number \u21487 \'bf\'c9\u20197 \'d2\'d4\u26174 \'cf\'d4\u31034 \'ca\'be\u35268 \'b9\'e6\u21017 \'d4\'f2\u21644 \'ba\'cd\u30456 \'cf\'e0\u23545 \'b6\'d4\u24212 \'d3\'a6\u30340 \'b5\'c4\u32534 \'b1\'e0\u21495 \'ba\'c5\uc1
+\par num target\~\~\~\~ prot opt source\~\~\~\~\~\~\~\~\~\~\~\~\~\~ destination
+\par 1\~\~\~ DROP\~\~\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ tcp dpt:3306
+\par 2\~\~\~ DROP\~\~\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ tcp dpt:21
+\par 3\~\~\~ DROP\~\~\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ tcp dpt:80
+\par \uc2\u22810 \'b6\'e0\u20102 \'c1\'cb num \u36825 \'d5\'e2\u19968 \'d2\'bb\u21015 \'c1\'d0\u65292 \'a3\'ac \u36825 \'d5\'e2\u26679 \'d1\'f9\u25105 \'ce\'d2\u20204 \'c3\'c7\u23601 \'be\'cd\u21487 \'bf\'c9\u20197 \'d2\'d4 \u30475 \'bf\'b4\u21040 \'b5\'bd\u21018 \'b8\'d5\u25165 \'b2\'c5\u30340 \'b5\'c4\u35268 \'b9\'e6\u21017 \'d4\'f2\u23545 \'b6\'d4\u24212 \'d3\'a6\u30340 \'b5\'c4\u26159 \'ca\'c7 \u32534 \'b1\'e0\u21495 \'ba\'c52\uc1
+\par \uc2\u37027 \'c4\'c7\u20040 \'c3\'b4\u25105 \'ce\'d2\u20204 \'c3\'c7\u23601 \'be\'cd\u21487 \'bf\'c9\u20197 \'d2\'d4\u36827 \'bd\'f8\u34892 \'d0\'d0\u21024 \'c9\'be\u38500 \'b3\'fd\u20102 \'c1\'cb\uc1
+\par iptables -D INPUT 2
+\par \uc2\u21024 \'c9\'be\u38500 \'b3\'fdINPUT\u38142 \'c1\'b4\u32534 \'b1\'e0\u21495 \'ba\'c5\u20026 \'ce\'aa2\u30340 \'b5\'c4\u35268 \'b9\'e6\u21017 \'d4\'f2\u12290 \'a1\'a3\uc1
+\par \uc2\u20877 \'d4\'d9 iptables -L -n \u26597 \'b2\'e9\u30475 \'bf\'b4\u19968 \'d2\'bb\u19979 \'cf\'c2 \u24050 \'d2\'d1\u32463 \'be\'ad\u34987 \'b1\'bb\u28165 \'c7\'e5\u38500 \'b3\'fd\u20102 \'c1\'cb\u12290 \'a1\'a3\uc1
+\par 
+\par \plain \f1\b\fs20 5\uc2\u12289 \'a1\'a2\u36807 \'b9\'fd\u28388 \'c2\'cb\u26080 \'ce\'de\u25928 \'d0\'a7\u30340 \'b5\'c4\u25968 \'ca\'fd\u25454 \'be\'dd\u21253 \'b0\'fc\uc1
+\par \plain \f1\fs20 \uc2\u20551 \'bc\'d9\u35774 \'c9\'e8\u26377 \'d3\'d0\u20154 \'c8\'cb\u36827 \'bd\'f8\u20837 \'c8\'eb\u20102 \'c1\'cb\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7\u65292 \'a3\'ac\u25110 \'bb\'f2\u32773 \'d5\'df\u26377 \'d3\'d0\u30149 \'b2\'a1\u27602 \'b6\'be\u26408 \'c4\'be\u39532 \'c2\'ed\u31243 \'b3\'cc\u24207 \'d0\'f2\u65292 \'a3\'ac\u23427 \'cb\'fc\u21487 \'bf\'c9\u20197 \'d2\'d4\u36890 \'cd\'a8\u36807 \'b9\'fd22\u65292 \'a3\'ac80\u31471 \'b6\'cb\u21475 \'bf\'da\u20687 \'cf\'f1\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7\u22806 \'cd\'e2\u20256 \'b4\'ab\u36865 \'cb\'cd\u25968 \'ca\'fd\u25454 \'be\'dd\u12290 \'a1\'a3\uc1
+\par \uc2\u23427 \'cb\'fc\u30340 \'b5\'c4\u36825 \'d5\'e2\u31181 \'d6\'d6\u26041 \'b7\'bd\u24335 \'ca\'bd\u23601 \'be\'cd\u21644 \'ba\'cd\u25105 \'ce\'d2\u20204 \'c3\'c7\u27491 \'d5\'fd\u24120 \'b3\'a3\u35775 \'b7\'c3\u38382 \'ce\'ca22\u65292 \'a3\'ac80\u31471 \'b6\'cb\u21475 \'bf\'da\u21306 \'c7\'f8\u21035 \'b1\'f0\u12290 \'a1\'a3\u23427 \'cb\'fc\u21457 \'b7\'a2\u21521 \'cf\'f2\u22806 \'cd\'e2\u21457 \'b7\'a2\u30340 \'b5\'c4\u25968 \'ca\'fd\u25454 \'be\'dd\u19981 \'b2\'bb\u26159 \'ca\'c7\u25105 \'ce\'d2\u20204 \'c3\'c7\u36890 \'cd\'a8\u36807 \'b9\'fd\u35775 \'b7\'c3\u38382 \'ce\'ca\u32593 \'cd\'f8\u39029 \'d2\'b3\u35831 \'c7\'eb\u27714 \'c7\'f3\uc1
+\par \uc2\u32780 \'b6\'f8\u22238 \'bb\'d8\u24212 \'d3\'a6\u30340 \'b5\'c4\u25968 \'ca\'fd\u25454 \'be\'dd\u21253 \'b0\'fc\u12290 \'a1\'a3\uc1
+\par \uc2\u19979 \'cf\'c2\u38754 \'c3\'e6\u25105 \'ce\'d2\u20204 \'c3\'c7\u35201 \'d2\'aa\u31105 \'bd\'fb\u27490 \'d6\'b9\u36825 \'d5\'e2\u20123 \'d0\'a9\u27809 \'c3\'bb\u26377 \'d3\'d0\u36890 \'cd\'a8\u36807 \'b9\'fd\u35831 \'c7\'eb\u27714 \'c7\'f3\u22238 \'bb\'d8\u24212 \'d3\'a6\u30340 \'b5\'c4\u25968 \'ca\'fd\u25454 \'be\'dd\u21253 \'b0\'fc\u65292 \'a3\'ac\u32479 \'cd\'b3\u32479 \'cd\'b3\u25226 \'b0\'d1\u23427 \'cb\'fc\u20204 \'c3\'c7\u22581 \'b6\'c2\u20303 \'d7\'a1\u25481 \'b5\'f4\u12290 \'a1\'a3\uc1
+\par iptables \uc2\u25552 \'cc\'e1\u20379 \'b9\'a9\u20102 \'c1\'cb\u19968 \'d2\'bb\u20010 \'b8\'f6\u21442 \'b2\'ce\u25968 \'ca\'fd \u26159 \'ca\'c7\u26816 \'bc\'ec\u26597 \'b2\'e9\u29366 \'d7\'b4\u24577 \'cc\'ac\u30340 \'b5\'c4\u65292 \'a3\'ac\u19979 \'cf\'c2\u38754 \'c3\'e6\u25105 \'ce\'d2\u20204 \'c3\'c7\u26469 \'c0\'b4\u37197 \'c5\'e4\u32622 \'d6\'c3\u19979 \'cf\'c2 22 \u21644 \'ba\'cd 80 \u31471 \'b6\'cb\u21475 \'bf\'da\u65292 \'a3\'ac\u38450 \'b7\'c0\u27490 \'d6\'b9\u26080 \'ce\'de\u25928 \'d0\'a7\u30340 \'b5\'c4\u25968 \'ca\'fd\u25454 \'be\'dd\u21253 \'b0\'fc\u12290 \'a1\'a3\uc1
+\par iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
+\par \uc2\u21487 \'bf\'c9\u20197 \'d2\'d4\u30475 \'bf\'b4\u21040 \'b5\'bd\u21644 \'ba\'cd\u25105 \'ce\'d2\u20204 \'c3\'c7\u20197 \'d2\'d4\u21069 \'c7\'b0\u20351 \'ca\'b9\u29992 \'d3\'c3\u30340 \'b5\'c4\u65306 \'a3\'ba\uc1
+\par iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
+\par \uc2\u22810 \'b6\'e0\u20102 \'c1\'cb\u19968 \'d2\'bb\u20010 \'b8\'f6\u29366 \'d7\'b4\u24577 \'cc\'ac\u21028 \'c5\'d0\u26029 \'b6\'cf\u12290 \'a1\'a3\uc1
+\par \uc2\u21516 \'cd\'ac\u26679 \'d1\'f980\u31471 \'b6\'cb\u21475 \'bf\'da\u20063 \'d2\'b2\u19968 \'d2\'bb\u26679 \'d1\'f9\u65292 \'a3\'ac \u29616 \'cf\'d6\u22312 \'d4\'da\u21024 \'c9\'be\u25481 \'b5\'f4\u21407 \'d4\'ad\u26469 \'c0\'b4\u30340 \'b5\'c42\u26465 \'cc\'f5\u35268 \'b9\'e6\u21017 \'d4\'f2\u65292 \'a3\'ac\uc1
+\par iptables -L -n --line-number\~\~\~ \uc2\u36825 \'d5\'e2\u20010 \'b8\'f6\u26159 \'ca\'c7\u26597 \'b2\'e9\u30475 \'bf\'b4\u35268 \'b9\'e6\u21017 \'d4\'f2\u32780 \'b6\'f8\u19988 \'c7\'d2\u24102 \'b4\'f8\u19978 \'c9\'cf\u32534 \'b1\'e0\u21495 \'ba\'c5\u12290 \'a1\'a3\u25105 \'ce\'d2\u20204 \'c3\'c7\u30475 \'bf\'b4\u21040 \'b5\'bd\u32534 \'b1\'e0\u21495 \'ba\'c5\u23601 \'be\'cd\u21487 \'bf\'c9\u20197 \'d2\'d4\uc1
+\par \uc2\u21024 \'c9\'be\u38500 \'b3\'fd\u23545 \'b6\'d4\u24212 \'d3\'a6\u30340 \'b5\'c4\u35268 \'b9\'e6\u21017 \'d4\'f2\u20102 \'c1\'cb\u12290 \'a1\'a3\uc1
+\par iptables -D OUTPUT 1\~\~\~\~ \uc2\u36825 \'d5\'e2\u37324 \'c0\'ef\u30340 \'b5\'c41\u34920 \'b1\'ed\u31034 \'ca\'be\u31532 \'b5\'da\u19968 \'d2\'bb\u26465 \'cc\'f5\u35268 \'b9\'e6\u21017 \'d4\'f2\u12290 \'a1\'a3\uc1
+\par \uc2\u24403 \'b5\'b1\u20320 \'c4\'e3\u21024 \'c9\'be\u38500 \'b3\'fd\u20102 \'c1\'cb\u21069 \'c7\'b0\u38754 \'c3\'e6\u30340 \'b5\'c4\u35268 \'b9\'e6\u21017 \'d4\'f2\u65292 \'a3\'ac \u32534 \'b1\'e0\u21495 \'ba\'c5\u20063 \'d2\'b2\u20250 \'bb\'e1\u38543 \'cb\'e6\u20043 \'d6\'ae\u25913 \'b8\'c4\u21464 \'b1\'e4\u12290 \'a1\'a3\u30475 \'bf\'b4\u21040 \'b5\'bd\u20102 \'c1\'cb\u21543 \'b0\'c9\u12290 \'a1\'a3\uc1
+\par \uc2\u22909 \'ba\'c3\u65292 \'a3\'ac\u25105 \'ce\'d2\u20204 \'c3\'c7\u21024 \'c9\'be\u38500 \'b3\'fd\u20102 \'c1\'cb\u21069 \'c7\'b0\u38754 \'c3\'e62\u20010 \'b8\'f6\u35268 \'b9\'e6\u21017 \'d4\'f2\u65292 \'a3\'ac22\u31471 \'b6\'cb\u21475 \'bf\'da\u36824 \'bb\'b9\u21487 \'bf\'c9\u20197 \'d2\'d4\u27491 \'d5\'fd\u24120 \'b3\'a3\u20351 \'ca\'b9\u29992 \'d3\'c3\u65292 \'a3\'ac\u35828 \'cb\'b5\u26126 \'c3\'f7\u27809 \'c3\'bb\u38382 \'ce\'ca\u39064 \'cc\'e2\u20102 \'c1\'cb\uc1
+\par \uc2\u19979 \'cf\'c2\u38754 \'c3\'e6\u36827 \'bd\'f8\u34892 \'d0\'d0\u20445 \'b1\'a3\u23384 \'b4\'e6\u65292 \'a3\'ac\u21035 \'b1\'f0\u24536 \'cd\'fc\u35760 \'bc\'c7\u20102 \'c1\'cb\u65292 \'a3\'ac\u19981 \'b2\'bb\u28982 \'c8\'bb\u30340 \'b5\'c4\u35805 \'bb\'b0\u37325 \'d6\'d8\u21551 \'c6\'f4\u23601 \'be\'cd\u20250 \'bb\'e1\u36824 \'bb\'b9\u21407 \'d4\'ad\u21040 \'b5\'bd\u21407 \'d4\'ad\u26469 \'c0\'b4\u30340 \'b5\'c4\u26679 \'d1\'f9\u23376 \'d7\'d3\u12290 \'a1\'a3\uc1
+\par service iptables save\~\~\~ \uc2\u36827 \'bd\'f8\u34892 \'d0\'d0\u20445 \'b1\'a3\u23384 \'b4\'e6\u12290 \'a1\'a3\uc1
+\par Saving firewall rules to /etc/sysconfig/iptables:\~\~\~\~\~\~\~\~\~ [ OK ]
+\par \uc2\u20854 \'c6\'e4\u23454 \'ca\'b5\u23601 \'be\'cd\u26159 \'ca\'c7\u25226 \'b0\'d1\u21018 \'b8\'d5\u25165 \'b2\'c5\u35774 \'c9\'e8\u32622 \'d6\'c3\u30340 \'b5\'c4\u35268 \'b9\'e6\u21017 \'d4\'f2\u20889 \'d0\'b4\u20837 \'c8\'eb\u21040 \'b5\'bd /etc/sysconfig/iptables \u25991 \'ce\'c4\u20214 \'bc\'fe\u20013 \'d6\'d0\u12290 \'a1\'a3\uc1
+\par 
+\par \plain \f1\b\fs20 6\uc2\u12289 \'a1\'a2DNS\u31471 \'b6\'cb\u21475 \'bf\'da53\u35774 \'c9\'e8\u32622 \'d6\'c3\uc1
+\par \plain \f1\fs20 \uc2\u19979 \'cf\'c2\u38754 \'c3\'e6\u25105 \'ce\'d2\u20204 \'c3\'c7\u26469 \'c0\'b4\u30475 \'bf\'b4\u30475 \'bf\'b4\u22914 \'c8\'e7\u20309 \'ba\'ce\u35774 \'c9\'e8\u32622 \'d6\'c3iptables\u26469 \'c0\'b4\u25171 \'b4\'f2\u24320 \'bf\'aaDNS\u31471 \'b6\'cb\u21475 \'bf\'da\u65292 \'a3\'acDNS\u31471 \'b6\'cb\u21475 \'bf\'da\u23545 \'b6\'d4\u24212 \'d3\'a6\u30340 \'b5\'c4\u26159 \'ca\'c753\uc1
+\par \uc2\u22823 \'b4\'f3\u23478 \'bc\'d2\u30475 \'bf\'b4\u21040 \'b5\'bd\u25105 \'ce\'d2\u29616 \'cf\'d6\u22312 \'d4\'da\u30340 \'b5\'c4\u24773 \'c7\'e9\u20917 \'bf\'f6\u20102 \'c1\'cb\u21543 \'b0\'c9\u65292 \'a3\'ac\u21482 \'d6\'bb\u24320 \'bf\'aa\u25918 \'b7\'c522\u21644 \'ba\'cd80\u31471 \'b6\'cb\u21475 \'bf\'da\u65292 \'a3\'ac \u25105 \'ce\'d2\u29616 \'cf\'d6\u22312 \'d4\'da\u30475 \'bf\'b4\u30475 \'bf\'b4\u33021 \'c4\'dc\u19981 \'b2\'bb\u33021 \'c4\'dc\u35299 \'bd\'e2\u26512 \'ce\'f6\u22495 \'d3\'f2\u21517 \'c3\'fb\u12290 \'a1\'a3\uc1
+\par host\plain \f1\ul\fs20\cf1 www.google.com\plain \f1\fs20 \~\~\~ \uc2\u36755 \'ca\'e4\u20837 \'c8\'eb\u36825 \'d5\'e2\u20010 \'b8\'f6\u21629 \'c3\'fc\u20196 \'c1\'ee\u21518 \'ba\'f3\u65292 \'a3\'ac\u19968 \'d2\'bb\u30452 \'d6\'b1\u31561 \'b5\'c8\u24453 \'b4\'fd\u65292 \'a3\'ac\u35828 \'cb\'b5\u26126 \'c3\'f7DNS\u19981 \'b2\'bb\u36890 \'cd\'a8\uc1
+\par \uc2\u20986 \'b3\'f6\u29616 \'cf\'d6\u19979 \'cf\'c2\u38754 \'c3\'e6\u25552 \'cc\'e1\u31034 \'ca\'be \u65306 \'a3\'ba\uc1
+\par ;; connection timed out; no servers could be reached
+\par ping \uc2\u19968 \'d2\'bb\u19979 \'cf\'c2\u22495 \'d3\'f2\u21517 \'c3\'fb\u20063 \'d2\'b2\u26159 \'ca\'c7\u19981 \'b2\'bb\u36890 \'cd\'a8\uc1
+\par [root@localhost ~ping\plain \f1\ul\fs20\cf1 www.google.com
+\par \plain \f1\fs20 ping: unknown host\plain \f1\ul\fs20\cf1 www.google.com
+\par \plain \f1\fs20 \uc2\u25105 \'ce\'d2\u36825 \'d5\'e2\u37324 \'c0\'ef\u30340 \'b5\'c4\u21407 \'d4\'ad\u22240 \'d2\'f2\u23601 \'be\'cd\u26159 \'ca\'c7 iptables \u38480 \'cf\'de\u21046 \'d6\'c6\u20102 \'c1\'cb53\u31471 \'b6\'cb\u21475 \'bf\'da\u12290 \'a1\'a3\uc1
+\par \uc2\u26377 \'d3\'d0\u20123 \'d0\'a9\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7\u65292 \'a3\'ac\u29305 \'cc\'d8\u21035 \'b1\'f0\u26159 \'ca\'c7Web\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7\u20943 \'bc\'f5\u24930 \'c2\'fd\u65292 \'a3\'acDNS\u20854 \'c6\'e4\u23454 \'ca\'b5\u20063 \'d2\'b2\u26377 \'d3\'d0\u20851 \'b9\'d8\u31995 \'cf\'b5\u30340 \'b5\'c4\u65292 \'a3\'ac\u26080 \'ce\'de\u27861 \'b7\'a8\u21457 \'b7\'a2\u36865 \'cb\'cd\u21253 \'b0\'fc\u21040 \'b5\'bdDNS\u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7\u23548 \'b5\'bc\u33268 \'d6\'c2\u30340 \'b5\'c4\u12290 \'a1\'a3\uc1
+\par \uc2\u19979 \'cf\'c2\u38754 \'c3\'e6\u28436 \'d1\'dd\u31034 \'ca\'be\u19979 \'cf\'c2\u22914 \'c8\'e7\u20309 \'ba\'ce\u20351 \'ca\'b9\u29992 \'d3\'c3 iptables \u26469 \'c0\'b4\u35774 \'c9\'e8\u32622 \'d6\'c3DNS 53\u36825 \'d5\'e2\u20010 \'b8\'f6\u31471 \'b6\'cb\u21475 \'bf\'da\u65292 \'a3\'ac\u22914 \'c8\'e7\u26524 \'b9\'fb\u20320 \'c4\'e3\u19981 \'b2\'bb\u30693 \'d6\'aa\u36947 \'b5\'c0 \u22495 \'d3\'f2\u21517 \'c3\'fb\u26381 \'b7\'fe\u21153 \'ce\'f1\u31471 \'b6\'cb\u21475 \'bf\'da\u21495 \'ba\'c5\u65292 \'a3\'ac\u20320 \'c4\'e3\uc1
+\par \uc2\u21487 \'bf\'c9\u20197 \'d2\'d4\u29992 \'d3\'c3\u21629 \'c3\'fc\u20196 \'c1\'ee : grep domain /etc/services\uc1
+\par [root@localhost ~grep domain /etc/services
+\par domain\~\~\~\~\~\~\~\~\~ 53/tcp\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ # name-domain server
+\par domain\~\~\~\~\~\~\~\~\~ 53/udp
+\par domaintime\~\~\~\~\~ 9909/tcp\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ # domaintime
+\par domaintime\~\~\~\~\~ 9909/udp\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ # domaintime
+\par \uc2\u30475 \'bf\'b4\u21040 \'b5\'bd\u20102 \'c1\'cb\u21543 \'b0\'c9\u65292 \'a3\'ac \u25105 \'ce\'d2\u20204 \'c3\'c7\u19968 \'d2\'bb\u33324 \'b0\'e3\u20351 \'ca\'b9\u29992 \'d3\'c3 udp \u21327 \'d0\'ad\u35758 \'d2\'e9\u12290 \'a1\'a3\uc1
+\par \uc2\u22909 \'ba\'c3\u20102 \'c1\'cb\u65292 \'a3\'ac \u24320 \'bf\'aa\u22987 \'ca\'bc\u35774 \'c9\'e8\u32622 \'d6\'c3\u12290 \'a1\'a3\u12290 \'a1\'a3\u12290 \'a1\'a3\uc1
+\par iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
+\par \uc2\u36825 \'d5\'e2\u26159 \'ca\'c7\u25105 \'ce\'d2\u20204 \'c3\'c7 ping \u19968 \'d2\'bb\u20010 \'b8\'f6\u22495 \'d3\'f2\u21517 \'c3\'fb\u65292 \'a3\'ac\u25968 \'ca\'fd\u25454 \'be\'dd\u23601 \'be\'cd\u26159 \'ca\'c7\u20174 \'b4\'d3\u26412 \'b1\'be\u26426 \'bb\'fa\u20986 \'b3\'f6\u21435 \'c8\'a5\u65292 \'a3\'ac\u25152 \'cb\'f9\u20197 \'d2\'d4\u25105 \'ce\'d2\u20204 \'c3\'c7\u20808 \'cf\'c8\u35774 \'c9\'e8\u32622 \'d6\'c3 OUTPUT\u65292 \'a3\'ac\uc1
+\par \uc2\u25105 \'ce\'d2\u20204 \'c3\'c7\u25353 \'b0\'b4\u29031 \'d5\'d5ping\u36825 \'d5\'e2\u20010 \'b8\'f6\u27969 \'c1\'f7\u31243 \'b3\'cc\u26469 \'c0\'b4\u35774 \'c9\'e8\u32622 \'d6\'c3\u12290 \'a1\'a3\uc1
+\par \uc2\u28982 \'c8\'bb\u21518 \'ba\'f3 DNS \u26381 \'b7\'fe\u21153 \'ce\'f1\u22120 \'c6\'f7\u25910 \'ca\'d5\u21040 \'b5\'bd\u25105 \'ce\'d2\u20204 \'c3\'c7\u21457 \'b7\'a2\u20986 \'b3\'f6\u21435 \'c8\'a5\u30340 \'b5\'c4\u21253 \'b0\'fc\u65292 \'a3\'ac\u23601 \'be\'cd\u22238 \'bb\'d8\u24212 \'d3\'a6\u19968 \'d2\'bb\u20010 \'b8\'f6\u22238 \'bb\'d8\u26469 \'c0\'b4\uc1
+\par iptables -A INPUT -p udp --sport 53 -j ACCEPT
+\par \uc2\u21516 \'cd\'ac\u26102 \'ca\'b1\u36824 \'bb\'b9\u35201 \'d2\'aa\u35774 \'c9\'e8\u32622 \'d6\'c3\uc1
+\par iptables -A INPUT -p udp --dport 53 -j ACCEPT
+\par iptables -A OUTPUT -p udp --sport 53 -j ACCEPT
+\par \uc2\u22909 \'ba\'c3\u20102 \'c1\'cb\u65292 \'a3\'ac \u19979 \'cf\'c2\u38754 \'c3\'e6\u24320 \'bf\'aa\u22987 \'ca\'bc\u27979 \'b2\'e2\u35797 \'ca\'d4\u19979 \'cf\'c2\u65292 \'a3\'ac \u21487 \'bf\'c9\u20197 \'d2\'d4\u29992 \'d3\'c3 iptables -L -n \u26597 \'b2\'e9\u30475 \'bf\'b4\u35774 \'c9\'e8\u32622 \'d6\'c3\u24773 \'c7\'e9\u20917 \'bf\'f6\u65292 \'a3\'ac\u30830 \'c8\'b7\u23450 \'b6\'a8\u27809 \'c3\'bb\u26377 \'d3\'d0\u38382 \'ce\'ca\u39064 \'cc\'e2\u23601 \'be\'cd\u21487 \'bf\'c9\u20197 \'d2\'d4\u27979 \'b2\'e2\u35797 \'ca\'d4\u20102 \'c1\'cb\uc1
+\par [root@localhost ~iptables -L -n
+\par Chain INPUT (policy DROP)
+\par target\~\~\~\~ prot opt source\~\~\~\~\~\~\~\~\~\~\~\~\~\~ destination
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ tcp dpt:22
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ tcp dpt:80
+\par ACCEPT\~\~\~\~ udp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ udp spt:53
+\par ACCEPT\~\~\~\~ udp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ udp dpt:53
+\par Chain FORWARD (policy DROP)
+\par target\~\~\~\~ prot opt source\~\~\~\~\~\~\~\~\~\~\~\~\~\~ destination
+\par Chain OUTPUT (policy DROP)
+\par target\~\~\~\~ prot opt source\~\~\~\~\~\~\~\~\~\~\~\~\~\~ destination
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ tcp spt:22 state ESTABLISHED
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ tcp spt:80 state ESTABLISHED
+\par ACCEPT\~\~\~\~ udp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ udp dpt:53
+\par ACCEPT\~\~\~\~ udp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~ udp spt:53
+\par \uc2\u21487 \'bf\'c9\u20197 \'d2\'d4\u27979 \'b2\'e2\u35797 \'ca\'d4\u19968 \'d2\'bb\u19979 \'cf\'c2 \u26159 \'ca\'c7\u21542 \'b7\'f1 DNS \u21487 \'bf\'c9\u20197 \'d2\'d4\u36890 \'cd\'a8\u36807 \'b9\'fdiptables \u20102 \'c1\'cb\u12290 \'a1\'a3\uc1
+\par [root@localhost ~host\plain \f1\ul\fs20\cf1 www.google.com
+\par \plain \f1\ul\fs20\cf1 www.google.com\plain \f1\fs20 is an alias for\plain \f1\ul\fs20\cf1 www.l.google.com\plain \f1\fs20 .
+\par \plain \f1\ul\fs20\cf1 www.l.google.com\plain \f1\fs20 is an alias for www-china.l.google.com.
+\par www-china.l.google.com has address 64.233.189.104
+\par www-china.l.google.com has address 64.233.189.147
+\par www-china.l.google.com has address 64.233.189.99
+\par \uc2\u27491 \'d5\'fd\u24120 \'b3\'a3\u21487 \'bf\'c9\u20197 \'d2\'d4\u35299 \'bd\'e2\u26512 \'ce\'f6 google \u22495 \'d3\'f2\u21517 \'c3\'fb\u12290 \'a1\'a3\uc1
+\par ping \uc2\u26041 \'b7\'bd\u38754 \'c3\'e6\u21487 \'bf\'c9\u33021 \'c4\'dc\u36824 \'bb\'b9\u35201 \'d2\'aa\u35774 \'c9\'e8\u32622 \'d6\'c3\u20123 \'d0\'a9\u19996 \'b6\'ab\u35199 \'ce\'f7\u12290 \'a1\'a3\uc1
+\par \uc2\u29992 \'d3\'c3 nslookup \u30475 \'bf\'b4\u30475 \'bf\'b4\u21543 \'b0\'c9\uc1
+\par [root@localhost ~nslookup
+\par >\plain \f1\ul\fs20\cf1 www.google.com
+\par \plain \f1\fs20 Server:\~\~\~\~\~\~\~\~ 192.168.1.1
+\par Address:\~\~\~\~\~\~\~ 192.168.1.1#53
+\par Non-authoritative answer:
+\par \plain \f1\ul\fs20\cf1 www.google.com\plain \f1\fs20 canonical name =\plain \f1\ul\fs20\cf1 www.l.google.com\plain \f1\fs20 .
+\par \plain \f1\ul\fs20\cf1 www.l.google.com\plain \f1\fs20 \~\~\~\~\~\~\~ canonical name = www-china.l.google.com.
+\par Name:\~\~ www-china.l.google.com
+\par Address: 64.233.189.147
+\par Name:\~\~ www-china.l.google.com
+\par Address: 64.233.189.99
+\par Name:\~\~ www-china.l.google.com
+\par Address: 64.233.189.104
+\par \uc2\u35828 \'cb\'b5\u26126 \'c3\'f7\u26412 \'b1\'be\u26426 \'bb\'faDNS\u27491 \'d5\'fd\u24120 \'b3\'a3\u65292 \'a3\'ac iptables \u20801 \'d4\'ca\u35768 \'d0\'ed53\u36825 \'d5\'e2\u20010 \'b8\'f6\u31471 \'b6\'cb\u21475 \'bf\'da\u30340 \'b5\'c4\u35775 \'b7\'c3\u38382 \'ce\'ca\u12290 \'a1\'a3\uc1
+\par 
+\par \plain \f1\b\fs20 7\uc2\u12289 \'a1\'a2iptables\u23545 \'b6\'d4ftp\u30340 \'b5\'c4\u35774 \'c9\'e8\u32622 \'d6\'c3\uc1
+\par \plain \f1\fs20 \uc2\u29616 \'cf\'d6\u22312 \'d4\'da\u25105 \'ce\'d2\u24320 \'bf\'aa\u22987 \'ca\'bc\u23545 \'b6\'d4ftp\u31471 \'b6\'cb\u21475 \'bf\'da\u30340 \'b5\'c4\u35774 \'c9\'e8\u32622 \'d6\'c3\u65292 \'a3\'ac\u25353 \'b0\'b4\u29031 \'d5\'d5\u25105 \'ce\'d2\u20204 \'c3\'c7\u20197 \'d2\'d4\u21069 \'c7\'b0\u30340 \'b5\'c4\u35270 \'ca\'d3\u39057 \'c6\'b5\u65292 \'a3\'ac\u28155 \'cc\'ed\u21152 \'bc\'d3\u38656 \'d0\'e8\u35201 \'d2\'aa\u24320 \'bf\'aa\u25918 \'b7\'c5\u30340 \'b5\'c4\u31471 \'b6\'cb\u21475 \'bf\'da\uc1
+\par ftp\uc2\u36830 \'c1\'ac\u25509 \'bd\'d3\u31471 \'b6\'cb\u21475 \'bf\'da\u26377 \'d3\'d02\u20010 \'b8\'f6 21 \u21644 \'ba\'cd 20 \u31471 \'b6\'cb\u21475 \'bf\'da\u65292 \'a3\'ac\u25105 \'ce\'d2\u29616 \'cf\'d6\u22312 \'d4\'da\u28155 \'cc\'ed\u21152 \'bc\'d3\u23545 \'b6\'d4\u24212 \'d3\'a6\u30340 \'b5\'c4\u35268 \'b9\'e6\u21017 \'d4\'f2\u12290 \'a1\'a3\uc1
+\par [root@localhost rootiptables -A INPUT -p tcp --dport 21 -j ACCEPT
+\par [root@localhost rootiptables -A INPUT -p tcp --dport 20 -j ACCEPT
+\par [root@localhost rootiptables -A OUTPUT -p tcp --sport 21 -j ACCEPT
+\par [root@localhost rootiptables -A OUTPUT -p tcp --sport 20 -j ACCEPT
+\par \uc2\u22909 \'ba\'c3\u65292 \'a3\'ac\u36825 \'d5\'e2\u26679 \'d1\'f9\u23601 \'be\'cd\u28155 \'cc\'ed\u21152 \'bc\'d3\u23436 \'cd\'ea\u20102 \'c1\'cb\u65292 \'a3\'ac\u25105 \'ce\'d2\u20204 \'c3\'c7\u29992 \'d3\'c3\u27983 \'e4\'af\u35272 \'c0\'c0\u22120 \'c6\'f7\u35775 \'b7\'c3\u38382 \'ce\'ca\u19968 \'d2\'bb\u19979 \'cf\'c2ftp,\u20986 \'b3\'f6\u29616 \'cf\'d6\u36229 \'b3\'ac\u26102 \'ca\'b1\u12290 \'a1\'a3\uc1
+\par \uc2\u25152 \'cb\'f9\u20197 \'d2\'d4\u25105 \'ce\'d2\u21018 \'b8\'d5\u25165 \'b2\'c5\u35828 \'cb\'b5 ftp \u26159 \'ca\'c7\u27604 \'b1\'c8\u36739 \'bd\'cf\u29305 \'cc\'d8\u27530 \'ca\'e2\u30340 \'b5\'c4\u31471 \'b6\'cb\u21475 \'bf\'da\u65292 \'a3\'ac\u23427 \'cb\'fc\u36824 \'bb\'b9\u26377 \'d3\'d0\u19968 \'d2\'bb\u20123 \'d0\'a9\u31471 \'b6\'cb\u21475 \'bf\'da\u26159 \'ca\'c7 \u25968 \'ca\'fd\u25454 \'be\'dd\u20256 \'b4\'ab\u36755 \'ca\'e4\u31471 \'b6\'cb\u21475 \'bf\'da\u65292 \'a3\'ac\uc1
+\par \uc2\u20363 \'c0\'fd\u22914 \'c8\'e7\u30446 \'c4\'bf\u24405 \'c2\'bc\u21015 \'c1\'d0\u34920 \'b1\'ed\u65292 \'a3\'ac \u19978 \'c9\'cf\u20256 \'b4\'ab \u65292 \'a3\'ac\u19979 \'cf\'c2\u36733 \'d4\'d8 \u25991 \'ce\'c4\u20214 \'bc\'fe\u37117 \'b6\'bc\u35201 \'d2\'aa\u29992 \'d3\'c3\u21040 \'b5\'bd\u36825 \'d5\'e2\u20123 \'d0\'a9\u31471 \'b6\'cb\u21475 \'bf\'da\u12290 \'a1\'a3\uc1
+\par \uc2\u32780 \'b6\'f8\u36825 \'d5\'e2\u20123 \'d0\'a9\u31471 \'b6\'cb\u21475 \'bf\'da\u26159 \'ca\'c7 \u20219 \'c8\'ce\u24847 \'d2\'e2 \u31471 \'b6\'cb\u21475 \'bf\'da\u12290 \'a1\'a3\u12290 \'a1\'a3\u12290 \'a1\'a3 \u36825 \'d5\'e2\u20010 \'b8\'f6 \u20219 \'c8\'ce\u24847 \'d2\'e2 \u30495 \'d5\'e6\u30340 \'b5\'c4\u27604 \'b1\'c8\u36739 \'bd\'cf\u29305 \'cc\'d8\u27530 \'ca\'e2\u12290 \'a1\'a3\uc1
+\par \uc2\u22914 \'c8\'e7\u26524 \'b9\'fb\u19981 \'b2\'bb\u25351 \'d6\'b8\u23450 \'b6\'a8\u20160 \'ca\'b2\u20040 \'c3\'b4\u19968 \'d2\'bb\u20010 \'b8\'f6\u31471 \'b6\'cb\u21475 \'bf\'da\u33539 \'b7\'b6\u22260 \'ce\'a7\u65292 \'a3\'ac iptables \u24456 \'ba\'dc\u38590 \'c4\'d1\u23545 \'b6\'d4\u20219 \'c8\'ce\u24847 \'d2\'e2\u31471 \'b6\'cb\u21475 \'bf\'da\u24320 \'bf\'aa\u25918 \'b7\'c5\u30340 \'b5\'c4\u65292 \'a3\'ac\uc1
+\par \uc2\u22914 \'c8\'e7\u26524 \'b9\'fbiptables\u20801 \'d4\'ca\u35768 \'d0\'ed\u20219 \'c8\'ce\u24847 \'d2\'e2\u31471 \'b6\'cb\u21475 \'bf\'da\u35775 \'b7\'c3\u38382 \'ce\'ca\u65292 \'a3\'ac \u37027 \'c4\'c7\u21644 \'ba\'cd\u19981 \'b2\'bb\u35774 \'c9\'e8\u32622 \'d6\'c3\u38450 \'b7\'c0\u28779 \'bb\'f0\u22681 \'c7\'bd\u27809 \'c3\'bb\u20160 \'ca\'b2\u20040 \'c3\'b4\u21306 \'c7\'f8\u21035 \'b1\'f0\u65292 \'a3\'ac\u25152 \'cb\'f9\u20197 \'d2\'d4\u19981 \'b2\'bb\u29616 \'cf\'d6\u23454 \'ca\'b5\u30340 \'b5\'c4\u12290 \'a1\'a3\uc1
+\par \uc2\u37027 \'c4\'c7\u20040 \'c3\'b4\u25105 \'ce\'d2\u20204 \'c3\'c7\u30340 \'b5\'c4\u35299 \'bd\'e2\u20915 \'be\'f6\u21150 \'b0\'ec\u27861 \'b7\'a8\u23601 \'be\'cd\u26159 \'ca\'c7 \u25351 \'d6\'b8\u23450 \'b6\'a8\u36825 \'d5\'e2\u20010 \'b8\'f6\u25968 \'ca\'fd\u25454 \'be\'dd\u20256 \'b4\'ab\u36755 \'ca\'e4\u31471 \'b6\'cb\u21475 \'bf\'da\u30340 \'b5\'c4\u19968 \'d2\'bb\u20010 \'b8\'f6\u33539 \'b7\'b6\u22260 \'ce\'a7\u12290 \'a1\'a3\uc1
+\par \uc2\u19979 \'cf\'c2\u38754 \'c3\'e6\u25105 \'ce\'d2\u20204 \'c3\'c7\u20462 \'d0\'de\u25913 \'b8\'c4\u19968 \'d2\'bb\u19979 \'cf\'c2ftp\u37197 \'c5\'e4\u32622 \'d6\'c3\u25991 \'ce\'c4\u20214 \'bc\'fe\u12290 \'a1\'a3\uc1
+\par \uc2\u25105 \'ce\'d2\u36825 \'d5\'e2\u37324 \'c0\'ef\u20351 \'ca\'b9\u29992 \'d3\'c3vsftpd\u26469 \'c0\'b4\u20462 \'d0\'de\u25913 \'b8\'c4\u28436 \'d1\'dd\u31034 \'ca\'be\u65292 \'a3\'ac\u20854 \'c6\'e4\u20182 \'cb\'fbftp\u25105 \'ce\'d2\u19981 \'b2\'bb\u30693 \'d6\'aa\u36947 \'b5\'c0\u21738 \'c4\'c4\u37324 \'c0\'ef\u20462 \'d0\'de\u25913 \'b8\'c4\u65292 \'a3\'ac\u22823 \'b4\'f3\u23478 \'bc\'d2\u21487 \'bf\'c9\u20197 \'d2\'d4\u25214 \'d5\'d2\u25214 \'d5\'d2\u36164 \'d7\'ca\u26009 \'c1\'cf\u12290 \'a1\'a3\uc1
+\par [root@localhost rootvi /etc/vsftpd.conf
+\par \uc2\u22312 \'d4\'da\u37197 \'c5\'e4\u32622 \'d6\'c3\u25991 \'ce\'c4\u20214 \'bc\'fe\u30340 \'b5\'c4\u26368 \'d7\'ee\u19979 \'cf\'c2\u38754 \'c3\'e6 \u21152 \'bc\'d3\u20837 \'c8\'eb\uc1
+\par pasv_min_port=30001
+\par pasv_max_port=31000
+\par \uc2\u28982 \'c8\'bb\u21518 \'ba\'f3\u20445 \'b1\'a3\u23384 \'b4\'e6\u36864 \'cd\'cb\u20986 \'b3\'f6\u12290 \'a1\'a3\uc1
+\par \uc2\u36825 \'d5\'e2\u20004 \'c1\'bd\u21477 \'be\'e4\u35805 \'bb\'b0\u30340 \'b5\'c4\u24847 \'d2\'e2\u24605 \'cb\'bc\u21578 \'b8\'e6\u35785 \'cb\'dfvsftpd, \u35201 \'d2\'aa\u20256 \'b4\'ab\u36755 \'ca\'e4\u25968 \'ca\'fd\u25454 \'be\'dd\u30340 \'b5\'c4\u31471 \'b6\'cb\u21475 \'bf\'da\u33539 \'b7\'b6\u22260 \'ce\'a7\u23601 \'be\'cd\u22312 \'d4\'da30001\u21040 \'b5\'bd31000 \u36825 \'d5\'e2\u20010 \'b8\'f6\u33539 \'b7\'b6\u22260 \'ce\'a7\u20869 \'c4\'da\u20256 \'b4\'ab\u36865 \'cb\'cd\u12290 \'a1\'a3\uc1
+\par \uc2\u36825 \'d5\'e2\u26679 \'d1\'f9\u25105 \'ce\'d2\u20204 \'c3\'c7\u20351 \'ca\'b9\u29992 \'d3\'c3 iptables \u23601 \'be\'cd\u22909 \'ba\'c3\u21150 \'b0\'ec\u22810 \'b6\'e0\u20102 \'c1\'cb\u65292 \'a3\'ac\u25105 \'ce\'d2\u20204 \'c3\'c7\u23601 \'be\'cd\u25171 \'b4\'f2\u24320 \'bf\'aa 30001\u21040 \'b5\'bd31000 \u36825 \'d5\'e2\u20123 \'d0\'a9\u31471 \'b6\'cb\u21475 \'bf\'da\u12290 \'a1\'a3\uc1
+\par [root@localhost rootiptables -A INPUT -p tcp --dport 30001:31000 -j ACCEPT
+\par [root@localhost rootiptables -A OUTPUT -p tcp --sport 30001:31000 -j ACCEPT
+\par [root@localhost rootservice iptables save
+\par \uc2\u26368 \'d7\'ee\u21518 \'ba\'f3\u36827 \'bd\'f8\u34892 \'d0\'d0\u20445 \'b1\'a3\u23384 \'b4\'e6\u65292 \'a3\'ac \u28982 \'c8\'bb\u21518 \'ba\'f3\u25105 \'ce\'d2\u20204 \'c3\'c7\u20877 \'d4\'d9\u29992 \'d3\'c3\u27983 \'e4\'af\u35272 \'c0\'c0\u22120 \'c6\'f7\u33539 \'b7\'b6\u22260 \'ce\'a7\u19979 \'cf\'c2 ftp\u12290 \'a1\'a3\u21487 \'bf\'c9\u20197 \'d2\'d4\u27491 \'d5\'fd\u24120 \'b3\'a3\u35775 \'b7\'c3\u38382 \'ce\'ca\uc1
+\par \uc2\u29992 \'d3\'c3\u20010 \'b8\'f6\u36134 \'d5\'cb\u21495 \'ba\'c5\u30331 \'b5\'c7\u38470 \'c2\'bd\u19978 \'c9\'cf\u21435 \'c8\'a5\u65292 \'a3\'ac\u20063 \'d2\'b2\u27809 \'c3\'bb\u26377 \'d3\'d0\u38382 \'ce\'ca\u39064 \'cc\'e2\u65292 \'a3\'ac\u19978 \'c9\'cf\u20256 \'b4\'ab\u19968 \'d2\'bb\u20123 \'d0\'a9\u25991 \'ce\'c4\u20214 \'bc\'fe\u19978 \'c9\'cf\u21435 \'c8\'a5\u30475 \'bf\'b4\u30475 \'bf\'b4\u12290 \'a1\'a3\uc1
+\par \uc2\u30475 \'bf\'b4\u21040 \'b5\'bd\u20102 \'c1\'cb\u21543 \'b0\'c9\u65292 \'a3\'ac\u19978 \'c9\'cf\u20256 \'b4\'ab\u21644 \'ba\'cd\u19979 \'cf\'c2\u36733 \'d4\'d8\u37117 \'b6\'bc\u27491 \'d5\'fd\u24120 \'b3\'a3\u12290 \'a1\'a3\u12290 \'a1\'a3 \u20877 \'d4\'d9\u26597 \'b2\'e9\u30475 \'bf\'b4\u19979 \'cf\'c2 iptables \u30340 \'b5\'c4\u35774 \'c9\'e8\u32622 \'d6\'c3\uc1
+\par [root@localhost rootiptables -L -n
+\par Chain INPUT (policy DROP)
+\par target\~\~\~\~ prot opt source\~\~\~\~\~\~\~\~\~\~\~\~\~\~ destination
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~ tcp dpt:22
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~ tcp dpt:21
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~ tcp dpt:20
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~ tcp dpts:30001:31000
+\par Chain FORWARD (policy DROP)
+\par target\~\~\~\~ prot opt source\~\~\~\~\~\~\~\~\~\~\~\~\~\~ destination
+\par Chain OUTPUT (policy DROP)
+\par target\~\~\~\~ prot opt source\~\~\~\~\~\~\~\~\~\~\~\~\~\~ destination
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~ tcp spt:22
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~ tcp spt:21
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~ tcp spt:20
+\par ACCEPT\~\~\~\~ tcp -- 0.0.0.0/0\~\~\~\~\~\~\~\~\~\~\~ 0.0.0.0/0\~\~\~\~\~\~\~\~\~ tcp spts:30001:31000
+\par \uc2\u36825 \'d5\'e2\u26159 \'ca\'c7\u25105 \'ce\'d2\u20026 \'ce\'aa\u20102 \'c1\'cb\u28436 \'d1\'dd\u31034 \'ca\'beftp\u29305 \'cc\'d8\u27530 \'ca\'e2\u31471 \'b6\'cb\u21475 \'bf\'da\u20570 \'d7\'f6\u30340 \'b5\'c4\u31616 \'bc\'f2\u21333 \'b5\'a5\u35268 \'b9\'e6\u21017 \'d4\'f2\u65292 \'a3\'ac\u22823 \'b4\'f3\u23478 \'bc\'d2\u21487 \'bf\'c9\u20197 \'d2\'d4\u28155 \'cc\'ed\u21152 \'bc\'d3\u19968 \'d2\'bb\u20123 \'d0\'a9\u23545 \'b6\'d4\u25968 \'ca\'fd\u25454 \'be\'dd\u21253 \'b0\'fc\u30340 \'b5\'c4\u39564 \'d1\'e9\u35777 \'d6\'a4\uc1
+\par \uc2\u20363 \'c0\'fd\u22914 \'c8\'e7 -m state --state ESTABLISHED,RELATED \u31561 \'b5\'c8\u31561 \'b5\'c8\u35201 \'d2\'aa\u27714 \'c7\'f3\u26356 \'b8\'fc\u21152 \'bc\'d3\u39640 \'b8\'df\u30340 \'b5\'c4\u39564 \'d1\'e9\u35777 \'d6\'a4\uc1\par}

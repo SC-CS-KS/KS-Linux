@@ -1,0 +1,67 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil Arial;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid844730044\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid54328238}
+{\list\listtemplateid1466902122\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid341257753}
+{\list\listtemplateid441011842\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid1476252300}
+{\list\listtemplateid351129793\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid441768391}
+}
+{\*\listoverridetable
+{\listoverride\listid54328238\listoverridecount0\ls1}
+{\listoverride\listid341257753\listoverridecount0\ls2}
+{\listoverride\listid1476252300\listoverridecount0\ls3}
+{\listoverride\listid441768391\listoverridecount0\ls4}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 iptables \uc2\u20165 \'bd\'f6\u24320 \'bf\'aa\u25918 \'b7\'c53306\u31471 \'b6\'cb\u21475 \'bf\'da/\u20801 \'d4\'ca\u35768 \'d0\'edping\uc1
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs20 iptables\~\uc2\u37197 \'c5\'e4\u32622 \'d6\'c3\u26696 \'b0\'b8\u20363 \'c0\'fd\u65288 \'a3\'a8\u20165 \'bd\'f6\u24320 \'bf\'aa\u25918 \'b7\'c580\u12289 \'a1\'a23306\u31471 \'b6\'cb\u21475 \'bf\'da\u12289 \'a1\'a2\u20801 \'d4\'ca\u35768 \'d0\'edping\u65289 \'a3\'a9\uc1
+\par \uc2\u40664 \'c4\'ac\u35748 \'c8\'cf\u30340 \'b5\'c4\u37197 \'c5\'e4\u32622 \'d6\'c3\u20026 \'ce\'aa\u65306 \'a3\'ba\uc1
+\par ########################################################################
+\par #\~Firewall\~configuration\~written\~by\~system-config-firewall
+\par #\~Manual\~customization\~of\~this\~file\~is\~not\~recommended.
+\par *filter
+\par :INPUT\~ACCEPT\~[0:0]
+\par :FORWARD\~ACCEPT\~[0:0]
+\par :OUTPUT\~ACCEPT\~[0:0]
+\par -A\~INPUT\~-m\~state\~--state\~ESTABLISHED,RELATED\~-j\~ACCEPT
+\par -A\~INPUT\~-p\~icmp\~-j\~ACCEPT
+\par -A\~INPUT\~-i\~lo\~-j\~ACCEPT
+\par -A\~INPUT\~-m\~state\~--state\~NEW\~-m\~tcp\~-p\~tcp\~--dport\~22\~-j\~ACCEPT
+\par -A\~INPUT\~-m\~state\~--state\~NEW\~-m\~tcp\~-p\~tcp\~--dport\~80\~-j\~ACCEPT
+\par -A\~INPUT\~-j\~REJECT\~--reject-with\~icmp-host-prohibited
+\par -A\~FORWARD\~-j\~REJECT\~--reject-with\~icmp-host-prohibited
+\par COMMIT
+\par ###########################################################################
+\par 
+\par \uc2\u25105 \'ce\'d2\u20204 \'c3\'c7\u20462 \'d0\'de\u25913 \'b8\'c4\u19968 \'d2\'bb\u19979 \'cf\'c2/etc/sysconfig/iptables\~\u25991 \'ce\'c4\u20214 \'bc\'fe\u65292 \'a3\'ac\u20801 \'d4\'ca\u35768 \'d0\'edping\~\~\u24320 \'bf\'aa\u25918 \'b7\'c522\u12289 \'a1\'a280\u12289 \'a1\'a23306\u31471 \'b6\'cb\u21475 \'bf\'da\uc1
+\par vi\~/etc/sysconfig/iptables
+\par ####################################################################
+\par #\~Firewall\~configuration\~written\~by\~system-config-firewall
+\par #\~Manual\~customization\~of\~this\~file\~is\~not\~recommended.
+\par #\~Firewall\~configuration\~written\~by\~system-config-firewall
+\par #\~Manual\~customization\~of\~this\~file\~is\~not\~recommended.
+\par #\~Firewall\~configuration\~written\~by\~system-config-firewall
+\par #\~Manual\~customization\~of\~this\~file\~is\~not\~recommended.
+\par *filter
+\par -A\~INPUT\~\~-p\~tcp\~--dport\~22\~-j\~ACCEPT
+\par -A\~OUTPUT\~-p\~tcp\~--sport\~22\~-j\~ACCEPT
+\par -A\~INPUT\~-p\~icmp\~-j\~ACCEPT
+\par -A\~INPUT\~-i\~lo\~-j\~ACCEPT
+\par :INPUT\~DROP\~[0:0]
+\par :FORWARD\~ACCEPT\~[0:0]
+\par :OUTPUT\~ACCEPT\~[0:0]
+\par -A\~INPUT\~\~-p\~tcp\~--dport\~80\~-j\~ACCEPT
+\par -A\~OUTPUT\~-p\~tcp\~--sport\~80\~-j\~ACCEPT
+\par -A\~INPUT\~\~-p\~tcp\~--dport\~3306\~-j\~ACCEPT
+\par -A\~OUTPUT\~-p\~tcp\~--sport\~3306\~-j\~ACCEPT
+\par COMMIT
+\par ########################################################################
+\par 
+\par /etc/init.d/iptables\~restart\par}

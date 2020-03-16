@@ -1,0 +1,687 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil Arial;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red235\green245\blue245;}{\*\listtable{\list\listtemplateid117766482\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'00;}{\levelnumbers;}\f3\fs24}
+\listid373271199}
+}
+{\*\listoverridetable
+{\listoverride\listid373271199\listoverridecount0\ls1}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 03.RPM
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs20 RPM(8)                                                     Red Hat Linux                                                     RPM(8)
+\par 
+\par NAME
+\par \plain \f1\fs20\cf1        rpm - RPM Package Manager
+\par \plain \f1\fs20 
+\par SYNOPSIS
+\par    QUERYING AND VERIFYING PACKAGES:
+\par \plain \f1\fs20\cf1        rpm \{-q|--query\} [select-options] [query-options]
+\par \plain \f1\fs20 
+\par        rpm \{-V|--verify\} [select-options] [verify-options]
+\par 
+\par        rpm --import PUBKEY ...
+\par 
+\par        rpm \{-K|--checksig\} [--nosignature] [--nodigest]
+\par            PACKAGE_FILE ...
+\par 
+\par    INSTALLING, UPGRADING, AND REMOVING PACKAGES:
+\par        rpm \{-i|--install\} [install-options] PACKAGE_FILE ...
+\par 
+\par        rpm \{-U|--upgrade\} [install-options] PACKAGE_FILE ...
+\par 
+\par        rpm \{-F|--freshen\} [install-options] PACKAGE_FILE ...
+\par 
+\par        rpm \{-e|--erase\} [--allmatches] [--nodeps] [--noscripts]
+\par            [--notriggers] [--repackage] [--test] PACKAGE_NAME ...
+\par 
+\par    MISCELLANEOUS:
+\par        rpm \{--initdb|--rebuilddb\}
+\par 
+\par        rpm \{--addsign|--resign\} PACKAGE_FILE ...
+\par 
+\par        rpm \{--querytags|--showrc\}
+\par 
+\par        rpm \{--setperms|--setugids\} PACKAGE_NAME ...
+\par 
+\par    select-options
+\par         [PACKAGE_NAME] [-a,--all] [-f,--file FILE]
+\par         [-g,--group GROUP] \{-p,--package PACKAGE_FILE]
+\par         [--fileid MD5] [--hdrid SHA1] [--pkgid MD5] [--tid TID]
+\par         [--querybynumber HDRNUM] [--triggeredby PACKAGE_NAME]
+\par         [--whatprovides CAPABILITY] [--whatrequires CAPABILITY]
+\par 
+\par    query-options
+\par         [--changelog] [-c,--configfiles] [-d,--docfiles] [--dump]
+\par         [--filesbypkg] [-i,--info] [--last] [-l,--list]
+\par         [--provides] [--qf,--queryformat QUERYFMT]
+\par         [-R,--requires] [--scripts] [-s,--state]
+\par         [--triggers,--triggerscripts]
+\par 
+\par    verify-options
+\par         [--nodeps] [--nofiles] [--noscripts]
+\par         [--nodigest] [--nosignature]
+\par         [--nolinkto] [--nomd5] [--nosize] [--nouser]
+\par         [--nogroup] [--nomtime] [--nomode] [--nordev]
+\par 
+\par    install-options
+\par         [--aid] [--allfiles] [--badreloc] [--excludepath OLDPATH]
+\par         [--excludedocs] [--force] [-h,--hash]
+\par         [--ignoresize] [--ignorearch] [--ignoreos]
+\par         [--includedocs] [--justdb] [--nodeps]
+\par         [--nodigest] [--nosignature] [--nosuggest]
+\par         [--noorder] [--noscripts] [--notriggers]
+\par         [--oldpackage] [--percent] [--prefix NEWPATH]
+\par         [--relocate OLDPATH=NEWPATH]
+\par         [--repackage] [--replacefiles] [--replacepkgs]
+\par         [--test]
+\par 
+\par DESCRIPTION
+\par        rpm is a powerful Package Manager, which can be used to build, install, query, verify, update, and erase individual software
+\par        packages.  A package consists of an archive of files and meta-data used to install and erase the archive  files.  The  meta-
+\par        data  includes  helper  scripts, file attributes, and descriptive information about the package.  Packages come in two vari-
+\par        eties: binary packages, used to encapsulate software to be installed, and source packages, containing the  source  code  and
+\par        recipe necessary to produce binary packages.
+\par 
+\par        One  of the following basic modes must be selected: Query, Verify, Signature Check, Install/Upgrade/Freshen, Uninstall, Ini-
+\par        tialize Database, Rebuild Database, Resign, Add Signature, Set Owners/Groups, Show Querytags, and Show Configuration.
+\par 
+\par    GENERAL OPTIONS
+\par        These options can be used in all the different modes.
+\par 
+\par        -?, --help
+\par               Print a longer usage message then normal.
+\par 
+\par        --version
+\par               Print a single line containing the version number of rpm being used.
+\par 
+\par        --quiet
+\par               Print as little as possible - normally only error messages will be displayed.
+\par 
+\par        -v     Print verbose information - normally routine progress messages will be displayed.
+\par 
+\par        -vv    Print lots of ugly debugging information.
+\par 
+\par        --rcfile FILELIST
+\par               Each of the files in the colon separated FILELIST is read sequentially by rpm for  configuration  information.   Only
+\par               the  first  file  in the list must exist, and tildes will be expanded to the value of $HOME.  The default FILELIST is
+\par               /usr/lib/rpm/rpmrc:/usr/lib/rpm/redhat/rpmrc:/etc/rpmrc:~/.rpmrc.
+\par 
+\par        --pipe CMD
+\par               Pipes the output of rpm to the command CMD.
+\par 
+\par        --dbpath DIRECTORY
+\par               Use the database in DIRECTORY rather than the default path /var/lib/rpm
+\par 
+\par        --root DIRECTORY
+\par               Use the file system tree rooted at DIRECTORY for all operations.  Note that this means the database within  DIRECTORY
+\par               will  be used for dependency checks and any scriptlet(s) (e.g.  %post if installing, or %prep if building, a package)
+\par               will be run after a chroot(2) to DIRECTORY.
+\par 
+\par    INSTALL AND UPGRADE OPTIONS
+\par        The general form of an rpm install command is
+\par 
+\par        rpm \{-i|--install\} [install-options] PACKAGE_FILE ...
+\par 
+\par        This installs a new package.
+\par 
+\par        The general form of an rpm upgrade command is
+\par 
+\par        rpm \{-U|--upgrade\} [install-options] PACKAGE_FILE ...
+\par 
+\par        This upgrades or installs the package currently installed to a newer version.  This is the same as install, except all other
+\par        version(s) of the package are removed after the new package is installed.
+\par 
+\par        rpm \{-F|--freshen\} [install-options] PACKAGE_FILE ...
+\par 
+\par        This  will upgrade packages, but only if an earlier version currently exists. The PACKAGE_FILE may be specified as an ftp or
+\par        http URL, in which case the package will be downloaded before being installed. See FTP/HTTP OPTIONS for information on rpm\rquote s
+\par        internal ftp and http client support.
+\par 
+\par        --aid  Add suggested packages to the transaction set when needed.
+\par 
+\par        --allfiles
+\par               Installs or upgrades all the missingok files in the package, regardless if they exist.
+\par 
+\par        --badreloc
+\par               Used  with  --relocate, permit relocations on all file paths, not just those OLDPATH\rquote s included in the binary package
+\par               relocation hint(s).
+\par 
+\par        --excludepath OLDPATH
+\par               Don\rquote t install files whose name begins with OLDPATH.
+\par 
+\par        --excludedocs
+\par               Don\rquote t install any files which are marked as documentation (which includes man pages and texinfo documents).
+\par 
+\par        --force
+\par               Same as using --replacepkgs, --replacefiles, and --oldpackage.
+\par 
+\par        -h, --hash
+\par               Print 50 hash marks as the package archive is unpacked.  Use with -v|--verbose for a nicer display.
+\par 
+\par        --ignoresize
+\par               Don\rquote t check mount file systems for sufficient disk space before installing this package.
+\par 
+\par        --ignorearch
+\par               Allow installation or upgrading even if the architectures of the binary package and host don\rquote t match.
+\par 
+\par        --ignoreos
+\par               Allow installation or upgrading even if the operating systems of the binary package and host don\rquote t match.
+\par 
+\par        --includedocs
+\par               Install documentation files. This is the default behavior.
+\par 
+\par        --justdb
+\par               Update only the database, not the filesystem.
+\par 
+\par        --nodigest
+\par               Don\rquote t verify package or header digests when reading.
+\par 
+\par        --nosignature
+\par               Don\rquote t verify package or header signatures when reading.
+\par 
+\par        --nodeps
+\par               Don\rquote t do a dependency check before installing or upgrading a package.
+\par 
+\par        --nosuggest
+\par               Don\rquote t suggest package(s) that provide a missing dependency.
+\par 
+\par        --noorder
+\par               Don\rquote t reorder the packages for an install. The list of packages would normally be reordered to satisfy  dependencies.
+\par 
+\par        --noscripts
+\par 
+\par        --nopre
+\par 
+\par        --nopost
+\par 
+\par        --nopreun
+\par 
+\par        --nopostun
+\par               Don\rquote t execute the scriptlet of the same name.  The --noscripts option is equivalent to
+\par 
+\par               --nopre --nopost --nopreun --nopostun
+\par 
+\par               and turns off the execution of the corresponding %pre, %post, %preun, and %postun scriptlet(s).
+\par 
+\par        --notriggers
+\par 
+\par        --notriggerin
+\par 
+\par        --notriggerun
+\par 
+\par        --notriggerpostun
+\par               Don\rquote t execute any trigger scriptlet of the named type.  The --notriggers option is equivalent to
+\par 
+\par               --notriggerin --notriggerun --notriggerpostun
+\par 
+\par               and turns off execution of the corresponding %triggerin, %triggerun, and %triggerpostun scriptlet(s).
+\par 
+\par        --oldpackage
+\par               Allow an upgrade to replace a newer package with an older one.
+\par 
+\par        --percent
+\par               Print  percentages  as  files  are  unpacked from the package archive.  This is intended to make rpm easy to run from
+\par               other tools.
+\par 
+\par        --prefix NEWPATH
+\par               For relocatable binary packages, translate all file paths that start with the  installation  prefix  in  the  package
+\par               relocation hint(s) to NEWPATH.
+\par 
+\par        --relocate OLDPATH=NEWPATH
+\par               For  relocatable  binary packages, translate all file paths that start with OLDPATH in the package relocation hint(s)
+\par               to NEWPATH.  This option can be used repeatedly if several OLDPATH\rquote s in the package are to be relocated.
+\par 
+\par        --repackage
+\par               Re-package the files before erasing. The previously installed package will be named according to the macro  %_repack-
+\par               age_name_fmt  and  will  be  created  in  the  directory  named  by  the  macro  %_repackage_dir  (default  value  is
+\par               /var/spool/repackage).
+\par 
+\par        --replacefiles
+\par               Install the packages even if they replace files from other, already installed, packages.
+\par 
+\par        --replacepkgs
+\par               Install the packages even if some of them are already installed on this system.
+\par 
+\par        --test Do not install the package, simply check for and report potential conflicts.
+\par 
+\par    ERASE OPTIONS
+\par        The general form of an rpm erase command is
+\par 
+\par        rpm \{-e|--erase\} [--allmatches] [--nodeps] [--noscripts] [--notriggers] [--repackage] [--test] PACKAGE_NAME ...
+\par 
+\par        The following options may also be used:
+\par 
+\par        --allmatches
+\par               Remove all versions of the package which match PACKAGE_NAME. Normally an error is issued if PACKAGE_NAME matches mul-
+\par               tiple packages.
+\par 
+\par        --nodeps
+\par               Don\rquote t check dependencies before uninstalling the packages.
+\par 
+\par        --noscripts
+\par 
+\par        --nopreun
+\par 
+\par        --nopostun
+\par               Don\rquote t execute the scriptlet of the same name.  The --noscripts option during package erase is equivalent to
+\par 
+\par               --nopreun --nopostun
+\par 
+\par               and turns off the execution of the corresponding %preun, and %postun scriptlet(s).
+\par 
+\par        --notriggers
+\par 
+\par        --notriggerun
+\par 
+\par        --notriggerpostun
+\par               Don\rquote t execute any trigger scriptlet of the named type.  The --notriggers option is equivalent to
+\par 
+\par               --notriggerun --notriggerpostun
+\par 
+\par               and turns off execution of the corresponding %triggerun, and %triggerpostun scriptlet(s).
+\par 
+\par        --repackage
+\par               Re-package  the files before erasing. The previously installed package will be named according to the macro %_repack-
+\par               age_name_fmt  and  will  be  created  in  the  directory  named  by  the  macro  %_repackage_dir  (default  value  is
+\par               /var/spool/repackage).
+\par 
+\par        --test Don\rquote t  really  uninstall anything, just go through the motions.  Useful in conjunction with the -vv option for debug-
+\par               ging.
+\par 
+\par    QUERY OPTIONS
+\par        The general form of an rpm query command is
+\par 
+\par        rpm \{-q|--query\} [select-options] [query-options]
+\par 
+\par        You may specify the format that package information should be printed in. To do this, you use the
+\par 
+\par         --qf|--queryformat QUERYFMT
+\par 
+\par        option, followed by the QUERYFMT format string.  Query formats are modified versions of the standard  printf(3)  formatting.
+\par        The  format  is made up of static strings (which may include standard C character escapes for newlines, tabs, and other spe-
+\par        cial characters) and printf(3) type formatters.  As rpm already knows the type to print, the type specifier must be  omitted
+\par        however,  and  replaced  by the name of the header tag to be printed, enclosed by \{\} characters. Tag names are case insensi-
+\par        tive, and the leading RPMTAG_ portion of the tag name may be omitted as well.
+\par 
+\par        Alternate output formats may be requested by following the tag with :typetag.  Currently, the following types are supported:
+\par 
+\par        :armor  Wrap a public key in ASCII armor.
+\par 
+\par        :base64
+\par               Encode binary data using base64.
+\par 
+\par        :date  Use strftime(3) "%c" format.
+\par 
+\par        :day   Use strftime(3) "%a %b %d %Y" format.
+\par 
+\par        :depflags
+\par               Format dependency flags.
+\par 
+\par        :fflags
+\par               Format file flags.
+\par 
+\par        :hex   Format in hexadecimal.
+\par 
+\par        :octal Format in octal.
+\par 
+\par        :perms Format file permissions.
+\par 
+\par        :shescape
+\par               Escape single quotes for use in a script.
+\par 
+\par        :triggertype
+\par               Display trigger suffix.
+\par 
+\par        For  example,  to  print  only  the names of the packages queried, you could use %\{NAME\} as the format string.  To print the
+\par        packages name and distribution information in two columns, you could use %-30\{NAME\}%\{DISTRIBUTION\}.  rpm will print  a  list
+\par        of all of the tags it knows about when it is invoked with the --querytags argument.
+\par 
+\par        There are two subsets of options for querying: package selection, and information selection.
+\par 
+\par    PACKAGE SELECTION OPTIONS:
+\par        PACKAGE_NAME
+\par               Query installed package named PACKAGE_NAME.
+\par 
+\par        -a, --all
+\par               Query all installed packages.
+\par 
+\par        -f, --file FILE
+\par               Query package owning FILE.
+\par 
+\par        --fileid MD5
+\par               Query package that contains a given file identifier, i.e. the MD5 digest of the file contents.
+\par 
+\par        -g, --group GROUP
+\par               Query packages with the group of GROUP.
+\par 
+\par        --hdrid SHA1
+\par               Query package that contains a given header identifier, i.e. the SHA1 digest of the immutable header region.
+\par 
+\par        -p, --package PACKAGE_FILE
+\par               Query an (uninstalled) package PACKAGE_FILE.  The PACKAGE_FILE may be specified as an ftp or http style URL, in which
+\par               case the package header will be downloaded and queried.  See FTP/HTTP OPTIONS for information on rpm\rquote s  internal  ftp
+\par               and http client support. The PACKAGE_FILE argument(s), if not a binary package, will be interpreted as an ASCII pack-
+\par               age manifest.  Comments are permitted, starting with a \rquote #\rquote , and each line of a  package  manifest  file  may  include
+\par               white  space separated glob expressions, including URL\rquote s with remote glob expressions, that will be expanded to paths
+\par               that are substituted in place of the package manifest as additional PACKAGE_FILE arguments to the query.
+\par 
+\par        --pkgid MD5
+\par               Query package that contains a given package identifier, i.e. the MD5 digest of the combined header and  payload  con-
+\par               tents.
+\par 
+\par        --querybynumber HDRNUM
+\par               Query the HDRNUMth database entry directly; this is useful only for debugging.
+\par 
+\par        --specfile SPECFILE
+\par               Parse  and  query  SPECFILE as if it were a package. Although not all the information (e.g. file lists) is available,
+\par               this type of query permits rpm to be used to extract information from spec files without having to write  a  specfile
+\par               parser.
+\par 
+\par        --tid TID
+\par               Query  package(s)  that have a given TID transaction identifier. A unix time stamp is currently used as a transaction
+\par               identifier. All package(s) installed or erased within a single transaction have a common identifier.
+\par 
+\par        --triggeredby PACKAGE_NAME
+\par               Query packages that are triggered by package(s) PACKAGE_NAME.
+\par 
+\par        --whatprovides CAPABILITY
+\par               Query all packages that provide the CAPABILITY capability.
+\par 
+\par        --whatrequires CAPABILITY
+\par               Query all packages that requires CAPABILITY for proper functioning.
+\par 
+\par    PACKAGE QUERY OPTIONS:
+\par        --changelog
+\par               Display change information for the package.
+\par 
+\par        -c, --configfiles
+\par               List only configuration files (implies -l).
+\par 
+\par        -d, --docfiles
+\par               List only documentation files (implies -l).
+\par 
+\par        --dump Dump file information as follows:
+\par 
+\par               path size mtime md5sum mode owner group isconfig isdoc rdev symlink
+\par 
+\par        This option must be used with at least one of -l, -c, -d.
+\par 
+\par        --filesbypkg
+\par               List all the files in each selected package.
+\par 
+\par        -i, --info
+\par               Display package information, including name, version, and description.  This uses the --queryformat if one was speci-
+\par               fied.
+\par 
+\par        --last Orders the package listing by install time such that the latest packages are at the top.
+\par 
+\par        -l, --list
+\par               List files in package.
+\par 
+\par        --provides
+\par               List capabilities this package provides.
+\par 
+\par        -R, --requires
+\par               List packages on which this package depends.
+\par 
+\par        --scripts
+\par               List the package specific scriptlet(s) that are used as part of the installation and uninstallation processes.
+\par 
+\par        -s, --state
+\par               Display  the states of files in the package (implies -l).  The state of each file is one of normal, not installed, or
+\par               replaced.
+\par 
+\par        --triggers, --triggerscripts
+\par               Display the trigger scripts, if any, which are contained in the package.
+\par 
+\par    VERIFY OPTIONS
+\par        The general form of an rpm verify command is
+\par 
+\par        rpm \{-V|--verify\} [select-options] [verify-options]
+\par 
+\par        Verifying a package compares information about the installed files in the package with information  about  the  files  taken
+\par        from  the  package  metadata  stored in the rpm database.  Among other things, verifying compares the size, MD5 sum, permis-
+\par        sions, type, owner and group of each file.  Any discrepancies are displayed.  Files that were not installed from  the  pack-
+\par        age, for example, documentation files excluded on installation using the "--excludedocs" option, will be silently ignored.
+\par 
+\par        The  package  selection options are the same as for package querying (including package manifest files as arguments).  Other
+\par        options unique to verify mode are:
+\par 
+\par        --nodeps
+\par               Don\rquote t verify dependencies of packages.
+\par 
+\par        --nodigest
+\par               Don\rquote t verify package or header digests when reading.
+\par 
+\par        --nofiles
+\par               Don\rquote t verify any attributes of package files.
+\par 
+\par        --noscripts
+\par               Don\rquote t execute the %verifyscript scriptlet (if any).
+\par 
+\par        --nosignature
+\par               Don\rquote t verify package or header signatures when reading.
+\par 
+\par        --nolinkto
+\par 
+\par        --nomd5
+\par 
+\par        --nosize
+\par 
+\par        --nouser
+\par 
+\par        --nogroup
+\par 
+\par        --nomtime
+\par 
+\par        --nomode
+\par 
+\par        --nordev
+\par               Don\rquote t verify the corresponding file attribute.
+\par 
+\par        The format of the output is a string of 8 characters, a possible attribute marker:
+\par 
+\par        c %config configuration file.
+\par        d %doc documentation file.
+\par        g %ghost file (i.e. the file contents are not included in the package payload).
+\par        l %license license file.
+\par        r %readme readme file.
+\par 
+\par        from the package header, followed by the file name.  Each of the  8  characters  denotes  the  result  of  a  comparison  of
+\par        attribute(s)  of the file to the value of those attribute(s) recorded in the database.  A single "." (period) means the test
+\par        passed, while a single "?" (question mark) indicates the test could not be performed (e.g. file  permissions  prevent  read-
+\par        ing). Otherwise, the (mnemonically emBoldened) character denotes failure of the corresponding --verify test:
+\par 
+\par        S file Size differs
+\par        M Mode differs (includes permissions and file type)
+\par        5 MD5 sum differs
+\par        D Device major/minor number mismatch
+\par        L readLink(2) path mismatch
+\par        U User ownership differs
+\par        G Group ownership differs
+\par        T mTime differs
+\par 
+\par    DIGITAL SIGNATURE AND DIGEST VERIFICATION
+\par        The general forms of rpm digital signature commands are
+\par 
+\par        rpm --import PUBKEY ...
+\par 
+\par        rpm \{--checksig\} [--nosignature] [--nodigest]
+\par            PACKAGE_FILE ...
+\par 
+\par        The  --checksig option checks all the digests and signatures contained in PACKAGE_FILE to ensure the integrity and origin of
+\par        the package. Note that signatures are now verified whenever a package is read, and --checksig is useful to verify all of the
+\par        digests and signatures associated with a package.
+\par 
+\par        Digital  signatures  cannot  be verified without a public key.  An ASCII armored public key can be added to the rpm database
+\par        using --import. An imported public key is carried in a header, and key ring management is  performed  exactly  like  package
+\par        management. For example, all currently imported public keys can be displayed by:
+\par 
+\par        rpm -qa gpg-pubkey*
+\par 
+\par        Details  about  a  specific  public  key, when imported, can be displayed by querying.  Here\rquote s information about the Red Hat
+\par        GPG/DSA key:
+\par 
+\par        rpm -qi gpg-pubkey-db42a60e
+\par 
+\par        Finally, public keys can be erased after importing just like packages. Here\rquote s how to remove the Red Hat GPG/DSA key
+\par 
+\par        rpm -e gpg-pubkey-db42a60e
+\par 
+\par    SIGNING A PACKAGE
+\par        rpm --addsign|--resign PACKAGE_FILE ...
+\par 
+\par        Both of the --addsign and --resign options generate and insert new signatures for each package PACKAGE_FILE given, replacing
+\par        any existing signatures. There are two options for historical reasons, there is no difference in behavior currently.
+\par 
+\par    USING GPG TO SIGN PACKAGES
+\par        In  order  to sign packages using GPG, rpm must be configured to run GPG and be able to find a key ring with the appropriate
+\par        keys. By default, rpm uses the same conventions as GPG to find key rings, namely the $GNUPGHOME  environment  variable.   If
+\par        your key rings are not located where GPG expects them to be, you will need to configure the macro %_gpg_path to be the loca-
+\par        tion of the GPG key rings to use.
+\par 
+\par        For compatibility with older versions of GPG, PGP, and rpm, only V3 OpenPGP signature packets should be configured.   Either
+\par        DSA or RSA verification algorithms can be used, but DSA is preferred.
+\par 
+\par        If  you  want  to  be able to sign packages you create yourself, you also need to create your own public and secret key pair
+\par        (see the GPG manual). You will also need to configure the rpm macros
+\par 
+\par        %_signature
+\par               The signature type.  Right now only gpg and pgp are supported.
+\par 
+\par        %_gpg_name
+\par               The name of the "user" whose key you wish to use to sign your packages.
+\par 
+\par        For example, to be able to use GPG to sign packages as the user "John Doe <jdoe@foo.com>" from  the  key  rings  located  in
+\par        /etc/rpm/.gpg using the executable /usr/bin/gpg you would include
+\par 
+\par        %_signature gpg
+\par        %_gpg_path /etc/rpm/.gpg
+\par        %_gpg_name John Doe <jdoe@foo.com>
+\par        %_gpgbin /usr/bin/gpg
+\par 
+\par        in a macro configuration file. Use /etc/rpm/macros for per-system configuration and ~/.rpmmacros for per-user configuration.
+\par 
+\par    REBUILD DATABASE OPTIONS
+\par        The general form of an rpm rebuild database command is
+\par 
+\par        rpm \{--initdb|--rebuilddb\} [-v] [--dbpath DIRECTORY] [--root DIRECTORY]
+\par 
+\par        Use --initdb to create a new database, use --rebuilddb to rebuild the database indices from the installed package headers.
+\par 
+\par    SHOWRC
+\par        The command
+\par 
+\par        rpm --showrc
+\par 
+\par        shows the values rpm will use for all of the options are currently set in rpmrc and macros configuration file(s).
+\par 
+\par    FTP/HTTP OPTIONS
+\par        rpm can act as an FTP and/or HTTP client so that packages can be queried or installed from the internet.  Package files  for
+\par        install, upgrade, and query operations may be specified as an ftp or http style URL:
+\par 
+\par        ftp://USER:PASSWORD@HOST:PORT/path/to/package.rpm
+\par 
+\par        If  the  :PASSWORD portion is omitted, the password will be prompted for (once per user/hostname pair). If both the user and
+\par        password are omitted, anonymous ftp is used.  In all cases, passive (PASV) ftp transfers are performed.
+\par 
+\par        rpm allows the following options to be used with ftp URLs:
+\par 
+\par        --ftpproxy HOST
+\par               The host HOST will be used as a proxy server for all ftp transfers,  which  allows  users  to  ftp  through  firewall
+\par               machines which use proxy systems. This option may also be specified by configuring the macro %_ftpproxy.
+\par 
+\par        --ftpport PORT
+\par               The  TCP  PORT  number to use for the ftp connection on the proxy ftp server instead of the default port. This option
+\par               may also be specified by configuring the macro %_ftpport.
+\par 
+\par        rpm allows the following options to be used with http URLs:
+\par 
+\par        --httpproxy HOST
+\par               The host HOST will be used as a proxy server for all http transfers. This option may also be specified by configuring
+\par               the macro %_httpproxy.
+\par 
+\par        --httpport PORT
+\par               The  TCP PORT number to use for the http connection on the proxy http server instead of the default port. This option
+\par               may also be specified by configuring the macro %_httpport.
+\par 
+\par LEGACY ISSUES
+\par    Executing rpmbuild
+\par        The build modes of rpm are now resident in the /usr/bin/rpmbuild executable. Although legacy compatibility provided  by  the
+\par        popt  aliases below has been adequate, the compatibility is not perfect; hence build mode compatibility through popt aliases
+\par        is being removed from rpm.  Install the rpmbuild package, and see rpmbuild(8) for documentation of all the rpm  build  modes
+\par        previously documented here in rpm(8).
+\par 
+\par        Add the following lines to /etc/popt if you wish to continue invoking rpmbuild from the rpm command line:
+\par 
+\par        rpm     exec --bp               rpmb -bp
+\par        rpm     exec --bc               rpmb -bc
+\par        rpm     exec --bi               rpmb -bi
+\par        rpm     exec --bl               rpmb -bl
+\par        rpm     exec --ba               rpmb -ba
+\par        rpm     exec --bb               rpmb -bb
+\par        rpm     exec --bs               rpmb -bs
+\par        rpm     exec --tp               rpmb -tp
+\par        rpm     exec --tc               rpmb -tc
+\par        rpm     exec --ti               rpmb -ti
+\par        rpm     exec --tl               rpmb -tl
+\par        rpm     exec --ta               rpmb -ta
+\par        rpm     exec --tb               rpmb -tb
+\par        rpm     exec --ts               rpmb -ts
+\par        rpm     exec --rebuild          rpmb --rebuild
+\par        rpm     exec --recompile        rpmb --recompile
+\par        rpm     exec --clean            rpmb --clean
+\par        rpm     exec --rmsource         rpmb --rmsource
+\par        rpm     exec --rmspec           rpmb --rmspec
+\par        rpm     exec --target           rpmb --target
+\par        rpm     exec --short-circuit    rpmb --short-circuit
+\par 
+\par FILES
+\par    rpmrc Configuration
+\par        /usr/lib/rpm/rpmrc
+\par        /usr/lib/rpm/redhat/rpmrc
+\par        /etc/rpmrc
+\par        ~/.rpmrc
+\par 
+\par    Macro Configuration
+\par        /usr/lib/rpm/macros
+\par        /usr/lib/rpm/redhat/macros
+\par        /etc/rpm/macros
+\par        ~/.rpmmacros
+\par 
+\par    Database
+\par        /var/lib/rpm/Basenames
+\par        /var/lib/rpm/Conflictname
+\par        /var/lib/rpm/Dirnames
+\par        /var/lib/rpm/Filemd5s
+\par        /var/lib/rpm/Group
+\par        /var/lib/rpm/Installtid
+\par        /var/lib/rpm/Name
+\par        /var/lib/rpm/Packages
+\par        /var/lib/rpm/Providename
+\par        /var/lib/rpm/Provideversion
+\par        /var/lib/rpm/Pubkeys
+\par        /var/lib/rpm/Removed
+\par        /var/lib/rpm/Requirename
+\par        /var/lib/rpm/Requireversion
+\par        /var/lib/rpm/Sha1header
+\par        /var/lib/rpm/Sigmd5
+\par        /var/lib/rpm/Triggername
+\par 
+\par    Temporary
+\par        /var/tmp/rpm*
+\par 
+\par SEE ALSO
+\par        popt(3),
+\par        rpm2cpio(8),
+\par        rpmbuild(8),
+\par 
+\par        http://www.rpm.org/ <URL:http://www.rpm.org/>
+\par 
+\par AUTHORS
+\par        Marc Ewing <marc@redhat.com>
+\par        Jeff Johnson <jbj@redhat.com>
+\par        Erik Troan <ewt@redhat.com>
+\par 
+\par Red Hat, Inc.                                               09 June 2002                                                     RPM(8)\par}

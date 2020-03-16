@@ -1,0 +1,72 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil\fcharset2 Symbol;}}{\colortbl;\red0\green0\blue255;\red255\green0\blue0;\red0\green0\blue0;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid670816800\listsimple1
+{\listlevel\levelnfc23\leveljc0\li720\fi-360\jclisttab\tx720{\leveltext\'01\uc2\u183 \'a1\'a4\uc1;}{\levelnumbers;}\f3\fs24\lang1024}
+\listid2036860066}
+}
+{\*\listoverridetable
+{\listoverride\listid2036860066\listoverridecount0\ls1}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf3 cat ssh-copy-id
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs20 #!/bin/sh
+\par # Shell script to\plain \f1\fs20\cf1  install your identity.pub on a remote machine
+\par \plain \f1\fs20 # \plain \f1\fs20\cf1 Takes the remote machine name as an argument.
+\par \plain \f1\fs20 # Obviously, \plain \f1\fs20\cf2 the remote machine must accept password authentication,
+\par \plain \f1\fs20 # \plain \f1\fs20\cf1 or one of the other keys in your ssh-agent\plain \f1\fs20 , for this to work.
+\par 
+\par \plain \f1\fs20\cf1 ID_FILE="$\{HOME\}/.ssh/identity.pub"
+\par \plain \f1\fs20 \~
+\par while\~getopts\~':i:p:P:h'\~OPTION
+\par do
+\par \~\~\~\~case\~$OPTION\~in
+\par \~\~\~\~\~\~\~\~i)
+\par \~\~\~\~\~\~\~\~if\~[\~-n\~"$OPTARG"\~];\~then
+\par \~\~\~\~\~\~\~\~\~\~\~\~if\~expr\~"$OPTARG"\~:\~".*.pub"\~>\~/dev/null\~;\~then
+\par \~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ID_FILE="$OPTARG"
+\par \~\~\~\~\~\~\~\~\~\~\~\~else
+\par \~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ID_FILE="$OPTARG.pub"
+\par \~\~\~\~\~\~\~\~\~\~\~\~fi
+\par \~\~\~\~\~\~\~\~fi
+\par \~\~\~\~\~\~\~\~;;
+\par \~\~\~\~\~\~\~\~P|p)
+\par \~\~\~\~\~\~\~\~\~\~\~\~PORT=$OPTARG;
+\par \~\~\~\~\~\~\~\~;;
+\par \~\~\~\~\~\~\~\~h)
+\par \~\~\~\~\~\~\~\~\~\~\~\~echo\~"Usage: $0 [-i [identity_file]] [user@]machine"\~>&2
+\par \~\~\~\~\~\~\~\~\~\~\~\~exit\~1
+\par \~\~\~\~\~\~\~\~;;
+\par \~\~\~\~esac;
+\par done;
+\par \~
+\par \plain \f1\fs20\cf1 shift\~$(($OPTIND\~-\~1))
+\par \plain \f1\fs20 \~
+\par if\~[\~$# -lt 1 ] && [ x$SSH_AUTH_SOCK != x ] ; then
+\par \~\~\~GET_ID="$GET_ID ssh-add -L"
+\par fi
+\par \~
+\par if\~[\~-z\~"`eval $GET_ID`"\~]\~&&\~[\~-r\~"$\{ID_FILE\}"\~]\~;\~then
+\par \~\~GET_ID="cat $\{ID_FILE\}"
+\par fi
+\par \~
+\par if\~[\~-z\~"`eval $GET_ID`"\~];\~then
+\par \~\~echo\~"$0: ERROR: No identities found"\~>&2
+\par \~\~exit\~1
+\par fi
+\par \~
+\par if\~[\~-z\~$PORT\~];\~then
+\par \~\~\~\~PORTOPTION=""
+\par else
+\par \~\~\~\~PORTOPTION="-p $PORT "
+\par fi;
+\par \plain \f1\fs20\cf1 \~
+\par \{\~eval\~"$GET_ID"\~;\~\}\~|\~ssh\~$PORTOPTION\~$1\~"\plain \f1\fs20\cf2 umask 077; test -d .ssh || mkdir .ssh ; cat >> .ssh/authorized_keys\plain \f1\fs20\cf1 "\~||\~exit\~1
+\par \plain \f1\fs20 \~
+\par cat\~<<EOF
+\par Now try logging into the machine,\~with\~"ssh $PORTOPTION'$1'",\~and\~check in:
+\par \~
+\par \~\~.ssh/authorized_keys
+\par \~
+\par to make sure we haven't added extra keys that you weren't expecting.
+\par \~
+\par EOF\par}

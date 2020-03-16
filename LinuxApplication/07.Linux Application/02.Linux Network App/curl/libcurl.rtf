@@ -1,0 +1,114 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil Arial;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid1421162729\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid808633490}
+{\list\listtemplateid1458397404\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid125622353}
+{\list\listtemplateid1401307031\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid388603384}
+{\list\listtemplateid487077850\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid1691222854}
+}
+{\*\listoverridetable
+{\listoverride\listid808633490\listoverridecount0\ls1}
+{\listoverride\listid125622353\listoverridecount0\ls2}
+{\listoverride\listid388603384\listoverridecount0\ls3}
+{\listoverride\listid1691222854\listoverridecount0\ls4}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 libcurl
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs18 libcurl(3)                                                       libcurl overview                                                       libcurl(3)
+\par 
+\par NAME
+\par \plain \f1\fs18\cf1        libcurl - client-side URL transfers
+\par \plain \f1\fs18 
+\par DESCRIPTION
+\par      \plain \f1\fs18\cf1   This is an short overview on how to use libcurl in your C programs\plain \f1\fs18 . There are specific man pages for each function mentioned in here. There
+\par        are also the libcurl-easy(3) man page, the libcurl-multi(3) man page, the libcurl-share(3) man page and the  libcurl-tutorial(3)  man  page
+\par        for in-depth understanding on how to program with libcurl.
+\par 
+\par        There  are more than a twenty custom bindings available that bring libcurl access to your favourite language. Look elsewhere for documenta-
+\par        tion on those.
+\par 
+\par        All applications that use libcurl should call curl_global_init(3) exactly once before any libcurl function can be used. After all usage  of
+\par        libcurl is complete, it must call curl_global_cleanup(3). In between those two calls, you can use libcurl as described below.
+\par 
+\par        To  transfer  files,  you  always  set  up an "easy handle" using curl_easy_init(3), but when you want the file(s) transferred you have the
+\par        option of using the "easy" interface, or the "multi" interface.
+\par 
+\par        The easy interface is a synchronous interface with which you call curl_easy_perform(3) and let it perform the transfer.  When  it  is  com-
+\par        pleted, the function return and you can continue. More details are found in the libcurl-easy(3) man page.
+\par 
+\par        The  multi interface on the other hand is an asynchronous interface, that you call and that performs only a little piece of the transfer on
+\par        each invoke. It is perfect if you want to do things while the transfer is in progress, or  similar.  The  multi  interface  allows  you  to
+\par        select()  on  libcurl  action,  and  even to easily download multiple files simultaneously using a single thread. See further deails in the
+\par        libcurl-multi(3) man page.
+\par 
+\par        You can have multiple easy handles share certain data, even if they are used in different threads. This magic  is  setup  using  the  share
+\par        interface, as described in the libcurl-share(3) man page.
+\par 
+\par \plain \f1\fs18\cf1        There is also a series of other helpful functions to use, including these:
+\par \plain \f1\fs18 
+\par               \plain \f1\fs18\cf1 curl_version_info\plain \f1\fs18 ()
+\par                      gets detailed libcurl (and other used libraries) version info
+\par 
+\par               \plain \f1\fs18\cf1 curl_getdate\plain \f1\fs18 ()
+\par                      converts a date string to time_t
+\par 
+\par               \plain \f1\fs18\cf1 curl_easy_getinfo\plain \f1\fs18 ()
+\par                      get information about a performed transfer
+\par 
+\par               \plain \f1\fs18\cf1 curl_formadd\plain \f1\fs18 ()
+\par                      helps building an HTTP form POST
+\par 
+\par               \plain \f1\fs18\cf1 curl_formfree\plain \f1\fs18 ()
+\par                      free a list built with curl_formadd(3)
+\par 
+\par               \plain \f1\fs18\cf1 curl_slist_append\plain \f1\fs18 ()
+\par                      builds a linked list
+\par 
+\par               \plain \f1\fs18\cf1 curl_slist_free_all\plain \f1\fs18 ()
+\par                      frees a whole curl_slist
+\par 
+\par LINKING WITH LIBCURL
+\par        On  unix-like  machines,  there's  a tool named curl-config that gets installed with the rest of the curl stuff when 'make install' is per-
+\par        formed.
+\par 
+\par        curl-config is added to make it easier for applications to link with libcurl and developers to learn about libcurl and how to use it.
+\par 
+\par        Run 'curl-config --libs' to get the (additional) linker options you need to link with the particular version of libcurl  you've  installed.
+\par        See the curl-config(1) man page for further details.
+\par 
+\par        Unix-like  operating  system  that ship libcurl as part of their distributions often don't provide the curl-config tool, but simply install
+\par        the library and headers in the common path for this purpose.
+\par 
+\par LIBCURL SYMBOL NAMES
+\par        All public functions in the libcurl interface are prefixed with 'curl_' (with a lowercase c). You can find other functions in  the  library
+\par        source code, but other prefixes indicate that the functions are private and may change without further notice in the next release.
+\par 
+\par        Only use documented functions and functionality!
+\par 
+\par PORTABILITY
+\par        libcurl works exactly the same, on any of the platforms it compiles and builds on.
+\par 
+\par THREADS
+\par        Never  ever  call  curl-functions  simultaneously using the same handle from several threads. libcurl is thread-safe and can be used in any
+\par        number of threads, but you must use separate curl handles if you want to use libcurl in more than one thread simultaneously.
+\par 
+\par PERSISTENT CONNECTIONS
+\par        Persistent connections means that libcurl can re-use the same connection for several transfers, if the conditions are right.
+\par 
+\par        libcurl will always attempt to use persistent connections. Whenever you use curl_easy_perform(3)  or  curl_multi_perform(3),  libcurl  will
+\par        attempt to use an existing connection to do the transfer, and if none exists it'll open a new one that will be subject for re-use on a pos-
+\par        sible following call to curl_easy_perform(3) or curl_multi_perform(3).
+\par 
+\par        To allow libcurl to take full advantage of persistent connections, you should do as many of your file transfers as possible using the  same
+\par        curl handle. When you call curl_easy_cleanup(3), all the possibly open connections held by libcurl will be closed and forgotten.
+\par 
+\par        Note that the options set with curl_easy_setopt(3) will be used in on every repeated curl_easy_perform(3) call.
+\par 
+\par libcurl 7.9.6                                                      19 March 2002                                                        libcurl(3)\par}

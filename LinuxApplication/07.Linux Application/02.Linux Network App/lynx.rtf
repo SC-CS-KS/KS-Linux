@@ -1,0 +1,951 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil \'ce\'a2\'c8\'ed\'d1\'c5\'ba\'da;}{\f2\fnil\fcharset134 \'cb\'ce\'cc\'e5;}{\f3\fnil Arial;}}{\colortbl;\red0\green0\blue255;\red0\green0\blue0;\red255\green255\blue255;}{\*\listtable{\list\listtemplateid797991373\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid1588601093}
+{\list\listtemplateid1722548000\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid837877669}
+{\list\listtemplateid1722963003\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid1992987947}
+{\list\listtemplateid1413733342\listsimple1
+{\listlevel\levelnfc0\leveljc0\li720\fi-360\jclisttab\tx720\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\f3\fs24}
+\listid2041202522}
+}
+{\*\listoverridetable
+{\listoverride\listid1588601093\listoverridecount0\ls1}
+{\listoverride\listid837877669\listoverridecount0\ls2}
+{\listoverride\listid1992987947\listoverridecount0\ls3}
+{\listoverride\listid2041202522\listoverridecount0\ls4}
+}
+
+
+\pard\fi0\li0\qc\ri0\sb0\sa0\itap0 \plain \f2\b\lang2052\fs24\cf2 lynx
+\par \pard\fi0\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\fs18 NAME
+\par \plain \f1\fs18\cf1        lynx - a general purpose distributed information browser for the World Wide Web
+\par \plain \f1\fs18 
+\par SYNOPSIS
+\par        lynx [options] [path or URL]
+\par 
+\par        lynx [options] [path or URL] -get_data
+\par        data
+\par        --
+\par 
+\par        lynx [options] [path or URL] -post_data
+\par        data
+\par        --
+\par 
+\par        Use "lynx -help" to display a complete list of current options.
+\par 
+\par DESCRIPTION
+\par        Lynx  is  a  fully-featured  World  Wide  Web  (WWW) client for users running cursor-addressable, character-cell
+\par        display devices (e.g., vt100 terminals, vt100 emulators running on Windows 95/NT or Macintoshes,  or  any  other
+\par        "curses-oriented"  display).   It  will  display  hypertext markup language (HTML) documents containing links to
+\par        files residing on the local system, as well as files residing on remote systems running Gopher, HTTP, FTP, WAIS,
+\par        and NNTP servers.  Current versions of Lynx run on Unix, VMS, Windows 95/NT, 386DOS and OS/2 EMX.
+\par 
+\par        Lynx can be used to access information on the World Wide Web, or to build information systems intended primarily
+\par        for local access.  For example, Lynx has been used to build several Campus Wide Information Systems (CWIS).   In
+\par        addition, Lynx can be used to build systems isolated within a single LAN.
+\par 
+\par OPTIONS
+\par        At  start  up,  Lynx  will load any local file or remote URL specified at the command line.  For help with URLs,
+\par        press "?"  or "H" while running Lynx.  Then follow the link titled, "Help on URLs."
+\par 
+\par        If more than one local file or remote URL is  listed  on  the  command  line,  Lynx  will  open  only  the  last
+\par        interactively.  All of the names (local files and remote URLs) are added to the G)oto history.
+\par 
+\par        Lynx uses only long option names. Option names can begin with double dash as well, underscores and dashes can be
+\par        intermixed in option names (in the reference below options are with one dash before them and with underscores).
+\par 
+\par        Lynx provides many command-line options.  Some options require a value (string, number or keyword).   These  are
+\par        noted  in  the  reference below.  The other options set boolean values in the program.  There are three types of
+\par        boolean options: set, unset and toggle.  If no option value is given, these have the obvious  meaning:  set  (to
+\par        true),  unset  (to  false), or toggle (between true/false).  For any of these, an explicit value can be given in
+\par        different forms to allow for operating system constraints, e.g.,
+\par               -center:off
+\par               -center=off
+\par               -center-
+\par        Lynx recognizes "1", "+", "on" and "true" for true values, and "0", "-", "off" and  "false"  for  false  values.
+\par        Other option-values are ignored.
+\par 
+\par        The  default  boolean,  number  and  string option values that are compiled into Lynx are displayed in the help-
+\par        message provided by lynx -help.  Some of those may differ according to how Lynx was built; see the help  message
+\par        itself  for  these values.  The -help option is processed in the third pass of options-processing, so any option
+\par        which sets a value, as well as runtime configuration values are reflected in the help-message.
+\par 
+\par        -      If the argument is only '-', then Lynx expects to receive the arguments from the standard input.  This is
+\par               to  allow  for  the  potentially  very  long  command  line  that can be associated with the -get_data or
+\par               -post_data arguments (see below).  It can also be used to  avoid  having  sensitive  information  in  the
+\par               invoking  command  line  (which would be visible to other processes on most systems), especially when the
+\par               -auth or -pauth options are used.
+\par 
+\par        -accept_all_cookies
+\par               accept all cookies.
+\par 
+\par        -anonymous
+\par               apply restrictions for anonymous account, see also -restrictions.
+\par 
+\par        -assume_charset=MIMEname
+\par               charset for documents that don't specify it.
+\par 
+\par        -assume_local_charset=MIMEname
+\par               charset assumed for local files, i.e., files which Lynx creates such as internal pages  for  the  options
+\par               menu.
+\par 
+\par        -assume_unrec_charset=MIMEname
+\par               use this instead of unrecognized charsets.
+\par 
+\par        -auth=ID:PASSWD
+\par               set  authorization  ID  and  password  for protected documents at startup.  Be sure to protect any script
+\par               files which use this switch.
+\par 
+\par        -base  prepend a request URL comment and BASE tag to text/html outputs for -source dumps.
+\par 
+\par        -bibp=URL
+\par               specify a local bibp server (default http://bibhost/).
+\par 
+\par        -blink forces high intensity background colors for color mode, if available and supported by the terminal.  This
+\par               applies to the slang library (for a few terminal emulators), or to OS/2 EMX with ncurses.
+\par 
+\par        -book  use  the bookmark page as the startfile.  The default or command line startfile is still set for the Main
+\par               screen command, and will be used if the bookmark page is unavailable or blank.
+\par 
+\par        -buried_news
+\par               toggles scanning of news  articles  for  buried  references,  and  converts  them  to  news  links. Not recommended because email addresses enclosed in angle brackets will be converted to false news links, and uuencoded messages can be trashed.
+\par 
+\par        -cache=NUMBER
+\par               set the NUMBER of documents cached in memory.  The default is 10.
+\par 
+\par        -case  enable case-sensitive string searching.
+\par 
+\par        -center
+\par               Toggle center alignment in HTML TABLE.
+\par 
+\par        -cfg=FILENAME
+\par               specifies a Lynx configuration file other than the default lynx.cfg.
+\par 
+\par        -child exit on left-arrow in startfile, and disable save to disk and associated print/mail options.
+\par 
+\par        -child_relaxed
+\par               exit on left-arrow in startfile, but allow save to disk and associated print/mail options.
+\par 
+\par        -cmd_log=FILENAME
+\par               write keystroke commands and related information to the specified file.
+\par 
+\par        -cmd_script=FILENAME
+\par               read keystroke commands from the specified file.  You can use the data written using the -cmd_log option.
+\par               Lynx  will ignore other information which the command-logging may have written to the logfile.  Each line
+\par               of the command script contains either a comment beginning with "#", or a keyword:
+\par 
+\par               exit
+\par                  causes the script to stop, and forces Lynx to exit immediately.
+\par 
+\par               key
+\par                  the character value, in printable form.  Cursor and other special keys are given as names, e.g., "Down
+\par                  Arrow".   Printable  7-bit  ASCII  codes are given as-is, and hexadecimal values represent other 8-bit
+\par                  codes.
+\par 
+\par               set
+\par                  followed by a "name=value" allows one to override values set in the lynx.cfg file.
+\par 
+\par        -color forces color mode on, if available.  Default color control sequences which work for many  terminal  types
+\par               are  assumed  if the terminal capability description does not specify how to handle color.  Lynx needs to
+\par               be compiled with the slang library for this flag, it is equivalent to setting the  COLORTERM  environment
+\par               variable.   (If  color  support  is instead provided by a color-capable curses library like ncurses, Lynx
+\par               relies completely on the terminal description to determine whether color mode is possible, and this  flag
+\par               is  not  needed  and  thus  unavailable.)   A  saved show_color=always setting found in a .lynxrc file at
+\par               startup has the same effect.  A saved show_color=never found in .lynxrc on startup is overridden by  this
+\par               flag.
+\par 
+\par        -connect_timeout=N
+\par               Sets the connection timeout, where N is given in seconds.
+\par 
+\par        -cookie_file=FILENAME
+\par               specifies  a file to use to read cookies.  If none is specified, the default value is ~/.lynx_cookies for
+\par               most systems, but ~/cookies for MS-DOS.
+\par 
+\par        -cookie_save_file=FILENAME
+\par               specifies a file to use to store cookies.  If none is specified, the value given by -cookie_file is used.
+\par 
+\par        -cookies
+\par               toggles handling of Set-Cookie headers.
+\par 
+\par        -core  toggles forced core dumps on fatal errors.  Turn this option off to ask Lynx to force a core  dump  if  a
+\par               fatal error occurs.
+\par 
+\par        -crawl with  -traversal,  output  each page to a file.  with -dump, format output as with -traversal, but to the
+\par               standard output.
+\par 
+\par        -curses_pads
+\par               toggles the use of curses "pad" feature which supports left/right scrolling of the display.
+\par 
+\par        -debug_partial
+\par               separate incremental display stages with MessageSecs delay
+\par 
+\par        -delay add DebugSecs delay after each progress-message
+\par 
+\par        -display=DISPLAY
+\par               set the display variable for X rexec-ed programs.
+\par 
+\par        -display_charset=MIMEname
+\par               set the charset for the terminal output.
+\par 
+\par        -dont_wrap_pre
+\par               inhibit wrapping of text in
+\par when -dump'ing  and  -crawl'ing,  mark  wrapped  lines  in  interactive
+\par               session.
+\par 
+\par        -dump  dumps  the  formatted  output  of the default document or those specified on the command line to standard
+\par               output.  Unlike interactive mode, all documents are processed.  This can be used in the following way:
+\par 
+\par               lynx -dump http://www.subir.com/lynx.html
+\par 
+\par        -editor=EDITOR
+\par               enable external editing, using the specified EDITOR. (vi, ed, emacs, etc.)
+\par 
+\par        -emacskeys
+\par               enable emacs-like key movement.
+\par 
+\par        -enable_scrollback
+\par               toggles compatibility with communication programs' scrollback keys (may be incompatible with some  curses
+\par               packages).
+\par 
+\par        -error_file=FILE
+\par               define a file where Lynx will report HTTP access codes.
+\par 
+\par        -exec  enable local program execution (normally not configured).
+\par 
+\par        -fileversions
+\par               include all versions of files in local VMS directory listings.
+\par 
+\par        -find_leaks
+\par               toggle  memory leak-checking.  Normally this is not compiled-into your executable, but when it is, it can
+\par               be disabled for a session.
+\par 
+\par        -force_empty_hrefless_a
+\par               force HREF-less 'A' elements to be empty (close them as soon as they are seen).
+\par 
+\par        -force_html
+\par               forces the first document to be interpreted as HTML.
+\par 
+\par        -force_secure
+\par               toggles forcing of the secure flag for SSL cookies.
+\par 
+\par        -forms_options
+\par               toggles whether the Options Menu is key-based or form-based.
+\par 
+\par        -from  toggles transmissions of From headers.
+\par 
+\par        -ftp   disable ftp access.
+\par 
+\par        -get_data
+\par               properly formatted data for a get form are read in from the standard input and passed to the form.  Input
+\par               is terminated by a line that starts with '---'.
+\par 
+\par        -head  send a HEAD request for the mime headers.
+\par 
+\par        -help  print the Lynx command syntax usage message, and exit.
+\par 
+\par        -hiddenlinks=[option]
+\par               control the display of hidden links.
+\par 
+\par               merge
+\par                  hidden  links  show up as bracketed numbers and are numbered together with other links in the sequence
+\par                  of their occurrence in the document.
+\par 
+\par               listonly
+\par                  hidden links are shown only on L)ist screens and listings generated by -dump or from the P)rint  menu,
+\par                  but appear separately at the end of those lists.  This is the default behavior.
+\par 
+\par               ignore
+\par                  hidden links do not appear even in listings.
+\par 
+\par        -historical
+\par               toggles use of '>' or '-->' as a terminator for comments.
+\par 
+\par        -homepage=URL
+\par               set homepage separate from start page.
+\par 
+\par        -image_links
+\par               toggles inclusion of links for all images.
+\par 
+\par        -index=URL
+\par               set the default index file to the specified URL.
+\par 
+\par        -ismap toggles inclusion of ISMAP links when client-side MAPs are present.
+\par 
+\par        -justify
+\par               do justification of text.
+\par 
+\par        -link=NUMBER
+\par               starting count for lnk#.dat files produced by -crawl.
+\par 
+\par        -listonly
+\par               for -dump, show only the list of links.
+\par 
+\par        -localhost
+\par               disable URLs that point to remote hosts.
+\par 
+\par        -locexec
+\par               enable local program execution from local files only (if Lynx was compiled with local execution enabled).
+\par 
+\par        -lss=FILENAME
+\par               specify  filename  containing  color-style  information.   The default is lynx.lss.  If you give an empty
+\par               filename, lynx uses a built-in monochrome scheme which imitates the non-color-style configuration.
+\par 
+\par        -mime_header
+\par               prints the MIME header of a fetched document along with its source.
+\par 
+\par        -minimal
+\par               toggles minimal versus valid comment parsing.
+\par 
+\par        -nested_tables
+\par               toggles nested-tables logic (for debugging).
+\par 
+\par        -newschunksize=NUMBER
+\par               number of articles in chunked news listings.
+\par 
+\par        -newsmaxchunk=NUMBER
+\par               maximum news articles in listings before chunking.
+\par 
+\par        -nobold
+\par               disable bold video-attribute.
+\par 
+\par        -nobrowse
+\par               disable directory browsing.
+\par 
+\par        -nocc  disable Cc: prompts for self copies of mailings.  Note that this does  not  disable  any  CCs  which  are
+\par               incorporated within a mailto URL or form ACTION.
+\par 
+\par        -nocolor
+\par               force  color  mode  off,  overriding  terminal capabilities and any -color flags, COLORTERM variable, and
+\par               saved .lynxrc settings.
+\par 
+\par        -noexec
+\par               disable local program execution. (DEFAULT)
+\par 
+\par        -nofilereferer
+\par               disable transmissions of Referer headers for file URLs.
+\par 
+\par        -nolist
+\par               disable the link list feature in dumps.
+\par 
+\par        -nolog disable mailing of error messages to document owners.
+\par 
+\par        -nomargins
+\par               disable left/right margins in the default style sheet.
+\par 
+\par        -nomore
+\par               disable -more- string in statusline messages.
+\par 
+\par        -nonrestarting_sigwinch
+\par               This flag is not available on all systems, Lynx needs to be compiled  with  HAVE_SIGACTION  defined.   If
+\par               available, this flag may cause Lynx to react more immediately to window changes when run within an xterm.
+\par 
+\par        -nonumbers
+\par               disable link- and field-numbering.  This overrides -number_fields and -number_links.
+\par 
+\par        -nopause
+\par               disable forced pauses for statusline messages.
+\par 
+\par        -noprint
+\par               disable most print functions.
+\par 
+\par        -noredir
+\par               prevents automatic redirection and prints a message with a link to the new URL.
+\par 
+\par        -noreferer
+\par               disable transmissions of Referer headers.
+\par 
+\par        -noreverse
+\par               disable reverse video-attribute.
+\par 
+\par        -nosocks
+\par               disable SOCKS proxy usage by a SOCKSified Lynx.
+\par 
+\par        -nostatus
+\par               disable the retrieval status messages.
+\par 
+\par        -notitle
+\par               disable title and blank line from top of page.
+\par 
+\par        -nounderline
+\par               disable underline video-attribute.
+\par 
+\par        -number_fields
+\par               force numbering of links as well as form input fields
+\par 
+\par        -number_links
+\par               force numbering of links.
+\par 
+\par        -partial
+\par               toggles display partial pages while loading.
+\par 
+\par        -partial_thres=NUMBER
+\par               number of lines to render before repainting display with partial-display logic
+\par 
+\par        -passive-ftp
+\par               toggles passive ftp connections.
+\par 
+\par        -pauth=ID:PASSWD
+\par               set authorization ID and password for a protected proxy server at startup.  Be sure to protect any script
+\par               files which use this switch.
+\par 
+\par        -popup toggles handling of single-choice SELECT options via popup windows or as lists of radio buttons.
+\par 
+\par        -post_data
+\par               properly formatted data for a post form are read in from the standard  input  and  passed  to  the  form.
+\par               Input is terminated by a line that starts with '---'.
+\par 
+\par        -preparsed
+\par               show HTML source preparsed and reformatted when used with -source or in source view.
+\par 
+\par        -prettysrc
+\par               show HTML source view with lexical elements and tags in color.
+\par 
+\par        -print enable print functions. (default)
+\par 
+\par        -pseudo_inlines
+\par               toggles pseudo-ALTs for inline images with no ALT string.
+\par 
+\par        -raw   toggles default setting of 8-bit character translations or CJK mode for the startup character set.
+\par 
+\par        -realm restricts access to URLs in the starting realm.
+\par 
+\par        -read_timeout=N
+\par               Sets the read-timeout, where N is given in seconds.
+\par 
+\par        -reload
+\par               flushes the cache on a proxy server (only the first document affected).
+\par 
+\par        -restrictions=[option][,option][,option]...
+\par               allows  a  list  of  services  to  be disabled selectively. Dashes and underscores in option names can be
+\par               intermixed. The following list is printed if no options are specified.
+\par 
+\par               all
+\par                  restricts all options listed below.
+\par 
+\par               bookmark
+\par                  disallow changing the location of the bookmark file.
+\par 
+\par               bookmark_exec
+\par                  disallow execution links via the bookmark file.
+\par 
+\par               change_exec_perms
+\par                  disallow changing the eXecute permission on files (but still allow it for directories) when local file
+\par                  management is enabled.
+\par 
+\par               default
+\par                  same  as  command  line option -anonymous.  Disables default services for anonymous users.  Set to all
+\par                  restricted,  except  for:  inside_telnet,  outside_telnet,  inside_ftp,  outside_ftp,   inside_rlogin,
+\par                  outside_rlogin,  inside_news,  outside_news,  telnet_port,  jump,  mail,  print,  exec, and goto.  The
+\par                  settings for these, as well as additional goto restrictions for specific URL  schemes  that  are  also
+\par                  applied, are derived from definitions within userdefs.h.
+\par 
+\par               dired_support
+\par                  disallow local file management.
+\par 
+\par               disk_save
+\par                  disallow saving to disk in the download and print menus.
+\par 
+\par               dotfiles
+\par                  disallow access to, or creation of, hidden (dot) files.
+\par 
+\par               download
+\par                  disallow some downloaders in the download menu (does not imply disk_save restriction).
+\par 
+\par               editor
+\par                  disallow external editing.
+\par 
+\par               exec
+\par                  disable execution scripts.
+\par 
+\par               exec_frozen
+\par                  disallow the user from changing the local execution option.
+\par 
+\par               externals
+\par                  disallow  some  "EXTERNAL"  configuration  lines  if support for passing URLs to external applications
+\par                  (with the EXTERN command) is compiled in.
+\par 
+\par               file_url
+\par                  disallow using G)oto, served links or bookmarks for file: URLs.
+\par 
+\par               goto
+\par                  disable the 'g' (goto) command.
+\par 
+\par               inside_ftp
+\par                  disallow ftps for people coming from inside your domain (utmp required for selectivity).
+\par 
+\par               inside_news
+\par                  disallow  USENET  news  posting  for  people  coming  from  inside  your  domain  (utmp  required  for
+\par                  selectivity).
+\par 
+\par               inside_rlogin
+\par                  disallow rlogins for people coming from inside your domain (utmp required for selectivity).
+\par 
+\par               inside_telnet
+\par                  disallow telnets for people coming from inside your domain (utmp required for selectivity).
+\par 
+\par               jump
+\par                  disable the 'j' (jump) command.
+\par 
+\par               multibook
+\par                  disallow multiple bookmarks.
+\par 
+\par               mail
+\par                  disallow mail.
+\par 
+\par               news_post
+\par                  disallow USENET News posting.
+\par 
+\par               options_save
+\par                  disallow saving options in .lynxrc.
+\par 
+\par               outside_ftp
+\par                  disallow ftps for people coming from outside your domain (utmp required for selectivity).
+\par 
+\par               outside_news
+\par                  disallow USENET news reading and posting for people coming from outside your domain (utmp required for
+\par                  selectivity).  This restriction applies to "news", "nntp", "newspost", and "newsreply" URLs,  but  not
+\par                  to "snews", "snewspost", or "snewsreply" in case they are supported.
+\par 
+\par               outside_rlogin
+\par                  disallow rlogins for people coming from outside your domain (utmp required for selectivity).
+\par 
+\par               outside_telnet
+\par                  disallow telnets for people coming from outside your domain (utmp required for selectivity).
+\par 
+\par               print
+\par                  disallow most print options.
+\par 
+\par               shell
+\par                  disallow shell escapes and lynxexec or lynxprog G)oto's.
+\par 
+\par               suspend
+\par                  disallow Unix Control-Z suspends with escape to shell.
+\par 
+\par               telnet_port
+\par                  disallow specifying a port in telnet G)oto's.
+\par 
+\par               useragent
+\par                  disallow modifications of the User-Agent header.
+\par 
+\par        -resubmit_posts
+\par               toggles  forced  resubmissions  (no-cache) of forms with method POST when the documents they returned are
+\par               sought with the PREV_DOC command or from the History List.
+\par 
+\par        -rlogin
+\par               disable recognition of rlogin commands.
+\par 
+\par        -scrollbar
+\par               toggles showing scrollbar.
+\par 
+\par        -scrollbar_arrow
+\par               toggles showing arrows at ends of the scrollbar.
+\par 
+\par        -selective
+\par               require .www_browsable files to browse directories.
+\par 
+\par        -session=FILENAME
+\par               resumes from specified file on startup and saves session to that file on exit.
+\par 
+\par        -sessionin=FILENAME
+\par               resumes session from specified file.
+\par 
+\par        -sessionout=FILENAME
+\par               saves session to specified file.
+\par 
+\par        -short_url
+\par               show very long URLs in the status line with "..." to represent the portion  which  cannot  be  displayed.
+\par               The beginning and end of the URL are displayed, rather than suppressing the end.
+\par 
+\par        -show_cfg
+\par               Print the configuration settings, e.g., as read from "lynx.cfg", and exit.
+\par 
+\par        -show_cursor
+\par               If  enabled  the cursor will not be hidden in the right hand corner but will instead be positioned at the
+\par               start of the currently selected link.  Show cursor  is  the  default  for  systems  without  FANCY_CURSES
+\par               capabilities.   The  default  configuration  can  be changed in userdefs.h or lynx.cfg.  The command line
+\par               switch toggles the default.
+\par 
+\par        -show_rate
+\par               If enabled the transfer rate is shown in bytes/second.  If disabled, no  transfer  rate  is  shown.   Use
+\par               lynx.cfg or the options menu to select KB/second and/or ETA.
+\par 
+\par        -soft_dquotes
+\par               toggles  emulation  of  the  old Netscape and Mosaic bug which treated '>' as a co-terminator for double-
+\par               quotes and tags.
+\par 
+\par        -source
+\par               works the same as dump but outputs HTML source instead of formatted text.  For example
+\par 
+\par               lynx -source . >foo.html
+\par 
+\par               generates HTML source listing the files in the current  directory.   Each  file  is  marked  by  an  HREF
+\par               relative  to  the  parent  directory.   Add  a  trailing slash to make the HREF's relative to the current
+\par               directory:
+\par 
+\par               lynx -source ./ >foo.html
+\par 
+\par        -stack_dump
+\par               disable SIGINT cleanup handler
+\par 
+\par        -startfile_ok
+\par               allow non-http startfile and homepage with -validate.
+\par 
+\par        -stderr
+\par               When dumping a document using -dump or -source, Lynx normally does not  display  alert  (error)  messages
+\par               that  you  see  on  the  screen  in  the status line.  Use the -stderr option to tell Lynx to write these
+\par               messages to the standard error.
+\par 
+\par        -stdin read the startfile from standard input (UNIX only).
+\par 
+\par        -syslog=text
+\par               information for syslog call.
+\par 
+\par        -syslog-urls
+\par               log requested URLs with syslog.
+\par 
+\par        -tagsoup
+\par               initialize parser, using Tag Soup DTD rather than SortaSGML.
+\par 
+\par        -telnet
+\par               disable recognition of telnet commands.
+\par 
+\par        -term=TERM
+\par               tell Lynx what terminal type to assume it is talking to.  (This may be useful for remote execution, when,
+\par               for  example,  Lynx  connects  to a remote TCP/IP port that starts a script that, in turn, starts another
+\par               Lynx process.)
+\par 
+\par        -timeout=N
+\par               For win32, sets the network read-timeout, where N is given in seconds.
+\par 
+\par        -tlog  toggles between using a Lynx Trace Log and stderr for trace output from the session.
+\par 
+\par        -tna   turns on "Textfields Need Activation" mode.
+\par 
+\par        -trace turns on Lynx trace mode.  Destination of trace output depends on -tlog.
+\par 
+\par        -trace_mask=value
+\par               turn on optional traces, which may result in very large trace files.  Logically OR the values to  combine
+\par               options:
+\par 
+\par               1  SGML character parsing states
+\par 
+\par               2  color-style
+\par 
+\par               4  TRST (table layout)
+\par 
+\par               8  configuration (lynx.cfg, .lynxrc, .lynx-keymaps, mime.types and mailcap contents)
+\par 
+\par               16 binary string copy/append, used in form data construction.
+\par 
+\par               32 cookies
+\par 
+\par               64 character sets
+\par 
+\par               128
+\par                  GridText parsing
+\par 
+\par               256
+\par                  timing
+\par 
+\par        -traversal
+\par               traverse  all  http  links derived from startfile.  When used with -crawl, each link that begins with the
+\par               same string as startfile is output to a  file,  intended  for  indexing.   See  CRAWL.announce  for  more
+\par               information.
+\par 
+\par        -trim_input_fields
+\par               trim input text/textarea fields in forms.
+\par 
+\par        -underline_links
+\par               toggles use of underline/bold attribute for links.
+\par 
+\par        -underscore
+\par               toggles use of _underline_ format in dumps.
+\par 
+\par        -unique_urls
+\par               check  for  duplicate  link  numbers  in  each  page and corresponding lists, and reuse the original link
+\par               number.
+\par 
+\par        -use_mouse
+\par               turn on mouse support, if available.  Clicking the left mouse button on a link  traverses  it.   Clicking
+\par               the  right  mouse  button  pops  back.   Click on the top line to scroll up.  Click on the bottom line to
+\par               scroll down.  The first few positions in the top and bottom line may invoke additional  functions.   Lynx
+\par               must  be compiled with ncurses or slang to support this feature.  If ncurses is used, clicking the middle
+\par               mouse button pops up a simple menu.  Mouse clicks may only work reliably while Lynx is idle  waiting  for
+\par               input.
+\par 
+\par        -useragent=Name
+\par               set alternate Lynx User-Agent header.
+\par 
+\par        -validate
+\par               accept only http URLs (for validation).  Complete security restrictions also are implemented.
+\par 
+\par        -verbose
+\par               toggle [LINK], [IMAGE] and [INLINE] comments with filenames of these images.
+\par 
+\par        -version
+\par               print version information, and exit.
+\par 
+\par        -vikeys
+\par               enable vi-like key movement.
+\par 
+\par        -wdebug
+\par               enable  Waterloo  tcp/ip  packet  debug  (print  to  watt  debugfile).  This applies only to DOS versions
+\par               compiled with WATTCP or WATT-32.
+\par 
+\par        -width=NUMBER
+\par               number of columns for formatting of dumps, default is 80.  This is limited by the number of columns  that
+\par               Lynx could display, typically 1024 (the MAX_LINE symbol).
+\par 
+\par        -with_backspaces
+\par               emit backspaces in output if -dump'ing or -crawl'ing (like 'man' does)
+\par 
+\par        -xhtml_parsing
+\par               tells  Lynx  that it can ignore certain tags which have no content in an XHTML 1.0 document.  For example
+\par               "" will be discarded.
+\par 
+\par COMMANDS
+\par        o  Use Up arrow and Down arrow to scroll through hypertext links.
+\par 
+\par        o  Right arrow or Return will follow a highlighted hypertext link.
+\par 
+\par        o  Left Arrow will retreat from a link.
+\par 
+\par        o  Type "H" or "?" for online help and descriptions of key-stroke commands.
+\par 
+\par        o  Type "K" for a complete list of the current key-stroke command mappings.
+\par 
+\par ENVIRONMENT
+\par        In addition to various "standard" environment variables such as HOME, PATH, USER,  DISPLAY,  TMPDIR,  etc,  Lynx
+\par        utilizes several Lynx-specific environment variables, if they exist.
+\par 
+\par        Others  may be created or modified by Lynx to pass data to an external program, or for other reasons.  These are
+\par        listed separately below.
+\par 
+\par        See also the sections on SIMULATED CGI SUPPORT and NATIVE LANGUAGE SUPPORT, below.
+\par 
+\par        Note:  Not all environment variables apply to all  types  of  platforms  supported  by  Lynx,  though  most  do.
+\par        Feedback on platform dependencies is solicited.
+\par 
+\par        Environment Variables Used By Lynx:
+\par 
+\par        COLORTERM           If  set,  color  capability for the terminal is forced on at startup time.  The actual value
+\par                            assigned to the variable is ignored.  This variable is only meaningful  if  Lynx  was  built
+\par                            using the slang screen-handling library.
+\par 
+\par        LYNX_CFG            This  variable,  if  set,  will  override  the  default  location  and  name  of  the global
+\par                            configuration file (normally, lynx.cfg) that was defined by the  LYNX_CFG_FILE  constant  in
+\par                            the userdefs.h file, during installation.  See the userdefs.h file for more information.
+\par 
+\par        LYNX_HELPFILE       If  set, this variable overrides the compiled-in URL and configuration file URL for the Lynx
+\par                            help file.
+\par 
+\par        LYNX_LOCALEDIR      If set, this variable overrides the compiled-in  location  of  the  locale  directory  which
+\par                            contains native language (NLS) message text.
+\par 
+\par        LYNX_LSS            This  variable,  if  set,  specifies  the location of the default Lynx character style sheet
+\par                            file.  [Currently only meaningful if Lynx was built using experimental color style support.]
+\par 
+\par        LYNX_SAVE_SPACE     This variable, if set, will override the default path prefix for files saved to disk that is
+\par                            defined in the lynx.cfg SAVE_SPACE: statement.  See the lynx.cfg file for more information.
+\par 
+\par        LYNX_TEMP_SPACE     This  variable,  if  set, will override the default path prefix for temporary files that was
+\par                            defined during installation, as well as any  value  that  may  be  assigned  to  the  TMPDIR
+\par                            variable.
+\par 
+\par        MAIL                This  variable specifies the default inbox Lynx will check for new mail, if such checking is
+\par                            enabled in the lynx.cfg file.
+\par 
+\par        NEWS_ORGANIZATION   This variable, if set, provides the string used in the Organization: header of  USENET  news
+\par                            postings.   It  will override the setting of the ORGANIZATION environment variable, if it is
+\par                            also set (and, on UNIX, the contents of an /etc/organization file, if present).
+\par 
+\par        NNTPSERVER          If set, this variable specifies the default NNTP server that will be used  for  USENET  news
+\par                            reading and posting with Lynx, via news: URL's.
+\par 
+\par        ORGANIZATION        This  variable,  if set, provides the string used in the Organization: header of USENET news
+\par                            postings.  On UNIX, it will override the contents of an /etc/organization file, if present.
+\par 
+\par        PROTOCOL_proxy      Lynx supports the use of proxy servers  that  can  act  as  firewall  gateways  and  caching
+\par                            servers.   They are preferable to the older gateway servers (see WWW_access_GATEWAY, below).
+\par                            Each protocol used by Lynx, (http, ftp, gopher, etc), can be mapped  separately  by  setting
+\par                            environment   variables  of  the  form  PROTOCOL_proxy  (literally:  http_proxy,  ftp_proxy,
+\par                            gopher_proxy, etc), to "http://some.server.dom:port/".  See Lynx Users Guide for  additional
+\par                            details and examples.
+\par 
+\par        SSL_CERT_DIR        Set to the directory containing trusted certificates.
+\par 
+\par        SSL_CERT_FILE       Set to the full path and filename for your file of trusted certificates.
+\par 
+\par        WWW_access_GATEWAY  Lynx   still   supports   use   of   gateway   servers,   with  the  servers  specified  via
+\par                            "WWW_access_GATEWAY" variables (where "access" is lower  case  and  can  be  "http",  "ftp",
+\par                            "gopher"  or "wais"), however most gateway servers have been discontinued.  Note that you do
+\par                            not include a terminal '/' for gateways, but do  for  proxies  specified  by  PROTOCOL_proxy
+\par                            environment variables.  See Lynx Users Guide for details.
+\par 
+\par        WWW_HOME            This  variable,  if  set, will override the default startup URL specified in any of the Lynx
+\par                            configuration files.
+\par 
+\par        Environment Variables Set or Modified By Lynx:
+\par 
+\par        LYNX_PRINT_DATE     This variable is set by the  Lynx  p(rint)  function,  to  the  Date:  string  seen  in  the
+\par                            document's  "Information  about" page (= cmd), if any.  It is created for use by an external
+\par                            program, as defined in a lynx.cfg PRINTER: definition statement.   If  the  field  does  not
+\par                            exist  for the document, the variable is set to a null string under UNIX, or "No Date" under
+\par                            VMS.
+\par 
+\par        LYNX_PRINT_LASTMOD  This variable is set by the Lynx p(rint) function, to the  Last  Mod:  string  seen  in  the
+\par                            document's  "Information  about" page (= cmd), if any.  It is created for use by an external
+\par                            program, as defined in a lynx.cfg PRINTER: definition statement.   If  the  field  does  not
+\par                            exist  for  the  document,  the variable is set to a null string under UNIX, or "No LastMod"
+\par                            under VMS.
+\par 
+\par        LYNX_PRINT_TITLE    This variable is set by the Lynx p(rint) function, to  the  Linkname:  string  seen  in  the
+\par                            document's  "Information  about" page (= cmd), if any.  It is created for use by an external
+\par                            program, as defined in a lynx.cfg PRINTER: definition statement.   If  the  field  does  not
+\par                            exist for the document, the variable is set to a null string under UNIX, or "No Title" under
+\par                            VMS.
+\par 
+\par        LYNX_PRINT_URL      This variable is set by the Lynx p(rint) function, to the URL: string seen in the document's
+\par                            "Information  about" page (= cmd), if any.  It is created for use by an external program, as
+\par                            defined in a lynx.cfg PRINTER: definition statement.  If the field does not  exist  for  the
+\par                            document, the variable is set to a null string under UNIX, or "No URL" under VMS.
+\par 
+\par        LYNX_TRACE          If set, causes Lynx to write a trace file as if the -trace option were supplied.
+\par 
+\par        LYNX_TRACE_FILE     If  set, overrides the compiled-in name of the trace file, which is either Lynx.trace or LY-
+\par                            TRACE.LOG (the latter on the DOS platform).  The trace file is in either  case  relative  to
+\par                            the home directory.
+\par 
+\par        LYNX_VERSION        This  variable is always set by Lynx, and may be used by an external program to determine if
+\par                            it was invoked by Lynx.  See also the comments in the distribution's  sample  mailcap  file,
+\par                            for notes on usage in such a file.
+\par 
+\par        TERM                Normally,  this variable is used by Lynx to determine the terminal type being used to invoke
+\par                            Lynx.  If, however, it is unset at startup time (or has the  value  "unknown"),  or  if  the
+\par                            -term  command-line  option is used (see OPTIONS section above), Lynx will set or modify its
+\par                            value to the user specified terminal type (for the Lynx execution  environment).   Note:  If
+\par                            set/modified  by Lynx, the values of the LINES and/or COLUMNS environment variables may also
+\par                            be changed.
+\par 
+\par SIMULATED CGI SUPPORT
+\par        If built with the cgi-links option enabled, Lynx allows access to a cgi script directly without the need for  an
+\par        http daemon.
+\par 
+\par        When  executing  such  "lynxcgi  scripts"  (if enabled), the following variables may be set for simulating a CGI
+\par        environment:
+\par 
+\par        CONTENT_LENGTH
+\par 
+\par        CONTENT_TYPE
+\par 
+\par        DOCUMENT_ROOT
+\par 
+\par        HTTP_ACCEPT_CHARSET
+\par 
+\par        HTTP_ACCEPT_LANGUAGE
+\par 
+\par        HTTP_USER_AGENT
+\par 
+\par        PATH_INFO
+\par 
+\par        PATH_TRANSLATED
+\par 
+\par        QUERY_STRING
+\par 
+\par        REMOTE_ADDR
+\par 
+\par        REMOTE_HOST
+\par 
+\par        REQUEST_METHOD
+\par 
+\par        SERVER_SOFTWARE
+\par 
+\par        Other environment variables are not inherited by the script, unless they are provided via a  LYNXCGI_ENVIRONMENT
+\par        statement  in  the  configuration  file.   See  the  lynx.cfg  file,  and  the  (draft)  CGI  1.1  Specification
+\par        for the definition and usage of these variables.
+\par 
+\par        The CGI Specification, and other associated documentation, should be consulted for general  information  on  CGI
+\par        script programming.
+\par 
+\par NATIVE LANGUAGE SUPPORT
+\par        If  configured  and  installed with Native Language Support, Lynx will display status and other messages in your
+\par        local language.  See the file ABOUT_NLS in the source  distribution,  or  at  your  local  GNU  site,  for  more
+\par        information about internationalization.
+\par 
+\par        The following environment variables may be used to alter default settings:
+\par 
+\par        LANG                This  variable,  if  set, will override the default message language.  It is an ISO 639 two-
+\par                            letter code identifying the language.  Language codes are NOT the same as the country  codes
+\par                            given in ISO 3166.
+\par 
+\par        LANGUAGE            This  variable, if set, will override the default message language.  This is a GNU extension
+\par                            that has higher priority for setting the message catalog than LANG or LC_ALL.
+\par 
+\par        LC_ALL              and
+\par 
+\par        LC_MESSAGES         These variables, if set, specify the notion of native language formatting style.   They  are
+\par                            POSIXly correct.
+\par 
+\par        LINGUAS             This  variable,  if  set  prior to configuration, limits the installed languages to specific
+\par                            values.  It is a space-separated list of two-letter codes.  Currently, it is hard-coded to a
+\par                            wish list.
+\par 
+\par        NLSPATH             This variable, if set, is used as the path prefix for message catalogs.
+\par 
+\par NOTES
+\par        This is the Lynx v2.8.7 Release; development is in progress for 2.8.8.
+\par 
+\par        If  you  wish  to  contribute  to the further development of Lynx, subscribe to our mailing list.  Send email to
+\par        with "subscribe lynx-dev" as the only line in the body of your message.
+\par 
+\par        Send bug reports, comments, suggestions to after subscribing.
+\par 
+\par        Unsubscribe by sending email to with "unsubscribe lynx-dev" as the  only  line  in
+\par        the body of your message.  Do not send the unsubscribe message to the lynx-dev list, itself.
+\par 
+\par SEE ALSO
+\par        catgets(3),  curses(3),  environ(7),  execve(2),  ftp(1), gettext(GNU), localeconv(3), ncurses(3), setlocale(3),
+\par        slang(?), termcap(5), terminfo(5), wget(GNU)
+\par 
+\par        Note that man page availability and section numbering is somewhat platform dependent,  and  may  vary  from  the
+\par        above references.
+\par 
+\par        A  section  shown as (GNU), is intended to denote that the topic may be available via an info page, instead of a
+\par        man page (i.e., try "info subject", rather than "man subject").
+\par 
+\par        A section shown as (?) denotes that documentation on the topic exists, but is not part of an  established  docu\uc2\u8208 \'a9\\\uc1
+\par        mentation  retrieval system (see the distribution files associated with the topic, or contact your System Admin\uc2\u8208 \'a9\\\uc1
+\par        istrator for further information).
+\par 
+\par ACKNOWLEDGMENTS
+\par        Lynx has incorporated code from a variety of sources along the way.  The earliest versions of Lynx included code
+\par        from  Earl  Fogel  of Computing Services at the University of Saskatchewan, who implemented HYPERREZ in the Unix
+\par        environment.  HYPERREZ was developed by Niel Larson of Think.com and served as the model for the early  versions
+\par        of Lynx.  Those versions also incorporated libraries from the Unix Gopher clients developed at the University of
+\par        Minnesota, and the later versions of Lynx rely on the WWW client library code developed by Tim  Berners-Lee  and
+\par        the WWW community.  Also a special thanks to Foteos Macrides who ported much of Lynx to VMS and did or organized
+\par        most of its development since the departures of Lou Montulli and Garrett Blythe from the University of Kansas in
+\par        the  summer  of 1994 through the release of v2.7.2, and to everyone on the net who has contributed to Lynx's de\uc2\u8208 \'a9\\\uc1
+\par        velopment either directly (through patches, comments or bug reports) or indirectly (through inspiration and  de\uc2\u8208 \'a9\\\uc1
+\par        velopment of other systems).
+\par 
+\par AUTHORS
+\par        Lou Montulli, Garrett Blythe, Craig Lavender, Michael Grobe, Charles Rezac
+\par        Academic Computing Services
+\par        University of Kansas
+\par        Lawrence, Kansas 66047
+\par 
+\par        Foteos Macrides
+\par        Worcester Foundation for Biomedical Research
+\par        Shrewsbury, Massachusetts 01545
+\par 
+\par        Thomas E. Dickey
+\par        
+\par 
+\par 
+\par 
+\par                                                                                                                 LYNX(1)\par}
